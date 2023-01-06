@@ -20,7 +20,7 @@ isCJKLanguage: true
 
 ## Fork 流影文档
 最好在本地进行文档改善工作。
-* 首先在Github中Fork流影文档 [ly_docs](https://github.com/Abyssal-Fish-Technology/ly_docs)
+* 首先在Github中Fork流影文档 [ly_docs](https://github.com/abyssalfish-os/abyssalfish-os.github.io)
 * Clone项目到本地，参见[GitHub's documentation on "forking"][ghforking]
 * 本地创建分支进行文档完善工作
 
