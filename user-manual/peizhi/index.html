@@ -1,0 +1,486 @@
+<!doctype html><html class=no-js lang="
+    zh-cn
+  
+  ">
+<head>
+<meta charset=utf-8>
+<link rel=preload href=https://abyssalfish-os.github.io/fonts/muli-latin-200.woff2 as=font type=font/woff2 crossorigin>
+<link rel=preload href=https://abyssalfish-os.github.io/fonts/muli-latin-400.woff2 as=font type=font/woff2 crossorigin>
+<link rel=preload href=https://abyssalfish-os.github.io/fonts/muli-latin-800.woff2 as=font type=font/woff2 crossorigin>
+<meta http-equiv=x-ua-compatible content="IE=edge">
+<title>
+流影: 系统配置
+</title><meta name=viewport content="width=device-width,minimum-scale=1">
+<meta name=generator content="Hugo 0.109.0">
+<meta name=robots content="index, follow">
+<link rel=stylesheet href=/output/css/app.min.631706eef190df8129d8f5b57c45caa8c431efd8e4148fbd17b354b607ce316a.css integrity="sha256-YxcG7vGQ34Ep2PW1fEXKqMQx79jkFI+9F7NUtgfOMWo=" crossorigin=anonymous>
+<meta name=description content="
+        配置事件检测策略、配置追踪、用户管理等
+      
+      ">
+<script type=text/javascript src=/output/js/app.5a802739f9b2407f0d3a1f84a20731b6705a5a4df051c35686f22bd3aea90731.js crossorigin=anonymous defer></script>
+<script async defer src=https://buttons.github.io/buttons.js></script>
+<link rel=apple-touch-icon sizes=180x180 href=/apple-touch-icon.png>
+<link rel=icon type=image/png href=/favicon-32x32.png sizes=32x32>
+<link rel=icon type=image/png href=/favicon-16x16.png sizes=16x16>
+<link rel=manifest href=/manifest.json>
+<link rel=mask-icon href=/safari-pinned-tab.svg color=#0594cb>
+<meta name=theme-color content="#ffffff">
+<meta property="og:title" content="系统配置">
+<meta property="og:description" content="配置事件检测策略、配置追踪、用户管理等">
+<meta property="og:type" content="article">
+<meta property="og:url" content="https://abyssalfish-os.github.io/user-manual/peizhi/"><meta property="og:image" content="https://abyssalfish-os.github.io/opengraph/gohugoio-card-base-1_huf001e7df4fd9c00c4355abac7d4ca455_242906_filter_5004832908604976182.png"><meta property="article:section" content="user-manual">
+<meta property="article:published_time" content="2022-12-30T00:00:00+08:00">
+<meta property="article:modified_time" content="2023-01-07T00:58:17+08:00">
+<meta itemprop=name content="系统配置">
+<meta itemprop=description content="配置事件检测策略、配置追踪、用户管理等"><meta itemprop=datePublished content="2022-12-30T00:00:00+08:00">
+<meta itemprop=dateModified content="2023-01-07T00:58:17+08:00">
+<meta itemprop=wordCount content="4306">
+<meta itemprop=keywords content>
+</head><body class="ma0 sans-serif bg-primary-color-light
+production">
+<nav class="bg-primary-color-dark pv4 w-100" role=navigation>
+<div class="center flex-ns flex-wrap items-center justify-start mw9">
+<h1 class="dim f3 lh-solid ml0-ns mr0 mr4-l mv0 pl3 pl4-ns">
+<a href=https://abyssalfish-os.github.io/ class="link white">
+流影->FlowShadow
+</a>
+</h1><ul class="list ma0 pa0 dn dib-l" role=menu>
+<li class="f5 dib mr4" role=menuitem>
+<a href=/news/ class="dim link light-silver">
+新闻&博客
+</a>
+</li><li class="f5 dib mr4" role=menuitem>
+<a href=/documentation/ class="dim link light-silver">
+文档
+</a>
+</li><li class="f5 dib mr4" role=menuitem>
+<a href=/demo/ class="dim link light-silver">
+Demo演示
+</a>
+</li><li class="f5 dib mr4" role=menuitem>
+<a href=https://gitee.com/organizations/abyssalfish-os/projects class="dim link light-silver">
+Gitee
+<span class=pl1><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="10" height="10" viewBox="0 0 32 32" class="fill-current v-base" aria-label="External Link"><path d="M25.152 16.576v5.696q0 2.144-1.504 3.648T20 27.424H5.152q-2.144.0-3.648-1.504t-1.504-3.648V7.424q0-2.112 1.504-3.616t3.648-1.536h12.576q.224.0.384.16t.16.416V4q0 .256-.16.416t-.384.16H5.152q-1.184.0-2.016.832t-.864 2.016v14.848q0 1.184.864 2.016t2.016.864H20q1.184.0 2.016-.864t.832-2.016v-5.696q0-.256.16-.416t.416-.16h1.152q.256.0.416.16t.16.416zM32 1.152v9.12q0 .48-.352.8t-.8.352-.8-.352l-3.136-3.136-11.648 11.648q-.16.192-.416.192t-.384-.192l-2.048-2.048q-.192-.16-.192-.384t.192-.416L24.064 5.088l-3.136-3.136q-.352-.352-.352-.8t.352-.8.8-.352h9.12q.48.0.8.352t.352.8z"/></svg>
+</span>
+</a>
+</li><li class="f5 dib mr4" role=menuitem>
+<a href=https://github.com/orgs/Abyssal-Fish-Technology/repositories class="dim link light-silver">
+GitHub
+<span class=pl1><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="10" height="10" viewBox="0 0 32 32" class="fill-current v-base" aria-label="External Link"><path d="M25.152 16.576v5.696q0 2.144-1.504 3.648T20 27.424H5.152q-2.144.0-3.648-1.504t-1.504-3.648V7.424q0-2.112 1.504-3.616t3.648-1.536h12.576q.224.0.384.16t.16.416V4q0 .256-.16.416t-.384.16H5.152q-1.184.0-2.016.832t-.864 2.016v14.848q0 1.184.864 2.016t2.016.864H20q1.184.0 2.016-.864t.832-2.016v-5.696q0-.256.16-.416t.416-.16h1.152q.256.0.416.16t.16.416zM32 1.152v9.12q0 .48-.352.8t-.8.352-.8-.352l-3.136-3.136-11.648 11.648q-.16.192-.416.192t-.384-.192l-2.048-2.048q-.192-.16-.192-.384t.192-.416L24.064 5.088l-3.136-3.136q-.352-.352-.352-.8t.352-.8.8-.352h9.12q.48.0.8.352t.352.8z"/></svg>
+</span>
+</a>
+</li><li class="f5 dib mr4" role=menuitem>
+<a href=https://gitter.im/abyssalfish-os/community class="dim link light-silver">
+讨论区
+<span class=pl1><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="10" height="10" viewBox="0 0 32 32" class="fill-current v-base" aria-label="External Link"><path d="M25.152 16.576v5.696q0 2.144-1.504 3.648T20 27.424H5.152q-2.144.0-3.648-1.504t-1.504-3.648V7.424q0-2.112 1.504-3.616t3.648-1.536h12.576q.224.0.384.16t.16.416V4q0 .256-.16.416t-.384.16H5.152q-1.184.0-2.016.832t-.864 2.016v14.848q0 1.184.864 2.016t2.016.864H20q1.184.0 2.016-.864t.832-2.016v-5.696q0-.256.16-.416t.416-.16h1.152q.256.0.416.16t.16.416zM32 1.152v9.12q0 .48-.352.8t-.8.352-.8-.352l-3.136-3.136-11.648 11.648q-.16.192-.416.192t-.384-.192l-2.048-2.048q-.192-.16-.192-.384t.192-.416L24.064 5.088l-3.136-3.136q-.352-.352-.352-.8t.352-.8.8-.352h9.12q.48.0.8.352t.352.8z"/></svg>
+</span>
+</a>
+</li></ul><div class="db dib-ns pl3"><form id=site-search-form role=search>
+<fieldset class="bn ma0 pa0">
+<label class=clip for=search-input>Search</label>
+<input type=text id=search-input class="needs-js dn bn f5 lh-solid mt3 mt0-ns pl4 pv2 w5 white" placeholder="Welcome to FlowShadow" name=search-input style=background-color:rgba(255,255,255,0)>
+</fieldset></form></div></div></nav><main role=main class="content-with-sidebar min-vh-100 pb7 pb0-ns">
+<article class="w-100 ph4 pb5 pb6-ns pt1 pt5-ns">
+<div class=flex-l>
+<div class="order-2 w-100 w-20-l ph5-m ph0-l mb4 sticky">
+<aside class="fixed-lTK mw5-l right-0 f6 bl-l b--moon-gray pv4 pv0-ns ph4-l nested-list-reset nested-links nested-copy-line-height">
+<p class=b>What's on this Page</p><nav id=TableOfContents>
+<ul>
+<li><a href=#配置概述><strong>配置概述</strong></a></li><li><a href=#基本操作><strong>基本操作</strong></a></li><li><a href=#检测规则><strong>检测规则</strong></a></li><li><a href=#资产配置><strong>资产配置</strong></a></li><li><a href=#黑白名单配置><strong>黑白名单配置</strong></a></li><li><a href=#追踪配置><strong>追踪配置</strong></a></li><li><a href=#系统配置><strong>系统配置</strong></a></li></ul></nav><div date-pref>
+<a href=https://abyssalfish-os.github.io/user-manual/login/ class="dib f6 pl1 hover-bg-light-gray br-100" title="用户登录 "><svg class="fill-current" height="30" viewBox="0 0 24 24" width="30" xmlns="http://www.w3.org/2000/svg"><path d="M15.41 7.41 14 6l-6 6 6 6 1.41-1.41L10.83 12z"/><path d="M0 0h24v24H0z" fill="none"/></svg>
+</a>
+<a href=https://abyssalfish-os.github.io/user-manual/zhuizong/ class="dib f6 pr1 hover-bg-light-gray br-100" title=追踪功能><svg class="fill-current" height="30" viewBox="0 0 24 24" width="30" xmlns="http://www.w3.org/2000/svg"><path d="M10 6 8.59 7.41 13.17 12l-4.58 4.59L10 18l6-6z"/><path d="M0 0h24v24H0z" fill="none"/></svg>
+</a>
+</div></aside></div><div class="order-1 w-60-l mw7 ph0 ph5-ns mid-gray nested-copy-line-height no-underline nested-links nested-img nested-copy-seperator nested-blockquote mt0-ns" style=flex-grow:1>
+<div class="documentation-copy center measure-wide-wd">
+<div id=readout class="fixed right-0 bottom-0">
+</div><header class="flex-none w-100">
+<a href=/categories/usage class="f6 fw8 mb0 link mid-gray dim mr3">
+USAGE
+</a>
+<a href=/categories/fundamentals class="f6 fw8 mb0 link mid-gray dim mr3">
+FUNDAMENTALS
+</a>
+<h1 class="lh-title mb3 mv0 pt3 primary-color-dark">系统配置</h1></header><aside class="bt bw1 pt3 mt2 mid-gray b--mid-gray fn w-100">
+<div class="f4 fw4 lh-copy">
+配置事件检测策略、配置追踪、用户管理等
+</div></aside><div class=prose id=prose>
+<h2 id=配置概述><strong>配置概述</strong> <a class=header-link href=#%e9%85%8d%e7%bd%ae%e6%a6%82%e8%bf%b0><svg class="fill-current o-60 hover-accent-color-light" height="22" viewBox="0 0 24 24" width="22" xmlns="http://www.w3.org/2000/svg"><path d="M0 0h24v24H0z" fill="none"/><path d="M3.9 12c0-1.71 1.39-3.1 3.1-3.1h4V7H7c-2.76.0-5 2.24-5 5s2.24 5 5 5h4v-1.9H7c-1.71.0-3.1-1.39-3.1-3.1zM8 13h8v-2H8v2zm9-6h-4v1.9h4c1.71.0 3.1 1.39 3.1 3.1s-1.39 3.1-3.1 3.1h-4V17h4c2.76.0 5-2.24 5-5s-2.24-5-5-5z"/></svg></a></h2><p>配置页面可以，包含了事件检测、资产范围、黑白名单、追踪目标、用户管理等。各个功能模块。</p><p>其中由于页面的布局展示的一致，所以新增、编辑、删除的操作都是一致的。只有每个模块的配置项不一致。下面统一介绍后操作方法后，后面主要分别讲解一下配置的内容。</p><p><img src=/img/usage/Aspose.Words.4325b89e-3d42-4255-924b-c68f9f0e7d81.112.png alt></p><h2 id=基本操作><strong>基本操作</strong> <a class=header-link href=#%e5%9f%ba%e6%9c%ac%e6%93%8d%e4%bd%9c><svg class="fill-current o-60 hover-accent-color-light" height="22" viewBox="0 0 24 24" width="22" xmlns="http://www.w3.org/2000/svg"><path d="M0 0h24v24H0z" fill="none"/><path d="M3.9 12c0-1.71 1.39-3.1 3.1-3.1h4V7H7c-2.76.0-5 2.24-5 5s2.24 5 5 5h4v-1.9H7c-1.71.0-3.1-1.39-3.1-3.1zM8 13h8v-2H8v2zm9-6h-4v1.9h4c1.71.0 3.1 1.39 3.1 3.1s-1.39 3.1-3.1 3.1h-4V17h4c2.76.0 5-2.24 5-5s-2.24-5-5-5z"/></svg></a></h2><h3 id=新增><strong>新增</strong> <a class=header-link href=#%e6%96%b0%e5%a2%9e><svg class="fill-current o-60 hover-accent-color-light" height="22" viewBox="0 0 24 24" width="22" xmlns="http://www.w3.org/2000/svg"><path d="M0 0h24v24H0z" fill="none"/><path d="M3.9 12c0-1.71 1.39-3.1 3.1-3.1h4V7H7c-2.76.0-5 2.24-5 5s2.24 5 5 5h4v-1.9H7c-1.71.0-3.1-1.39-3.1-3.1zM8 13h8v-2H8v2zm9-6h-4v1.9h4c1.71.0 3.1 1.39 3.1 3.1s-1.39 3.1-3.1 3.1h-4V17h4c2.76.0 5-2.24 5-5s-2.24-5-5-5z"/></svg></a></h3><ol>
+<li>进入【配置/XXX】页面，在子导航区域选中配置类型。</li><li>点击配置列表区域的新增按钮，出现配置弹窗。</li><li>填入信息后，点击“下一步”。</li><li>二次确认后，点击“提交”。</li></ol><h3 id=编辑><strong>编辑</strong> <a class=header-link href=#%e7%bc%96%e8%be%91><svg class="fill-current o-60 hover-accent-color-light" height="22" viewBox="0 0 24 24" width="22" xmlns="http://www.w3.org/2000/svg"><path d="M0 0h24v24H0z" fill="none"/><path d="M3.9 12c0-1.71 1.39-3.1 3.1-3.1h4V7H7c-2.76.0-5 2.24-5 5s2.24 5 5 5h4v-1.9H7c-1.71.0-3.1-1.39-3.1-3.1zM8 13h8v-2H8v2zm9-6h-4v1.9h4c1.71.0 3.1 1.39 3.1 3.1s-1.39 3.1-3.1 3.1h-4V17h4c2.76.0 5-2.24 5-5s-2.24-5-5-5z"/></svg></a></h3><ol>
+<li>进入【配置/XXX】页面，在子导航区域选中配置类型。</li><li>在配置列表区域，找到想要修改的配置条目，点击其操作列“更多”。</li><li>点击“修改”，触发编辑弹窗。</li><li>编辑配置内容后。点击“下一步”。</li><li>二次确认信息无误后，点击“提交”</li></ol><h3 id=删除><strong>删除</strong> <a class=header-link href=#%e5%88%a0%e9%99%a4><svg class="fill-current o-60 hover-accent-color-light" height="22" viewBox="0 0 24 24" width="22" xmlns="http://www.w3.org/2000/svg"><path d="M0 0h24v24H0z" fill="none"/><path d="M3.9 12c0-1.71 1.39-3.1 3.1-3.1h4V7H7c-2.76.0-5 2.24-5 5s2.24 5 5 5h4v-1.9H7c-1.71.0-3.1-1.39-3.1-3.1zM8 13h8v-2H8v2zm9-6h-4v1.9h4c1.71.0 3.1 1.39 3.1 3.1s-1.39 3.1-3.1 3.1h-4V17h4c2.76.0 5-2.24 5-5s-2.24-5-5-5z"/></svg></a></h3><h4 id=单条删除><strong>单条删除</strong> <a class=header-link href=#%e5%8d%95%e6%9d%a1%e5%88%a0%e9%99%a4><svg class="fill-current o-60 hover-accent-color-light" height="22" viewBox="0 0 24 24" width="22" xmlns="http://www.w3.org/2000/svg"><path d="M0 0h24v24H0z" fill="none"/><path d="M3.9 12c0-1.71 1.39-3.1 3.1-3.1h4V7H7c-2.76.0-5 2.24-5 5s2.24 5 5 5h4v-1.9H7c-1.71.0-3.1-1.39-3.1-3.1zM8 13h8v-2H8v2zm9-6h-4v1.9h4c1.71.0 3.1 1.39 3.1 3.1s-1.39 3.1-3.1 3.1h-4V17h4c2.76.0 5-2.24 5-5s-2.24-5-5-5z"/></svg></a></h4><ol>
+<li>进入【配置/XXX】页面，在子导航区域选中配置类型。</li><li>在配置列表区域中，找到想要删除的配置条目，点击其操作列按钮。</li><li>点击“删除”，触发删除确认框。</li><li>点击“确定”。</li></ol><h4 id=批量删除><strong>批量删除</strong> <a class=header-link href=#%e6%89%b9%e9%87%8f%e5%88%a0%e9%99%a4><svg class="fill-current o-60 hover-accent-color-light" height="22" viewBox="0 0 24 24" width="22" xmlns="http://www.w3.org/2000/svg"><path d="M0 0h24v24H0z" fill="none"/><path d="M3.9 12c0-1.71 1.39-3.1 3.1-3.1h4V7H7c-2.76.0-5 2.24-5 5s2.24 5 5 5h4v-1.9H7c-1.71.0-3.1-1.39-3.1-3.1zM8 13h8v-2H8v2zm9-6h-4v1.9h4c1.71.0 3.1 1.39 3.1 3.1s-1.39 3.1-3.1 3.1h-4V17h4c2.76.0 5-2.24 5-5s-2.24-5-5-5z"/></svg></a></h4><ol>
+<li>进入【配置/xxx】页面，在子导航区域选中配置类型。</li><li>在配置列表区域中，通过选择框，选择所有要删除的条目。</li><li>点击表格上方的“批量删除”，出现删除确认框。</li><li>点击“确定”。</li></ol><h2 id=检测规则><strong>检测规则</strong> <a class=header-link href=#%e6%a3%80%e6%b5%8b%e8%a7%84%e5%88%99><svg class="fill-current o-60 hover-accent-color-light" height="22" viewBox="0 0 24 24" width="22" xmlns="http://www.w3.org/2000/svg"><path d="M0 0h24v24H0z" fill="none"/><path d="M3.9 12c0-1.71 1.39-3.1 3.1-3.1h4V7H7c-2.76.0-5 2.24-5 5s2.24 5 5 5h4v-1.9H7c-1.71.0-3.1-1.39-3.1-3.1zM8 13h8v-2H8v2zm9-6h-4v1.9h4c1.71.0 3.1 1.39 3.1 3.1s-1.39 3.1-3.1 3.1h-4V17h4c2.76.0 5-2.24 5-5s-2.24-5-5-5z"/></svg></a></h2><p>事件的配置内容分为两部分。分别是基础配置和规则配置。所有事件类型的基础配置部分都一样，规则配置部分则不同。</p><h3 id=基础配置><strong>基础配置</strong> <a class=header-link href=#%e5%9f%ba%e7%a1%80%e9%85%8d%e7%bd%ae><svg class="fill-current o-60 hover-accent-color-light" height="22" viewBox="0 0 24 24" width="22" xmlns="http://www.w3.org/2000/svg"><path d="M0 0h24v24H0z" fill="none"/><path d="M3.9 12c0-1.71 1.39-3.1 3.1-3.1h4V7H7c-2.76.0-5 2.24-5 5s2.24 5 5 5h4v-1.9H7c-1.71.0-3.1-1.39-3.1-3.1zM8 13h8v-2H8v2zm9-6h-4v1.9h4c1.71.0 3.1 1.39 3.1 3.1s-1.39 3.1-3.1 3.1h-4V17h4c2.76.0 5-2.24 5-5s-2.24-5-5-5z"/></svg></a></h3><table>
+<thead>
+<tr>
+<th>名称</th><th>必填</th><th>描述</th></tr></thead><tbody>
+<tr>
+<td>数据源</td><td>是</td><td>规则生效的采集环境</td></tr><tr>
+<td>事件级别</td><td>是</td><td>检测的安全事件级别，其中auto_loose和auto_tight都会自动计算告警阈值，不过auto_loose的级别变更灵敏性及较低。</td></tr><tr>
+<td>事件状态</td><td>是</td><td>规则检测是否开启</td></tr><tr>
+<td>监控星期</td><td>是</td><td>规则生效周期(天)</td></tr><tr>
+<td>开始时间</td><td>是</td><td>规则在一天中的生效开始时间。</td></tr><tr>
+<td>结束时间</td><td>是</td><td>规则在一天中的生效结束时间。</td></tr><tr>
+<td>描述</td><td>是</td><td>规则备注</td></tr></tbody></table><h3 id=黑名单事件><strong>黑名单事件</strong> <a class=header-link href=#%e9%bb%91%e5%90%8d%e5%8d%95%e4%ba%8b%e4%bb%b6><svg class="fill-current o-60 hover-accent-color-light" height="22" viewBox="0 0 24 24" width="22" xmlns="http://www.w3.org/2000/svg"><path d="M0 0h24v24H0z" fill="none"/><path d="M3.9 12c0-1.71 1.39-3.1 3.1-3.1h4V7H7c-2.76.0-5 2.24-5 5s2.24 5 5 5h4v-1.9H7c-1.71.0-3.1-1.39-3.1-3.1zM8 13h8v-2H8v2zm9-6h-4v1.9h4c1.71.0 3.1 1.39 3.1 3.1s-1.39 3.1-3.1 3.1h-4V17h4c2.76.0 5-2.24 5-5s-2.24-5-5-5z"/></svg></a></h3><h4 id=介绍><strong>介绍</strong> <a class=header-link href=#%e4%bb%8b%e7%bb%8d><svg class="fill-current o-60 hover-accent-color-light" height="22" viewBox="0 0 24 24" width="22" xmlns="http://www.w3.org/2000/svg"><path d="M0 0h24v24H0z" fill="none"/><path d="M3.9 12c0-1.71 1.39-3.1 3.1-3.1h4V7H7c-2.76.0-5 2.24-5 5s2.24 5 5 5h4v-1.9H7c-1.71.0-3.1-1.39-3.1-3.1zM8 13h8v-2H8v2zm9-6h-4v1.9h4c1.71.0 3.1 1.39 3.1 3.1s-1.39 3.1-3.1 3.1h-4V17h4c2.76.0 5-2.24 5-5s-2.24-5-5-5z"/></svg></a></h4><p>黑名单事件是在规则生效的时间内，探针检测到了主机有主动外连访问系统黑名单中的设备的行为，并且通讯量超过了设定的阈值。就会产生黑名单安全事件告警。</p><h4 id=配置内容><strong>配置内容</strong> <a class=header-link href=#%e9%85%8d%e7%bd%ae%e5%86%85%e5%ae%b9><svg class="fill-current o-60 hover-accent-color-light" height="22" viewBox="0 0 24 24" width="22" xmlns="http://www.w3.org/2000/svg"><path d="M0 0h24v24H0z" fill="none"/><path d="M3.9 12c0-1.71 1.39-3.1 3.1-3.1h4V7H7c-2.76.0-5 2.24-5 5s2.24 5 5 5h4v-1.9H7c-1.71.0-3.1-1.39-3.1-3.1zM8 13h8v-2H8v2zm9-6h-4v1.9h4c1.71.0 3.1 1.39 3.1 3.1s-1.39 3.1-3.1 3.1h-4V17h4c2.76.0 5-2.24 5-5s-2.24-5-5-5z"/></svg></a></h4><table>
+<thead>
+<tr>
+<th>名称</th><th>必填</th><th>描述</th></tr></thead><tbody>
+<tr>
+<td>最小值</td><td>是</td><td>最小阈值</td></tr><tr>
+<td>最大值</td><td>否</td><td>最大阈值</td></tr><tr>
+<td>阈值单位</td><td>是</td><td>字节量/秒、会话量/秒、包数量/秒。</td></tr></tbody></table><h3 id=包特征事件><strong>包特征事件</strong> <a class=header-link href=#%e5%8c%85%e7%89%b9%e5%be%81%e4%ba%8b%e4%bb%b6><svg class="fill-current o-60 hover-accent-color-light" height="22" viewBox="0 0 24 24" width="22" xmlns="http://www.w3.org/2000/svg"><path d="M0 0h24v24H0z" fill="none"/><path d="M3.9 12c0-1.71 1.39-3.1 3.1-3.1h4V7H7c-2.76.0-5 2.24-5 5s2.24 5 5 5h4v-1.9H7c-1.71.0-3.1-1.39-3.1-3.1zM8 13h8v-2H8v2zm9-6h-4v1.9h4c1.71.0 3.1 1.39 3.1 3.1s-1.39 3.1-3.1 3.1h-4V17h4c2.76.0 5-2.24 5-5s-2.24-5-5-5z"/></svg></a></h3><h4 id=介绍-1><strong>介绍</strong> <a class=header-link href=#%e4%bb%8b%e7%bb%8d-1><svg class="fill-current o-60 hover-accent-color-light" height="22" viewBox="0 0 24 24" width="22" xmlns="http://www.w3.org/2000/svg"><path d="M0 0h24v24H0z" fill="none"/><path d="M3.9 12c0-1.71 1.39-3.1 3.1-3.1h4V7H7c-2.76.0-5 2.24-5 5s2.24 5 5 5h4v-1.9H7c-1.71.0-3.1-1.39-3.1-3.1zM8 13h8v-2H8v2zm9-6h-4v1.9h4c1.71.0 3.1 1.39 3.1 3.1s-1.39 3.1-3.1 3.1h-4V17h4c2.76.0 5-2.24 5-5s-2.24-5-5-5z"/></svg></a></h4><p>包特征事件，是通过包内容检测的方式检测出安全事件，其内部包含SQL注入、XSS注入、Code注入、文件包含、CMD注入、WebShell注入、后门利用等多种安全子类型。</p><p>此部分由后端设置，前端不涉及配置。</p><h3 id=dga事件><strong>DGA事件</strong> <a class=header-link href=#dga%e4%ba%8b%e4%bb%b6><svg class="fill-current o-60 hover-accent-color-light" height="22" viewBox="0 0 24 24" width="22" xmlns="http://www.w3.org/2000/svg"><path d="M0 0h24v24H0z" fill="none"/><path d="M3.9 12c0-1.71 1.39-3.1 3.1-3.1h4V7H7c-2.76.0-5 2.24-5 5s2.24 5 5 5h4v-1.9H7c-1.71.0-3.1-1.39-3.1-3.1zM8 13h8v-2H8v2zm9-6h-4v1.9h4c1.71.0 3.1 1.39 3.1 3.1s-1.39 3.1-3.1 3.1h-4V17h4c2.76.0 5-2.24 5-5s-2.24-5-5-5z"/></svg></a></h3><h4 id=介绍-2><strong>介绍</strong> <a class=header-link href=#%e4%bb%8b%e7%bb%8d-2><svg class="fill-current o-60 hover-accent-color-light" height="22" viewBox="0 0 24 24" width="22" xmlns="http://www.w3.org/2000/svg"><path d="M0 0h24v24H0z" fill="none"/><path d="M3.9 12c0-1.71 1.39-3.1 3.1-3.1h4V7H7c-2.76.0-5 2.24-5 5s2.24 5 5 5h4v-1.9H7c-1.71.0-3.1-1.39-3.1-3.1zM8 13h8v-2H8v2zm9-6h-4v1.9h4c1.71.0 3.1 1.39 3.1 3.1s-1.39 3.1-3.1 3.1h-4V17h4c2.76.0 5-2.24 5-5s-2.24-5-5-5z"/></svg></a></h4><p>通过AI模型对域名进行DGA域名相似度评估，当相似度评估值、单位时间内疑似DGA域名的数量超过设定的阈值后即产生告警事件。DGA事件一般是C2通讯的前置行为。</p><h4 id=配置内容-1><strong>配置内容</strong> <a class=header-link href=#%e9%85%8d%e7%bd%ae%e5%86%85%e5%ae%b9-1><svg class="fill-current o-60 hover-accent-color-light" height="22" viewBox="0 0 24 24" width="22" xmlns="http://www.w3.org/2000/svg"><path d="M0 0h24v24H0z" fill="none"/><path d="M3.9 12c0-1.71 1.39-3.1 3.1-3.1h4V7H7c-2.76.0-5 2.24-5 5s2.24 5 5 5h4v-1.9H7c-1.71.0-3.1-1.39-3.1-3.1zM8 13h8v-2H8v2zm9-6h-4v1.9h4c1.71.0 3.1 1.39 3.1 3.1s-1.39 3.1-3.1 3.1h-4V17h4c2.76.0 5-2.24 5-5s-2.24-5-5-5z"/></svg></a></h4><table>
+<thead>
+<tr>
+<th>名称</th><th>必填</th><th>描述</th></tr></thead><tbody>
+<tr>
+<td>源IP</td><td>否</td><td>发起DNS查询的IP</td></tr><tr>
+<td>目的IP</td><td>否</td><td>DNS服务器</td></tr><tr>
+<td>最小百分比</td><td>是</td><td>查询域名的疑似DGA的概率阈值</td></tr><tr>
+<td>域名数量</td><td>是</td><td>5分钟内，疑似DGA域名的数量阈值</td></tr></tbody></table><h3 id=dns事件><strong>DNS事件</strong> <a class=header-link href=#dns%e4%ba%8b%e4%bb%b6><svg class="fill-current o-60 hover-accent-color-light" height="22" viewBox="0 0 24 24" width="22" xmlns="http://www.w3.org/2000/svg"><path d="M0 0h24v24H0z" fill="none"/><path d="M3.9 12c0-1.71 1.39-3.1 3.1-3.1h4V7H7c-2.76.0-5 2.24-5 5s2.24 5 5 5h4v-1.9H7c-1.71.0-3.1-1.39-3.1-3.1zM8 13h8v-2H8v2zm9-6h-4v1.9h4c1.71.0 3.1 1.39 3.1 3.1s-1.39 3.1-3.1 3.1h-4V17h4c2.76.0 5-2.24 5-5s-2.24-5-5-5z"/></svg></a></h3><h4 id=介绍-3><strong>介绍</strong> <a class=header-link href=#%e4%bb%8b%e7%bb%8d-3><svg class="fill-current o-60 hover-accent-color-light" height="22" viewBox="0 0 24 24" width="22" xmlns="http://www.w3.org/2000/svg"><path d="M0 0h24v24H0z" fill="none"/><path d="M3.9 12c0-1.71 1.39-3.1 3.1-3.1h4V7H7c-2.76.0-5 2.24-5 5s2.24 5 5 5h4v-1.9H7c-1.71.0-3.1-1.39-3.1-3.1zM8 13h8v-2H8v2zm9-6h-4v1.9h4c1.71.0 3.1 1.39 3.1 3.1s-1.39 3.1-3.1 3.1h-4V17h4c2.76.0 5-2.24 5-5s-2.24-5-5-5z"/></svg></a></h4><p>DNS事件是指设备存在查询威胁情报库中的危险域名的风险行为。当设备频繁发生查询危险域名时，说明该主机已被黑客控制，或者为内网用户的违规操作。</p><h4 id=配置内容-2><strong>配置内容</strong> <a class=header-link href=#%e9%85%8d%e7%bd%ae%e5%86%85%e5%ae%b9-2><svg class="fill-current o-60 hover-accent-color-light" height="22" viewBox="0 0 24 24" width="22" xmlns="http://www.w3.org/2000/svg"><path d="M0 0h24v24H0z" fill="none"/><path d="M3.9 12c0-1.71 1.39-3.1 3.1-3.1h4V7H7c-2.76.0-5 2.24-5 5s2.24 5 5 5h4v-1.9H7c-1.71.0-3.1-1.39-3.1-3.1zM8 13h8v-2H8v2zm9-6h-4v1.9h4c1.71.0 3.1 1.39 3.1 3.1s-1.39 3.1-3.1 3.1h-4V17h4c2.76.0 5-2.24 5-5s-2.24-5-5-5z"/></svg></a></h4><table>
+<thead>
+<tr>
+<th>名称</th><th>必填</th><th>描述</th></tr></thead><tbody>
+<tr>
+<td>查询DNS的IP</td><td>否</td><td>查询DNS的设备，支持IP段的填写，多个目标可以通过英文逗号分割。</td></tr><tr>
+<td>查询域名</td><td>否</td><td>查询的DNS域名，多个目标可以通过英文逗号分割。</td></tr><tr>
+<td>查询次数</td><td>是</td><td>DNS查询的阈值</td></tr></tbody></table><h3 id=dns隧道事件><strong>DNS隧道事件</strong> <a class=header-link href=#dns%e9%9a%a7%e9%81%93%e4%ba%8b%e4%bb%b6><svg class="fill-current o-60 hover-accent-color-light" height="22" viewBox="0 0 24 24" width="22" xmlns="http://www.w3.org/2000/svg"><path d="M0 0h24v24H0z" fill="none"/><path d="M3.9 12c0-1.71 1.39-3.1 3.1-3.1h4V7H7c-2.76.0-5 2.24-5 5s2.24 5 5 5h4v-1.9H7c-1.71.0-3.1-1.39-3.1-3.1zM8 13h8v-2H8v2zm9-6h-4v1.9h4c1.71.0 3.1 1.39 3.1 3.1s-1.39 3.1-3.1 3.1h-4V17h4c2.76.0 5-2.24 5-5s-2.24-5-5-5z"/></svg></a></h3><h4 id=介绍-4><strong>介绍</strong> <a class=header-link href=#%e4%bb%8b%e7%bb%8d-4><svg class="fill-current o-60 hover-accent-color-light" height="22" viewBox="0 0 24 24" width="22" xmlns="http://www.w3.org/2000/svg"><path d="M0 0h24v24H0z" fill="none"/><path d="M3.9 12c0-1.71 1.39-3.1 3.1-3.1h4V7H7c-2.76.0-5 2.24-5 5s2.24 5 5 5h4v-1.9H7c-1.71.0-3.1-1.39-3.1-3.1zM8 13h8v-2H8v2zm9-6h-4v1.9h4c1.71.0 3.1 1.39 3.1 3.1s-1.39 3.1-3.1 3.1h-4V17h4c2.76.0 5-2.24 5-5s-2.24-5-5-5z"/></svg></a></h4><p>DNS隧道攻击是通过DNS查询的方式，建立传输信息的隧道，以躲避防火墙或其他安全防护设备的阻拦。</p><h4 id=配置内容-3><strong>配置内容</strong> <a class=header-link href=#%e9%85%8d%e7%bd%ae%e5%86%85%e5%ae%b9-3><svg class="fill-current o-60 hover-accent-color-light" height="22" viewBox="0 0 24 24" width="22" xmlns="http://www.w3.org/2000/svg"><path d="M0 0h24v24H0z" fill="none"/><path d="M3.9 12c0-1.71 1.39-3.1 3.1-3.1h4V7H7c-2.76.0-5 2.24-5 5s2.24 5 5 5h4v-1.9H7c-1.71.0-3.1-1.39-3.1-3.1zM8 13h8v-2H8v2zm9-6h-4v1.9h4c1.71.0 3.1 1.39 3.1 3.1s-1.39 3.1-3.1 3.1h-4V17h4c2.76.0 5-2.24 5-5s-2.24-5-5-5z"/></svg></a></h4><table>
+<thead>
+<tr>
+<th>名称</th><th>必填</th><th>描述</th></tr></thead><tbody>
+<tr>
+<td>查询DNS的IP</td><td>否</td><td>发起DNS查询动作的IP</td></tr><tr>
+<td>域名长度</td><td>否</td><td>查询的域名长度阈值</td></tr><tr>
+<td>父域名请求次数阈值</td><td>否</td><td>5分钟内，查询的父域名次数阈值</td></tr><tr>
+<td>检出评估值</td><td>否</td><td>域名的信息熵阈值，默认值是4</td></tr></tbody></table><h3 id=dns隧道机器学习检测事件><strong>DNS隧道机器学习检测事件</strong> <a class=header-link href=#dns%e9%9a%a7%e9%81%93%e6%9c%ba%e5%99%a8%e5%ad%a6%e4%b9%a0%e6%a3%80%e6%b5%8b%e4%ba%8b%e4%bb%b6><svg class="fill-current o-60 hover-accent-color-light" height="22" viewBox="0 0 24 24" width="22" xmlns="http://www.w3.org/2000/svg"><path d="M0 0h24v24H0z" fill="none"/><path d="M3.9 12c0-1.71 1.39-3.1 3.1-3.1h4V7H7c-2.76.0-5 2.24-5 5s2.24 5 5 5h4v-1.9H7c-1.71.0-3.1-1.39-3.1-3.1zM8 13h8v-2H8v2zm9-6h-4v1.9h4c1.71.0 3.1 1.39 3.1 3.1s-1.39 3.1-3.1 3.1h-4V17h4c2.76.0 5-2.24 5-5s-2.24-5-5-5z"/></svg></a></h3><h4 id=介绍-5><strong>介绍</strong> <a class=header-link href=#%e4%bb%8b%e7%bb%8d-5><svg class="fill-current o-60 hover-accent-color-light" height="22" viewBox="0 0 24 24" width="22" xmlns="http://www.w3.org/2000/svg"><path d="M0 0h24v24H0z" fill="none"/><path d="M3.9 12c0-1.71 1.39-3.1 3.1-3.1h4V7H7c-2.76.0-5 2.24-5 5s2.24 5 5 5h4v-1.9H7c-1.71.0-3.1-1.39-3.1-3.1zM8 13h8v-2H8v2zm9-6h-4v1.9h4c1.71.0 3.1 1.39 3.1 3.1s-1.39 3.1-3.1 3.1h-4V17h4c2.76.0 5-2.24 5-5s-2.24-5-5-5z"/></svg></a></h4><p>通过AI模型的方式识别DNS隧道行为。通过模型对DNS请求域名进行相似性评估得到评估值，当评估值超出相似度阈值后产生告警。</p><h4 id=配置内容-4><strong>配置内容</strong> <a class=header-link href=#%e9%85%8d%e7%bd%ae%e5%86%85%e5%ae%b9-4><svg class="fill-current o-60 hover-accent-color-light" height="22" viewBox="0 0 24 24" width="22" xmlns="http://www.w3.org/2000/svg"><path d="M0 0h24v24H0z" fill="none"/><path d="M3.9 12c0-1.71 1.39-3.1 3.1-3.1h4V7H7c-2.76.0-5 2.24-5 5s2.24 5 5 5h4v-1.9H7c-1.71.0-3.1-1.39-3.1-3.1zM8 13h8v-2H8v2zm9-6h-4v1.9h4c1.71.0 3.1 1.39 3.1 3.1s-1.39 3.1-3.1 3.1h-4V17h4c2.76.0 5-2.24 5-5s-2.24-5-5-5z"/></svg></a></h4><table>
+<thead>
+<tr>
+<th>名称</th><th>必填</th><th>描述</th></tr></thead><tbody>
+<tr>
+<td>查询DNS的IP</td><td>是</td><td>发起DNS请求的IP，支持IP端的填写，多个IP使用英文逗号分割。</td></tr><tr>
+<td>DNS服务器IP</td><td>是</td><td>DNS服务器</td></tr><tr>
+<td>可疑程度</td><td>是</td><td>查询的域名有多像DNS隧道，取值为0-99</td></tr></tbody></table><h3 id=服务器外连事件><strong>服务器外连事件</strong> <a class=header-link href=#%e6%9c%8d%e5%8a%a1%e5%99%a8%e5%a4%96%e8%bf%9e%e4%ba%8b%e4%bb%b6><svg class="fill-current o-60 hover-accent-color-light" height="22" viewBox="0 0 24 24" width="22" xmlns="http://www.w3.org/2000/svg"><path d="M0 0h24v24H0z" fill="none"/><path d="M3.9 12c0-1.71 1.39-3.1 3.1-3.1h4V7H7c-2.76.0-5 2.24-5 5s2.24 5 5 5h4v-1.9H7c-1.71.0-3.1-1.39-3.1-3.1zM8 13h8v-2H8v2zm9-6h-4v1.9h4c1.71.0 3.1 1.39 3.1 3.1s-1.39 3.1-3.1 3.1h-4V17h4c2.76.0 5-2.24 5-5s-2.24-5-5-5z"/></svg></a></h3><h4 id=介绍-6><strong>介绍</strong> <a class=header-link href=#%e4%bb%8b%e7%bb%8d-6><svg class="fill-current o-60 hover-accent-color-light" height="22" viewBox="0 0 24 24" width="22" xmlns="http://www.w3.org/2000/svg"><path d="M0 0h24v24H0z" fill="none"/><path d="M3.9 12c0-1.71 1.39-3.1 3.1-3.1h4V7H7c-2.76.0-5 2.24-5 5s2.24 5 5 5h4v-1.9H7c-1.71.0-3.1-1.39-3.1-3.1zM8 13h8v-2H8v2zm9-6h-4v1.9h4c1.71.0 3.1 1.39 3.1 3.1s-1.39 3.1-3.1 3.1h-4V17h4c2.76.0 5-2.24 5-5s-2.24-5-5-5z"/></svg></a></h4><p>系统对指定服务器设备进行主动外连行为的监控，服务器作为C/S架构的S端，一般不会主动对外发起网络通讯。当发生了主动外连时，服务器很有可能已被控制。</p><h4 id=配置内容-5><strong>配置内容</strong> <a class=header-link href=#%e9%85%8d%e7%bd%ae%e5%86%85%e5%ae%b9-5><svg class="fill-current o-60 hover-accent-color-light" height="22" viewBox="0 0 24 24" width="22" xmlns="http://www.w3.org/2000/svg"><path d="M0 0h24v24H0z" fill="none"/><path d="M3.9 12c0-1.71 1.39-3.1 3.1-3.1h4V7H7c-2.76.0-5 2.24-5 5s2.24 5 5 5h4v-1.9H7c-1.71.0-3.1-1.39-3.1-3.1zM8 13h8v-2H8v2zm9-6h-4v1.9h4c1.71.0 3.1 1.39 3.1 3.1s-1.39 3.1-3.1 3.1h-4V17h4c2.76.0 5-2.24 5-5s-2.24-5-5-5z"/></svg></a></h4><table>
+<thead>
+<tr>
+<th>名称</th><th>必填</th><th>描述</th></tr></thead><tbody>
+<tr>
+<td>服务器IP</td><td>是</td><td>服务器设备</td></tr><tr>
+<td>外联通讯</td><td>否</td><td>外部设备</td></tr><tr>
+<td>阈值</td><td>是</td><td>通讯流量阈值</td></tr></tbody></table><h3 id=icmp隧道事件><strong>ICMP隧道事件</strong> <a class=header-link href=#icmp%e9%9a%a7%e9%81%93%e4%ba%8b%e4%bb%b6><svg class="fill-current o-60 hover-accent-color-light" height="22" viewBox="0 0 24 24" width="22" xmlns="http://www.w3.org/2000/svg"><path d="M0 0h24v24H0z" fill="none"/><path d="M3.9 12c0-1.71 1.39-3.1 3.1-3.1h4V7H7c-2.76.0-5 2.24-5 5s2.24 5 5 5h4v-1.9H7c-1.71.0-3.1-1.39-3.1-3.1zM8 13h8v-2H8v2zm9-6h-4v1.9h4c1.71.0 3.1 1.39 3.1 3.1s-1.39 3.1-3.1 3.1h-4V17h4c2.76.0 5-2.24 5-5s-2.24-5-5-5z"/></svg></a></h3><h4 id=介绍-7><strong>介绍</strong> <a class=header-link href=#%e4%bb%8b%e7%bb%8d-7><svg class="fill-current o-60 hover-accent-color-light" height="22" viewBox="0 0 24 24" width="22" xmlns="http://www.w3.org/2000/svg"><path d="M0 0h24v24H0z" fill="none"/><path d="M3.9 12c0-1.71 1.39-3.1 3.1-3.1h4V7H7c-2.76.0-5 2.24-5 5s2.24 5 5 5h4v-1.9H7c-1.71.0-3.1-1.39-3.1-3.1zM8 13h8v-2H8v2zm9-6h-4v1.9h4c1.71.0 3.1 1.39 3.1 3.1s-1.39 3.1-3.1 3.1h-4V17h4c2.76.0 5-2.24 5-5s-2.24-5-5-5z"/></svg></a></h4><p>系统检测到在ICMP通讯中，从频率以及包载荷内容中检测到异常，存在传递信息的行为。就会产生ICMP隧道告警。</p><h4 id=配置内容-6><strong>配置内容</strong> <a class=header-link href=#%e9%85%8d%e7%bd%ae%e5%86%85%e5%ae%b9-6><svg class="fill-current o-60 hover-accent-color-light" height="22" viewBox="0 0 24 24" width="22" xmlns="http://www.w3.org/2000/svg"><path d="M0 0h24v24H0z" fill="none"/><path d="M3.9 12c0-1.71 1.39-3.1 3.1-3.1h4V7H7c-2.76.0-5 2.24-5 5s2.24 5 5 5h4v-1.9H7c-1.71.0-3.1-1.39-3.1-3.1zM8 13h8v-2H8v2zm9-6h-4v1.9h4c1.71.0 3.1 1.39 3.1 3.1s-1.39 3.1-3.1 3.1h-4V17h4c2.76.0 5-2.24 5-5s-2.24-5-5-5z"/></svg></a></h4><table>
+<thead>
+<tr>
+<th>名称</th><th>必填</th><th>描述</th></tr></thead><tbody>
+<tr>
+<td>源IP</td><td>否</td><td>ICMP通讯的源端，不填写为所有</td></tr><tr>
+<td>目的IP</td><td>否</td><td>ICMP通讯的对端，不填写为所有</td></tr><tr>
+<td>异常载荷内容种类数</td><td>否</td><td>在一个5分钟内，一个ICMP通讯中，产生的异常通讯类型（type不等于0和8）的Payload中，不同内容的种类数量，默认为5</td></tr><tr>
+<td>所有载荷种内容类数</td><td>否</td><td>在一个5分钟内，一个ICMP通讯中，产生所有的Payload中，不同内容的种类数量，默认为2</td></tr><tr>
+<td>所有载荷长度种类数</td><td>否</td><td>在一个5分钟内，一个ICMP通讯中，产生的所有Payload中，其内容长度的种类数量，默认为5</td></tr><tr>
+<td>描述信息</td><td>否</td><td>规则备注</td></tr></tbody></table><h3 id=ip扫描><strong>IP扫描</strong> <a class=header-link href=#ip%e6%89%ab%e6%8f%8f><svg class="fill-current o-60 hover-accent-color-light" height="22" viewBox="0 0 24 24" width="22" xmlns="http://www.w3.org/2000/svg"><path d="M0 0h24v24H0z" fill="none"/><path d="M3.9 12c0-1.71 1.39-3.1 3.1-3.1h4V7H7c-2.76.0-5 2.24-5 5s2.24 5 5 5h4v-1.9H7c-1.71.0-3.1-1.39-3.1-3.1zM8 13h8v-2H8v2zm9-6h-4v1.9h4c1.71.0 3.1 1.39 3.1 3.1s-1.39 3.1-3.1 3.1h-4V17h4c2.76.0 5-2.24 5-5s-2.24-5-5-5z"/></svg></a></h3><h4 id=介绍-8><strong>介绍</strong> <a class=header-link href=#%e4%bb%8b%e7%bb%8d-8><svg class="fill-current o-60 hover-accent-color-light" height="22" viewBox="0 0 24 24" width="22" xmlns="http://www.w3.org/2000/svg"><path d="M0 0h24v24H0z" fill="none"/><path d="M3.9 12c0-1.71 1.39-3.1 3.1-3.1h4V7H7c-2.76.0-5 2.24-5 5s2.24 5 5 5h4v-1.9H7c-1.71.0-3.1-1.39-3.1-3.1zM8 13h8v-2H8v2zm9-6h-4v1.9h4c1.71.0 3.1 1.39 3.1 3.1s-1.39 3.1-3.1 3.1h-4V17h4c2.76.0 5-2.24 5-5s-2.24-5-5-5z"/></svg></a></h4><p>IP扫描是信息收集阶段的攻击，攻击者探测一个具体IP的存活端口，寻找注入点。当IP扫描发生时，说明攻击者的目标很明确了。</p><h4 id=配置内容-7><strong>配置内容</strong> <a class=header-link href=#%e9%85%8d%e7%bd%ae%e5%86%85%e5%ae%b9-7><svg class="fill-current o-60 hover-accent-color-light" height="22" viewBox="0 0 24 24" width="22" xmlns="http://www.w3.org/2000/svg"><path d="M0 0h24v24H0z" fill="none"/><path d="M3.9 12c0-1.71 1.39-3.1 3.1-3.1h4V7H7c-2.76.0-5 2.24-5 5s2.24 5 5 5h4v-1.9H7c-1.71.0-3.1-1.39-3.1-3.1zM8 13h8v-2H8v2zm9-6h-4v1.9h4c1.71.0 3.1 1.39 3.1 3.1s-1.39 3.1-3.1 3.1h-4V17h4c2.76.0 5-2.24 5-5s-2.24-5-5-5z"/></svg></a></h4><table>
+<thead>
+<tr>
+<th>名称</th><th>必填</th><th>描述</th></tr></thead><tbody>
+<tr>
+<td>探测端口数量阈值</td><td>是</td><td>最小扫描端口数量</td></tr><tr>
+<td>扫描源IP</td><td>否</td><td>扫描源IP</td></tr><tr>
+<td>受害IP</td><td>否</td><td>被扫描IP</td></tr><tr>
+<td>协议</td><td>否</td><td>支持TCP、UDP、ICMP等协议，默认是选择全部</td></tr></tbody></table><h3 id=追踪事件><strong>追踪事件</strong> <a class=header-link href=#%e8%bf%bd%e8%b8%aa%e4%ba%8b%e4%bb%b6><svg class="fill-current o-60 hover-accent-color-light" height="22" viewBox="0 0 24 24" width="22" xmlns="http://www.w3.org/2000/svg"><path d="M0 0h24v24H0z" fill="none"/><path d="M3.9 12c0-1.71 1.39-3.1 3.1-3.1h4V7H7c-2.76.0-5 2.24-5 5s2.24 5 5 5h4v-1.9H7c-1.71.0-3.1-1.39-3.1-3.1zM8 13h8v-2H8v2zm9-6h-4v1.9h4c1.71.0 3.1 1.39 3.1 3.1s-1.39 3.1-3.1 3.1h-4V17h4c2.76.0 5-2.24 5-5s-2.24-5-5-5z"/></svg></a></h3><h4 id=介绍-9><strong>介绍</strong> <a class=header-link href=#%e4%bb%8b%e7%bb%8d-9><svg class="fill-current o-60 hover-accent-color-light" height="22" viewBox="0 0 24 24" width="22" xmlns="http://www.w3.org/2000/svg"><path d="M0 0h24v24H0z" fill="none"/><path d="M3.9 12c0-1.71 1.39-3.1 3.1-3.1h4V7H7c-2.76.0-5 2.24-5 5s2.24 5 5 5h4v-1.9H7c-1.71.0-3.1-1.39-3.1-3.1zM8 13h8v-2H8v2zm9-6h-4v1.9h4c1.71.0 3.1 1.39 3.1 3.1s-1.39 3.1-3.1 3.1h-4V17h4c2.76.0 5-2.24 5-5s-2.24-5-5-5z"/></svg></a></h4><p>系统提供对设置的追踪目标进行告警监控，当追踪目标在单位时间内产生的流量超出阈值后就会产生告警。追踪事件的应用场景非常的灵活，例如如果要监控总裁办公室的非工作时间的流出流量，就可以把“总裁办公司设备对外通讯”设置为追踪目标，然后添加到追踪事件中，配置好流量阈值以及规则生效时间即可。</p><h4 id=配置内容-8><strong>配置内容</strong> <a class=header-link href=#%e9%85%8d%e7%bd%ae%e5%86%85%e5%ae%b9-8><svg class="fill-current o-60 hover-accent-color-light" height="22" viewBox="0 0 24 24" width="22" xmlns="http://www.w3.org/2000/svg"><path d="M0 0h24v24H0z" fill="none"/><path d="M3.9 12c0-1.71 1.39-3.1 3.1-3.1h4V7H7c-2.76.0-5 2.24-5 5s2.24 5 5 5h4v-1.9H7c-1.71.0-3.1-1.39-3.1-3.1zM8 13h8v-2H8v2zm9-6h-4v1.9h4c1.71.0 3.1 1.39 3.1 3.1s-1.39 3.1-3.1 3.1h-4V17h4c2.76.0 5-2.24 5-5s-2.24-5-5-5z"/></svg></a></h4><table>
+<thead>
+<tr>
+<th>名称</th><th>必填</th><th>描述</th></tr></thead><tbody>
+<tr>
+<td>监控追踪条目</td><td>是</td><td>选择需要监控追踪目标</td></tr><tr>
+<td>数据类型</td><td>是</td><td>阈值单位：字节量/秒、会话量/秒、包数量/秒</td></tr><tr>
+<td>最小值</td><td>是</td><td>最小阈值</td></tr><tr>
+<td>最大值</td><td>否</td><td>最大阈值</td></tr></tbody></table><h3 id=端口扫描><strong>端口扫描</strong> <a class=header-link href=#%e7%ab%af%e5%8f%a3%e6%89%ab%e6%8f%8f><svg class="fill-current o-60 hover-accent-color-light" height="22" viewBox="0 0 24 24" width="22" xmlns="http://www.w3.org/2000/svg"><path d="M0 0h24v24H0z" fill="none"/><path d="M3.9 12c0-1.71 1.39-3.1 3.1-3.1h4V7H7c-2.76.0-5 2.24-5 5s2.24 5 5 5h4v-1.9H7c-1.71.0-3.1-1.39-3.1-3.1zM8 13h8v-2H8v2zm9-6h-4v1.9h4c1.71.0 3.1 1.39 3.1 3.1s-1.39 3.1-3.1 3.1h-4V17h4c2.76.0 5-2.24 5-5s-2.24-5-5-5z"/></svg></a></h3><h4 id=介绍-10><strong>介绍</strong> <a class=header-link href=#%e4%bb%8b%e7%bb%8d-10><svg class="fill-current o-60 hover-accent-color-light" height="22" viewBox="0 0 24 24" width="22" xmlns="http://www.w3.org/2000/svg"><path d="M0 0h24v24H0z" fill="none"/><path d="M3.9 12c0-1.71 1.39-3.1 3.1-3.1h4V7H7c-2.76.0-5 2.24-5 5s2.24 5 5 5h4v-1.9H7c-1.71.0-3.1-1.39-3.1-3.1zM8 13h8v-2H8v2zm9-6h-4v1.9h4c1.71.0 3.1 1.39 3.1 3.1s-1.39 3.1-3.1 3.1h-4V17h4c2.76.0 5-2.24 5-5s-2.24-5-5-5z"/></svg></a></h4><p>端口扫描，是信息收集阶段的攻击。针对于一个特定的端口，检测有哪些IP的该端口是存活的。有可能攻击者已经掌握了该端口的某个服务的漏洞。</p><h4 id=配置内容-9><strong>配置内容</strong> <a class=header-link href=#%e9%85%8d%e7%bd%ae%e5%86%85%e5%ae%b9-9><svg class="fill-current o-60 hover-accent-color-light" height="22" viewBox="0 0 24 24" width="22" xmlns="http://www.w3.org/2000/svg"><path d="M0 0h24v24H0z" fill="none"/><path d="M3.9 12c0-1.71 1.39-3.1 3.1-3.1h4V7H7c-2.76.0-5 2.24-5 5s2.24 5 5 5h4v-1.9H7c-1.71.0-3.1-1.39-3.1-3.1zM8 13h8v-2H8v2zm9-6h-4v1.9h4c1.71.0 3.1 1.39 3.1 3.1s-1.39 3.1-3.1 3.1h-4V17h4c2.76.0 5-2.24 5-5s-2.24-5-5-5z"/></svg></a></h4><table>
+<thead>
+<tr>
+<th>名称</th><th>必填</th><th>描述</th></tr></thead><tbody>
+<tr>
+<td>探测IP数量阈值</td><td>是</td><td>扫描源探测的IP数量阈值最小值。</td></tr><tr>
+<td>被扫描端口</td><td>否</td><td>监控的端口</td></tr><tr>
+<td>扫描源IP</td><td>否</td><td>扫描源</td></tr><tr>
+<td>协议</td><td>否</td><td>支持TCP、UDP、ICMP等协议，默认是选择全部。</td></tr></tbody></table><h3 id=异常服务><strong>异常服务</strong> <a class=header-link href=#%e5%bc%82%e5%b8%b8%e6%9c%8d%e5%8a%a1><svg class="fill-current o-60 hover-accent-color-light" height="22" viewBox="0 0 24 24" width="22" xmlns="http://www.w3.org/2000/svg"><path d="M0 0h24v24H0z" fill="none"/><path d="M3.9 12c0-1.71 1.39-3.1 3.1-3.1h4V7H7c-2.76.0-5 2.24-5 5s2.24 5 5 5h4v-1.9H7c-1.71.0-3.1-1.39-3.1-3.1zM8 13h8v-2H8v2zm9-6h-4v1.9h4c1.71.0 3.1 1.39 3.1 3.1s-1.39 3.1-3.1 3.1h-4V17h4c2.76.0 5-2.24 5-5s-2.24-5-5-5z"/></svg></a></h3><h4 id=介绍-11><strong>介绍</strong> <a class=header-link href=#%e4%bb%8b%e7%bb%8d-11><svg class="fill-current o-60 hover-accent-color-light" height="22" viewBox="0 0 24 24" width="22" xmlns="http://www.w3.org/2000/svg"><path d="M0 0h24v24H0z" fill="none"/><path d="M3.9 12c0-1.71 1.39-3.1 3.1-3.1h4V7H7c-2.76.0-5 2.24-5 5s2.24 5 5 5h4v-1.9H7c-1.71.0-3.1-1.39-3.1-3.1zM8 13h8v-2H8v2zm9-6h-4v1.9h4c1.71.0 3.1 1.39 3.1 3.1s-1.39 3.1-3.1 3.1h-4V17h4c2.76.0 5-2.24 5-5s-2.24-5-5-5z"/></svg></a></h4><p>当某台服务器的某个服务一个时间切片内，提供服务的次数超过了设定的端口会话数阈值，就会产生告警事件。在一个稳定的网络环境中，服务的访问量应该也是稳定的，如果骤增则可能发生了攻击行为。</p><h4 id=配置内容-10><strong>配置内容</strong> <a class=header-link href=#%e9%85%8d%e7%bd%ae%e5%86%85%e5%ae%b9-10><svg class="fill-current o-60 hover-accent-color-light" height="22" viewBox="0 0 24 24" width="22" xmlns="http://www.w3.org/2000/svg"><path d="M0 0h24v24H0z" fill="none"/><path d="M3.9 12c0-1.71 1.39-3.1 3.1-3.1h4V7H7c-2.76.0-5 2.24-5 5s2.24 5 5 5h4v-1.9H7c-1.71.0-3.1-1.39-3.1-3.1zM8 13h8v-2H8v2zm9-6h-4v1.9h4c1.71.0 3.1 1.39 3.1 3.1s-1.39 3.1-3.1 3.1h-4V17h4c2.76.0 5-2.24 5-5s-2.24-5-5-5z"/></svg></a></h4><table>
+<thead>
+<tr>
+<th>名称</th><th>必填</th><th>描述</th></tr></thead><tbody>
+<tr>
+<td>服务会话数阈值</td><td>是</td><td>服务上5分钟内产生的会话量阈值</td></tr><tr>
+<td>服务端口</td><td>否</td><td>不填写就是所有的端口</td></tr><tr>
+<td>服务IP</td><td>否</td><td>不填写就是所有的IP</td></tr><tr>
+<td>协议</td><td>否</td><td>支持TCP、UDP、ICMP等协议，默认是选择全部。</td></tr></tbody></table><h3 id=情报命中><strong>情报命中</strong> <a class=header-link href=#%e6%83%85%e6%8a%a5%e5%91%bd%e4%b8%ad><svg class="fill-current o-60 hover-accent-color-light" height="22" viewBox="0 0 24 24" width="22" xmlns="http://www.w3.org/2000/svg"><path d="M0 0h24v24H0z" fill="none"/><path d="M3.9 12c0-1.71 1.39-3.1 3.1-3.1h4V7H7c-2.76.0-5 2.24-5 5s2.24 5 5 5h4v-1.9H7c-1.71.0-3.1-1.39-3.1-3.1zM8 13h8v-2H8v2zm9-6h-4v1.9h4c1.71.0 3.1 1.39 3.1 3.1s-1.39 3.1-3.1 3.1h-4V17h4c2.76.0 5-2.24 5-5s-2.24-5-5-5z"/></svg></a></h3><h4 id=介绍-12><strong>介绍</strong> <a class=header-link href=#%e4%bb%8b%e7%bb%8d-12><svg class="fill-current o-60 hover-accent-color-light" height="22" viewBox="0 0 24 24" width="22" xmlns="http://www.w3.org/2000/svg"><path d="M0 0h24v24H0z" fill="none"/><path d="M3.9 12c0-1.71 1.39-3.1 3.1-3.1h4V7H7c-2.76.0-5 2.24-5 5s2.24 5 5 5h4v-1.9H7c-1.71.0-3.1-1.39-3.1-3.1zM8 13h8v-2H8v2zm9-6h-4v1.9h4c1.71.0 3.1 1.39 3.1 3.1s-1.39 3.1-3.1 3.1h-4V17h4c2.76.0 5-2.24 5-5s-2.24-5-5-5z"/></svg></a></h4><p>情报事件系统检测到了主机有主动外连访问系统内置的威胁情报设备的行为，并且通讯量超过了设定的阈值。就会产生情报命中告警。</p><h4 id=配置内容-11><strong>配置内容</strong> <a class=header-link href=#%e9%85%8d%e7%bd%ae%e5%86%85%e5%ae%b9-11><svg class="fill-current o-60 hover-accent-color-light" height="22" viewBox="0 0 24 24" width="22" xmlns="http://www.w3.org/2000/svg"><path d="M0 0h24v24H0z" fill="none"/><path d="M3.9 12c0-1.71 1.39-3.1 3.1-3.1h4V7H7c-2.76.0-5 2.24-5 5s2.24 5 5 5h4v-1.9H7c-1.71.0-3.1-1.39-3.1-3.1zM8 13h8v-2H8v2zm9-6h-4v1.9h4c1.71.0 3.1 1.39 3.1 3.1s-1.39 3.1-3.1 3.1h-4V17h4c2.76.0 5-2.24 5-5s-2.24-5-5-5z"/></svg></a></h4><table>
+<thead>
+<tr>
+<th>名称</th><th>必填</th><th>描述</th></tr></thead><tbody>
+<tr>
+<td>最小值</td><td>是</td><td>最小阈值</td></tr><tr>
+<td>最大值</td><td>否</td><td>最大阈值</td></tr><tr>
+<td>阈值单位</td><td>是</td><td>字节量/秒、会话量/秒、包数量/秒。</td></tr></tbody></table><h3 id=url内容识别><strong>URL内容识别</strong> <a class=header-link href=#url%e5%86%85%e5%ae%b9%e8%af%86%e5%88%ab><svg class="fill-current o-60 hover-accent-color-light" height="22" viewBox="0 0 24 24" width="22" xmlns="http://www.w3.org/2000/svg"><path d="M0 0h24v24H0z" fill="none"/><path d="M3.9 12c0-1.71 1.39-3.1 3.1-3.1h4V7H7c-2.76.0-5 2.24-5 5s2.24 5 5 5h4v-1.9H7c-1.71.0-3.1-1.39-3.1-3.1zM8 13h8v-2H8v2zm9-6h-4v1.9h4c1.71.0 3.1 1.39 3.1 3.1s-1.39 3.1-3.1 3.1h-4V17h4c2.76.0 5-2.24 5-5s-2.24-5-5-5z"/></svg></a></h3><h4 id=介绍-13><strong>介绍</strong> <a class=header-link href=#%e4%bb%8b%e7%bb%8d-13><svg class="fill-current o-60 hover-accent-color-light" height="22" viewBox="0 0 24 24" width="22" xmlns="http://www.w3.org/2000/svg"><path d="M0 0h24v24H0z" fill="none"/><path d="M3.9 12c0-1.71 1.39-3.1 3.1-3.1h4V7H7c-2.76.0-5 2.24-5 5s2.24 5 5 5h4v-1.9H7c-1.71.0-3.1-1.39-3.1-3.1zM8 13h8v-2H8v2zm9-6h-4v1.9h4c1.71.0 3.1 1.39 3.1 3.1s-1.39 3.1-3.1 3.1h-4V17h4c2.76.0 5-2.24 5-5s-2.24-5-5-5z"/></svg></a></h4><p>通过攻击行为的正则表达式与URL进行匹配来检测和防范API攻击、XSS、SQL注入等攻击。</p><h4 id=配置内容-12><strong>配置内容</strong> <a class=header-link href=#%e9%85%8d%e7%bd%ae%e5%86%85%e5%ae%b9-12><svg class="fill-current o-60 hover-accent-color-light" height="22" viewBox="0 0 24 24" width="22" xmlns="http://www.w3.org/2000/svg"><path d="M0 0h24v24H0z" fill="none"/><path d="M3.9 12c0-1.71 1.39-3.1 3.1-3.1h4V7H7c-2.76.0-5 2.24-5 5s2.24 5 5 5h4v-1.9H7c-1.71.0-3.1-1.39-3.1-3.1zM8 13h8v-2H8v2zm9-6h-4v1.9h4c1.71.0 3.1 1.39 3.1 3.1s-1.39 3.1-3.1 3.1h-4V17h4c2.76.0 5-2.24 5-5s-2.24-5-5-5z"/></svg></a></h4><table>
+<thead>
+<tr>
+<th>名称</th><th>必填</th><th>描述</th></tr></thead><tbody>
+<tr>
+<td>阈值</td><td>是</td><td>匹配的Flow数量</td></tr><tr>
+<td>类型</td><td>是</td><td>威胁的类型，如SQL、XSS等。</td></tr><tr>
+<td>正则</td><td>是</td><td>威胁语句的正则表达式</td></tr></tbody></table><h3 id=挖矿检测><strong>挖矿检测</strong> <a class=header-link href=#%e6%8c%96%e7%9f%bf%e6%a3%80%e6%b5%8b><svg class="fill-current o-60 hover-accent-color-light" height="22" viewBox="0 0 24 24" width="22" xmlns="http://www.w3.org/2000/svg"><path d="M0 0h24v24H0z" fill="none"/><path d="M3.9 12c0-1.71 1.39-3.1 3.1-3.1h4V7H7c-2.76.0-5 2.24-5 5s2.24 5 5 5h4v-1.9H7c-1.71.0-3.1-1.39-3.1-3.1zM8 13h8v-2H8v2zm9-6h-4v1.9h4c1.71.0 3.1 1.39 3.1 3.1s-1.39 3.1-3.1 3.1h-4V17h4c2.76.0 5-2.24 5-5s-2.24-5-5-5z"/></svg></a></h3><h4 id=介绍-14><strong>介绍</strong> <a class=header-link href=#%e4%bb%8b%e7%bb%8d-14><svg class="fill-current o-60 hover-accent-color-light" height="22" viewBox="0 0 24 24" width="22" xmlns="http://www.w3.org/2000/svg"><path d="M0 0h24v24H0z" fill="none"/><path d="M3.9 12c0-1.71 1.39-3.1 3.1-3.1h4V7H7c-2.76.0-5 2.24-5 5s2.24 5 5 5h4v-1.9H7c-1.71.0-3.1-1.39-3.1-3.1zM8 13h8v-2H8v2zm9-6h-4v1.9h4c1.71.0 3.1 1.39 3.1 3.1s-1.39 3.1-3.1 3.1h-4V17h4c2.76.0 5-2.24 5-5s-2.24-5-5-5z"/></svg></a></h4><p>挖矿事件是到在规则生效的时间内，探针检测到了设备存在访问数字货币交易平台、连接矿池、接收挖矿任务、提交任务等典型挖矿行为。</p><h4 id=配置内容-13><strong>配置内容</strong> <a class=header-link href=#%e9%85%8d%e7%bd%ae%e5%86%85%e5%ae%b9-13><svg class="fill-current o-60 hover-accent-color-light" height="22" viewBox="0 0 24 24" width="22" xmlns="http://www.w3.org/2000/svg"><path d="M0 0h24v24H0z" fill="none"/><path d="M3.9 12c0-1.71 1.39-3.1 3.1-3.1h4V7H7c-2.76.0-5 2.24-5 5s2.24 5 5 5h4v-1.9H7c-1.71.0-3.1-1.39-3.1-3.1zM8 13h8v-2H8v2zm9-6h-4v1.9h4c1.71.0 3.1 1.39 3.1 3.1s-1.39 3.1-3.1 3.1h-4V17h4c2.76.0 5-2.24 5-5s-2.24-5-5-5z"/></svg></a></h4><p>无</p><h3 id=事件忽略配置><strong>事件忽略配置</strong> <a class=header-link href=#%e4%ba%8b%e4%bb%b6%e5%bf%bd%e7%95%a5%e9%85%8d%e7%bd%ae><svg class="fill-current o-60 hover-accent-color-light" height="22" viewBox="0 0 24 24" width="22" xmlns="http://www.w3.org/2000/svg"><path d="M0 0h24v24H0z" fill="none"/><path d="M3.9 12c0-1.71 1.39-3.1 3.1-3.1h4V7H7c-2.76.0-5 2.24-5 5s2.24 5 5 5h4v-1.9H7c-1.71.0-3.1-1.39-3.1-3.1zM8 13h8v-2H8v2zm9-6h-4v1.9h4c1.71.0 3.1 1.39 3.1 3.1s-1.39 3.1-3.1 3.1h-4V17h4c2.76.0 5-2.24 5-5s-2.24-5-5-5z"/></svg></a></h3><h4 id=介绍-15><strong>介绍</strong> <a class=header-link href=#%e4%bb%8b%e7%bb%8d-15><svg class="fill-current o-60 hover-accent-color-light" height="22" viewBox="0 0 24 24" width="22" xmlns="http://www.w3.org/2000/svg"><path d="M0 0h24v24H0z" fill="none"/><path d="M3.9 12c0-1.71 1.39-3.1 3.1-3.1h4V7H7c-2.76.0-5 2.24-5 5s2.24 5 5 5h4v-1.9H7c-1.71.0-3.1-1.39-3.1-3.1zM8 13h8v-2H8v2zm9-6h-4v1.9h4c1.71.0 3.1 1.39 3.1 3.1s-1.39 3.1-3.1 3.1h-4V17h4c2.76.0 5-2.24 5-5s-2.24-5-5-5z"/></svg></a></h4><p>事件忽略配置是一种更精细化配置的告警白名单，可以指定设备五元组、域名以及事件类型来规避业务误报。</p><h4 id=配置内容-14><strong>配置内容</strong> <a class=header-link href=#%e9%85%8d%e7%bd%ae%e5%86%85%e5%ae%b9-14><svg class="fill-current o-60 hover-accent-color-light" height="22" viewBox="0 0 24 24" width="22" xmlns="http://www.w3.org/2000/svg"><path d="M0 0h24v24H0z" fill="none"/><path d="M3.9 12c0-1.71 1.39-3.1 3.1-3.1h4V7H7c-2.76.0-5 2.24-5 5s2.24 5 5 5h4v-1.9H7c-1.71.0-3.1-1.39-3.1-3.1zM8 13h8v-2H8v2zm9-6h-4v1.9h4c1.71.0 3.1 1.39 3.1 3.1s-1.39 3.1-3.1 3.1h-4V17h4c2.76.0 5-2.24 5-5s-2.24-5-5-5z"/></svg></a></h4><table>
+<thead>
+<tr>
+<th>名称</th><th>必填</th><th>描述</th></tr></thead><tbody>
+<tr>
+<td>发起IP</td><td>是</td><td>攻击设备IP</td></tr><tr>
+<td>目标IP</td><td>否</td><td>受害设备IP</td></tr><tr>
+<td>目标端口</td><td>否</td><td>受害设备端口</td></tr><tr>
+<td>域名</td><td>否</td><td>查询域名</td></tr><tr>
+<td>协议</td><td>否</td><td>告警通讯的协议</td></tr><tr>
+<td>描述</td><td>否</td><td>描述信息</td></tr><tr>
+<td>周期</td><td>否</td><td>忽略配置生效周期(天)</td></tr><tr>
+<td>开始时间</td><td>否</td><td>忽略配置在一天中的生效开始时间。</td></tr><tr>
+<td>结束时间</td><td>否</td><td>忽略配置在一天中的生效结束时间。</td></tr></tbody></table><h2 id=资产配置><strong>资产配置</strong> <a class=header-link href=#%e8%b5%84%e4%ba%a7%e9%85%8d%e7%bd%ae><svg class="fill-current o-60 hover-accent-color-light" height="22" viewBox="0 0 24 24" width="22" xmlns="http://www.w3.org/2000/svg"><path d="M0 0h24v24H0z" fill="none"/><path d="M3.9 12c0-1.71 1.39-3.1 3.1-3.1h4V7H7c-2.76.0-5 2.24-5 5s2.24 5 5 5h4v-1.9H7c-1.71.0-3.1-1.39-3.1-3.1zM8 13h8v-2H8v2zm9-6h-4v1.9h4c1.71.0 3.1 1.39 3.1 3.1s-1.39 3.1-3.1 3.1h-4V17h4c2.76.0 5-2.24 5-5s-2.24-5-5-5z"/></svg></a></h2><h3 id=介绍-16><strong>介绍</strong> <a class=header-link href=#%e4%bb%8b%e7%bb%8d-16><svg class="fill-current o-60 hover-accent-color-light" height="22" viewBox="0 0 24 24" width="22" xmlns="http://www.w3.org/2000/svg"><path d="M0 0h24v24H0z" fill="none"/><path d="M3.9 12c0-1.71 1.39-3.1 3.1-3.1h4V7H7c-2.76.0-5 2.24-5 5s2.24 5 5 5h4v-1.9H7c-1.71.0-3.1-1.39-3.1-3.1zM8 13h8v-2H8v2zm9-6h-4v1.9h4c1.71.0 3.1 1.39 3.1 3.1s-1.39 3.1-3.1 3.1h-4V17h4c2.76.0 5-2.24 5-5s-2.24-5-5-5z"/></svg></a></h3><p>资产组便于在系统中进行资产轻量管理、标签展示、确认设备身份、设别资产相关事件等。并且只有在配置范围内的IP，才会识别资产信息。</p><h3 id=配置内容-15><strong>配置内容</strong> <a class=header-link href=#%e9%85%8d%e7%bd%ae%e5%86%85%e5%ae%b9-15><svg class="fill-current o-60 hover-accent-color-light" height="22" viewBox="0 0 24 24" width="22" xmlns="http://www.w3.org/2000/svg"><path d="M0 0h24v24H0z" fill="none"/><path d="M3.9 12c0-1.71 1.39-3.1 3.1-3.1h4V7H7c-2.76.0-5 2.24-5 5s2.24 5 5 5h4v-1.9H7c-1.71.0-3.1-1.39-3.1-3.1zM8 13h8v-2H8v2zm9-6h-4v1.9h4c1.71.0 3.1 1.39 3.1 3.1s-1.39 3.1-3.1 3.1h-4V17h4c2.76.0 5-2.24 5-5s-2.24-5-5-5z"/></svg></a></h3><table>
+<thead>
+<tr>
+<th>名称</th><th>必填</th><th>描述</th></tr></thead><tbody>
+<tr>
+<td>IP</td><td>是</td><td>资产组IP范围</td></tr><tr>
+<td>描述</td><td>否</td><td>资产组名称</td></tr><tr>
+<td>数据源</td><td>否</td><td>资产组所属于的采集环境</td></tr></tbody></table><h2 id=黑白名单配置><strong>黑白名单配置</strong> <a class=header-link href=#%e9%bb%91%e7%99%bd%e5%90%8d%e5%8d%95%e9%85%8d%e7%bd%ae><svg class="fill-current o-60 hover-accent-color-light" height="22" viewBox="0 0 24 24" width="22" xmlns="http://www.w3.org/2000/svg"><path d="M0 0h24v24H0z" fill="none"/><path d="M3.9 12c0-1.71 1.39-3.1 3.1-3.1h4V7H7c-2.76.0-5 2.24-5 5s2.24 5 5 5h4v-1.9H7c-1.71.0-3.1-1.39-3.1-3.1zM8 13h8v-2H8v2zm9-6h-4v1.9h4c1.71.0 3.1 1.39 3.1 3.1s-1.39 3.1-3.1 3.1h-4V17h4c2.76.0 5-2.24 5-5s-2.24-5-5-5z"/></svg></a></h2><h3 id=介绍-17><strong>介绍</strong> <a class=header-link href=#%e4%bb%8b%e7%bb%8d-17><svg class="fill-current o-60 hover-accent-color-light" height="22" viewBox="0 0 24 24" width="22" xmlns="http://www.w3.org/2000/svg"><path d="M0 0h24v24H0z" fill="none"/><path d="M3.9 12c0-1.71 1.39-3.1 3.1-3.1h4V7H7c-2.76.0-5 2.24-5 5s2.24 5 5 5h4v-1.9H7c-1.71.0-3.1-1.39-3.1-3.1zM8 13h8v-2H8v2zm9-6h-4v1.9h4c1.71.0 3.1 1.39 3.1 3.1s-1.39 3.1-3.1 3.1h-4V17h4c2.76.0 5-2.24 5-5s-2.24-5-5-5z"/></svg></a></h3><p>黑名单配置后会检测黑名单的通讯，产生黑名单类别的安全事件告警。白名单中的设备配置后就不会产生安全事件了。</p><h3 id=配置内容-16><strong>配置内容</strong> <a class=header-link href=#%e9%85%8d%e7%bd%ae%e5%86%85%e5%ae%b9-16><svg class="fill-current o-60 hover-accent-color-light" height="22" viewBox="0 0 24 24" width="22" xmlns="http://www.w3.org/2000/svg"><path d="M0 0h24v24H0z" fill="none"/><path d="M3.9 12c0-1.71 1.39-3.1 3.1-3.1h4V7H7c-2.76.0-5 2.24-5 5s2.24 5 5 5h4v-1.9H7c-1.71.0-3.1-1.39-3.1-3.1zM8 13h8v-2H8v2zm9-6h-4v1.9h4c1.71.0 3.1 1.39 3.1 3.1s-1.39 3.1-3.1 3.1h-4V17h4c2.76.0 5-2.24 5-5s-2.24-5-5-5z"/></svg></a></h3><table>
+<thead>
+<tr>
+<th>名称</th><th>必填</th><th>描述</th></tr></thead><tbody>
+<tr>
+<td>IP</td><td>是</td><td>黑/白名单设备IP</td></tr><tr>
+<td>端口</td><td>否</td><td>黑/白名单设备端口</td></tr><tr>
+<td>描述</td><td>是</td><td>黑/白名单设备描述</td></tr></tbody></table><h2 id=追踪配置><strong>追踪配置</strong> <a class=header-link href=#%e8%bf%bd%e8%b8%aa%e9%85%8d%e7%bd%ae><svg class="fill-current o-60 hover-accent-color-light" height="22" viewBox="0 0 24 24" width="22" xmlns="http://www.w3.org/2000/svg"><path d="M0 0h24v24H0z" fill="none"/><path d="M3.9 12c0-1.71 1.39-3.1 3.1-3.1h4V7H7c-2.76.0-5 2.24-5 5s2.24 5 5 5h4v-1.9H7c-1.71.0-3.1-1.39-3.1-3.1zM8 13h8v-2H8v2zm9-6h-4v1.9h4c1.71.0 3.1 1.39 3.1 3.1s-1.39 3.1-3.1 3.1h-4V17h4c2.76.0 5-2.24 5-5s-2.24-5-5-5z"/></svg></a></h2><h3 id=追踪分组><strong>追踪分组</strong> <a class=header-link href=#%e8%bf%bd%e8%b8%aa%e5%88%86%e7%bb%84><svg class="fill-current o-60 hover-accent-color-light" height="22" viewBox="0 0 24 24" width="22" xmlns="http://www.w3.org/2000/svg"><path d="M0 0h24v24H0z" fill="none"/><path d="M3.9 12c0-1.71 1.39-3.1 3.1-3.1h4V7H7c-2.76.0-5 2.24-5 5s2.24 5 5 5h4v-1.9H7c-1.71.0-3.1-1.39-3.1-3.1zM8 13h8v-2H8v2zm9-6h-4v1.9h4c1.71.0 3.1 1.39 3.1 3.1s-1.39 3.1-3.1 3.1h-4V17h4c2.76.0 5-2.24 5-5s-2.24-5-5-5z"/></svg></a></h3><h4 id=介绍-18><strong>介绍</strong> <a class=header-link href=#%e4%bb%8b%e7%bb%8d-18><svg class="fill-current o-60 hover-accent-color-light" height="22" viewBox="0 0 24 24" width="22" xmlns="http://www.w3.org/2000/svg"><path d="M0 0h24v24H0z" fill="none"/><path d="M3.9 12c0-1.71 1.39-3.1 3.1-3.1h4V7H7c-2.76.0-5 2.24-5 5s2.24 5 5 5h4v-1.9H7c-1.71.0-3.1-1.39-3.1-3.1zM8 13h8v-2H8v2zm9-6h-4v1.9h4c1.71.0 3.1 1.39 3.1 3.1s-1.39 3.1-3.1 3.1h-4V17h4c2.76.0 5-2.24 5-5s-2.24-5-5-5z"/></svg></a></h4><p>追踪分组是方便用户分类管理不同的追踪目标。</p><h4 id=配置内容-17><strong>配置内容</strong> <a class=header-link href=#%e9%85%8d%e7%bd%ae%e5%86%85%e5%ae%b9-17><svg class="fill-current o-60 hover-accent-color-light" height="22" viewBox="0 0 24 24" width="22" xmlns="http://www.w3.org/2000/svg"><path d="M0 0h24v24H0z" fill="none"/><path d="M3.9 12c0-1.71 1.39-3.1 3.1-3.1h4V7H7c-2.76.0-5 2.24-5 5s2.24 5 5 5h4v-1.9H7c-1.71.0-3.1-1.39-3.1-3.1zM8 13h8v-2H8v2zm9-6h-4v1.9h4c1.71.0 3.1 1.39 3.1 3.1s-1.39 3.1-3.1 3.1h-4V17h4c2.76.0 5-2.24 5-5s-2.24-5-5-5z"/></svg></a></h4><table>
+<thead>
+<tr>
+<th>名称</th><th>必填</th><th>描述</th></tr></thead><tbody>
+<tr>
+<td>名称</td><td>是</td><td>分组名</td></tr></tbody></table><h3 id=追踪条目><strong>追踪条目</strong> <a class=header-link href=#%e8%bf%bd%e8%b8%aa%e6%9d%a1%e7%9b%ae><svg class="fill-current o-60 hover-accent-color-light" height="22" viewBox="0 0 24 24" width="22" xmlns="http://www.w3.org/2000/svg"><path d="M0 0h24v24H0z" fill="none"/><path d="M3.9 12c0-1.71 1.39-3.1 3.1-3.1h4V7H7c-2.76.0-5 2.24-5 5s2.24 5 5 5h4v-1.9H7c-1.71.0-3.1-1.39-3.1-3.1zM8 13h8v-2H8v2zm9-6h-4v1.9h4c1.71.0 3.1 1.39 3.1 3.1s-1.39 3.1-3.1 3.1h-4V17h4c2.76.0 5-2.24 5-5s-2.24-5-5-5z"/></svg></a></h3><h4 id=介绍-19><strong>介绍</strong> <a class=header-link href=#%e4%bb%8b%e7%bb%8d-19><svg class="fill-current o-60 hover-accent-color-light" height="22" viewBox="0 0 24 24" width="22" xmlns="http://www.w3.org/2000/svg"><path d="M0 0h24v24H0z" fill="none"/><path d="M3.9 12c0-1.71 1.39-3.1 3.1-3.1h4V7H7c-2.76.0-5 2.24-5 5s2.24 5 5 5h4v-1.9H7c-1.71.0-3.1-1.39-3.1-3.1zM8 13h8v-2H8v2zm9-6h-4v1.9h4c1.71.0 3.1 1.39 3.1 3.1s-1.39 3.1-3.1 3.1h-4V17h4c2.76.0 5-2.24 5-5s-2.24-5-5-5z"/></svg></a></h4><p>系统支持对IP、端口以及通讯关系进行追踪观察，并且可以配置相关的安全事件告警，配置参考<a href=#_%E8%BF%BD%E8%B8%AA%E4%BA%8B%E4%BB%B6>追踪事件</a>。</p><h4 id=配置内容-18><strong>配置内容</strong> <a class=header-link href=#%e9%85%8d%e7%bd%ae%e5%86%85%e5%ae%b9-18><svg class="fill-current o-60 hover-accent-color-light" height="22" viewBox="0 0 24 24" width="22" xmlns="http://www.w3.org/2000/svg"><path d="M0 0h24v24H0z" fill="none"/><path d="M3.9 12c0-1.71 1.39-3.1 3.1-3.1h4V7H7c-2.76.0-5 2.24-5 5s2.24 5 5 5h4v-1.9H7c-1.71.0-3.1-1.39-3.1-3.1zM8 13h8v-2H8v2zm9-6h-4v1.9h4c1.71.0 3.1 1.39 3.1 3.1s-1.39 3.1-3.1 3.1h-4V17h4c2.76.0 5-2.24 5-5s-2.24-5-5-5z"/></svg></a></h4><table>
+<thead>
+<tr>
+<th>名称</th><th>必填</th><th>描述</th></tr></thead><tbody>
+<tr>
+<td>追踪目标IP</td><td>与追踪目标端口必填一个</td><td>追踪的IP地址</td></tr><tr>
+<td>追踪目标端口</td><td>与追踪目标IP必填一个</td><td>追踪的端口</td></tr><tr>
+<td>对端IP</td><td>否</td><td>追踪的通讯关系中的对端IP</td></tr><tr>
+<td>对端端口</td><td>否</td><td>追踪的通讯关系中的对端端口</td></tr><tr>
+<td>协议</td><td>否</td><td>追踪目标的通讯协议</td></tr><tr>
+<td>追踪分组</td><td>是</td><td>所属分组</td></tr><tr>
+<td>方向</td><td>是</td><td>追踪通讯关系的流向。ALL：不关注通讯方向。IN：只关注对端 &ndash;> 追踪目标的通讯。OUT：只关注追踪目标 &ndash;> 对端的通讯。</td></tr><tr>
+<td>数据源</td><td>是</td><td>监控目标所属采集环境</td></tr><tr>
+<td>描述</td><td>否</td><td>标签描述</td></tr></tbody></table><h2 id=系统配置><strong>系统配置</strong> <a class=header-link href=#%e7%b3%bb%e7%bb%9f%e9%85%8d%e7%bd%ae><svg class="fill-current o-60 hover-accent-color-light" height="22" viewBox="0 0 24 24" width="22" xmlns="http://www.w3.org/2000/svg"><path d="M0 0h24v24H0z" fill="none"/><path d="M3.9 12c0-1.71 1.39-3.1 3.1-3.1h4V7H7c-2.76.0-5 2.24-5 5s2.24 5 5 5h4v-1.9H7c-1.71.0-3.1-1.39-3.1-3.1zM8 13h8v-2H8v2zm9-6h-4v1.9h4c1.71.0 3.1 1.39 3.1 3.1s-1.39 3.1-3.1 3.1h-4V17h4c2.76.0 5-2.24 5-5s-2.24-5-5-5z"/></svg></a></h2><h3 id=用户配置><strong>用户配置</strong> <a class=header-link href=#%e7%94%a8%e6%88%b7%e9%85%8d%e7%bd%ae><svg class="fill-current o-60 hover-accent-color-light" height="22" viewBox="0 0 24 24" width="22" xmlns="http://www.w3.org/2000/svg"><path d="M0 0h24v24H0z" fill="none"/><path d="M3.9 12c0-1.71 1.39-3.1 3.1-3.1h4V7H7c-2.76.0-5 2.24-5 5s2.24 5 5 5h4v-1.9H7c-1.71.0-3.1-1.39-3.1-3.1zM8 13h8v-2H8v2zm9-6h-4v1.9h4c1.71.0 3.1 1.39 3.1 3.1s-1.39 3.1-3.1 3.1h-4V17h4c2.76.0 5-2.24 5-5s-2.24-5-5-5z"/></svg></a></h3><h4 id=介绍-20><strong>介绍</strong> <a class=header-link href=#%e4%bb%8b%e7%bb%8d-20><svg class="fill-current o-60 hover-accent-color-light" height="22" viewBox="0 0 24 24" width="22" xmlns="http://www.w3.org/2000/svg"><path d="M0 0h24v24H0z" fill="none"/><path d="M3.9 12c0-1.71 1.39-3.1 3.1-3.1h4V7H7c-2.76.0-5 2.24-5 5s2.24 5 5 5h4v-1.9H7c-1.71.0-3.1-1.39-3.1-3.1zM8 13h8v-2H8v2zm9-6h-4v1.9h4c1.71.0 3.1 1.39 3.1 3.1s-1.39 3.1-3.1 3.1h-4V17h4c2.76.0 5-2.24 5-5s-2.24-5-5-5z"/></svg></a></h4><p>支持修改用户密码、权限、访问数据资源、锁定/解锁等操作。</p><h4 id=配置内容-19><strong>配置内容</strong> <a class=header-link href=#%e9%85%8d%e7%bd%ae%e5%86%85%e5%ae%b9-19><svg class="fill-current o-60 hover-accent-color-light" height="22" viewBox="0 0 24 24" width="22" xmlns="http://www.w3.org/2000/svg"><path d="M0 0h24v24H0z" fill="none"/><path d="M3.9 12c0-1.71 1.39-3.1 3.1-3.1h4V7H7c-2.76.0-5 2.24-5 5s2.24 5 5 5h4v-1.9H7c-1.71.0-3.1-1.39-3.1-3.1zM8 13h8v-2H8v2zm9-6h-4v1.9h4c1.71.0 3.1 1.39 3.1 3.1s-1.39 3.1-3.1 3.1h-4V17h4c2.76.0 5-2.24 5-5s-2.24-5-5-5z"/></svg></a></h4><table>
+<thead>
+<tr>
+<th>名称</th><th>必填</th><th>描述</th></tr></thead><tbody>
+<tr>
+<td>用户名</td><td>是</td><td>账号</td></tr><tr>
+<td>密码</td><td>是</td><td>密码</td></tr><tr>
+<td>重复密码</td><td>是</td><td>重复密码</td></tr><tr>
+<td>注释</td><td>否</td><td>描述信息</td></tr><tr>
+<td>角色</td><td>是</td><td>系统内部具有三种权限的用户：1) Viewer观察员。只能查看数据和修改自身密码。2) Analysis分析员，仅能调整事件的检出规则配置和修改自身密码。3) Admin管理员。拥有系统所有权限。</td></tr><tr>
+<td>是否禁用</td><td>否</td><td>是否锁定账户</td></tr><tr>
+<td>资源</td><td>否</td><td>用户能够访问的采集环境</td></tr></tbody></table><h3 id=数据节点配置><strong>数据节点配置</strong> <a class=header-link href=#%e6%95%b0%e6%8d%ae%e8%8a%82%e7%82%b9%e9%85%8d%e7%bd%ae><svg class="fill-current o-60 hover-accent-color-light" height="22" viewBox="0 0 24 24" width="22" xmlns="http://www.w3.org/2000/svg"><path d="M0 0h24v24H0z" fill="none"/><path d="M3.9 12c0-1.71 1.39-3.1 3.1-3.1h4V7H7c-2.76.0-5 2.24-5 5s2.24 5 5 5h4v-1.9H7c-1.71.0-3.1-1.39-3.1-3.1zM8 13h8v-2H8v2zm9-6h-4v1.9h4c1.71.0 3.1 1.39 3.1 3.1s-1.39 3.1-3.1 3.1h-4V17h4c2.76.0 5-2.24 5-5s-2.24-5-5-5z"/></svg></a></h3><h4 id=介绍-21><strong>介绍</strong> <a class=header-link href=#%e4%bb%8b%e7%bb%8d-21><svg class="fill-current o-60 hover-accent-color-light" height="22" viewBox="0 0 24 24" width="22" xmlns="http://www.w3.org/2000/svg"><path d="M0 0h24v24H0z" fill="none"/><path d="M3.9 12c0-1.71 1.39-3.1 3.1-3.1h4V7H7c-2.76.0-5 2.24-5 5s2.24 5 5 5h4v-1.9H7c-1.71.0-3.1-1.39-3.1-3.1zM8 13h8v-2H8v2zm9-6h-4v1.9h4c1.71.0 3.1 1.39 3.1 3.1s-1.39 3.1-3.1 3.1h-4V17h4c2.76.0 5-2.24 5-5s-2.24-5-5-5z"/></svg></a></h4><p>数据节点也就是采集节点的配置，系统部署后有一个默认的采集器配置。</p><h4 id=配置内容-20><strong>配置内容</strong> <a class=header-link href=#%e9%85%8d%e7%bd%ae%e5%86%85%e5%ae%b9-20><svg class="fill-current o-60 hover-accent-color-light" height="22" viewBox="0 0 24 24" width="22" xmlns="http://www.w3.org/2000/svg"><path d="M0 0h24v24H0z" fill="none"/><path d="M3.9 12c0-1.71 1.39-3.1 3.1-3.1h4V7H7c-2.76.0-5 2.24-5 5s2.24 5 5 5h4v-1.9H7c-1.71.0-3.1-1.39-3.1-3.1zM8 13h8v-2H8v2zm9-6h-4v1.9h4c1.71.0 3.1 1.39 3.1 3.1s-1.39 3.1-3.1 3.1h-4V17h4c2.76.0 5-2.24 5-5s-2.24-5-5-5z"/></svg></a></h4><table>
+<thead>
+<tr>
+<th>名称</th><th>必填</th><th>描述</th></tr></thead><tbody>
+<tr>
+<td>名称</td><td>是</td><td>数据节点名称</td></tr><tr>
+<td>模型</td><td>否</td><td>填入IPv4或者IPv6</td></tr><tr>
+<td>创建者</td><td>否</td><td>新建配置的人</td></tr><tr>
+<td>注释</td><td>否</td><td>描述信息</td></tr><tr>
+<td>端口</td><td>是</td><td>发送到分析节点哪个接收端口，注意端口占用</td></tr><tr>
+<td>设备类型</td><td>否</td><td>采集流量设备属性描述信息。router: 路由器switch: 交换机mirror：镜像</td></tr><tr>
+<td>数据类型</td><td>否</td><td>netflow和sflow两种数据格式</td></tr><tr>
+<td>分析节点</td><td>否</td><td>采集后的数据发到哪个分析节点</td></tr><tr>
+<td>禁止使用</td><td>否</td><td>是否禁用采集器</td></tr></tbody></table><h3 id=分析节点配置><strong>分析节点配置</strong> <a class=header-link href=#%e5%88%86%e6%9e%90%e8%8a%82%e7%82%b9%e9%85%8d%e7%bd%ae><svg class="fill-current o-60 hover-accent-color-light" height="22" viewBox="0 0 24 24" width="22" xmlns="http://www.w3.org/2000/svg"><path d="M0 0h24v24H0z" fill="none"/><path d="M3.9 12c0-1.71 1.39-3.1 3.1-3.1h4V7H7c-2.76.0-5 2.24-5 5s2.24 5 5 5h4v-1.9H7c-1.71.0-3.1-1.39-3.1-3.1zM8 13h8v-2H8v2zm9-6h-4v1.9h4c1.71.0 3.1 1.39 3.1 3.1s-1.39 3.1-3.1 3.1h-4V17h4c2.76.0 5-2.24 5-5s-2.24-5-5-5z"/></svg></a></h3><h4 id=介绍-22><strong>介绍</strong> <a class=header-link href=#%e4%bb%8b%e7%bb%8d-22><svg class="fill-current o-60 hover-accent-color-light" height="22" viewBox="0 0 24 24" width="22" xmlns="http://www.w3.org/2000/svg"><path d="M0 0h24v24H0z" fill="none"/><path d="M3.9 12c0-1.71 1.39-3.1 3.1-3.1h4V7H7c-2.76.0-5 2.24-5 5s2.24 5 5 5h4v-1.9H7c-1.71.0-3.1-1.39-3.1-3.1zM8 13h8v-2H8v2zm9-6h-4v1.9h4c1.71.0 3.1 1.39 3.1 3.1s-1.39 3.1-3.1 3.1h-4V17h4c2.76.0 5-2.24 5-5s-2.24-5-5-5z"/></svg></a></h4><p>分析节点是系统架构中的数据分析层，用来接收采集器采集、解析的数据，并识别特征和告警事件，Server服务器来读取最终的结果数据。</p><h4 id=配置内容-21><strong>配置内容</strong> <a class=header-link href=#%e9%85%8d%e7%bd%ae%e5%86%85%e5%ae%b9-21><svg class="fill-current o-60 hover-accent-color-light" height="22" viewBox="0 0 24 24" width="22" xmlns="http://www.w3.org/2000/svg"><path d="M0 0h24v24H0z" fill="none"/><path d="M3.9 12c0-1.71 1.39-3.1 3.1-3.1h4V7H7c-2.76.0-5 2.24-5 5s2.24 5 5 5h4v-1.9H7c-1.71.0-3.1-1.39-3.1-3.1zM8 13h8v-2H8v2zm9-6h-4v1.9h4c1.71.0 3.1 1.39 3.1 3.1s-1.39 3.1-3.1 3.1h-4V17h4c2.76.0 5-2.24 5-5s-2.24-5-5-5z"/></svg></a></h4><table>
+<thead>
+<tr>
+<th>名称</th><th>必填</th><th>描述</th></tr></thead><tbody>
+<tr>
+<td>名称</td><td>是</td><td>数据节点名称</td></tr><tr>
+<td>创建者</td><td>否</td><td>填入IPv4或者IPv6</td></tr><tr>
+<td>注释</td><td>否</td><td>新建配置的人</td></tr><tr>
+<td>IP地址</td><td>是</td><td>分析节点的地址，让Server用来读取数据的</td></tr><tr>
+<td>状态</td><td>否</td><td>disconnect：断开连接connect：连接</td></tr><tr>
+<td>禁止使用</td><td>否</td><td>是否禁用分析节点。</td></tr></tbody></table></div><h2>See Also</h2><ul>
+<li><a href=/user-manual/basic-setting/>基础配置</a></li><li><a href=/user-manual/zhuizong/>追踪功能</a></li><li><a href=/user-manual/yanpan/>事件分析研判</a></li><li><a href=/user-manual/shijian/>安全事件</a></li><li><a href=/user-manual/zonglan/>态势总览</a></li></ul></div></div><div class="order-0 w-20 dn db-l">
+<nav role=navigation>
+<ul class="list pa0 nl2">
+<li class="f5 w-100 hover-bg-light-gray hover-accent-color-light fw8">
+<a href=javascript:void(0) class="js-toggle dib w-100 link mid-gray hover-accent-color-light pl2 pr2 pv2" data-target=.about>关于流影</a>
+<ul class="about desktopmenu animated fadeIn list pl0 bg-light-gray dn">
+<li class="f6 fw4">
+<a href=/about/ class="db link hover-bg-gray hover-white pl3 pr2 pv2 black">
+概览
+</a>
+</li><li class="f6 fw4">
+<a href=/about/what-is-liuying/ class="db link hover-bg-gray hover-white pl3 pr2 pv2 black">
+简介
+</a>
+</li><li class="f6 fw4">
+<a href=/about/structure/ class="db link hover-bg-gray hover-white pl3 pr2 pv2 black">
+架构
+</a>
+</li><li class="f6 fw4">
+<a href=/about/license/ class="db link hover-bg-gray hover-white pl3 pr2 pv2 black">
+开源协议
+</a>
+</li></ul></li><li class="f5 w-100 hover-bg-light-gray hover-accent-color-light fw8">
+<a href=javascript:void(0) class="js-toggle dib w-100 link mid-gray hover-accent-color-light pl2 pr2 pv2" data-target=.getting-started>快速开始</a>
+<ul class="getting-started desktopmenu animated fadeIn list pl0 bg-light-gray dn">
+<li class="f6 fw4">
+<a href=/getting-started/ class="db link hover-bg-gray hover-white pl3 pr2 pv2 black">
+入门概览
+</a>
+</li><li class="f6 fw4">
+<a href=/getting-started/quick-start/ class="db link hover-bg-gray hover-white pl3 pr2 pv2 black">
+快速上手
+</a>
+</li><li class="f6 fw4">
+<a href=/getting-started/usage/ class="db link hover-bg-gray hover-white pl3 pr2 pv2 black">
+界面使用
+</a>
+</li><li class="f6 fw4">
+<a href=/getting-started/deploy-required/ class="db link hover-bg-gray hover-white pl3 pr2 pv2 black">
+部署环境
+</a>
+</li></ul></li><li class="f5 w-100 hover-bg-light-gray hover-accent-color-light fw8">
+<a href=javascript:void(0) class="js-toggle dib w-100 link mid-gray hover-accent-color-light pl2 pr2 pv2" data-target=.installation>编译安装</a>
+<ul class="installation desktopmenu animated fadeIn list pl0 bg-light-gray dn">
+<li class="f6 fw4">
+<a href=/installation/ class="db link hover-bg-gray hover-white pl3 pr2 pv2 black">
+编译安装概览
+</a>
+</li><li class="f6 fw4">
+<a href=/installation/ly_probe/ class="db link hover-bg-gray hover-white pl3 pr2 pv2 black">
+流量探针
+</a>
+</li><li class="f6 fw4">
+<a href=/installation/ly_analyser/ class="db link hover-bg-gray hover-white pl3 pr2 pv2 black">
+分析引擎
+</a>
+</li><li class="f6 fw4">
+<a href=/installation/ly_server/ class="db link hover-bg-gray hover-white pl3 pr2 pv2 black">
+管理引擎
+</a>
+</li><li class="f6 fw4">
+<a href=/installation/ly_vis/ class="db link hover-bg-gray hover-white pl3 pr2 pv2 black">
+可视化交互界面
+</a>
+</li></ul></li><li class="f5 w-100 hover-bg-light-gray hover-accent-color-light fw8">
+<a href=javascript:void(0) class="js-toggle dib w-100 link mid-gray hover-accent-color-light pl2 pr2 pv2 primary-color" data-target=.user-manual>用户手册</a>
+<ul class="user-manual desktopmenu animated fadeIn list pl0 bg-light-gray db">
+<li class="f6 fw4">
+<a href=/user-manual/ class="db link hover-bg-gray hover-white pl3 pr2 pv2 black">
+手册概览
+</a>
+</li><li class="f6 fw4">
+<a href=/user-manual/login/ class="db link hover-bg-gray hover-white pl3 pr2 pv2 black">
+登录系统
+</a>
+</li><li class="f6 fw4">
+<a href=/user-manual/basic-setting/ class="db link hover-bg-gray hover-white pl3 pr2 pv2 black">
+基本配置
+</a>
+</li><li class="f6 fw4">
+<a href=/user-manual/zonglan/ class="db link hover-bg-gray hover-white pl3 pr2 pv2 black">
+态势总览
+</a>
+</li><li class="f6 fw4">
+<a href=/user-manual/shijian/ class="db link hover-bg-gray hover-white pl3 pr2 pv2 black">
+事件告警
+</a>
+</li><li class="f6 fw4">
+<a href=/user-manual/yanpan/ class="db link hover-bg-gray hover-white pl3 pr2 pv2 black">
+分析研判
+</a>
+</li><li class="f6 fw4">
+<a href=/user-manual/zhuizong/ class="db link hover-bg-gray hover-white pl3 pr2 pv2 black">
+追踪功能
+</a>
+</li><li class="f6 fw4">
+<a href=/user-manual/peizhi/ class="db link hover-bg-gray hover-white pl3 pr2 pv2 primary-color">
+系统配置
+</a>
+</li></ul></li><li class="f5 w-100 hover-bg-light-gray hover-accent-color-light fw8">
+<a href=/demo/ class="js-toggle dib w-100 link mid-gray hover-accent-color-light pl2 pr2 pv2" data-target=.demo>演示Demo</a>
+</li><li class="f5 w-100 hover-bg-light-gray hover-accent-color-light fw8 mb1 bb b--moon-gray">
+<a href=javascript:void(0) class="js-toggle dib w-100 link mid-gray hover-accent-color-light pl2 pr2 pv2" data-target=.contribute>欢迎贡献</a>
+<ul class="contribute desktopmenu animated fadeIn list pl0 bg-light-gray dn">
+<li class="f6 fw4">
+<a href=/contribute/ class="db link hover-bg-gray hover-white pl3 pr2 pv2 black">
+参与贡献
+</a>
+</li><li class="f6 fw4">
+<a href=/contribute/development/ class="db link hover-bg-gray hover-white pl3 pr2 pv2 black">
+参与开发
+</a>
+</li><li class="f6 fw4">
+<a href=/contribute/documentation/ class="db link hover-bg-gray hover-white pl3 pr2 pv2 black">
+完善文档
+</a>
+</li></ul></li></ul></nav></div></div></article><div class="w-100 bg-light-gray">
+<div class="mw7 pa4 center nested-lh-copy lh-copy">
+<h6 class="f6 dark-gray mb2">
+Last updated: January 7, 2023: <a class="hide-child link primary-color" href=https://github.com/Abyssal-Fish-Technology/ly_docs/commit/169ab8209f8669c9c099b99b25f900aa8362e6a9>init (169ab82)</a>
+</h6><a href=https://github.com/Abyssal-Fish-Technology/ly_docs/edit/master/content/user-manual/peizhi/index.md class="f6 ph3 pv1 br2 dib tc ttu mv3 bg-primary-color white hover-bg-green link">Improve this page</a>
+</div></div></main><footer class="bg-primary-color-dark ph4-ns pt4 relative w-100" role=contentinfo>
+<div class="center flex-ns flex-wrap justify-between mw9 w-90">
+<div class="center pb3 pt4">
+<div class="b f3 light-gray mb3 nested-links tc">
+流影由 <a href=https://github.com/orgs/Abyssal-Fish-Technology class=link>深海鱼（北京）科技有限公司 </a>发起开源和维护，欢迎参与<br>
+</div><ul class="center f6 list ma0 mv4 pa0 tc">
+<li class="dib mr3"><a href=https://github.com/Abyssal-Fish-Technology/ly_vis class="dim link light-gray pv2">可视化交互分析(ly_vis)</a></li><li class="dib mr3"><a href=https://github.com/Abyssal-Fish-Technology/ly_server class="dim link light-gray pv2">管理引擎(ly_server)</a></li><li class=dib><a href=https://github.com/Abyssal-Fish-Technology/ly_analyser class="dim link light-gray pv2">分析引擎(ly_analyser)</a></li><li class=dib><a href=https://github.com/Abyssal-Fish-Technology/ly_probe class="dim link light-gray pv2"> &nbsp;&nbsp;&nbsp;&nbsp;流量探针(ly_probe)</a></li></ul><ul class="center f6 list ma0 mv3 pa0 tc"><li class="dib mr3"><a href=https://github.com/abyssalfish-os/liuying/issues/new class="dim link light-gray pv2">到 Github 发起 Issue</a></li><li class=dib><a href=https://gitter.im/abyssalfish-os/community class="dim link light-gray pv2">来 Gitter 沟通留言</a></li></ul></div></div><div class="bg-primary-color-dark bottom-0 left-0 right-0 dn-l fixed pb3 ph3 pt3 z-2"><div class="globalmenu mobilemenu pb1 dn">
+<ul class="list hidden dib ph0 scrolling-touch tc">
+<li class="tl dib ma0 hover-bg-black w-100">
+<a href=/news/ class="ttu f6 link primary-color-light overflow hover-white db brand-font ma0 w-100 pv3 ph4">
+新闻&博客
+</a>
+</li><li class="tl dib ma0 hover-bg-black w-100">
+<a href=/documentation/ class="ttu f6 link primary-color-light overflow hover-white db brand-font ma0 w-100 pv3 ph4">
+文档
+</a>
+</li><li class="tl dib ma0 hover-bg-black w-100">
+<a href=/demo/ class="ttu f6 link primary-color-light overflow hover-white db brand-font ma0 w-100 pv3 ph4">
+Demo演示
+</a>
+</li><li class="tl dib ma0 hover-bg-black w-100">
+<a href=https://gitee.com/organizations/abyssalfish-os/projects class="ttu f6 link primary-color-light overflow hover-white db brand-font ma0 w-100 pv3 ph4">
+Gitee
+</a>
+</li><li class="tl dib ma0 hover-bg-black w-100">
+<a href=https://github.com/orgs/Abyssal-Fish-Technology/repositories class="ttu f6 link primary-color-light overflow hover-white db brand-font ma0 w-100 pv3 ph4">
+GitHub
+</a>
+</li><li class="tl dib ma0 hover-bg-black w-100">
+<a href=https://gitter.im/abyssalfish-os/community class="ttu f6 link primary-color-light overflow hover-white db brand-font ma0 w-100 pv3 ph4">
+讨论区
+</a>
+</li></ul></div><div class="docsmenu mobilemenu pb1 dn">
+<ul class="list dib ph0 scrolling-touch tc">
+<li class="tl dib ma0 hover-bg-black w-100">
+<a href=/about/ class="ttu f6 link primary-color-light hover-white db brand-font mb1 ma0 w-100 pv2 ph4">
+关于流影
+</a>
+</li><li class="tl dib ma0 hover-bg-black w-100">
+<a href=/getting-started/ class="ttu f6 link primary-color-light hover-white db brand-font mb1 ma0 w-100 pv2 ph4">
+快速开始
+</a>
+</li><li class="tl dib ma0 hover-bg-black w-100">
+<a href=/installation/ class="ttu f6 link primary-color-light hover-white db brand-font mb1 ma0 w-100 pv2 ph4">
+编译安装
+</a>
+</li><li class="tl dib ma0 hover-bg-black w-100">
+<a href=/user-manual/ class="ttu f6 link primary-color-light hover-white db brand-font mb1 ma0 w-100 pv2 ph4">
+用户手册
+</a>
+</li><li class="tl dib ma0 hover-bg-black w-100">
+<a href=/demo/ class="ttu f6 link primary-color-light hover-white db brand-font mb1 ma0 w-100 pv2 ph4">
+演示Demo
+</a>
+</li><li class="tl dib ma0 hover-bg-black w-100 mb2 bb b--mid-gray">
+<a href=/contribute/ class="ttu f6 link primary-color-light hover-white db brand-font mb1 ma0 w-100 pv2 ph4">
+欢迎贡献
+</a>
+</li></ul></div><div class="flex dn-l justify-between">
+<button class="js-toggle flex-auto dib dn-l f6 tc db ph3 pv2 link mr2 white bg-primary-color-dark hover-bg-primary-color ba b--white-40 w-auto" data-target=.globalmenu>Menu</button>
+<button class="js-toggle flex-auto dib dn-l f6 tc db ph3 pv2 link white bg-primary-color-dark hover-bg-primary-color ba b--white-40 w-auto" data-target=.docsmenu>Docs Menu</button>
+</div></div></footer></body></html>

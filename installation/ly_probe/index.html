@@ -1,0 +1,381 @@
+<!doctype html><html class=no-js lang="
+    zh-cn
+  
+  ">
+<head>
+<meta charset=utf-8>
+<link rel=preload href=https://abyssalfish-os.github.io/fonts/muli-latin-200.woff2 as=font type=font/woff2 crossorigin>
+<link rel=preload href=https://abyssalfish-os.github.io/fonts/muli-latin-400.woff2 as=font type=font/woff2 crossorigin>
+<link rel=preload href=https://abyssalfish-os.github.io/fonts/muli-latin-800.woff2 as=font type=font/woff2 crossorigin>
+<meta http-equiv=x-ua-compatible content="IE=edge">
+<title>
+流影: 流量探针编译安装
+</title><meta name=viewport content="width=device-width,minimum-scale=1">
+<meta name=generator content="Hugo 0.109.0">
+<meta name=robots content="index, follow">
+<link rel=stylesheet href=/output/css/app.min.631706eef190df8129d8f5b57c45caa8c431efd8e4148fbd17b354b607ce316a.css integrity="sha256-YxcG7vGQ34Ep2PW1fEXKqMQx79jkFI+9F7NUtgfOMWo=" crossorigin=anonymous>
+<meta name=description content="
+        介绍流量探针ly_probe编译安装
+      
+      ">
+<script type=text/javascript src=/output/js/app.5a802739f9b2407f0d3a1f84a20731b6705a5a4df051c35686f22bd3aea90731.js crossorigin=anonymous defer></script>
+<script async defer src=https://buttons.github.io/buttons.js></script>
+<link rel=apple-touch-icon sizes=180x180 href=/apple-touch-icon.png>
+<link rel=icon type=image/png href=/favicon-32x32.png sizes=32x32>
+<link rel=icon type=image/png href=/favicon-16x16.png sizes=16x16>
+<link rel=manifest href=/manifest.json>
+<link rel=mask-icon href=/safari-pinned-tab.svg color=#0594cb>
+<meta name=theme-color content="#ffffff">
+<meta property="og:title" content="流量探针编译安装">
+<meta property="og:description" content="介绍流量探针ly_probe编译安装">
+<meta property="og:type" content="article">
+<meta property="og:url" content="https://abyssalfish-os.github.io/installation/ly_probe/"><meta property="og:image" content="https://abyssalfish-os.github.io/opengraph/gohugoio-card-base-1_huf001e7df4fd9c00c4355abac7d4ca455_242906_filter_2303433759627595580.png"><meta property="article:section" content="installation">
+<meta property="article:published_time" content="2022-12-28T00:00:00+08:00">
+<meta property="article:modified_time" content="2023-01-07T00:58:17+08:00">
+<meta itemprop=name content="流量探针编译安装">
+<meta itemprop=description content="介绍流量探针ly_probe编译安装"><meta itemprop=datePublished content="2022-12-28T00:00:00+08:00">
+<meta itemprop=dateModified content="2023-01-07T00:58:17+08:00">
+<meta itemprop=wordCount content="1844">
+<meta itemprop=keywords content>
+</head><body class="ma0 sans-serif bg-primary-color-light
+production">
+<nav class="bg-primary-color-dark pv4 w-100" role=navigation>
+<div class="center flex-ns flex-wrap items-center justify-start mw9">
+<h1 class="dim f3 lh-solid ml0-ns mr0 mr4-l mv0 pl3 pl4-ns">
+<a href=https://abyssalfish-os.github.io/ class="link white">
+流影->FlowShadow
+</a>
+</h1><ul class="list ma0 pa0 dn dib-l" role=menu>
+<li class="f5 dib mr4" role=menuitem>
+<a href=/news/ class="dim link light-silver">
+新闻&博客
+</a>
+</li><li class="f5 dib mr4" role=menuitem>
+<a href=/documentation/ class="dim link light-silver">
+文档
+</a>
+</li><li class="f5 dib mr4" role=menuitem>
+<a href=/demo/ class="dim link light-silver">
+Demo演示
+</a>
+</li><li class="f5 dib mr4" role=menuitem>
+<a href=https://gitee.com/organizations/abyssalfish-os/projects class="dim link light-silver">
+Gitee
+<span class=pl1><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="10" height="10" viewBox="0 0 32 32" class="fill-current v-base" aria-label="External Link"><path d="M25.152 16.576v5.696q0 2.144-1.504 3.648T20 27.424H5.152q-2.144.0-3.648-1.504t-1.504-3.648V7.424q0-2.112 1.504-3.616t3.648-1.536h12.576q.224.0.384.16t.16.416V4q0 .256-.16.416t-.384.16H5.152q-1.184.0-2.016.832t-.864 2.016v14.848q0 1.184.864 2.016t2.016.864H20q1.184.0 2.016-.864t.832-2.016v-5.696q0-.256.16-.416t.416-.16h1.152q.256.0.416.16t.16.416zM32 1.152v9.12q0 .48-.352.8t-.8.352-.8-.352l-3.136-3.136-11.648 11.648q-.16.192-.416.192t-.384-.192l-2.048-2.048q-.192-.16-.192-.384t.192-.416L24.064 5.088l-3.136-3.136q-.352-.352-.352-.8t.352-.8.8-.352h9.12q.48.0.8.352t.352.8z"/></svg>
+</span>
+</a>
+</li><li class="f5 dib mr4" role=menuitem>
+<a href=https://github.com/orgs/Abyssal-Fish-Technology/repositories class="dim link light-silver">
+GitHub
+<span class=pl1><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="10" height="10" viewBox="0 0 32 32" class="fill-current v-base" aria-label="External Link"><path d="M25.152 16.576v5.696q0 2.144-1.504 3.648T20 27.424H5.152q-2.144.0-3.648-1.504t-1.504-3.648V7.424q0-2.112 1.504-3.616t3.648-1.536h12.576q.224.0.384.16t.16.416V4q0 .256-.16.416t-.384.16H5.152q-1.184.0-2.016.832t-.864 2.016v14.848q0 1.184.864 2.016t2.016.864H20q1.184.0 2.016-.864t.832-2.016v-5.696q0-.256.16-.416t.416-.16h1.152q.256.0.416.16t.16.416zM32 1.152v9.12q0 .48-.352.8t-.8.352-.8-.352l-3.136-3.136-11.648 11.648q-.16.192-.416.192t-.384-.192l-2.048-2.048q-.192-.16-.192-.384t.192-.416L24.064 5.088l-3.136-3.136q-.352-.352-.352-.8t.352-.8.8-.352h9.12q.48.0.8.352t.352.8z"/></svg>
+</span>
+</a>
+</li><li class="f5 dib mr4" role=menuitem>
+<a href=https://gitter.im/abyssalfish-os/community class="dim link light-silver">
+讨论区
+<span class=pl1><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="10" height="10" viewBox="0 0 32 32" class="fill-current v-base" aria-label="External Link"><path d="M25.152 16.576v5.696q0 2.144-1.504 3.648T20 27.424H5.152q-2.144.0-3.648-1.504t-1.504-3.648V7.424q0-2.112 1.504-3.616t3.648-1.536h12.576q.224.0.384.16t.16.416V4q0 .256-.16.416t-.384.16H5.152q-1.184.0-2.016.832t-.864 2.016v14.848q0 1.184.864 2.016t2.016.864H20q1.184.0 2.016-.864t.832-2.016v-5.696q0-.256.16-.416t.416-.16h1.152q.256.0.416.16t.16.416zM32 1.152v9.12q0 .48-.352.8t-.8.352-.8-.352l-3.136-3.136-11.648 11.648q-.16.192-.416.192t-.384-.192l-2.048-2.048q-.192-.16-.192-.384t.192-.416L24.064 5.088l-3.136-3.136q-.352-.352-.352-.8t.352-.8.8-.352h9.12q.48.0.8.352t.352.8z"/></svg>
+</span>
+</a>
+</li></ul><div class="db dib-ns pl3"><form id=site-search-form role=search>
+<fieldset class="bn ma0 pa0">
+<label class=clip for=search-input>Search</label>
+<input type=text id=search-input class="needs-js dn bn f5 lh-solid mt3 mt0-ns pl4 pv2 w5 white" placeholder="Welcome to FlowShadow" name=search-input style=background-color:rgba(255,255,255,0)>
+</fieldset></form></div></div></nav><main role=main class="content-with-sidebar min-vh-100 pb7 pb0-ns">
+<article class="w-100 ph4 pb5 pb6-ns pt1 pt5-ns">
+<div class=flex-l>
+<div class="order-2 w-100 w-20-l ph5-m ph0-l mb4 sticky">
+<aside class="fixed-lTK mw5-l right-0 f6 bl-l b--moon-gray pv4 pv0-ns ph4-l nested-list-reset nested-links nested-copy-line-height">
+<p class=b>What's on this Page</p><nav id=TableOfContents>
+<ul>
+<li><a href=#项目地址>项目地址</a></li><li><a href=#依赖说明>依赖说明</a></li><li><a href=#编译安装>编译安装</a></li><li><a href=#运行示例>运行示例</a></li><li><a href=#插件功能>插件功能</a></li><li><a href=#开源许可>开源许可</a></li><li><a href=#联系方式>联系方式</a></li></ul></nav><div date-pref>
+<a href=https://abyssalfish-os.github.io/installation/ly_vis/ class="dib f6 pl1 hover-bg-light-gray br-100" title="可视化交互式分析界面 "><svg class="fill-current" height="30" viewBox="0 0 24 24" width="30" xmlns="http://www.w3.org/2000/svg"><path d="M15.41 7.41 14 6l-6 6 6 6 1.41-1.41L10.83 12z"/><path d="M0 0h24v24H0z" fill="none"/></svg>
+</a>
+</div></aside></div><div class="order-1 w-60-l mw7 ph0 ph5-ns mid-gray nested-copy-line-height no-underline nested-links nested-img nested-copy-seperator nested-blockquote mt0-ns" style=flex-grow:1>
+<div class="documentation-copy center measure-wide-wd">
+<div id=readout class="fixed right-0 bottom-0">
+</div><header class="flex-none w-100">
+<a href=/categories/installation class="f6 fw8 mb0 link mid-gray dim mr3">
+INSTALLATION
+</a>
+<a href=/categories/compile class="f6 fw8 mb0 link mid-gray dim mr3">
+COMPILE
+</a>
+<h1 class="lh-title mb3 mv0 pt3 primary-color-dark">流量探针编译安装</h1></header><aside class="bt bw1 pt3 mt2 mid-gray b--mid-gray fn w-100">
+<div class="f4 fw4 lh-copy">
+介绍流量探针ly_probe编译安装
+</div></aside><div class=prose id=prose>
+<p>​<strong>ly_probe 探针</strong> 源自于早期开源nprobe5.x，是一款用于解析网络流量、提取关键信息的探针软件，能够将流量或pcap文件解析后，提取并匹配指定数据内容后，以netflow格式传输至采集器。
+除提取网络层相关信息，亦可解析HTTP、DNS、ICMP等应用层协议。
+通过配置指纹规则库，支持提取应用层协议相关应用、设备、操作系统等绑定到IP详细扩展信息，也支持识别应用层的威胁行为，或其他匹配目标特征的网络行为。
+规则命中的数据包可以根据需求以文件方式同步留存，供后续调查验证使用。</p><h2 id=项目地址>项目地址 <a class=header-link href=#%e9%a1%b9%e7%9b%ae%e5%9c%b0%e5%9d%80><svg class="fill-current o-60 hover-accent-color-light" height="22" viewBox="0 0 24 24" width="22" xmlns="http://www.w3.org/2000/svg"><path d="M0 0h24v24H0z" fill="none"/><path d="M3.9 12c0-1.71 1.39-3.1 3.1-3.1h4V7H7c-2.76.0-5 2.24-5 5s2.24 5 5 5h4v-1.9H7c-1.71.0-3.1-1.39-3.1-3.1zM8 13h8v-2H8v2zm9-6h-4v1.9h4c1.71.0 3.1 1.39 3.1 3.1s-1.39 3.1-3.1 3.1h-4V17h4c2.76.0 5-2.24 5-5s-2.24-5-5-5z"/></svg></a></h2><ul>
+<li><a href=https://github.com/Abyssal-Fish-Technology/ly_probe>Github</a></li><li><a href=https://gitee.com/abyssalfish-os/ly_probe>Gitee</a></li></ul><h3 id=模块目录结构>模块目录结构 <a class=header-link href=#%e6%a8%a1%e5%9d%97%e7%9b%ae%e5%bd%95%e7%bb%93%e6%9e%84><svg class="fill-current o-60 hover-accent-color-light" height="22" viewBox="0 0 24 24" width="22" xmlns="http://www.w3.org/2000/svg"><path d="M0 0h24v24H0z" fill="none"/><path d="M3.9 12c0-1.71 1.39-3.1 3.1-3.1h4V7H7c-2.76.0-5 2.24-5 5s2.24 5 5 5h4v-1.9H7c-1.71.0-3.1-1.39-3.1-3.1zM8 13h8v-2H8v2zm9-6h-4v1.9h4c1.71.0 3.1 1.39 3.1 3.1s-1.39 3.1-3.1 3.1h-4V17h4c2.76.0 5-2.24 5-5s-2.24-5-5-5z"/></svg></a></h3><pre tabindex=0><code>lyprobe
+├─── .dep/         --pl0文件
+├─── m4/           --m4宏文件
+├─── plugins/      --插件
+├─── fp-pattern/   --综合测绘识别指纹规则
+├─── l7-pattern/   --应用层协议识别指纹规则
+|─ ......
+└─ nprobe.c        --主程序代码
+</code></pre><h2 id=依赖说明>依赖说明 <a class=header-link href=#%e4%be%9d%e8%b5%96%e8%af%b4%e6%98%8e><svg class="fill-current o-60 hover-accent-color-light" height="22" viewBox="0 0 24 24" width="22" xmlns="http://www.w3.org/2000/svg"><path d="M0 0h24v24H0z" fill="none"/><path d="M3.9 12c0-1.71 1.39-3.1 3.1-3.1h4V7H7c-2.76.0-5 2.24-5 5s2.24 5 5 5h4v-1.9H7c-1.71.0-3.1-1.39-3.1-3.1zM8 13h8v-2H8v2zm9-6h-4v1.9h4c1.71.0 3.1 1.39 3.1 3.1s-1.39 3.1-3.1 3.1h-4V17h4c2.76.0 5-2.24 5-5s-2.24-5-5-5z"/></svg></a></h2><h4 id=编译环境>编译环境 <a class=header-link href=#%e7%bc%96%e8%af%91%e7%8e%af%e5%a2%83><svg class="fill-current o-60 hover-accent-color-light" height="22" viewBox="0 0 24 24" width="22" xmlns="http://www.w3.org/2000/svg"><path d="M0 0h24v24H0z" fill="none"/><path d="M3.9 12c0-1.71 1.39-3.1 3.1-3.1h4V7H7c-2.76.0-5 2.24-5 5s2.24 5 5 5h4v-1.9H7c-1.71.0-3.1-1.39-3.1-3.1zM8 13h8v-2H8v2zm9-6h-4v1.9h4c1.71.0 3.1 1.39 3.1 3.1s-1.39 3.1-3.1 3.1h-4V17h4c2.76.0 5-2.24 5-5s-2.24-5-5-5z"/></svg></a></h4><div class=highlight><pre tabindex=0 class=chroma><code class=language-text data-lang=text><span class=line><span class=cl>GCC
+</span></span><span class=line><span class=cl>automake
+</span></span><span class=line><span class=cl>autoconf
+</span></span><span class=line><span class=cl>libtool
+</span></span><span class=line><span class=cl>libpcap
+</span></span><span class=line><span class=cl>PF_RING (可选)
+</span></span></code></pre></div><h4 id=运行环境>运行环境 <a class=header-link href=#%e8%bf%90%e8%a1%8c%e7%8e%af%e5%a2%83><svg class="fill-current o-60 hover-accent-color-light" height="22" viewBox="0 0 24 24" width="22" xmlns="http://www.w3.org/2000/svg"><path d="M0 0h24v24H0z" fill="none"/><path d="M3.9 12c0-1.71 1.39-3.1 3.1-3.1h4V7H7c-2.76.0-5 2.24-5 5s2.24 5 5 5h4v-1.9H7c-1.71.0-3.1-1.39-3.1-3.1zM8 13h8v-2H8v2zm9-6h-4v1.9h4c1.71.0 3.1 1.39 3.1 3.1s-1.39 3.1-3.1 3.1h-4V17h4c2.76.0 5-2.24 5-5s-2.24-5-5-5z"/></svg></a></h4><div class=highlight><pre tabindex=0 class=chroma><code class=language-text data-lang=text><span class=line><span class=cl>libpcap
+</span></span><span class=line><span class=cl>PF_RING (可选)
+</span></span></code></pre></div><h2 id=编译安装>编译安装 <a class=header-link href=#%e7%bc%96%e8%af%91%e5%ae%89%e8%a3%85><svg class="fill-current o-60 hover-accent-color-light" height="22" viewBox="0 0 24 24" width="22" xmlns="http://www.w3.org/2000/svg"><path d="M0 0h24v24H0z" fill="none"/><path d="M3.9 12c0-1.71 1.39-3.1 3.1-3.1h4V7H7c-2.76.0-5 2.24-5 5s2.24 5 5 5h4v-1.9H7c-1.71.0-3.1-1.39-3.1-3.1zM8 13h8v-2H8v2zm9-6h-4v1.9h4c1.71.0 3.1 1.39 3.1 3.1s-1.39 3.1-3.1 3.1h-4V17h4c2.76.0 5-2.24 5-5s-2.24-5-5-5z"/></svg></a></h2><div class=highlight><pre tabindex=0 class=chroma><code class=language-shell data-lang=shell><span class=line><span class=cl><span class=c1># 检查环境</span>
+</span></span><span class=line><span class=cl>./autogen.sh
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl><span class=c1># 编译代码</span>
+</span></span><span class=line><span class=cl>make
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl><span class=c1># 部署可执行程序与依赖库文件</span>
+</span></span><span class=line><span class=cl>make install
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl><span class=c1># 若需要使用规则匹配插件，需手动将所应用的规则移动至指定位置</span>
+</span></span><span class=line><span class=cl>cp -r ./fp-pattern /usr/local/lib/lyprobe/plugins/fp-pattern
+</span></span></code></pre></div><aside class="admonition note">
+<div class=note-icon>
+</div><div class=admonition-content><p>​因系统环境问题，若运行&rsquo;autogen.sh&rsquo;后出现 U_INT系列宏定义错误，可修改&rsquo;config.h.in&rsquo;文件中相关宏，将&rsquo;#define&rsquo;更改为&rsquo;#undef&rsquo;。再次执行&rsquo;sh ./configure&rsquo;即可。</p></div></aside><h2 id=运行示例>运行示例 <a class=header-link href=#%e8%bf%90%e8%a1%8c%e7%a4%ba%e4%be%8b><svg class="fill-current o-60 hover-accent-color-light" height="22" viewBox="0 0 24 24" width="22" xmlns="http://www.w3.org/2000/svg"><path d="M0 0h24v24H0z" fill="none"/><path d="M3.9 12c0-1.71 1.39-3.1 3.1-3.1h4V7H7c-2.76.0-5 2.24-5 5s2.24 5 5 5h4v-1.9H7c-1.71.0-3.1-1.39-3.1-3.1zM8 13h8v-2H8v2zm9-6h-4v1.9h4c1.71.0 3.1 1.39 3.1 3.1s-1.39 3.1-3.1 3.1h-4V17h4c2.76.0 5-2.24 5-5s-2.24-5-5-5z"/></svg></a></h2><h4 id=基础示例>基础示例 <a class=header-link href=#%e5%9f%ba%e7%a1%80%e7%a4%ba%e4%be%8b><svg class="fill-current o-60 hover-accent-color-light" height="22" viewBox="0 0 24 24" width="22" xmlns="http://www.w3.org/2000/svg"><path d="M0 0h24v24H0z" fill="none"/><path d="M3.9 12c0-1.71 1.39-3.1 3.1-3.1h4V7H7c-2.76.0-5 2.24-5 5s2.24 5 5 5h4v-1.9H7c-1.71.0-3.1-1.39-3.1-3.1zM8 13h8v-2H8v2zm9-6h-4v1.9h4c1.71.0 3.1 1.39 3.1 3.1s-1.39 3.1-3.1 3.1h-4V17h4c2.76.0 5-2.24 5-5s-2.24-5-5-5z"/></svg></a></h4><p>​以守护进程形式在后台运行，监听eth0网卡的数据流量，解析MAC、IP、L4协议、端口、数据量等基础信息，以netflow形式发送至127.0.0.1:9995。</p><pre tabindex=0><code># lyprobe -T &#34;%IN_SRC_MAC %OUT_DST_MAC %IPV4_SRC_ADDR %IPV4_DST_ADDR %PROTOCOL %L4_SRC_PORT %L4_DST_PORT %TCP_FLAGS %SRC_TOS %IN_PKTS %IN_BYTES&#34; -n 127.0.0.1:9995 -e 0 -w 32768 -G -i eth0
+</code></pre><h4 id=参数说明>参数说明 <a class=header-link href=#%e5%8f%82%e6%95%b0%e8%af%b4%e6%98%8e><svg class="fill-current o-60 hover-accent-color-light" height="22" viewBox="0 0 24 24" width="22" xmlns="http://www.w3.org/2000/svg"><path d="M0 0h24v24H0z" fill="none"/><path d="M3.9 12c0-1.71 1.39-3.1 3.1-3.1h4V7H7c-2.76.0-5 2.24-5 5s2.24 5 5 5h4v-1.9H7c-1.71.0-3.1-1.39-3.1-3.1zM8 13h8v-2H8v2zm9-6h-4v1.9h4c1.71.0 3.1 1.39 3.1 3.1s-1.39 3.1-3.1 3.1h-4V17h4c2.76.0 5-2.24 5-5s-2.24-5-5-5z"/></svg></a></h4><p>​ 通过参数指定数据源、运行模式、解析格式、采集器位置等。</p><pre tabindex=0><code># lyprobe -h
+lyprobe -n &lt;host:port|none&gt; [-i &lt;interface|dump file&gt;] [-f &lt;filter&gt;]
+              [-G] [-O &lt;# threads&gt;] [-w &lt;hash size&gt;] [-e &lt;flow delay&gt;]
+              [-T &lt;flow template&gt;] [-U &lt;flow template id&gt;]
+              ......
+[--collector|-n] &lt;host:port|none&gt;   | Address of the NetFlow collector(s).
+                                    | Multiple collectors can be defined using
+                                    | multiple -n flags. In this case flows
+                                    | will be sent in round robin mode to
+                                    | all defined collectors if the -a flag
+                                    | is used. Note that you can specify
+                                    | both IPv4 and IPv6 addresses.
+                                    | If you specify none as value,
+                                    | no flow will be export; in this case
+                                    | the -P parameter is mandatory.
+[--interface|-i] &lt;iface|pcap&gt;       | Interface name from which packets are
+                                    | captured, or .pcap file (debug only)
+[--bpf-filter|-f] &lt;BPF filter&gt;      | BPF filter for captured packets
+                                    | [default=no filter]
+[--daemon-mode|-G]                  | Start as daemon.
+[--num-threads|-O] &lt;# threads&gt;      | Number of packet fetcher threads
+                                    | [default=2]. Use 1 unless you know
+                                    | what you&#39;re doing.
+[--hash-size|-w] &lt;hash size&gt;        | Flows hash size [default=32768]
+[--flow-delay|-e] &lt;flow delay&gt;      | Delay (in ms) between two flow
+                                    | exports [default=1]
+[--flow-templ|-T] &lt;flow template&gt;   | Specify the NFv9 template (see below).
+--pcap-file-list &lt;filename&gt;         | Specify a filename containing a list
+                                    | of pcap files.
+                                    | If you use this flag the -i option will be
+                                    | ignored.
+......
+</code></pre><h2 id=插件功能>插件功能 <a class=header-link href=#%e6%8f%92%e4%bb%b6%e5%8a%9f%e8%83%bd><svg class="fill-current o-60 hover-accent-color-light" height="22" viewBox="0 0 24 24" width="22" xmlns="http://www.w3.org/2000/svg"><path d="M0 0h24v24H0z" fill="none"/><path d="M3.9 12c0-1.71 1.39-3.1 3.1-3.1h4V7H7c-2.76.0-5 2.24-5 5s2.24 5 5 5h4v-1.9H7c-1.71.0-3.1-1.39-3.1-3.1zM8 13h8v-2H8v2zm9-6h-4v1.9h4c1.71.0 3.1 1.39 3.1 3.1s-1.39 3.1-3.1 3.1h-4V17h4c2.76.0 5-2.24 5-5s-2.24-5-5-5z"/></svg></a></h2><h4 id=服务识别插件---serviceplugin>服务识别插件 - servicePlugin <a class=header-link href=#%e6%9c%8d%e5%8a%a1%e8%af%86%e5%88%ab%e6%8f%92%e4%bb%b6---serviceplugin><svg class="fill-current o-60 hover-accent-color-light" height="22" viewBox="0 0 24 24" width="22" xmlns="http://www.w3.org/2000/svg"><path d="M0 0h24v24H0z" fill="none"/><path d="M3.9 12c0-1.71 1.39-3.1 3.1-3.1h4V7H7c-2.76.0-5 2.24-5 5s2.24 5 5 5h4v-1.9H7c-1.71.0-3.1-1.39-3.1-3.1zM8 13h8v-2H8v2zm9-6h-4v1.9h4c1.71.0 3.1 1.39 3.1 3.1s-1.39 3.1-3.1 3.1h-4V17h4c2.76.0 5-2.24 5-5s-2.24-5-5-5z"/></svg></a></h4><p>​ 通过数据包传输层载荷进行正则模式匹配，结合资产指纹规则，识别数据流应用层协议，目标IP的中间件服务、设备种类、操作系统等资产信息；结合威胁指纹规则，识别指定类型的威胁流量。</p><p>​ 指纹规则存放于 <strong>fp-pattern/</strong> 目录中，包含以JSON格式书写的五类规则：</p><pre tabindex=0><code>service.json	-- 应用层协议与服务识别规则
+​device.json	-- 硬件设备识别规则
+​os.json		-- 操作系统识别规则
+​midware.json	-- 软件平台与中间件规则
+​threat.json	-- 异常流量识别规则
+</code></pre><p>​ 指纹规则通过数个字段指定匹配条件与标记结果，例如：</p><pre tabindex=0><code>{
+    &#34;midware&#34;:{
+        &#34;rules&#34;:{
+            &#34;40001&#34;:{
+                &#34;type&#34;:&#34;Web Service&#34;,	-- 命中后类型标识，输出至XXX_TYPE字段
+                &#34;name&#34;:&#34;Nginx&#34;,			-- 命中后名称标识，输出至XXX_NAME字段
+                &#34;protocol&#34;:&#34;tcp&#34;,		-- 指定传输层协议
+                &#34;port&#34;:&#34;80&#34;,			-- 指定端口
+                &#34;is_http&#34;:1,			-- 指定是否为HTTP流量
+                &#34;regex&#34;:&#34;Server: nginx(?:\\/(\\d*\\.?\\d*\\.?\\d*))?&#34;,	-- 正则语句
+                // &#34;version&#34;:&#34;&#34;			-- 使用指定字符串声明版本信息；未设置字段时,
+                //						-- 提取第一个正则子表达式命中内容作为版本信息
+            }
+        }
+    }
+}
+</code></pre><p>​ 指定字段，在采集数据过程中进行规则匹配，获取到服务、设备、操作系统、中间件的类型、名称、版本等信息以及威胁流量的描述信息。插件留存规则命中的数据包，并通过微秒级的时间戳，对指定数据包进行定位查找。</p><pre tabindex=0><code># lyprobe -T &#34;%IN_SRC_MAC %OUT_DST_MAC %IPV4_SRC_ADDR %IPV4_DST_ADDR %PROTOCOL %L4_SRC_PORT %L4_DST_PORT %TCP_FLAGS %SRC_TOS %IN_PKTS %IN_BYTES %SRV_TYPE %SRV_NAME %SRV_VERS %DEV_TYPE %DEV_NAME %DEV_VEND %DEV_VERS %OS_TYPE %OS_NAME %OS_VERS %MID_TYPE %MID_NAME %MID_VERS %THREAT_TYPE %THREAT_NAME %THREAT_VERS %SRV_TIME %DEV_TIME %OS_TIME %MID_TIME %THREAT_TIME&#34; -n 127.0.0.1:9995 -e 0 -w 32768 -G -i eth0
+</code></pre><h4 id=dns协议解析插件---dnsplugin>DNS协议解析插件 - dnsPlugin <a class=header-link href=#dns%e5%8d%8f%e8%ae%ae%e8%a7%a3%e6%9e%90%e6%8f%92%e4%bb%b6---dnsplugin><svg class="fill-current o-60 hover-accent-color-light" height="22" viewBox="0 0 24 24" width="22" xmlns="http://www.w3.org/2000/svg"><path d="M0 0h24v24H0z" fill="none"/><path d="M3.9 12c0-1.71 1.39-3.1 3.1-3.1h4V7H7c-2.76.0-5 2.24-5 5s2.24 5 5 5h4v-1.9H7c-1.71.0-3.1-1.39-3.1-3.1zM8 13h8v-2H8v2zm9-6h-4v1.9h4c1.71.0 3.1 1.39 3.1 3.1s-1.39 3.1-3.1 3.1h-4V17h4c2.76.0 5-2.24 5-5s-2.24-5-5-5z"/></svg></a></h4><p>​ 解析PCAP文件的数据流量，实现对DNS协议内容的解析，获取DNS查询域名，查询类型，查询结果关联IP。</p><pre tabindex=0><code># lyprobe -T &#34;%IN_SRC_MAC %OUT_DST_MAC %IPV4_SRC_ADDR %IPV4_DST_ADDR %PROTOCOL %L4_SRC_PORT %L4_DST_PORT %TCP_FLAGS %SRC_TOS %IN_PKTS %IN_BYTES %DNS_REQ_DOMAIN %DNS_REQ_TYPE %DNS_RES_IP&#34; -n 127.0.0.1:9995 -e 0 -w 32768 -G -i eth0
+</code></pre><h4 id=http协议解析插件---httpplugin>HTTP协议解析插件 - httpPlugin <a class=header-link href=#http%e5%8d%8f%e8%ae%ae%e8%a7%a3%e6%9e%90%e6%8f%92%e4%bb%b6---httpplugin><svg class="fill-current o-60 hover-accent-color-light" height="22" viewBox="0 0 24 24" width="22" xmlns="http://www.w3.org/2000/svg"><path d="M0 0h24v24H0z" fill="none"/><path d="M3.9 12c0-1.71 1.39-3.1 3.1-3.1h4V7H7c-2.76.0-5 2.24-5 5s2.24 5 5 5h4v-1.9H7c-1.71.0-3.1-1.39-3.1-3.1zM8 13h8v-2H8v2zm9-6h-4v1.9h4c1.71.0 3.1 1.39 3.1 3.1s-1.39 3.1-3.1 3.1h-4V17h4c2.76.0 5-2.24 5-5s-2.24-5-5-5z"/></svg></a></h4><p>​ 解析PCAP文件的数据流量，实现对HTTP协议内容的解析，获取HTTP协议头部字段信息。</p><pre tabindex=0><code># lyprobe -T &#34;%IN_SRC_MAC %OUT_DST_MAC %IPV4_SRC_ADDR %IPV4_DST_ADDR %PROTOCOL %L4_SRC_PORT %L4_DST_PORT %TCP_FLAGS %SRC_TOS %IN_PKTS %IN_BYTES %HTTP_URL %HTTP_REQ_METHOD %HTTP_HOST %HTTP_MIME %HTTP_RET_CODE %HTTP_USER_AGENT&#34; -n 127.0.0.1:9995 -e 0 -w 32768 -G -i eth0
+</code></pre><h4 id=icmp协议解析插件---icmpplugin>ICMP协议解析插件 - icmpPlugin <a class=header-link href=#icmp%e5%8d%8f%e8%ae%ae%e8%a7%a3%e6%9e%90%e6%8f%92%e4%bb%b6---icmpplugin><svg class="fill-current o-60 hover-accent-color-light" height="22" viewBox="0 0 24 24" width="22" xmlns="http://www.w3.org/2000/svg"><path d="M0 0h24v24H0z" fill="none"/><path d="M3.9 12c0-1.71 1.39-3.1 3.1-3.1h4V7H7c-2.76.0-5 2.24-5 5s2.24 5 5 5h4v-1.9H7c-1.71.0-3.1-1.39-3.1-3.1zM8 13h8v-2H8v2zm9-6h-4v1.9h4c1.71.0 3.1 1.39 3.1 3.1s-1.39 3.1-3.1 3.1h-4V17h4c2.76.0 5-2.24 5-5s-2.24-5-5-5z"/></svg></a></h4><p>​ 解析PCAP文件的数据流量，实现对ICMP协议内容的解析，获取ICMP载荷内容等信息。</p><pre tabindex=0><code># lyprobe -T &#34;%IN_SRC_MAC %OUT_DST_MAC %IPV4_SRC_ADDR %IPV4_DST_ADDR %PROTOCOL %L4_SRC_PORT %L4_DST_PORT %TCP_FLAGS %SRC_TOS %IN_PKTS %IN_BYTES  %ICMP_DATA %ICMP_SEQ_NUM %ICMP_PAYLOAD_LEN&#34; -n 127.0.0.1:9995 -e 0 -w 32768 -G -i eth0
+</code></pre><h2 id=开源许可>开源许可 <a class=header-link href=#%e5%bc%80%e6%ba%90%e8%ae%b8%e5%8f%af><svg class="fill-current o-60 hover-accent-color-light" height="22" viewBox="0 0 24 24" width="22" xmlns="http://www.w3.org/2000/svg"><path d="M0 0h24v24H0z" fill="none"/><path d="M3.9 12c0-1.71 1.39-3.1 3.1-3.1h4V7H7c-2.76.0-5 2.24-5 5s2.24 5 5 5h4v-1.9H7c-1.71.0-3.1-1.39-3.1-3.1zM8 13h8v-2H8v2zm9-6h-4v1.9h4c1.71.0 3.1 1.39 3.1 3.1s-1.39 3.1-3.1 3.1h-4V17h4c2.76.0 5-2.24 5-5s-2.24-5-5-5z"/></svg></a></h2><ul>
+<li>GNU GENERAL PUBLIC LICENSE Version 3</li></ul><h2 id=联系方式>联系方式 <a class=header-link href=#%e8%81%94%e7%b3%bb%e6%96%b9%e5%bc%8f><svg class="fill-current o-60 hover-accent-color-light" height="22" viewBox="0 0 24 24" width="22" xmlns="http://www.w3.org/2000/svg"><path d="M0 0h24v24H0z" fill="none"/><path d="M3.9 12c0-1.71 1.39-3.1 3.1-3.1h4V7H7c-2.76.0-5 2.24-5 5s2.24 5 5 5h4v-1.9H7c-1.71.0-3.1-1.39-3.1-3.1zM8 13h8v-2H8v2zm9-6h-4v1.9h4c1.71.0 3.1 1.39 3.1 3.1s-1.39 3.1-3.1 3.1h-4V17h4c2.76.0 5-2.24 5-5s-2.24-5-5-5z"/></svg></a></h2><p>如果在开发、部署、使用的过程中遇到任何问题，或者技术讨论、产品咨询、商务合作等，都欢迎前来联系我们！</p><p>联系邮箱：<a href=mailto:opensource@abyssalfish.com.cn>opensource@abyssalfish.com.cn</a></p></div></div></div><div class="order-0 w-20 dn db-l">
+<nav role=navigation>
+<ul class="list pa0 nl2">
+<li class="f5 w-100 hover-bg-light-gray hover-accent-color-light fw8">
+<a href=javascript:void(0) class="js-toggle dib w-100 link mid-gray hover-accent-color-light pl2 pr2 pv2" data-target=.about>关于流影</a>
+<ul class="about desktopmenu animated fadeIn list pl0 bg-light-gray dn">
+<li class="f6 fw4">
+<a href=/about/ class="db link hover-bg-gray hover-white pl3 pr2 pv2 black">
+概览
+</a>
+</li><li class="f6 fw4">
+<a href=/about/what-is-liuying/ class="db link hover-bg-gray hover-white pl3 pr2 pv2 black">
+简介
+</a>
+</li><li class="f6 fw4">
+<a href=/about/structure/ class="db link hover-bg-gray hover-white pl3 pr2 pv2 black">
+架构
+</a>
+</li><li class="f6 fw4">
+<a href=/about/license/ class="db link hover-bg-gray hover-white pl3 pr2 pv2 black">
+开源协议
+</a>
+</li></ul></li><li class="f5 w-100 hover-bg-light-gray hover-accent-color-light fw8">
+<a href=javascript:void(0) class="js-toggle dib w-100 link mid-gray hover-accent-color-light pl2 pr2 pv2" data-target=.getting-started>快速开始</a>
+<ul class="getting-started desktopmenu animated fadeIn list pl0 bg-light-gray dn">
+<li class="f6 fw4">
+<a href=/getting-started/ class="db link hover-bg-gray hover-white pl3 pr2 pv2 black">
+入门概览
+</a>
+</li><li class="f6 fw4">
+<a href=/getting-started/quick-start/ class="db link hover-bg-gray hover-white pl3 pr2 pv2 black">
+快速上手
+</a>
+</li><li class="f6 fw4">
+<a href=/getting-started/usage/ class="db link hover-bg-gray hover-white pl3 pr2 pv2 black">
+界面使用
+</a>
+</li><li class="f6 fw4">
+<a href=/getting-started/deploy-required/ class="db link hover-bg-gray hover-white pl3 pr2 pv2 black">
+部署环境
+</a>
+</li></ul></li><li class="f5 w-100 hover-bg-light-gray hover-accent-color-light fw8">
+<a href=javascript:void(0) class="js-toggle dib w-100 link mid-gray hover-accent-color-light pl2 pr2 pv2 primary-color" data-target=.installation>编译安装</a>
+<ul class="installation desktopmenu animated fadeIn list pl0 bg-light-gray db">
+<li class="f6 fw4">
+<a href=/installation/ class="db link hover-bg-gray hover-white pl3 pr2 pv2 black">
+编译安装概览
+</a>
+</li><li class="f6 fw4">
+<a href=/installation/ly_probe/ class="db link hover-bg-gray hover-white pl3 pr2 pv2 primary-color">
+流量探针
+</a>
+</li><li class="f6 fw4">
+<a href=/installation/ly_analyser/ class="db link hover-bg-gray hover-white pl3 pr2 pv2 black">
+分析引擎
+</a>
+</li><li class="f6 fw4">
+<a href=/installation/ly_server/ class="db link hover-bg-gray hover-white pl3 pr2 pv2 black">
+管理引擎
+</a>
+</li><li class="f6 fw4">
+<a href=/installation/ly_vis/ class="db link hover-bg-gray hover-white pl3 pr2 pv2 black">
+可视化交互界面
+</a>
+</li></ul></li><li class="f5 w-100 hover-bg-light-gray hover-accent-color-light fw8">
+<a href=javascript:void(0) class="js-toggle dib w-100 link mid-gray hover-accent-color-light pl2 pr2 pv2" data-target=.user-manual>用户手册</a>
+<ul class="user-manual desktopmenu animated fadeIn list pl0 bg-light-gray dn">
+<li class="f6 fw4">
+<a href=/user-manual/ class="db link hover-bg-gray hover-white pl3 pr2 pv2 black">
+手册概览
+</a>
+</li><li class="f6 fw4">
+<a href=/user-manual/login/ class="db link hover-bg-gray hover-white pl3 pr2 pv2 black">
+登录系统
+</a>
+</li><li class="f6 fw4">
+<a href=/user-manual/basic-setting/ class="db link hover-bg-gray hover-white pl3 pr2 pv2 black">
+基本配置
+</a>
+</li><li class="f6 fw4">
+<a href=/user-manual/zonglan/ class="db link hover-bg-gray hover-white pl3 pr2 pv2 black">
+态势总览
+</a>
+</li><li class="f6 fw4">
+<a href=/user-manual/shijian/ class="db link hover-bg-gray hover-white pl3 pr2 pv2 black">
+事件告警
+</a>
+</li><li class="f6 fw4">
+<a href=/user-manual/yanpan/ class="db link hover-bg-gray hover-white pl3 pr2 pv2 black">
+分析研判
+</a>
+</li><li class="f6 fw4">
+<a href=/user-manual/zhuizong/ class="db link hover-bg-gray hover-white pl3 pr2 pv2 black">
+追踪功能
+</a>
+</li><li class="f6 fw4">
+<a href=/user-manual/peizhi/ class="db link hover-bg-gray hover-white pl3 pr2 pv2 black">
+系统配置
+</a>
+</li></ul></li><li class="f5 w-100 hover-bg-light-gray hover-accent-color-light fw8">
+<a href=/demo/ class="js-toggle dib w-100 link mid-gray hover-accent-color-light pl2 pr2 pv2" data-target=.demo>演示Demo</a>
+</li><li class="f5 w-100 hover-bg-light-gray hover-accent-color-light fw8 mb1 bb b--moon-gray">
+<a href=javascript:void(0) class="js-toggle dib w-100 link mid-gray hover-accent-color-light pl2 pr2 pv2" data-target=.contribute>欢迎贡献</a>
+<ul class="contribute desktopmenu animated fadeIn list pl0 bg-light-gray dn">
+<li class="f6 fw4">
+<a href=/contribute/ class="db link hover-bg-gray hover-white pl3 pr2 pv2 black">
+参与贡献
+</a>
+</li><li class="f6 fw4">
+<a href=/contribute/development/ class="db link hover-bg-gray hover-white pl3 pr2 pv2 black">
+参与开发
+</a>
+</li><li class="f6 fw4">
+<a href=/contribute/documentation/ class="db link hover-bg-gray hover-white pl3 pr2 pv2 black">
+完善文档
+</a>
+</li></ul></li></ul></nav></div></div></article><div class="w-100 bg-light-gray">
+<div class="mw7 pa4 center nested-lh-copy lh-copy">
+<h6 class="f6 dark-gray mb2">
+Last updated: January 7, 2023: <a class="hide-child link primary-color" href=https://github.com/Abyssal-Fish-Technology/ly_docs/commit/169ab8209f8669c9c099b99b25f900aa8362e6a9>init (169ab82)</a>
+</h6><a href=https://github.com/Abyssal-Fish-Technology/ly_docs/edit/master/content/installation/ly_probe.md class="f6 ph3 pv1 br2 dib tc ttu mv3 bg-primary-color white hover-bg-green link">Improve this page</a>
+</div></div></main><footer class="bg-primary-color-dark ph4-ns pt4 relative w-100" role=contentinfo>
+<div class="center flex-ns flex-wrap justify-between mw9 w-90">
+<div class="center pb3 pt4">
+<div class="b f3 light-gray mb3 nested-links tc">
+流影由 <a href=https://github.com/orgs/Abyssal-Fish-Technology class=link>深海鱼（北京）科技有限公司 </a>发起开源和维护，欢迎参与<br>
+</div><ul class="center f6 list ma0 mv4 pa0 tc">
+<li class="dib mr3"><a href=https://github.com/Abyssal-Fish-Technology/ly_vis class="dim link light-gray pv2">可视化交互分析(ly_vis)</a></li><li class="dib mr3"><a href=https://github.com/Abyssal-Fish-Technology/ly_server class="dim link light-gray pv2">管理引擎(ly_server)</a></li><li class=dib><a href=https://github.com/Abyssal-Fish-Technology/ly_analyser class="dim link light-gray pv2">分析引擎(ly_analyser)</a></li><li class=dib><a href=https://github.com/Abyssal-Fish-Technology/ly_probe class="dim link light-gray pv2"> &nbsp;&nbsp;&nbsp;&nbsp;流量探针(ly_probe)</a></li></ul><ul class="center f6 list ma0 mv3 pa0 tc"><li class="dib mr3"><a href=https://github.com/abyssalfish-os/liuying/issues/new class="dim link light-gray pv2">到 Github 发起 Issue</a></li><li class=dib><a href=https://gitter.im/abyssalfish-os/community class="dim link light-gray pv2">来 Gitter 沟通留言</a></li></ul></div></div><div class="bg-primary-color-dark bottom-0 left-0 right-0 dn-l fixed pb3 ph3 pt3 z-2"><div class="globalmenu mobilemenu pb1 dn">
+<ul class="list hidden dib ph0 scrolling-touch tc">
+<li class="tl dib ma0 hover-bg-black w-100">
+<a href=/news/ class="ttu f6 link primary-color-light overflow hover-white db brand-font ma0 w-100 pv3 ph4">
+新闻&博客
+</a>
+</li><li class="tl dib ma0 hover-bg-black w-100">
+<a href=/documentation/ class="ttu f6 link primary-color-light overflow hover-white db brand-font ma0 w-100 pv3 ph4">
+文档
+</a>
+</li><li class="tl dib ma0 hover-bg-black w-100">
+<a href=/demo/ class="ttu f6 link primary-color-light overflow hover-white db brand-font ma0 w-100 pv3 ph4">
+Demo演示
+</a>
+</li><li class="tl dib ma0 hover-bg-black w-100">
+<a href=https://gitee.com/organizations/abyssalfish-os/projects class="ttu f6 link primary-color-light overflow hover-white db brand-font ma0 w-100 pv3 ph4">
+Gitee
+</a>
+</li><li class="tl dib ma0 hover-bg-black w-100">
+<a href=https://github.com/orgs/Abyssal-Fish-Technology/repositories class="ttu f6 link primary-color-light overflow hover-white db brand-font ma0 w-100 pv3 ph4">
+GitHub
+</a>
+</li><li class="tl dib ma0 hover-bg-black w-100">
+<a href=https://gitter.im/abyssalfish-os/community class="ttu f6 link primary-color-light overflow hover-white db brand-font ma0 w-100 pv3 ph4">
+讨论区
+</a>
+</li></ul></div><div class="docsmenu mobilemenu pb1 dn">
+<ul class="list dib ph0 scrolling-touch tc">
+<li class="tl dib ma0 hover-bg-black w-100">
+<a href=/about/ class="ttu f6 link primary-color-light hover-white db brand-font mb1 ma0 w-100 pv2 ph4">
+关于流影
+</a>
+</li><li class="tl dib ma0 hover-bg-black w-100">
+<a href=/getting-started/ class="ttu f6 link primary-color-light hover-white db brand-font mb1 ma0 w-100 pv2 ph4">
+快速开始
+</a>
+</li><li class="tl dib ma0 hover-bg-black w-100">
+<a href=/installation/ class="ttu f6 link primary-color-light hover-white db brand-font mb1 ma0 w-100 pv2 ph4">
+编译安装
+</a>
+</li><li class="tl dib ma0 hover-bg-black w-100">
+<a href=/user-manual/ class="ttu f6 link primary-color-light hover-white db brand-font mb1 ma0 w-100 pv2 ph4">
+用户手册
+</a>
+</li><li class="tl dib ma0 hover-bg-black w-100">
+<a href=/demo/ class="ttu f6 link primary-color-light hover-white db brand-font mb1 ma0 w-100 pv2 ph4">
+演示Demo
+</a>
+</li><li class="tl dib ma0 hover-bg-black w-100 mb2 bb b--mid-gray">
+<a href=/contribute/ class="ttu f6 link primary-color-light hover-white db brand-font mb1 ma0 w-100 pv2 ph4">
+欢迎贡献
+</a>
+</li></ul></div><div class="flex dn-l justify-between">
+<button class="js-toggle flex-auto dib dn-l f6 tc db ph3 pv2 link mr2 white bg-primary-color-dark hover-bg-primary-color ba b--white-40 w-auto" data-target=.globalmenu>Menu</button>
+<button class="js-toggle flex-auto dib dn-l f6 tc db ph3 pv2 link white bg-primary-color-dark hover-bg-primary-color ba b--white-40 w-auto" data-target=.docsmenu>Docs Menu</button>
+</div></div></footer></body></html>

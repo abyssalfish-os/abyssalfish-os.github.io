@@ -1,0 +1,317 @@
+<!doctype html><html class=no-js lang="
+    zh-cn
+  
+  ">
+<head>
+<meta charset=utf-8>
+<link rel=preload href=https://abyssalfish-os.github.io/fonts/muli-latin-200.woff2 as=font type=font/woff2 crossorigin>
+<link rel=preload href=https://abyssalfish-os.github.io/fonts/muli-latin-400.woff2 as=font type=font/woff2 crossorigin>
+<link rel=preload href=https://abyssalfish-os.github.io/fonts/muli-latin-800.woff2 as=font type=font/woff2 crossorigin>
+<meta http-equiv=x-ua-compatible content="IE=edge">
+<title>
+流影: 安全事件
+</title><meta name=viewport content="width=device-width,minimum-scale=1">
+<meta name=generator content="Hugo 0.109.0">
+<meta name=robots content="index, follow">
+<link rel=stylesheet href=/output/css/app.min.631706eef190df8129d8f5b57c45caa8c431efd8e4148fbd17b354b607ce316a.css integrity="sha256-YxcG7vGQ34Ep2PW1fEXKqMQx79jkFI+9F7NUtgfOMWo=" crossorigin=anonymous>
+<meta name=description content="
+        安全事件态势、告警列表、事情详情.
+      
+      ">
+<script type=text/javascript src=/output/js/app.5a802739f9b2407f0d3a1f84a20731b6705a5a4df051c35686f22bd3aea90731.js crossorigin=anonymous defer></script>
+<script async defer src=https://buttons.github.io/buttons.js></script>
+<link rel=apple-touch-icon sizes=180x180 href=/apple-touch-icon.png>
+<link rel=icon type=image/png href=/favicon-32x32.png sizes=32x32>
+<link rel=icon type=image/png href=/favicon-16x16.png sizes=16x16>
+<link rel=manifest href=/manifest.json>
+<link rel=mask-icon href=/safari-pinned-tab.svg color=#0594cb>
+<meta name=theme-color content="#ffffff">
+<meta property="og:title" content="安全事件">
+<meta property="og:description" content="安全事件态势、告警列表、事情详情.">
+<meta property="og:type" content="article">
+<meta property="og:url" content="https://abyssalfish-os.github.io/user-manual/shijian/"><meta property="og:image" content="https://abyssalfish-os.github.io/opengraph/gohugoio-card-base-1_huf001e7df4fd9c00c4355abac7d4ca455_242906_filter_6781866029127700341.png"><meta property="article:section" content="user-manual">
+<meta property="article:published_time" content="2022-12-29T00:00:00+08:00">
+<meta property="article:modified_time" content="2023-01-07T00:58:17+08:00">
+<meta itemprop=name content="安全事件">
+<meta itemprop=description content="安全事件态势、告警列表、事情详情."><meta itemprop=datePublished content="2022-12-29T00:00:00+08:00">
+<meta itemprop=dateModified content="2023-01-07T00:58:17+08:00">
+<meta itemprop=wordCount content="1134">
+<meta itemprop=keywords content>
+</head><body class="ma0 sans-serif bg-primary-color-light
+production">
+<nav class="bg-primary-color-dark pv4 w-100" role=navigation>
+<div class="center flex-ns flex-wrap items-center justify-start mw9">
+<h1 class="dim f3 lh-solid ml0-ns mr0 mr4-l mv0 pl3 pl4-ns">
+<a href=https://abyssalfish-os.github.io/ class="link white">
+流影->FlowShadow
+</a>
+</h1><ul class="list ma0 pa0 dn dib-l" role=menu>
+<li class="f5 dib mr4" role=menuitem>
+<a href=/news/ class="dim link light-silver">
+新闻&博客
+</a>
+</li><li class="f5 dib mr4" role=menuitem>
+<a href=/documentation/ class="dim link light-silver">
+文档
+</a>
+</li><li class="f5 dib mr4" role=menuitem>
+<a href=/demo/ class="dim link light-silver">
+Demo演示
+</a>
+</li><li class="f5 dib mr4" role=menuitem>
+<a href=https://gitee.com/organizations/abyssalfish-os/projects class="dim link light-silver">
+Gitee
+<span class=pl1><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="10" height="10" viewBox="0 0 32 32" class="fill-current v-base" aria-label="External Link"><path d="M25.152 16.576v5.696q0 2.144-1.504 3.648T20 27.424H5.152q-2.144.0-3.648-1.504t-1.504-3.648V7.424q0-2.112 1.504-3.616t3.648-1.536h12.576q.224.0.384.16t.16.416V4q0 .256-.16.416t-.384.16H5.152q-1.184.0-2.016.832t-.864 2.016v14.848q0 1.184.864 2.016t2.016.864H20q1.184.0 2.016-.864t.832-2.016v-5.696q0-.256.16-.416t.416-.16h1.152q.256.0.416.16t.16.416zM32 1.152v9.12q0 .48-.352.8t-.8.352-.8-.352l-3.136-3.136-11.648 11.648q-.16.192-.416.192t-.384-.192l-2.048-2.048q-.192-.16-.192-.384t.192-.416L24.064 5.088l-3.136-3.136q-.352-.352-.352-.8t.352-.8.8-.352h9.12q.48.0.8.352t.352.8z"/></svg>
+</span>
+</a>
+</li><li class="f5 dib mr4" role=menuitem>
+<a href=https://github.com/orgs/Abyssal-Fish-Technology/repositories class="dim link light-silver">
+GitHub
+<span class=pl1><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="10" height="10" viewBox="0 0 32 32" class="fill-current v-base" aria-label="External Link"><path d="M25.152 16.576v5.696q0 2.144-1.504 3.648T20 27.424H5.152q-2.144.0-3.648-1.504t-1.504-3.648V7.424q0-2.112 1.504-3.616t3.648-1.536h12.576q.224.0.384.16t.16.416V4q0 .256-.16.416t-.384.16H5.152q-1.184.0-2.016.832t-.864 2.016v14.848q0 1.184.864 2.016t2.016.864H20q1.184.0 2.016-.864t.832-2.016v-5.696q0-.256.16-.416t.416-.16h1.152q.256.0.416.16t.16.416zM32 1.152v9.12q0 .48-.352.8t-.8.352-.8-.352l-3.136-3.136-11.648 11.648q-.16.192-.416.192t-.384-.192l-2.048-2.048q-.192-.16-.192-.384t.192-.416L24.064 5.088l-3.136-3.136q-.352-.352-.352-.8t.352-.8.8-.352h9.12q.48.0.8.352t.352.8z"/></svg>
+</span>
+</a>
+</li><li class="f5 dib mr4" role=menuitem>
+<a href=https://gitter.im/abyssalfish-os/community class="dim link light-silver">
+讨论区
+<span class=pl1><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="10" height="10" viewBox="0 0 32 32" class="fill-current v-base" aria-label="External Link"><path d="M25.152 16.576v5.696q0 2.144-1.504 3.648T20 27.424H5.152q-2.144.0-3.648-1.504t-1.504-3.648V7.424q0-2.112 1.504-3.616t3.648-1.536h12.576q.224.0.384.16t.16.416V4q0 .256-.16.416t-.384.16H5.152q-1.184.0-2.016.832t-.864 2.016v14.848q0 1.184.864 2.016t2.016.864H20q1.184.0 2.016-.864t.832-2.016v-5.696q0-.256.16-.416t.416-.16h1.152q.256.0.416.16t.16.416zM32 1.152v9.12q0 .48-.352.8t-.8.352-.8-.352l-3.136-3.136-11.648 11.648q-.16.192-.416.192t-.384-.192l-2.048-2.048q-.192-.16-.192-.384t.192-.416L24.064 5.088l-3.136-3.136q-.352-.352-.352-.8t.352-.8.8-.352h9.12q.48.0.8.352t.352.8z"/></svg>
+</span>
+</a>
+</li></ul><div class="db dib-ns pl3"><form id=site-search-form role=search>
+<fieldset class="bn ma0 pa0">
+<label class=clip for=search-input>Search</label>
+<input type=text id=search-input class="needs-js dn bn f5 lh-solid mt3 mt0-ns pl4 pv2 w5 white" placeholder="Welcome to FlowShadow" name=search-input style=background-color:rgba(255,255,255,0)>
+</fieldset></form></div></div></nav><main role=main class="content-with-sidebar min-vh-100 pb7 pb0-ns">
+<article class="w-100 ph4 pb5 pb6-ns pt1 pt5-ns">
+<div class=flex-l>
+<div class="order-2 w-100 w-20-l ph5-m ph0-l mb4 sticky">
+<aside class="fixed-lTK mw5-l right-0 f6 bl-l b--moon-gray pv4 pv0-ns ph4-l nested-list-reset nested-links nested-copy-line-height">
+<p class=b>What's on this Page</p><nav id=TableOfContents>
+<ul>
+<li><a href=#事件><strong>事件</strong></a></li><li><a href=#事件查询><strong>事件查询</strong></a></li><li><a href=#事件统计><strong>事件统计</strong></a></li><li><a href=#事件处置><strong>事件处置</strong></a></li><li><a href=#事件研判><strong>事件研判</strong></a></li></ul></nav><div date-pref>
+<a href=https://abyssalfish-os.github.io/user-manual/zhuizong/ class="dib f6 pl1 hover-bg-light-gray br-100" title="追踪功能 "><svg class="fill-current" height="30" viewBox="0 0 24 24" width="30" xmlns="http://www.w3.org/2000/svg"><path d="M15.41 7.41 14 6l-6 6 6 6 1.41-1.41L10.83 12z"/><path d="M0 0h24v24H0z" fill="none"/></svg>
+</a>
+<a href=https://abyssalfish-os.github.io/user-manual/yanpan/ class="dib f6 pr1 hover-bg-light-gray br-100" title=事件分析研判><svg class="fill-current" height="30" viewBox="0 0 24 24" width="30" xmlns="http://www.w3.org/2000/svg"><path d="M10 6 8.59 7.41 13.17 12l-4.58 4.59L10 18l6-6z"/><path d="M0 0h24v24H0z" fill="none"/></svg>
+</a>
+</div></aside></div><div class="order-1 w-60-l mw7 ph0 ph5-ns mid-gray nested-copy-line-height no-underline nested-links nested-img nested-copy-seperator nested-blockquote mt0-ns" style=flex-grow:1>
+<div class="documentation-copy center measure-wide-wd">
+<div id=readout class="fixed right-0 bottom-0">
+</div><header class="flex-none w-100">
+<a href=/categories/usage class="f6 fw8 mb0 link mid-gray dim mr3">
+USAGE
+</a>
+<a href=/categories/fundamentals class="f6 fw8 mb0 link mid-gray dim mr3">
+FUNDAMENTALS
+</a>
+<h1 class="lh-title mb3 mv0 pt3 primary-color-dark">安全事件</h1></header><aside class="bt bw1 pt3 mt2 mid-gray b--mid-gray fn w-100">
+<div class="f4 fw4 lh-copy">
+安全事件态势、告警列表、事情详情.
+</div></aside><div class=prose id=prose>
+<h2 id=事件><strong>事件</strong> <a class=header-link href=#%e4%ba%8b%e4%bb%b6><svg class="fill-current o-60 hover-accent-color-light" height="22" viewBox="0 0 24 24" width="22" xmlns="http://www.w3.org/2000/svg"><path d="M0 0h24v24H0z" fill="none"/><path d="M3.9 12c0-1.71 1.39-3.1 3.1-3.1h4V7H7c-2.76.0-5 2.24-5 5s2.24 5 5 5h4v-1.9H7c-1.71.0-3.1-1.39-3.1-3.1zM8 13h8v-2H8v2zm9-6h-4v1.9h4c1.71.0 3.1 1.39 3.1 3.1s-1.39 3.1-3.1 3.1h-4V17h4c2.76.0 5-2.24 5-5s-2.24-5-5-5z"/></svg></a></h2><p>流影【事件】页面是用来查看安全事件列表的，支持安全事件的查询、过滤、统计、处理等操作。可以通过导航进入此页面，也可以通过设备操作菜单中的“事件列表”进入到事件页面。</p><h2 id=事件查询><strong>事件查询</strong> <a class=header-link href=#%e4%ba%8b%e4%bb%b6%e6%9f%a5%e8%af%a2><svg class="fill-current o-60 hover-accent-color-light" height="22" viewBox="0 0 24 24" width="22" xmlns="http://www.w3.org/2000/svg"><path d="M0 0h24v24H0z" fill="none"/><path d="M3.9 12c0-1.71 1.39-3.1 3.1-3.1h4V7H7c-2.76.0-5 2.24-5 5s2.24 5 5 5h4v-1.9H7c-1.71.0-3.1-1.39-3.1-3.1zM8 13h8v-2H8v2zm9-6h-4v1.9h4c1.71.0 3.1 1.39 3.1 3.1s-1.39 3.1-3.1 3.1h-4V17h4c2.76.0 5-2.24 5-5s-2.24-5-5-5z"/></svg></a></h2><p>在页面右上方的控制栏中可以选择时间范围以及采集节点，点击刷新按钮后，就会加载对应的事件数据。对于所查询到的数据还可以进行下一步的筛选。</p><p><img src=/img/usage/Aspose.Words.4325b89e-3d42-4255-924b-c68f9f0e7d81.035.png alt></p><p>筛选表单支持以下操作：</p><ol>
+<li>文本输入类：输入条件后敲击“Enter”键，或者点击查询按钮。</li><li>标签选择类：
+<ol>
+<li>点击某一标签后选中，再次点击取消选中。</li><li>选中标签后，会在统计图表下方出现选择条件的汇总信息。可以通过点击“叉号”取消某个过滤条件。</li><li>点击某一条件的“全部”标签后，则该条件的其他标签全部取消选择。</li><li>选择类操作是即时生效的。</li></ol></li><li>图表选择：可以通过点击柱状图或环形图本身进行快速选择。</li><li>筛选表单的展开 / 收起。
+<ol>
+<li>点击“展开”展开筛选表单。</li><li>点击“收起”收起筛选表单。</li></ol></li><li>重置筛选：点击筛选表单下方的“重置”，或者筛选汇总的“重置”都可以重置表单。</li><li>设备查询切换
+<ol>
+<li>点击“精准查询”，切换至精准查询。</li><li>点击“模糊查询”，切换至模糊查询。</li></ol></li></ol><p>筛选条件支持以下条件：</p><table>
+<thead>
+<tr>
+<th style=text-align:center>条件</th><th>描述</th><th>类型</th></tr></thead><tbody>
+<tr>
+<td style=text-align:center>事件ID</td><td>系统分配的事件唯一标识。</td><td>输入</td></tr><tr>
+<td style=text-align:center>设备查询</td><td>模糊查询：可以过滤某设备的全部事件。</td><td>输入</td></tr><tr>
+<td style=text-align:center></td><td>精准查询：可以指定受害设备、攻击设备进行过滤。</td><td>输入</td></tr><tr>
+<td style=text-align:center>追踪目标</td><td>直接从列表中选取某个追踪目标，查看相关安全事件。</td><td>输入</td></tr><tr>
+<td style=text-align:center>事件级别</td><td>包括：全部、极高、高、中、低、极低。</td><td>选择</td></tr><tr>
+<td style=text-align:center>处理状态</td><td>包括：全部、极高、高、中、低、极低。</td><td>选择</td></tr><tr>
+<td style=text-align:center>活跃状态</td><td>包括：全部、活跃、不活跃。</td><td>选择</td></tr><tr>
+<td style=text-align:center>事件类型</td><td>包括：全部、现有安全事件数据的事件类型。</td><td>选择</td></tr><tr>
+<td style=text-align:center>详细类型</td><td>包括：全部、现有安全事件数据的详细类型。</td><td>选择</td></tr><tr>
+<td style=text-align:center>协议</td><td>包括：全部、TCP、UDP、ICMP。</td><td>选择</td></tr><tr>
+<td style=text-align:center>资产组</td><td>包括：全部、现有安全事件数据中设备所属的资产组。</td><td>选择</td></tr></tbody></table><h2 id=事件统计><strong>事件统计</strong> <a class=header-link href=#%e4%ba%8b%e4%bb%b6%e7%bb%9f%e8%ae%a1><svg class="fill-current o-60 hover-accent-color-light" height="22" viewBox="0 0 24 24" width="22" xmlns="http://www.w3.org/2000/svg"><path d="M0 0h24v24H0z" fill="none"/><path d="M3.9 12c0-1.71 1.39-3.1 3.1-3.1h4V7H7c-2.76.0-5 2.24-5 5s2.24 5 5 5h4v-1.9H7c-1.71.0-3.1-1.39-3.1-3.1zM8 13h8v-2H8v2zm9-6h-4v1.9h4c1.71.0 3.1 1.39 3.1 3.1s-1.39 3.1-3.1 3.1h-4V17h4c2.76.0 5-2.24 5-5s-2.24-5-5-5z"/></svg></a></h2><p>事件统计从威胁来源排行、受害目标排行、事件类型分布三个维度对安全事件数据进行统计。</p><p>统计模块支持以下操作：</p><ol>
+<li>筛选设备：点击柱状图的柱体，系统仅展示该设备的事件数据。</li><li>筛选类型：点击环形图的环体，系统仅展示该类型的事件数据。</li><li>事件类型统计：将鼠标移动至对应的柱体上，界面会出现如下的提示框。</li><li>设备操作：点击对应的设备名称。出现设备操作菜单。</li></ol><h2 id=事件处置><strong>事件处置</strong> <a class=header-link href=#%e4%ba%8b%e4%bb%b6%e5%a4%84%e7%bd%ae><svg class="fill-current o-60 hover-accent-color-light" height="22" viewBox="0 0 24 24" width="22" xmlns="http://www.w3.org/2000/svg"><path d="M0 0h24v24H0z" fill="none"/><path d="M3.9 12c0-1.71 1.39-3.1 3.1-3.1h4V7H7c-2.76.0-5 2.24-5 5s2.24 5 5 5h4v-1.9H7c-1.71.0-3.1-1.39-3.1-3.1zM8 13h8v-2H8v2zm9-6h-4v1.9h4c1.71.0 3.1 1.39 3.1 3.1s-1.39 3.1-3.1 3.1h-4V17h4c2.76.0 5-2.24 5-5s-2.24-5-5-5z"/></svg></a></h2><p>事件处置是通过处置操作改变事件的处置状态，从而实现对安全事件的运维管理。事件共有未处理、已确认、已处理三种状态，对应确认、处理、激活三种操作。</p><p><img src=/img/usage/Aspose.Words.4325b89e-3d42-4255-924b-c68f9f0e7d81.039.png alt></p><ul>
+<li>快速处理：点击事件表格中某条安全数据的处理状态单元格（倒数第二列），弹出操作弹窗。选择对应操作。</li></ul><p><img src=/img/usage/Aspose.Words.4325b89e-3d42-4255-924b-c68f9f0e7d81.040.png alt></p><ul>
+<li>批量处理：在事件表格中选中多条安全事件。投个上面会出现批量处理按钮。</li></ul><p><img src=/img/usage/Aspose.Words.4325b89e-3d42-4255-924b-c68f9f0e7d81.041.png alt></p><h2 id=事件研判><strong>事件研判</strong> <a class=header-link href=#%e4%ba%8b%e4%bb%b6%e7%a0%94%e5%88%a4><svg class="fill-current o-60 hover-accent-color-light" height="22" viewBox="0 0 24 24" width="22" xmlns="http://www.w3.org/2000/svg"><path d="M0 0h24v24H0z" fill="none"/><path d="M3.9 12c0-1.71 1.39-3.1 3.1-3.1h4V7H7c-2.76.0-5 2.24-5 5s2.24 5 5 5h4v-1.9H7c-1.71.0-3.1-1.39-3.1-3.1zM8 13h8v-2H8v2zm9-6h-4v1.9h4c1.71.0 3.1 1.39 3.1 3.1s-1.39 3.1-3.1 3.1h-4V17h4c2.76.0 5-2.24 5-5s-2.24-5-5-5z"/></svg></a></h2><p>事件列表仅提供安全事件的结果信息，如果想要查看某条事件更多详细信息，确定事件性质。可以通过点击该事件最右侧的ID列，跳转至事件研判页面。</p><p><img src=/img/usage/Aspose.Words.4325b89e-3d42-4255-924b-c68f9f0e7d81.042.png alt></p></div><h2>See Also</h2><ul>
+<li><a href=/user-manual/yanpan/>事件分析研判</a></li><li><a href=/user-manual/zonglan/>态势总览</a></li><li><a href=/user-manual/zhuizong/>追踪功能</a></li><li><a href=/user-manual/basic-setting/>基础配置</a></li><li><a href=/getting-started/usage/>用户界面</a></li></ul></div></div><div class="order-0 w-20 dn db-l">
+<nav role=navigation>
+<ul class="list pa0 nl2">
+<li class="f5 w-100 hover-bg-light-gray hover-accent-color-light fw8">
+<a href=javascript:void(0) class="js-toggle dib w-100 link mid-gray hover-accent-color-light pl2 pr2 pv2" data-target=.about>关于流影</a>
+<ul class="about desktopmenu animated fadeIn list pl0 bg-light-gray dn">
+<li class="f6 fw4">
+<a href=/about/ class="db link hover-bg-gray hover-white pl3 pr2 pv2 black">
+概览
+</a>
+</li><li class="f6 fw4">
+<a href=/about/what-is-liuying/ class="db link hover-bg-gray hover-white pl3 pr2 pv2 black">
+简介
+</a>
+</li><li class="f6 fw4">
+<a href=/about/structure/ class="db link hover-bg-gray hover-white pl3 pr2 pv2 black">
+架构
+</a>
+</li><li class="f6 fw4">
+<a href=/about/license/ class="db link hover-bg-gray hover-white pl3 pr2 pv2 black">
+开源协议
+</a>
+</li></ul></li><li class="f5 w-100 hover-bg-light-gray hover-accent-color-light fw8">
+<a href=javascript:void(0) class="js-toggle dib w-100 link mid-gray hover-accent-color-light pl2 pr2 pv2" data-target=.getting-started>快速开始</a>
+<ul class="getting-started desktopmenu animated fadeIn list pl0 bg-light-gray dn">
+<li class="f6 fw4">
+<a href=/getting-started/ class="db link hover-bg-gray hover-white pl3 pr2 pv2 black">
+入门概览
+</a>
+</li><li class="f6 fw4">
+<a href=/getting-started/quick-start/ class="db link hover-bg-gray hover-white pl3 pr2 pv2 black">
+快速上手
+</a>
+</li><li class="f6 fw4">
+<a href=/getting-started/usage/ class="db link hover-bg-gray hover-white pl3 pr2 pv2 black">
+界面使用
+</a>
+</li><li class="f6 fw4">
+<a href=/getting-started/deploy-required/ class="db link hover-bg-gray hover-white pl3 pr2 pv2 black">
+部署环境
+</a>
+</li></ul></li><li class="f5 w-100 hover-bg-light-gray hover-accent-color-light fw8">
+<a href=javascript:void(0) class="js-toggle dib w-100 link mid-gray hover-accent-color-light pl2 pr2 pv2" data-target=.installation>编译安装</a>
+<ul class="installation desktopmenu animated fadeIn list pl0 bg-light-gray dn">
+<li class="f6 fw4">
+<a href=/installation/ class="db link hover-bg-gray hover-white pl3 pr2 pv2 black">
+编译安装概览
+</a>
+</li><li class="f6 fw4">
+<a href=/installation/ly_probe/ class="db link hover-bg-gray hover-white pl3 pr2 pv2 black">
+流量探针
+</a>
+</li><li class="f6 fw4">
+<a href=/installation/ly_analyser/ class="db link hover-bg-gray hover-white pl3 pr2 pv2 black">
+分析引擎
+</a>
+</li><li class="f6 fw4">
+<a href=/installation/ly_server/ class="db link hover-bg-gray hover-white pl3 pr2 pv2 black">
+管理引擎
+</a>
+</li><li class="f6 fw4">
+<a href=/installation/ly_vis/ class="db link hover-bg-gray hover-white pl3 pr2 pv2 black">
+可视化交互界面
+</a>
+</li></ul></li><li class="f5 w-100 hover-bg-light-gray hover-accent-color-light fw8">
+<a href=javascript:void(0) class="js-toggle dib w-100 link mid-gray hover-accent-color-light pl2 pr2 pv2 primary-color" data-target=.user-manual>用户手册</a>
+<ul class="user-manual desktopmenu animated fadeIn list pl0 bg-light-gray db">
+<li class="f6 fw4">
+<a href=/user-manual/ class="db link hover-bg-gray hover-white pl3 pr2 pv2 black">
+手册概览
+</a>
+</li><li class="f6 fw4">
+<a href=/user-manual/login/ class="db link hover-bg-gray hover-white pl3 pr2 pv2 black">
+登录系统
+</a>
+</li><li class="f6 fw4">
+<a href=/user-manual/basic-setting/ class="db link hover-bg-gray hover-white pl3 pr2 pv2 black">
+基本配置
+</a>
+</li><li class="f6 fw4">
+<a href=/user-manual/zonglan/ class="db link hover-bg-gray hover-white pl3 pr2 pv2 black">
+态势总览
+</a>
+</li><li class="f6 fw4">
+<a href=/user-manual/shijian/ class="db link hover-bg-gray hover-white pl3 pr2 pv2 primary-color">
+事件告警
+</a>
+</li><li class="f6 fw4">
+<a href=/user-manual/yanpan/ class="db link hover-bg-gray hover-white pl3 pr2 pv2 black">
+分析研判
+</a>
+</li><li class="f6 fw4">
+<a href=/user-manual/zhuizong/ class="db link hover-bg-gray hover-white pl3 pr2 pv2 black">
+追踪功能
+</a>
+</li><li class="f6 fw4">
+<a href=/user-manual/peizhi/ class="db link hover-bg-gray hover-white pl3 pr2 pv2 black">
+系统配置
+</a>
+</li></ul></li><li class="f5 w-100 hover-bg-light-gray hover-accent-color-light fw8">
+<a href=/demo/ class="js-toggle dib w-100 link mid-gray hover-accent-color-light pl2 pr2 pv2" data-target=.demo>演示Demo</a>
+</li><li class="f5 w-100 hover-bg-light-gray hover-accent-color-light fw8 mb1 bb b--moon-gray">
+<a href=javascript:void(0) class="js-toggle dib w-100 link mid-gray hover-accent-color-light pl2 pr2 pv2" data-target=.contribute>欢迎贡献</a>
+<ul class="contribute desktopmenu animated fadeIn list pl0 bg-light-gray dn">
+<li class="f6 fw4">
+<a href=/contribute/ class="db link hover-bg-gray hover-white pl3 pr2 pv2 black">
+参与贡献
+</a>
+</li><li class="f6 fw4">
+<a href=/contribute/development/ class="db link hover-bg-gray hover-white pl3 pr2 pv2 black">
+参与开发
+</a>
+</li><li class="f6 fw4">
+<a href=/contribute/documentation/ class="db link hover-bg-gray hover-white pl3 pr2 pv2 black">
+完善文档
+</a>
+</li></ul></li></ul></nav></div></div></article><div class="w-100 bg-light-gray">
+<div class="mw7 pa4 center nested-lh-copy lh-copy">
+<h6 class="f6 dark-gray mb2">
+Last updated: January 7, 2023: <a class="hide-child link primary-color" href=https://github.com/Abyssal-Fish-Technology/ly_docs/commit/169ab8209f8669c9c099b99b25f900aa8362e6a9>init (169ab82)</a>
+</h6><a href=https://github.com/Abyssal-Fish-Technology/ly_docs/edit/master/content/user-manual/shijian/index.md class="f6 ph3 pv1 br2 dib tc ttu mv3 bg-primary-color white hover-bg-green link">Improve this page</a>
+</div></div></main><footer class="bg-primary-color-dark ph4-ns pt4 relative w-100" role=contentinfo>
+<div class="center flex-ns flex-wrap justify-between mw9 w-90">
+<div class="center pb3 pt4">
+<div class="b f3 light-gray mb3 nested-links tc">
+流影由 <a href=https://github.com/orgs/Abyssal-Fish-Technology class=link>深海鱼（北京）科技有限公司 </a>发起开源和维护，欢迎参与<br>
+</div><ul class="center f6 list ma0 mv4 pa0 tc">
+<li class="dib mr3"><a href=https://github.com/Abyssal-Fish-Technology/ly_vis class="dim link light-gray pv2">可视化交互分析(ly_vis)</a></li><li class="dib mr3"><a href=https://github.com/Abyssal-Fish-Technology/ly_server class="dim link light-gray pv2">管理引擎(ly_server)</a></li><li class=dib><a href=https://github.com/Abyssal-Fish-Technology/ly_analyser class="dim link light-gray pv2">分析引擎(ly_analyser)</a></li><li class=dib><a href=https://github.com/Abyssal-Fish-Technology/ly_probe class="dim link light-gray pv2"> &nbsp;&nbsp;&nbsp;&nbsp;流量探针(ly_probe)</a></li></ul><ul class="center f6 list ma0 mv3 pa0 tc"><li class="dib mr3"><a href=https://github.com/abyssalfish-os/liuying/issues/new class="dim link light-gray pv2">到 Github 发起 Issue</a></li><li class=dib><a href=https://gitter.im/abyssalfish-os/community class="dim link light-gray pv2">来 Gitter 沟通留言</a></li></ul></div></div><div class="bg-primary-color-dark bottom-0 left-0 right-0 dn-l fixed pb3 ph3 pt3 z-2"><div class="globalmenu mobilemenu pb1 dn">
+<ul class="list hidden dib ph0 scrolling-touch tc">
+<li class="tl dib ma0 hover-bg-black w-100">
+<a href=/news/ class="ttu f6 link primary-color-light overflow hover-white db brand-font ma0 w-100 pv3 ph4">
+新闻&博客
+</a>
+</li><li class="tl dib ma0 hover-bg-black w-100">
+<a href=/documentation/ class="ttu f6 link primary-color-light overflow hover-white db brand-font ma0 w-100 pv3 ph4">
+文档
+</a>
+</li><li class="tl dib ma0 hover-bg-black w-100">
+<a href=/demo/ class="ttu f6 link primary-color-light overflow hover-white db brand-font ma0 w-100 pv3 ph4">
+Demo演示
+</a>
+</li><li class="tl dib ma0 hover-bg-black w-100">
+<a href=https://gitee.com/organizations/abyssalfish-os/projects class="ttu f6 link primary-color-light overflow hover-white db brand-font ma0 w-100 pv3 ph4">
+Gitee
+</a>
+</li><li class="tl dib ma0 hover-bg-black w-100">
+<a href=https://github.com/orgs/Abyssal-Fish-Technology/repositories class="ttu f6 link primary-color-light overflow hover-white db brand-font ma0 w-100 pv3 ph4">
+GitHub
+</a>
+</li><li class="tl dib ma0 hover-bg-black w-100">
+<a href=https://gitter.im/abyssalfish-os/community class="ttu f6 link primary-color-light overflow hover-white db brand-font ma0 w-100 pv3 ph4">
+讨论区
+</a>
+</li></ul></div><div class="docsmenu mobilemenu pb1 dn">
+<ul class="list dib ph0 scrolling-touch tc">
+<li class="tl dib ma0 hover-bg-black w-100">
+<a href=/about/ class="ttu f6 link primary-color-light hover-white db brand-font mb1 ma0 w-100 pv2 ph4">
+关于流影
+</a>
+</li><li class="tl dib ma0 hover-bg-black w-100">
+<a href=/getting-started/ class="ttu f6 link primary-color-light hover-white db brand-font mb1 ma0 w-100 pv2 ph4">
+快速开始
+</a>
+</li><li class="tl dib ma0 hover-bg-black w-100">
+<a href=/installation/ class="ttu f6 link primary-color-light hover-white db brand-font mb1 ma0 w-100 pv2 ph4">
+编译安装
+</a>
+</li><li class="tl dib ma0 hover-bg-black w-100">
+<a href=/user-manual/ class="ttu f6 link primary-color-light hover-white db brand-font mb1 ma0 w-100 pv2 ph4">
+用户手册
+</a>
+</li><li class="tl dib ma0 hover-bg-black w-100">
+<a href=/demo/ class="ttu f6 link primary-color-light hover-white db brand-font mb1 ma0 w-100 pv2 ph4">
+演示Demo
+</a>
+</li><li class="tl dib ma0 hover-bg-black w-100 mb2 bb b--mid-gray">
+<a href=/contribute/ class="ttu f6 link primary-color-light hover-white db brand-font mb1 ma0 w-100 pv2 ph4">
+欢迎贡献
+</a>
+</li></ul></div><div class="flex dn-l justify-between">
+<button class="js-toggle flex-auto dib dn-l f6 tc db ph3 pv2 link mr2 white bg-primary-color-dark hover-bg-primary-color ba b--white-40 w-auto" data-target=.globalmenu>Menu</button>
+<button class="js-toggle flex-auto dib dn-l f6 tc db ph3 pv2 link white bg-primary-color-dark hover-bg-primary-color ba b--white-40 w-auto" data-target=.docsmenu>Docs Menu</button>
+</div></div></footer></body></html>

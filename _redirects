@@ -1,0 +1,31 @@
+# Netlify redirects. See https://www.netlify.com/docs/redirects/
+
+/tutorials/how-to-contribute/      	/contribute/
+/community/contributing/           	/contribute/
+/about-liuying/                    	/about/
+/docs/                             	/about/
+/content/manual                    	/user-manual/
+/content/usage                     	/user-manual/
+/overview/introduction/            	/getting-started/
+/quickstart/                       	/getting-started/quick-start/
+/overview/quickstart/              	/getting-started/quick-start/
+/overview/introduction/            	/about/what-is-liuying/
+/about/why-liuying/                	/about/what-is-liuying/
+/contribute/docs/                  	/contribute/documentation/
+/content/user-login/               	/user-manual/login/
+/overview/usage/                   	/getting-started/usage/
+/extras/livereload/                	/getting-started/usage/
+/doc/usage/                        	/getting-started/usage/
+/usage/                            	/getting-started/usage/
+/overview/deploy/                  	/getting-started/deploy-required/
+/meta/license                      	/about/license/
+/content/usage/peizhi/             	/user-manual/peizhi/
+/content/usage/zhuizong/           	/user-manual/zhuizong/
+/content/usage/shijian/            	/user-manual/shijian/
+/content/usage/yanpan/             	/user-manual/yanpan/
+/content/basic-setting/            	/user-manual/basic-setting/
+/content/usage/zonglan             	/user-manual/zonglan/
+/demo/                             	/demo/
+/overview/demo/                    	/demo/
+/release-notes/                    	/news/
+/getting-started/installing/       	/installation/
