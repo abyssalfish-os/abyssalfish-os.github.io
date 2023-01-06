@@ -31,10 +31,10 @@
 <meta property="og:type" content="article">
 <meta property="og:url" content="https://abyssalfish-os.github.io/contribute/documentation/"><meta property="og:image" content="https://abyssalfish-os.github.io/opengraph/gohugoio-card-base-1_huf001e7df4fd9c00c4355abac7d4ca455_242906_filter_18431263501596343871.png"><meta property="article:section" content="contribute">
 <meta property="article:published_time" content="2022-12-29T00:00:00+08:00">
-<meta property="article:modified_time" content="2023-01-07T00:58:17+08:00">
+<meta property="article:modified_time" content="2023-01-07T01:40:35+08:00">
 <meta itemprop=name content="帮助完善项目文档 Docs">
 <meta itemprop=description content="文档是开源项目重要组成部分，流影文档还在不断丰富完善中，欢迎改善文档."><meta itemprop=datePublished content="2022-12-29T00:00:00+08:00">
-<meta itemprop=dateModified content="2023-01-07T00:58:17+08:00">
+<meta itemprop=dateModified content="2023-01-07T01:40:35+08:00">
 <meta itemprop=wordCount content="225">
 <meta itemprop=keywords content>
 </head><body class="ma0 sans-serif bg-primary-color-light
@@ -102,7 +102,7 @@ CONTRIBUTE
 文档是开源项目重要组成部分，流影文档还在不断丰富完善中，欢迎改善文档.
 </div></aside><div class=prose id=prose>
 <h2 id=fork-流影文档>Fork 流影文档 <a class=header-link href=#fork-%e6%b5%81%e5%bd%b1%e6%96%87%e6%a1%a3><svg class="fill-current o-60 hover-accent-color-light" height="22" viewBox="0 0 24 24" width="22" xmlns="http://www.w3.org/2000/svg"><path d="M0 0h24v24H0z" fill="none"/><path d="M3.9 12c0-1.71 1.39-3.1 3.1-3.1h4V7H7c-2.76.0-5 2.24-5 5s2.24 5 5 5h4v-1.9H7c-1.71.0-3.1-1.39-3.1-3.1zM8 13h8v-2H8v2zm9-6h-4v1.9h4c1.71.0 3.1 1.39 3.1 3.1s-1.39 3.1-3.1 3.1h-4V17h4c2.76.0 5-2.24 5-5s-2.24-5-5-5z"/></svg></a></h2><p>最好在本地进行文档改善工作。</p><ul>
-<li>首先在Github中Fork流影文档 <a href=https://github.com/Abyssal-Fish-Technology/ly_docs>ly_docs</a></li><li>Clone项目到本地，参见<a href=https://help.github.com/articles/fork-a-repo/>GitHub&rsquo;s documentation on &ldquo;forking&rdquo;</a></li><li>本地创建分支进行文档完善工作</li></ul><div class=highlight><pre tabindex=0 class=chroma><code class=language-txt data-lang=txt><span class=line><span class=cl>git checkout -b doc-revised
+<li>首先在Github中Fork流影文档 <a href=https://github.com/abyssalfish-os/abyssalfish-os.github.io>ly_docs</a></li><li>Clone项目到本地，参见<a href=https://help.github.com/articles/fork-a-repo/>GitHub&rsquo;s documentation on &ldquo;forking&rdquo;</a></li><li>本地创建分支进行文档完善工作</li></ul><div class=highlight><pre tabindex=0 class=chroma><code class=language-txt data-lang=txt><span class=line><span class=cl>git checkout -b doc-revised
 </span></span></code></pre></div><h2 id=文档改善>文档改善 <a class=header-link href=#%e6%96%87%e6%a1%a3%e6%94%b9%e5%96%84><svg class="fill-current o-60 hover-accent-color-light" height="22" viewBox="0 0 24 24" width="22" xmlns="http://www.w3.org/2000/svg"><path d="M0 0h24v24H0z" fill="none"/><path d="M3.9 12c0-1.71 1.39-3.1 3.1-3.1h4V7H7c-2.76.0-5 2.24-5 5s2.24 5 5 5h4v-1.9H7c-1.71.0-3.1-1.39-3.1-3.1zM8 13h8v-2H8v2zm9-6h-4v1.9h4c1.71.0 3.1 1.39 3.1 3.1s-1.39 3.1-3.1 3.1h-4V17h4c2.76.0 5-2.24 5-5s-2.24-5-5-5z"/></svg></a></h2><p>流影文档使用 <a href=https://github.com/gohugoio/hugoDocs>hugoDocs</a> 样式，使用Hugo生成项目文档，具体信息请参考其使用文档。</p><h3 id=创建文档新内容>创建文档新内容 <a class=header-link href=#%e5%88%9b%e5%bb%ba%e6%96%87%e6%a1%a3%e6%96%b0%e5%86%85%e5%ae%b9><svg class="fill-current o-60 hover-accent-color-light" height="22" viewBox="0 0 24 24" width="22" xmlns="http://www.w3.org/2000/svg"><path d="M0 0h24v24H0z" fill="none"/><path d="M3.9 12c0-1.71 1.39-3.1 3.1-3.1h4V7H7c-2.76.0-5 2.24-5 5s2.24 5 5 5h4v-1.9H7c-1.71.0-3.1-1.39-3.1-3.1zM8 13h8v-2H8v2zm9-6h-4v1.9h4c1.71.0 3.1 1.39 3.1 3.1s-1.39 3.1-3.1 3.1h-4V17h4c2.76.0 5-2.24 5-5s-2.24-5-5-5z"/></svg></a></h3><div class=highlight><pre tabindex=0 class=chroma><code class=language-txt data-lang=txt><span class=line><span class=cl>hugo new &lt;DOCS-SECTION&gt;/&lt;new-content&gt;.md
 </span></span></code></pre></div><h3 id=编辑文档>编辑文档 <a class=header-link href=#%e7%bc%96%e8%be%91%e6%96%87%e6%a1%a3><svg class="fill-current o-60 hover-accent-color-light" height="22" viewBox="0 0 24 24" width="22" xmlns="http://www.w3.org/2000/svg"><path d="M0 0h24v24H0z" fill="none"/><path d="M3.9 12c0-1.71 1.39-3.1 3.1-3.1h4V7H7c-2.76.0-5 2.24-5 5s2.24 5 5 5h4v-1.9H7c-1.71.0-3.1-1.39-3.1-3.1zM8 13h8v-2H8v2zm9-6h-4v1.9h4c1.71.0 3.1 1.39 3.1 3.1s-1.39 3.1-3.1 3.1h-4V17h4c2.76.0 5-2.24 5-5s-2.24-5-5-5z"/></svg></a></h3><p>在<code>content</code>目录下找到对需要改善的文档md，修改内容即可。</p><h2 id=反馈方式>反馈方式 <a class=header-link href=#%e5%8f%8d%e9%a6%88%e6%96%b9%e5%bc%8f><svg class="fill-current o-60 hover-accent-color-light" height="22" viewBox="0 0 24 24" width="22" xmlns="http://www.w3.org/2000/svg"><path d="M0 0h24v24H0z" fill="none"/><path d="M3.9 12c0-1.71 1.39-3.1 3.1-3.1h4V7H7c-2.76.0-5 2.24-5 5s2.24 5 5 5h4v-1.9H7c-1.71.0-3.1-1.39-3.1-3.1zM8 13h8v-2H8v2zm9-6h-4v1.9h4c1.71.0 3.1 1.39 3.1 3.1s-1.39 3.1-3.1 3.1h-4V17h4c2.76.0 5-2.24 5-5s-2.24-5-5-5z"/></svg></a></h2><ul>
 <li>联系邮箱：<a href=mailto:opensource@abyssalfish.com.cn>opensource@abyssalfish.com.cn</a></li><li>线上讨论区：<a href="https://gitter.im/abyssalfish-os/community?utm_source=share-link&utm_medium=link&utm_campaign=share-link">去Gitter沟通群</a></li></ul></div></div></div><div class="order-0 w-20 dn db-l">
@@ -224,8 +224,8 @@ CONTRIBUTE
 </li></ul></li></ul></nav></div></div></article><div class="w-100 bg-light-gray">
 <div class="mw7 pa4 center nested-lh-copy lh-copy">
 <h6 class="f6 dark-gray mb2">
-Last updated: January 7, 2023: <a class="hide-child link primary-color" href=https://github.com/Abyssal-Fish-Technology/ly_docs/commit/169ab8209f8669c9c099b99b25f900aa8362e6a9>init (169ab82)</a>
-</h6><a href=https://github.com/Abyssal-Fish-Technology/ly_docs/edit/master/content/contribute/documentation.md class="f6 ph3 pv1 br2 dib tc ttu mv3 bg-primary-color white hover-bg-green link">Improve this page</a>
+Last updated: January 7, 2023: <a class="hide-child link primary-color" href=#ZgotmplZcommit/0885a0ad32a69aafb97841b9404b0544efcd314f>update url (0885a0a)</a>
+</h6><a href=#ZgotmplZedit/master/content/contribute/documentation.md class="f6 ph3 pv1 br2 dib tc ttu mv3 bg-primary-color white hover-bg-green link">Improve this page</a>
 </div></div></main><footer class="bg-primary-color-dark ph4-ns pt4 relative w-100" role=contentinfo>
 <div class="center flex-ns flex-wrap justify-between mw9 w-90">
 <div class="center pb3 pt4">
