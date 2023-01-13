@@ -31,11 +31,11 @@
 <meta property="og:type" content="article">
 <meta property="og:url" content="https://abyssalfish-os.github.io/news/ti/"><meta property="og:image" content="https://abyssalfish-os.github.io/opengraph/gohugoio-card-base-1_huf001e7df4fd9c00c4355abac7d4ca455_242906_filter_15022162365263349250.png"><meta property="article:section" content="news">
 <meta property="article:published_time" content="2023-01-13T00:00:00+08:00">
-<meta property="article:modified_time" content="2023-01-13T15:02:31+08:00">
+<meta property="article:modified_time" content="2023-01-13T15:21:32+08:00">
 <meta itemprop=name content="威胁情报在流影中的实践应用">
 <meta itemprop=description content="流影结合威胁情报，相辅相成，达到更好的安全防护效果。"><meta itemprop=datePublished content="2023-01-13T00:00:00+08:00">
-<meta itemprop=dateModified content="2023-01-13T15:02:31+08:00">
-<meta itemprop=wordCount content="5732">
+<meta itemprop=dateModified content="2023-01-13T15:21:32+08:00">
+<meta itemprop=wordCount content="5721">
 <meta itemprop=keywords content>
 </head><body class="ma0 sans-serif bg-primary-color-light
 production">
@@ -159,7 +159,7 @@ and analyzed to understand a threat actor&rsquo;s motives, targets, and attack b
 人读情报一般是文章、报告或者安全事件摘要等，供人工查阅研判使用。
 按照情报时效性，可以分为活跃情报和情报档案（信誉库、知识库）。
 其中活跃情报是指正在或者潜在导致威胁发生的情报，供实时检测和响应使用；
-情报档案是归档后的数据集，供查询分析使用。</p><h3 id=威胁情报相关标准>威胁情报相关标准 <a class=header-link href=#%e5%a8%81%e8%83%81%e6%83%85%e6%8a%a5%e7%9b%b8%e5%85%b3%e6%a0%87%e5%87%86><svg class="fill-current o-60 hover-accent-color-light" height="22" viewBox="0 0 24 24" width="22" xmlns="http://www.w3.org/2000/svg"><path d="M0 0h24v24H0z" fill="none"/><path d="M3.9 12c0-1.71 1.39-3.1 3.1-3.1h4V7H7c-2.76.0-5 2.24-5 5s2.24 5 5 5h4v-1.9H7c-1.71.0-3.1-1.39-3.1-3.1zM8 13h8v-2H8v2zm9-6h-4v1.9h4c1.71.0 3.1 1.39 3.1 3.1s-1.39 3.1-3.1 3.1h-4V17h4c2.76.0 5-2.24 5-5s-2.24-5-5-5z"/></svg></a></h3><p>威胁情报通过广泛扩散使用才能使其价值最大化，发挥出最大的作用。
+情报档案是归档后的数据集，供查询分析使用。</p><h3 id=威胁情报相关标准>威胁情报相关标准 <a class=header-link href=#%e5%a8%81%e8%83%81%e6%83%85%e6%8a%a5%e7%9b%b8%e5%85%b3%e6%a0%87%e5%87%86><svg class="fill-current o-60 hover-accent-color-light" height="22" viewBox="0 0 24 24" width="22" xmlns="http://www.w3.org/2000/svg"><path d="M0 0h24v24H0z" fill="none"/><path d="M3.9 12c0-1.71 1.39-3.1 3.1-3.1h4V7H7c-2.76.0-5 2.24-5 5s2.24 5 5 5h4v-1.9H7c-1.71.0-3.1-1.39-3.1-3.1zM8 13h8v-2H8v2zm9-6h-4v1.9h4c1.71.0 3.1 1.39 3.1 3.1s-1.39 3.1-3.1 3.1h-4V17h4c2.76.0 5-2.24 5-5s-2.24-5-5-5z"/></svg></a></h3><p>威胁情报通过广泛扩散使用才能使其价值最大化。
 威胁情报的扩散使用，需要各种行业、组织用户的广泛参与和情报交换共享。
 情报的共享交换的基础，是建立在情报格式标准规范化及有效共享交换机制基础之上的。
 下图列出一些威胁情报相关的国内外主要相关的标准规范。</p><p><img src=./ti_bz.png alt=相关标准></p><p>威胁情报标准化和共享机制，目前国外已经比较成熟，国内也在逐步完善之中。
@@ -179,9 +179,9 @@ Trusted Automated eXchange of Indicator Information <a href=https://taxiiproject
 可以看出威胁信息共享交换的相关标准规范也在制定当中。
 从实际应用情况来看，我们的直观感受是国内威胁情报共享交换落地尚处于实践探索阶段，
 相关标准有待于进一步迭代完善。
-国内威胁情报厂商支持的情报格式以自定义格式居多，少部分部分支持国标，
+国内威胁情报厂商支持的情报格式以自定义格式居多，少部分支持国标，
 但是各厂商的具体实现落地差异性较大，不太统一；
-为了与国际接轨，也有部分厂商的威胁情报支持STIX系列标准规范。</p><p>当前流影开源版已经实现威胁情报自定义格式的接入和查询，后续规划中考虑增加对国标和国外标准的接入和查询功能。</p><h2 id=流影中应用威胁情报>流影中应用威胁情报 <a class=header-link href=#%e6%b5%81%e5%bd%b1%e4%b8%ad%e5%ba%94%e7%94%a8%e5%a8%81%e8%83%81%e6%83%85%e6%8a%a5><svg class="fill-current o-60 hover-accent-color-light" height="22" viewBox="0 0 24 24" width="22" xmlns="http://www.w3.org/2000/svg"><path d="M0 0h24v24H0z" fill="none"/><path d="M3.9 12c0-1.71 1.39-3.1 3.1-3.1h4V7H7c-2.76.0-5 2.24-5 5s2.24 5 5 5h4v-1.9H7c-1.71.0-3.1-1.39-3.1-3.1zM8 13h8v-2H8v2zm9-6h-4v1.9h4c1.71.0 3.1 1.39 3.1 3.1s-1.39 3.1-3.1 3.1h-4V17h4c2.76.0 5-2.24 5-5s-2.24-5-5-5z"/></svg></a></h2><p>当前开源流影版本支持部分自定义格式的威胁情报接入，
+为了与国际接轨，也有部分厂商的威胁情报支持STIX系列标准规范。</p><p>当前流影开源版已经实现威胁情报自定义格式的接入和查询，后续规划中考虑增加对国内外标准规范的接入和查询功能。</p><h2 id=流影中应用威胁情报>流影中应用威胁情报 <a class=header-link href=#%e6%b5%81%e5%bd%b1%e4%b8%ad%e5%ba%94%e7%94%a8%e5%a8%81%e8%83%81%e6%83%85%e6%8a%a5><svg class="fill-current o-60 hover-accent-color-light" height="22" viewBox="0 0 24 24" width="22" xmlns="http://www.w3.org/2000/svg"><path d="M0 0h24v24H0z" fill="none"/><path d="M3.9 12c0-1.71 1.39-3.1 3.1-3.1h4V7H7c-2.76.0-5 2.24-5 5s2.24 5 5 5h4v-1.9H7c-1.71.0-3.1-1.39-3.1-3.1zM8 13h8v-2H8v2zm9-6h-4v1.9h4c1.71.0 3.1 1.39 3.1 3.1s-1.39 3.1-3.1 3.1h-4V17h4c2.76.0 5-2.24 5-5s-2.24-5-5-5z"/></svg></a></h2><p>当前开源流影版本支持部分自定义格式的威胁情报接入，
 集成实现了基于威胁情报的威胁行为检测告警、威胁分析、情报生产等方面的功能。</p><h3 id=流影不只是消费威胁情报也可以生产威胁情报>流影不只是消费威胁情报，也可以生产威胁情报 <a class=header-link href=#%e6%b5%81%e5%bd%b1%e4%b8%8d%e5%8f%aa%e6%98%af%e6%b6%88%e8%b4%b9%e5%a8%81%e8%83%81%e6%83%85%e6%8a%a5%e4%b9%9f%e5%8f%af%e4%bb%a5%e7%94%9f%e4%ba%a7%e5%a8%81%e8%83%81%e6%83%85%e6%8a%a5><svg class="fill-current o-60 hover-accent-color-light" height="22" viewBox="0 0 24 24" width="22" xmlns="http://www.w3.org/2000/svg"><path d="M0 0h24v24H0z" fill="none"/><path d="M3.9 12c0-1.71 1.39-3.1 3.1-3.1h4V7H7c-2.76.0-5 2.24-5 5s2.24 5 5 5h4v-1.9H7c-1.71.0-3.1-1.39-3.1-3.1zM8 13h8v-2H8v2zm9-6h-4v1.9h4c1.71.0 3.1 1.39 3.1 3.1s-1.39 3.1-3.1 3.1h-4V17h4c2.76.0 5-2.24 5-5s-2.24-5-5-5z"/></svg></a></h3><p><img src=./ti_ly.png alt=流影和威胁情报></p><p>在流影中既可以消费使用威胁情报，也可以生产输出威胁情报。
 威胁情报在流影中应用主要包括以下三个方面：</p><ul>
 <li>基于威胁情报的检测告警，支持恶意IP和域名的检测告警</li><li>基于情报的威胁分析，支持内外部威胁情报检索</li><li>威胁情报生产，安全人员使用流影分析发现和确认的威胁事件后，可以输出共享威胁情报数据</li></ul><p>使用和生产威胁情报，两者相辅相成，互相结合，能够形成良性循环，不断提高流影威胁检测与分析的能力。
