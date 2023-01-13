@@ -77,8 +77,8 @@ and analyzed to understand a threat actor&amp;rsquo;s motives, targets, and atta
 漏洞情报、安全事件情报及基础信息知识情报等方面内容。&lt;/p>
 &lt;p>&lt;img src="./ti_def.png" alt="网络安全情报">&lt;/p>
 &lt;p>在安全行业业内，大多数情况下所说的威胁情报指的是狭义的威胁情报，
-主要是攻击者相关的信息、动机、目标、攻击技战术、攻击指示器IOC等。
-特别地，在威胁行为检测场景下，其主要内容特指用于识别和检测威胁的失陷标识（IOC: Indicators of Compromise），
+主要是攻击者相关的信息、动机、目标、攻击技战术、失陷指示器IOC（Indicators of Compromise）等。
+特别地，在威胁行为检测场景下，其主要内容特指用于识别和检测威胁的失陷标识IOC，
 如文件 HASH、IP、域名、程序运行路径、注册表项等低层次技术级威胁情报。
 本文后面所述威胁情报，如果没有特别说明，一般也是指狭义的威胁情报，在检测场景下也特指威胁情报相关IOC。&lt;/p>
 &lt;h3 id="威胁情报用途和分类">威胁情报用途和分类 &lt;a class="header-link" href="#%e5%a8%81%e8%83%81%e6%83%85%e6%8a%a5%e7%94%a8%e9%80%94%e5%92%8c%e5%88%86%e7%b1%bb">&lt;svg class="fill-current o-60 hover-accent-color-light" height="22px" viewBox="0 0 24 24" width="22px" xmlns="http://www.w3.org/2000/svg">&lt;path d="M0 0h24v24H0z" fill="none"/>&lt;path d="M3.9 12c0-1.71 1.39-3.1 3.1-3.1h4V7H7c-2.76 0-5 2.24-5 5s2.24 5 5 5h4v-1.9H7c-1.71 0-3.1-1.39-3.1-3.1zM8 13h8v-2H8v2zm9-6h-4v1.9h4c1.71 0 3.1 1.39 3.1 3.1s-1.39 3.1-3.1 3.1h-4V17h4c2.76 0 5-2.24 5-5s-2.24-5-5-5z"/>&lt;/svg>&lt;/a>&lt;/h3>
@@ -172,7 +172,7 @@ Trusted Automated eXchange of Indicator Information &lt;a href="https://taxiipro
 内外部的威胁情报能够提供线索扩展，辅助事件告警分析，去伪存真。
 这主要是针对威胁情报命中事件之外的告警事件而言，例如流影中包检测事件、经验模型判定事件，
 通过查询事件相关的内外部威胁情报，进行关联分析，最终确认是否真实威胁行为。
-需要说明的是，开源流影当前集成的情报查询时自建情报数据接口，开源版仅限用于开发测试。
+需要说明的是，开源流影当前集成的情报查询是自建情报数据接口，开源版仅限用于开发测试。
 外部情报查询，支持跳转到VirusTotal。
 在实际生产环境，建议用户使用商业版威胁情报或者自营情报中心的数据。&lt;/p>
 &lt;p>在流影中，有两种方式进行威胁情报查询，第一种方式是通过全局搜索，如下图所示：&lt;/p>
@@ -218,7 +218,11 @@ Trusted Automated eXchange of Indicator Information &lt;a href="https://taxiipro
 &lt;li>&lt;a href="https://github.com/orgs/Abyssal-Fish-Technology/repositories">GitHub&lt;/a>&lt;/li>
 &lt;li>&lt;a href="https://gitee.com/organizations/abyssalfish-os/projects">Gitee&lt;/a>&lt;/li>
 &lt;li>&lt;a href="http://101.254.236.75:12280/ui/#/login">Demo地址&lt;/a>&lt;/li>
+&lt;li>扫码进入微信讨论群&lt;/li>
 &lt;/ul>
+&lt;figure style="padding: 0.25rem; margin: 2rem 0; ">
+&lt;img style="max-width: 100%; width: auto; height: auto;" src="https://abyssalfish-os.github.io/news/ti/wx_group_hu87a2e382e09fcee856265bf5cb34cab9_30575_256x0_resize_catmullrom_3.png" width="256" height="258">
+&lt;/figure>
 &lt;h2 id="参考文献">参考文献 &lt;a class="header-link" href="#%e5%8f%82%e8%80%83%e6%96%87%e7%8c%ae">&lt;svg class="fill-current o-60 hover-accent-color-light" height="22px" viewBox="0 0 24 24" width="22px" xmlns="http://www.w3.org/2000/svg">&lt;path d="M0 0h24v24H0z" fill="none"/>&lt;path d="M3.9 12c0-1.71 1.39-3.1 3.1-3.1h4V7H7c-2.76 0-5 2.24-5 5s2.24 5 5 5h4v-1.9H7c-1.71 0-3.1-1.39-3.1-3.1zM8 13h8v-2H8v2zm9-6h-4v1.9h4c1.71 0 3.1 1.39 3.1 3.1s-1.39 3.1-3.1 3.1h-4V17h4c2.76 0 5-2.24 5-5s-2.24-5-5-5z"/>&lt;/svg>&lt;/a>&lt;/h2>
 &lt;ol>
 &lt;li>&lt;a href="http://101.254.236.75:12280/ui">流影Demo&lt;/a>&lt;/li>
@@ -283,4 +287,9 @@ Trusted Automated eXchange of Indicator Information &lt;a href="https://taxiipro
 &lt;h2 id="联系反馈">联系反馈 &lt;a class="header-link" href="#%e8%81%94%e7%b3%bb%e5%8f%8d%e9%a6%88">&lt;svg class="fill-current o-60 hover-accent-color-light" height="22px" viewBox="0 0 24 24" width="22px" xmlns="http://www.w3.org/2000/svg">&lt;path d="M0 0h24v24H0z" fill="none"/>&lt;path d="M3.9 12c0-1.71 1.39-3.1 3.1-3.1h4V7H7c-2.76 0-5 2.24-5 5s2.24 5 5 5h4v-1.9H7c-1.71 0-3.1-1.39-3.1-3.1zM8 13h8v-2H8v2zm9-6h-4v1.9h4c1.71 0 3.1 1.39 3.1 3.1s-1.39 3.1-3.1 3.1h-4V17h4c2.76 0 5-2.24 5-5s-2.24-5-5-5z"/>&lt;/svg>&lt;/a>&lt;/h2>
 &lt;ul>
 &lt;li>邮箱：opensource@abyssalfish.com.cn&lt;/li>
+&lt;li>扫码进入微信讨论群
+&lt;figure style="padding: 0.25rem; margin: 2rem 0; ">
+&lt;img style="max-width: 100%; width: auto; height: auto;" src="https://abyssalfish-os.github.io/news/opensource/wx_group_hu87a2e382e09fcee856265bf5cb34cab9_30575_256x0_resize_catmullrom_3.png" width="256" height="258">
+&lt;/figure>
+&lt;/li>
 &lt;/ul></description></item></channel></rss>
