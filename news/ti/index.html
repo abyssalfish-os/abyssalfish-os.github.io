@@ -1,0 +1,293 @@
+<!doctype html><html class=no-js lang="
+    zh-cn
+  
+  ">
+<head>
+<meta charset=utf-8>
+<link rel=preload href=https://abyssalfish-os.github.io/fonts/muli-latin-200.woff2 as=font type=font/woff2 crossorigin>
+<link rel=preload href=https://abyssalfish-os.github.io/fonts/muli-latin-400.woff2 as=font type=font/woff2 crossorigin>
+<link rel=preload href=https://abyssalfish-os.github.io/fonts/muli-latin-800.woff2 as=font type=font/woff2 crossorigin>
+<meta http-equiv=x-ua-compatible content="IE=edge">
+<title>
+流影: 威胁情报在流影中的实践应用
+</title><meta name=viewport content="width=device-width,minimum-scale=1">
+<meta name=generator content="Hugo 0.109.0">
+<meta name=robots content="index, follow">
+<link rel=stylesheet href=/output/css/app.min.631706eef190df8129d8f5b57c45caa8c431efd8e4148fbd17b354b607ce316a.css integrity="sha256-YxcG7vGQ34Ep2PW1fEXKqMQx79jkFI+9F7NUtgfOMWo=" crossorigin=anonymous>
+<meta name=description content="
+        流影结合威胁情报，相辅相成，达到更好的安全防护效果。
+      
+      ">
+<script type=text/javascript src=/output/js/app.5a802739f9b2407f0d3a1f84a20731b6705a5a4df051c35686f22bd3aea90731.js crossorigin=anonymous defer></script>
+<script async defer src=https://buttons.github.io/buttons.js></script>
+<link rel=apple-touch-icon sizes=180x180 href=/apple-touch-icon.png>
+<link rel=icon type=image/png href=/favicon-32x32.png sizes=32x32>
+<link rel=icon type=image/png href=/favicon-16x16.png sizes=16x16>
+<link rel=manifest href=/manifest.json>
+<link rel=mask-icon href=/safari-pinned-tab.svg color=#0594cb>
+<meta name=theme-color content="#ffffff">
+<meta property="og:title" content="威胁情报在流影中的实践应用">
+<meta property="og:description" content="流影结合威胁情报，相辅相成，达到更好的安全防护效果。">
+<meta property="og:type" content="article">
+<meta property="og:url" content="https://abyssalfish-os.github.io/news/ti/"><meta property="og:image" content="https://abyssalfish-os.github.io/opengraph/gohugoio-card-base-1_huf001e7df4fd9c00c4355abac7d4ca455_242906_filter_15022162365263349250.png"><meta property="article:section" content="news">
+<meta property="article:published_time" content="2023-01-13T00:00:00+08:00">
+<meta property="article:modified_time" content="2023-01-13T15:02:31+08:00">
+<meta itemprop=name content="威胁情报在流影中的实践应用">
+<meta itemprop=description content="流影结合威胁情报，相辅相成，达到更好的安全防护效果。"><meta itemprop=datePublished content="2023-01-13T00:00:00+08:00">
+<meta itemprop=dateModified content="2023-01-13T15:02:31+08:00">
+<meta itemprop=wordCount content="5732">
+<meta itemprop=keywords content>
+</head><body class="ma0 sans-serif bg-primary-color-light
+production">
+<nav class="bg-primary-color-dark pv4 w-100" role=navigation>
+<div class="center flex-ns flex-wrap items-center justify-start mw9">
+<h1 class="dim f3 lh-solid ml0-ns mr0 mr4-l mv0 pl3 pl4-ns">
+<a href=https://abyssalfish-os.github.io/ class="link white">
+流影->FlowShadow
+</a>
+</h1><ul class="list ma0 pa0 dn dib-l" role=menu>
+<li class="f5 dib mr4" role=menuitem>
+<a href=/news/ class="dim link light-silver">
+新闻&博客
+</a>
+</li><li class="f5 dib mr4" role=menuitem>
+<a href=/documentation/ class="dim link light-silver">
+文档
+</a>
+</li><li class="f5 dib mr4" role=menuitem>
+<a href=/demo/ class="dim link light-silver">
+Demo演示
+</a>
+</li><li class="f5 dib mr4" role=menuitem>
+<a href=https://gitee.com/organizations/abyssalfish-os/projects class="dim link light-silver">
+Gitee
+<span class=pl1><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="10" height="10" viewBox="0 0 32 32" class="fill-current v-base" aria-label="External Link"><path d="M25.152 16.576v5.696q0 2.144-1.504 3.648T20 27.424H5.152q-2.144.0-3.648-1.504t-1.504-3.648V7.424q0-2.112 1.504-3.616t3.648-1.536h12.576q.224.0.384.16t.16.416V4q0 .256-.16.416t-.384.16H5.152q-1.184.0-2.016.832t-.864 2.016v14.848q0 1.184.864 2.016t2.016.864H20q1.184.0 2.016-.864t.832-2.016v-5.696q0-.256.16-.416t.416-.16h1.152q.256.0.416.16t.16.416zM32 1.152v9.12q0 .48-.352.8t-.8.352-.8-.352l-3.136-3.136-11.648 11.648q-.16.192-.416.192t-.384-.192l-2.048-2.048q-.192-.16-.192-.384t.192-.416L24.064 5.088l-3.136-3.136q-.352-.352-.352-.8t.352-.8.8-.352h9.12q.48.0.8.352t.352.8z"/></svg>
+</span>
+</a>
+</li><li class="f5 dib mr4" role=menuitem>
+<a href=https://github.com/orgs/Abyssal-Fish-Technology/repositories class="dim link light-silver">
+GitHub
+<span class=pl1><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="10" height="10" viewBox="0 0 32 32" class="fill-current v-base" aria-label="External Link"><path d="M25.152 16.576v5.696q0 2.144-1.504 3.648T20 27.424H5.152q-2.144.0-3.648-1.504t-1.504-3.648V7.424q0-2.112 1.504-3.616t3.648-1.536h12.576q.224.0.384.16t.16.416V4q0 .256-.16.416t-.384.16H5.152q-1.184.0-2.016.832t-.864 2.016v14.848q0 1.184.864 2.016t2.016.864H20q1.184.0 2.016-.864t.832-2.016v-5.696q0-.256.16-.416t.416-.16h1.152q.256.0.416.16t.16.416zM32 1.152v9.12q0 .48-.352.8t-.8.352-.8-.352l-3.136-3.136-11.648 11.648q-.16.192-.416.192t-.384-.192l-2.048-2.048q-.192-.16-.192-.384t.192-.416L24.064 5.088l-3.136-3.136q-.352-.352-.352-.8t.352-.8.8-.352h9.12q.48.0.8.352t.352.8z"/></svg>
+</span>
+</a>
+</li><li class="f5 dib mr4" role=menuitem>
+<a href=https://gitter.im/abyssalfish-os/community class="dim link light-silver">
+讨论区
+<span class=pl1><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="10" height="10" viewBox="0 0 32 32" class="fill-current v-base" aria-label="External Link"><path d="M25.152 16.576v5.696q0 2.144-1.504 3.648T20 27.424H5.152q-2.144.0-3.648-1.504t-1.504-3.648V7.424q0-2.112 1.504-3.616t3.648-1.536h12.576q.224.0.384.16t.16.416V4q0 .256-.16.416t-.384.16H5.152q-1.184.0-2.016.832t-.864 2.016v14.848q0 1.184.864 2.016t2.016.864H20q1.184.0 2.016-.864t.832-2.016v-5.696q0-.256.16-.416t.416-.16h1.152q.256.0.416.16t.16.416zM32 1.152v9.12q0 .48-.352.8t-.8.352-.8-.352l-3.136-3.136-11.648 11.648q-.16.192-.416.192t-.384-.192l-2.048-2.048q-.192-.16-.192-.384t.192-.416L24.064 5.088l-3.136-3.136q-.352-.352-.352-.8t.352-.8.8-.352h9.12q.48.0.8.352t.352.8z"/></svg>
+</span>
+</a>
+</li></ul><div class="db dib-ns pl3"><form id=site-search-form role=search>
+<fieldset class="bn ma0 pa0">
+<label class=clip for=search-input>Search</label>
+<input type=text id=search-input class="needs-js dn bn f5 lh-solid mt3 mt0-ns pl4 pv2 w5 white" placeholder="Welcome to FlowShadow" name=search-input style=background-color:rgba(255,255,255,0)>
+</fieldset></form></div></div></nav><main role=main class="content-with-sidebar min-vh-100 pb7 pb0-ns">
+<article class="cf ph4 pv3 pv5-ns">
+<header class="flex-none w-100 pb3">
+<a href=/categories/categories class="f6 fw8 mb0 link mid-gray dim mr3">
+CATEGORIES
+</a>
+<h1 class="lh-title fw9 mb7 mv0 pt3">
+<a href=/news/ti/ class="link primary-color dim">
+威胁情报在流影中的实践应用
+</a>
+</h1></header><div class=flex-l>
+<aside class="mid-gray fn w-100 w-25-l">
+<h2 class="f3 lh-title">
+流影结合威胁情报，相辅相成，达到更好的安全防护效果。
+</h2><time class="f6 mt2 db ttu tracked" datetime=2023-01-11T00:00:00+08:00>
+January 11, 2023
+</time>
+<div class="nested-links mt4">
+<div date-pref>
+<a href=https://abyssalfish-os.github.io/news/opensource/ class="dib f6 pr1 hover-bg-light-gray br-100" title=流影宣布开源><svg class="fill-current" height="30" viewBox="0 0 24 24" width="30" xmlns="http://www.w3.org/2000/svg"><path d="M10 6 8.59 7.41 13.17 12l-4.58 4.59L10 18l6-6z"/><path d="M0 0h24v24H0z" fill="none"/></svg>
+</a>
+</div></div></aside><div class="fn pl5-l pt3 mid-gray w-100 w-two-third-l sans-serif nested-copy-line-height no-underline nested-links nested-img nested-copy-seperator nested-blockquote measure-wide-wd">
+<p><img src=./ti_info.png alt=示意图></p><p>流影是开源的基于流量的网络行为可视化分析平台，功能架构灵活可扩展。
+威胁情报在安全检测与防御的实践应用中具有重要作用。
+流影支持多种网络威胁行为的检测方式，也支持威胁情报这种基本的检测方式。
+流影通过威胁情报的集成应用，方便用户能够灵活接入自产或采购的情报数据，
+实现基于情报的威胁检测告警、威胁分析功能。</p><p>为了更好的让用户了解威胁情报在流影中的应用，撰写此文，主要涵盖以下方面内容：</p><ul>
+<li><a href=#%E5%A8%81%E8%83%81%E6%83%85%E6%8A%A5%E6%A6%82%E8%BF%B0>威胁情报概述，对齐威胁情报的理解和术语</a></li><li><a href=#%E5%9F%BA%E4%BA%8E%E6%83%85%E6%8A%A5%E7%9A%84%E5%A8%81%E8%83%81%E8%A1%8C%E4%B8%BA%E6%A3%80%E6%B5%8B%E5%8A%9F%E8%83%BD>在流影中查看威胁情报告警事件</a></li><li><a href=#%E6%B5%81%E5%BD%B1%E9%9B%86%E6%88%90%E6%83%85%E6%8A%A5%E6%A3%80%E7%B4%A2%E5%8A%9F%E8%83%BD%E6%94%AF%E6%8C%81%E5%A8%81%E8%83%81%E8%A1%8C%E4%B8%BA%E5%88%86%E6%9E%90>使用流影集成情报检索功能进行威胁行为分析</a></li><li><a href=#%E6%B5%81%E5%BD%B1%E4%BA%A7%E5%87%BA%E5%A8%81%E8%83%81%E6%83%85%E6%8A%A5>通过流影生产威胁情报</a></li></ul><h2 id=威胁情报概述>威胁情报概述 <a class=header-link href=#%e5%a8%81%e8%83%81%e6%83%85%e6%8a%a5%e6%a6%82%e8%bf%b0><svg class="fill-current o-60 hover-accent-color-light" height="22" viewBox="0 0 24 24" width="22" xmlns="http://www.w3.org/2000/svg"><path d="M0 0h24v24H0z" fill="none"/><path d="M3.9 12c0-1.71 1.39-3.1 3.1-3.1h4V7H7c-2.76.0-5 2.24-5 5s2.24 5 5 5h4v-1.9H7c-1.71.0-3.1-1.39-3.1-3.1zM8 13h8v-2H8v2zm9-6h-4v1.9h4c1.71.0 3.1 1.39 3.1 3.1s-1.39 3.1-3.1 3.1h-4V17h4c2.76.0 5-2.24 5-5s-2.24-5-5-5z"/></svg></a></h2><p>威胁情报的概念自从Gartner提出后，迅速兴起和备受安全领域各界关注，应用发展至今已经大概10年之久，
+威胁情报在世界各行业、组织机构的安全发展过程中的确发挥了很大作用，这个过程其实体现了数据驱动各种生产力发展的大浪潮。</p><p>威胁情报目前仍然是国内外安全领域研究和应用的热点，相关市场份额逐年增高。
+威胁情报应用比较广泛，当前许多安全产品或者解决方案的介绍中，都能发现威胁情报的身影。
+经过近10多年的发展应用，目前各行业的安全从业人员对威胁情报的概念都比较熟悉或者了解了，
+对威胁情报的作用有了比较深刻的感受，大部分中大型企业基本都建立了自己的威胁情报运营中心，
+或者将威胁情报数据加入了年度预算进行采购。</p><p>为了对齐大家对威胁情报的理解，下面首先对威胁情报做一个简单的概要介绍。</p><h3 id=威胁情报含义>威胁情报含义 <a class=header-link href=#%e5%a8%81%e8%83%81%e6%83%85%e6%8a%a5%e5%90%ab%e4%b9%89><svg class="fill-current o-60 hover-accent-color-light" height="22" viewBox="0 0 24 24" width="22" xmlns="http://www.w3.org/2000/svg"><path d="M0 0h24v24H0z" fill="none"/><path d="M3.9 12c0-1.71 1.39-3.1 3.1-3.1h4V7H7c-2.76.0-5 2.24-5 5s2.24 5 5 5h4v-1.9H7c-1.71.0-3.1-1.39-3.1-3.1zM8 13h8v-2H8v2zm9-6h-4v1.9h4c1.71.0 3.1 1.39 3.1 3.1s-1.39 3.1-3.1 3.1h-4V17h4c2.76.0 5-2.24 5-5s-2.24-5-5-5z"/></svg></a></h3><p>威胁情报目前并没有统一明确的定义，而且不同的时期、
+不同的厂商和不同研究人员对其定义或者描述不尽相同。</p><ul>
+<li>Gartner在2013年提出威胁情报给出了初始定义，
+而后在2014年Gartner的 《Market Guide for Security Threat Intelligence Service》
+（安全威胁情报服务市场指南）报告中又进行了简单修订：
+威胁情报是一种基于证据的知识，包括情境、机制、指标、影响和操作建议等方面。
+威胁情报描述了已经发现的、或者将来会出现的威胁或危险，并可以用于通知主体针对相关威胁或危险采取某种响应。</li></ul><blockquote>
+<p>Threat intelligence is evidence-based knowledge, including context,
+mechanisms, indicators, implications and actionable advice,
+about an existing or emerging menace or hazard to assets
+that can be used to inform decisions regarding the subject&rsquo;s
+response to that menace or hazard.</p></blockquote><ul>
+<li>2015年，Jon Friedman和Mark Bouchard 发表的《Definitive Guide to Cyber Threat Intelligence》
+（网络威胁情报权威指南）白皮书中对威胁情报的定义：威胁情报是通过各种方式收集、分析、传播扩散的关于攻击者的动机、企图和方法的知识，
+使得各层级的安全和业务职员用来保护企业关键资产。</li></ul><blockquote>
+<p>Cyber threat intelligence is knowledge about adversaries and their motivations, intentions, and methods that is collected, analyzed,
+and disseminated in ways that help security and business staf
+at all levels protect the critical assets of the enterprise.</p></blockquote><ul>
+<li>美国SANS研究院对其定义：威胁情报是关于安全威胁、恶意攻击者、漏洞利用、恶意软件、漏洞信息和攻陷指标等方面，
+所收集的用于评估和应用的数据集。</li></ul><blockquote>
+<p>Threat intelligence is the set of data collected,
+assessed and applied regarding security threats,
+malicious actors, exploits, malware, vulnerabilities and compromise indicators.</p></blockquote><ul>
+<li>咨询公司Forrester对其描述：威胁情报是针对内部和外部威胁源的动机、意图和能力、
+内外部攻击组织的详细叙述，包括了敌手使用的技战术（TTPs）。</li></ul><blockquote>
+<p>Threat intelligence is details of motivations, intents, and capabilities of
+internel and external threats actors. TI includes sepecifics on the TTPs of these adversaries.</p></blockquote><ul>
+<li>安全厂商CrowdStrike的描述：威胁情报是为了理解威胁攻击者的动机、目标和攻击行为而收集、处理和分析的数据。</li></ul><blockquote>
+<p>Threat intelligence is data that is collected, processed,
+and analyzed to understand a threat actor&rsquo;s motives, targets, and attack behaviors.</p></blockquote><p>从上面可以看出，有的定义比较宽泛，有的相对具体和狭义。
+广义上的威胁情报，基本可以说是普遍的网络安全情报，内容比较宽泛，包括不限于狭义的资产情报、威胁情报、
+漏洞情报、安全事件情报及基础信息知识情报等方面内容。</p><p><img src=./ti_def.png alt=网络安全情报></p><p>在安全行业业内，大多数情况下所说的威胁情报指的是狭义的威胁情报，
+主要是攻击者相关的信息、动机、目标、攻击技战术、攻击指示器IOC等。
+特别地，在威胁行为检测场景下，其主要内容特指用于识别和检测威胁的失陷标识（IOC: Indicators of Compromise），
+如文件 HASH、IP、域名、程序运行路径、注册表项等低层次技术级威胁情报。
+本文后面所述威胁情报，如果没有特别说明，一般也是指狭义的威胁情报，在检测场景下也特指威胁情报相关IOC。</p><h3 id=威胁情报用途和分类>威胁情报用途和分类 <a class=header-link href=#%e5%a8%81%e8%83%81%e6%83%85%e6%8a%a5%e7%94%a8%e9%80%94%e5%92%8c%e5%88%86%e7%b1%bb><svg class="fill-current o-60 hover-accent-color-light" height="22" viewBox="0 0 24 24" width="22" xmlns="http://www.w3.org/2000/svg"><path d="M0 0h24v24H0z" fill="none"/><path d="M3.9 12c0-1.71 1.39-3.1 3.1-3.1h4V7H7c-2.76.0-5 2.24-5 5s2.24 5 5 5h4v-1.9H7c-1.71.0-3.1-1.39-3.1-3.1zM8 13h8v-2H8v2zm9-6h-4v1.9h4c1.71.0 3.1 1.39 3.1 3.1s-1.39 3.1-3.1 3.1h-4V17h4c2.76.0 5-2.24 5-5s-2.24-5-5-5z"/></svg></a></h3><p>威胁情报已经广泛被应用在威胁检测、溯源分析、主动防御和安全响应过程中。
+通过应用威胁情报，能够提高安全响应的效率，
+情报中的相关性和上下文信息能让安全人员快速明确哪些威胁数据是与企业信息资产和业务安全息息相关的，
+可以根据威胁的影响程度合理安排响应行动的优先级。</p><p>业界从不同的维度，对威胁情报进行了一些分类。</p><p><img src=./ti_cate.png alt=timg></p><p>威胁情报按照层次高低可以分为三类，由高至低包括战略级、战术级和技术级情报。
+最高级的战略威胁情报，一般是宏观层面的战略级情报，例如攻击组织、攻击动机及目标特点等；
+战术级情报也称运营级情报，主要是攻击TTP的知识库；技术级情报一般用于威胁检测实施和响应，
+包括IOC（Indicators of Compromise）和 IOA（Indicators of Attack）。</p><p>根据威胁情报来源不同，分为内部自产情报、安全厂商商业情报、社区共享情报和开源公布情报。
+按照情报使用方式不同，分为机读情报和人读情报。机读情报一般是遵循某种情报数据标准的格式化数据，
+可以供计算机读取，以便于进行检测或者响应的自动化集成；
+人读情报一般是文章、报告或者安全事件摘要等，供人工查阅研判使用。
+按照情报时效性，可以分为活跃情报和情报档案（信誉库、知识库）。
+其中活跃情报是指正在或者潜在导致威胁发生的情报，供实时检测和响应使用；
+情报档案是归档后的数据集，供查询分析使用。</p><h3 id=威胁情报相关标准>威胁情报相关标准 <a class=header-link href=#%e5%a8%81%e8%83%81%e6%83%85%e6%8a%a5%e7%9b%b8%e5%85%b3%e6%a0%87%e5%87%86><svg class="fill-current o-60 hover-accent-color-light" height="22" viewBox="0 0 24 24" width="22" xmlns="http://www.w3.org/2000/svg"><path d="M0 0h24v24H0z" fill="none"/><path d="M3.9 12c0-1.71 1.39-3.1 3.1-3.1h4V7H7c-2.76.0-5 2.24-5 5s2.24 5 5 5h4v-1.9H7c-1.71.0-3.1-1.39-3.1-3.1zM8 13h8v-2H8v2zm9-6h-4v1.9h4c1.71.0 3.1 1.39 3.1 3.1s-1.39 3.1-3.1 3.1h-4V17h4c2.76.0 5-2.24 5-5s-2.24-5-5-5z"/></svg></a></h3><p>威胁情报通过广泛扩散使用才能使其价值最大化，发挥出最大的作用。
+威胁情报的扩散使用，需要各种行业、组织用户的广泛参与和情报交换共享。
+情报的共享交换的基础，是建立在情报格式标准规范化及有效共享交换机制基础之上的。
+下图列出一些威胁情报相关的国内外主要相关的标准规范。</p><p><img src=./ti_bz.png alt=相关标准></p><p>威胁情报标准化和共享机制，目前国外已经比较成熟，国内也在逐步完善之中。
+美国牵头提出的一些标准包括Structured Threat Information eXpression <a href=http://stixproject.github.io/>(STIX)</a>系列、
+Cyber Observable eXpression <a href=https://cyboxproject.github.io/>(CyboX)</a>、
+联邦网络威胁信息共享指南 <a href=https://nvlpubs.nist.gov/nistpubs/SpecialPublications/NIST.SP.800-150.pdf>NIST.SP.800-150</a>、
+Trusted Automated eXchange of Indicator Information <a href=https://taxiiproject.github.io/>(TAXII)</a>。
+还有近年来比较热门的<a href=http://attack.mitre.org/>ATT&CK</a>框架，是一个不断完善的攻击技战术和通用知识库，
+是对已知网络攻击中攻防战术和技术尽可能全面建模描述，支持STIX和TAXII规范，
+适用于威胁分析建模、攻防演练、安全评估等场景，具有比较强的实战指导意义。
+这些标准规范之间互相联系和支撑，能组合使用，不仅得到美国国防部、国家安全局等政府部门的赞助支持，
+主要安全行业机构的也大量参与使用，具有较强的可实践性，
+而且相关标准规范在应用中还在不断的迭代优化完善，有些经过1.0版本已经迭代到2.X版本。</p><p>近年来，我国对网络安全高度重视，已经上升到国家安全战略高度。
+网络信息安全相关国家、行业标准也在不断完善中。
+2018年10月，我国发布了威胁情报相关的第一个国家标准《信息安全技术网络安全威胁信息格式规范》(GB/T 36643-2018) 。
+2021年12月，国家信安标委发布了《网信息安全技术 网络安全信息共享指南》的征求意见稿，
+可以看出威胁信息共享交换的相关标准规范也在制定当中。
+从实际应用情况来看，我们的直观感受是国内威胁情报共享交换落地尚处于实践探索阶段，
+相关标准有待于进一步迭代完善。
+国内威胁情报厂商支持的情报格式以自定义格式居多，少部分部分支持国标，
+但是各厂商的具体实现落地差异性较大，不太统一；
+为了与国际接轨，也有部分厂商的威胁情报支持STIX系列标准规范。</p><p>当前流影开源版已经实现威胁情报自定义格式的接入和查询，后续规划中考虑增加对国标和国外标准的接入和查询功能。</p><h2 id=流影中应用威胁情报>流影中应用威胁情报 <a class=header-link href=#%e6%b5%81%e5%bd%b1%e4%b8%ad%e5%ba%94%e7%94%a8%e5%a8%81%e8%83%81%e6%83%85%e6%8a%a5><svg class="fill-current o-60 hover-accent-color-light" height="22" viewBox="0 0 24 24" width="22" xmlns="http://www.w3.org/2000/svg"><path d="M0 0h24v24H0z" fill="none"/><path d="M3.9 12c0-1.71 1.39-3.1 3.1-3.1h4V7H7c-2.76.0-5 2.24-5 5s2.24 5 5 5h4v-1.9H7c-1.71.0-3.1-1.39-3.1-3.1zM8 13h8v-2H8v2zm9-6h-4v1.9h4c1.71.0 3.1 1.39 3.1 3.1s-1.39 3.1-3.1 3.1h-4V17h4c2.76.0 5-2.24 5-5s-2.24-5-5-5z"/></svg></a></h2><p>当前开源流影版本支持部分自定义格式的威胁情报接入，
+集成实现了基于威胁情报的威胁行为检测告警、威胁分析、情报生产等方面的功能。</p><h3 id=流影不只是消费威胁情报也可以生产威胁情报>流影不只是消费威胁情报，也可以生产威胁情报 <a class=header-link href=#%e6%b5%81%e5%bd%b1%e4%b8%8d%e5%8f%aa%e6%98%af%e6%b6%88%e8%b4%b9%e5%a8%81%e8%83%81%e6%83%85%e6%8a%a5%e4%b9%9f%e5%8f%af%e4%bb%a5%e7%94%9f%e4%ba%a7%e5%a8%81%e8%83%81%e6%83%85%e6%8a%a5><svg class="fill-current o-60 hover-accent-color-light" height="22" viewBox="0 0 24 24" width="22" xmlns="http://www.w3.org/2000/svg"><path d="M0 0h24v24H0z" fill="none"/><path d="M3.9 12c0-1.71 1.39-3.1 3.1-3.1h4V7H7c-2.76.0-5 2.24-5 5s2.24 5 5 5h4v-1.9H7c-1.71.0-3.1-1.39-3.1-3.1zM8 13h8v-2H8v2zm9-6h-4v1.9h4c1.71.0 3.1 1.39 3.1 3.1s-1.39 3.1-3.1 3.1h-4V17h4c2.76.0 5-2.24 5-5s-2.24-5-5-5z"/></svg></a></h3><p><img src=./ti_ly.png alt=流影和威胁情报></p><p>在流影中既可以消费使用威胁情报，也可以生产输出威胁情报。
+威胁情报在流影中应用主要包括以下三个方面：</p><ul>
+<li>基于威胁情报的检测告警，支持恶意IP和域名的检测告警</li><li>基于情报的威胁分析，支持内外部威胁情报检索</li><li>威胁情报生产，安全人员使用流影分析发现和确认的威胁事件后，可以输出共享威胁情报数据</li></ul><p>使用和生产威胁情报，两者相辅相成，互相结合，能够形成良性循环，不断提高流影威胁检测与分析的能力。
+一方面，通过多种威胁情报的接入，可以增强流影威胁检测发现和分析能力；
+另一方面，流影其他威胁行为识别模型检测出的安全事件，经过安全人员分析确认后，
+相关上下文、证据、IOC就可以作为情报输出，生成更多、更丰富的威胁情报数据。
+产出的威胁情报，通过在行业内或者社区组织之间的共享交换，还可以发挥出更大的价值。</p><h3 id=基于情报的威胁行为检测功能>基于情报的威胁行为检测功能 <a class=header-link href=#%e5%9f%ba%e4%ba%8e%e6%83%85%e6%8a%a5%e7%9a%84%e5%a8%81%e8%83%81%e8%a1%8c%e4%b8%ba%e6%a3%80%e6%b5%8b%e5%8a%9f%e8%83%bd><svg class="fill-current o-60 hover-accent-color-light" height="22" viewBox="0 0 24 24" width="22" xmlns="http://www.w3.org/2000/svg"><path d="M0 0h24v24H0z" fill="none"/><path d="M3.9 12c0-1.71 1.39-3.1 3.1-3.1h4V7H7c-2.76.0-5 2.24-5 5s2.24 5 5 5h4v-1.9H7c-1.71.0-3.1-1.39-3.1-3.1zM8 13h8v-2H8v2zm9-6h-4v1.9h4c1.71.0 3.1 1.39 3.1 3.1s-1.39 3.1-3.1 3.1h-4V17h4c2.76.0 5-2.24 5-5s-2.24-5-5-5z"/></svg></a></h3><p>开源流影支持威胁情报IOC的接入，基于情报检测识别威胁行为，输出安全告警事件。
+其基本检测原理，是对网络流量进行关键字匹配，对匹配成功的流量上下文、特征进行提取留存，
+按照时间窗口生成聚合安全告警列表。</p><h4 id=流影接入的威胁情报ioc类型>流影接入的威胁情报IOC类型 <a class=header-link href=#%e6%b5%81%e5%bd%b1%e6%8e%a5%e5%85%a5%e7%9a%84%e5%a8%81%e8%83%81%e6%83%85%e6%8a%a5ioc%e7%b1%bb%e5%9e%8b><svg class="fill-current o-60 hover-accent-color-light" height="22" viewBox="0 0 24 24" width="22" xmlns="http://www.w3.org/2000/svg"><path d="M0 0h24v24H0z" fill="none"/><path d="M3.9 12c0-1.71 1.39-3.1 3.1-3.1h4V7H7c-2.76.0-5 2.24-5 5s2.24 5 5 5h4v-1.9H7c-1.71.0-3.1-1.39-3.1-3.1zM8 13h8v-2H8v2zm9-6h-4v1.9h4c1.71.0 3.1 1.39 3.1 3.1s-1.39 3.1-3.1 3.1h-4V17h4c2.76.0 5-2.24 5-5s-2.24-5-5-5z"/></svg></a></h4><p><img src=./ti_ly_ioc.png alt=检测IOC></p><p>流影目前支持的IOC类型，包括恶意IP地址、Domain域名和特征指纹等技术比较成熟的情报类型。
+其中IP地址是最常用的检测指标，流影中按照威胁标签对相关事件进行分类，例如挖矿事件、命令控制事件C2等类型；
+域名检测一般是通过DNS流量，识别恶意域名请求，发现威胁行为，这类告警事件在流影中归类为DNS事件；
+特征指纹一般是恶意软件或与其通信相关的特殊标识，
+也普遍用于入侵检测，该类检测告警事件在流影中被归类为包特征识别事件。</p><h4 id=在流影中查看威胁情报事件告警>在流影中查看威胁情报事件告警 <a class=header-link href=#%e5%9c%a8%e6%b5%81%e5%bd%b1%e4%b8%ad%e6%9f%a5%e7%9c%8b%e5%a8%81%e8%83%81%e6%83%85%e6%8a%a5%e4%ba%8b%e4%bb%b6%e5%91%8a%e8%ad%a6><svg class="fill-current o-60 hover-accent-color-light" height="22" viewBox="0 0 24 24" width="22" xmlns="http://www.w3.org/2000/svg"><path d="M0 0h24v24H0z" fill="none"/><path d="M3.9 12c0-1.71 1.39-3.1 3.1-3.1h4V7H7c-2.76.0-5 2.24-5 5s2.24 5 5 5h4v-1.9H7c-1.71.0-3.1-1.39-3.1-3.1zM8 13h8v-2H8v2zm9-6h-4v1.9h4c1.71.0 3.1 1.39 3.1 3.1s-1.39 3.1-3.1 3.1h-4V17h4c2.76.0 5-2.24 5-5s-2.24-5-5-5z"/></svg></a></h4><p>当前版本流影前端界面，还没有设计单独威胁情报事件页面，事件列表中检测方法标记为情报的类型，
+就是通过威胁情报检测的安全事件。以下以一个dns事件查看为例进行说明。</p><p>通过点击事件主菜单进入事件汇总页面，可以通过筛选查询查看dns威胁情报相关事件，如下图所示。</p><p><img src=./ti_event.png alt=DNS事件></p><p>选定时间范围和筛选条件后，在页面下方显示的安全事件告警列表，如下图所示，可以看到其检测方法是情报类型：</p><p><img src=./ti_event_list.png alt=DNS事件列表></p><p>列表中显示了事件基本信息，包括检测规则、威胁来源、受害目标、事件类型、细分类型、检出方式、事件级别、
+事件时间、持续时长、活跃情况等。</p><p>在事件列表中，可以点击具体事件，可以查看该事件的详情信息，包括报警上下文、通信详情信息，如下图所示：</p><p><img src=./ti_event_detail.png alt=DNS事件></p><p>在该事件的详情页面中，可以查看事件基本信息、源目的资产基本信息、告警时序图、通联时序分布、流量特征信息。</p><h2 id=流影集成情报检索功能支持威胁行为分析>流影集成情报检索功能支持威胁行为分析 <a class=header-link href=#%e6%b5%81%e5%bd%b1%e9%9b%86%e6%88%90%e6%83%85%e6%8a%a5%e6%a3%80%e7%b4%a2%e5%8a%9f%e8%83%bd%e6%94%af%e6%8c%81%e5%a8%81%e8%83%81%e8%a1%8c%e4%b8%ba%e5%88%86%e6%9e%90><svg class="fill-current o-60 hover-accent-color-light" height="22" viewBox="0 0 24 24" width="22" xmlns="http://www.w3.org/2000/svg"><path d="M0 0h24v24H0z" fill="none"/><path d="M3.9 12c0-1.71 1.39-3.1 3.1-3.1h4V7H7c-2.76.0-5 2.24-5 5s2.24 5 5 5h4v-1.9H7c-1.71.0-3.1-1.39-3.1-3.1zM8 13h8v-2H8v2zm9-6h-4v1.9h4c1.71.0 3.1 1.39 3.1 3.1s-1.39 3.1-3.1 3.1h-4V17h4c2.76.0 5-2.24 5-5s-2.24-5-5-5z"/></svg></a></h2><p>安全分析人员针对安全事件告警信息，往往需要查询更多的情报来进行分析处置，
+内外部的威胁情报能够提供线索扩展，辅助事件告警分析，去伪存真。
+这主要是针对威胁情报命中事件之外的告警事件而言，例如流影中包检测事件、经验模型判定事件，
+通过查询事件相关的内外部威胁情报，进行关联分析，最终确认是否真实威胁行为。
+需要说明的是，开源流影当前集成的情报查询时自建情报数据接口，开源版仅限用于开发测试。
+外部情报查询，支持跳转到VirusTotal。
+在实际生产环境，建议用户使用商业版威胁情报或者自营情报中心的数据。</p><p>在流影中，有两种方式进行威胁情报查询，第一种方式是通过全局搜索，如下图所示：</p><p><img src=./ti_search.png alt=情报检索></p><p>输入检索的IP地址或者Domain字符串，点击检索按钮，即可进入检索详情页面，点击左侧的情报标签，即可查看历史情报档案信息。
+<img src=./ti_search_result.png alt=情报检索结果>
+该页面显示的情报信息，来源于公司自建的情报接口，开源版可以测试使用。商业使用请单独联系。</p><p>第二种查询方式是通过事件列表页的快捷菜单，如下图所示：
+<img src=./ti_search_2.png alt=情报检索结果2>
+在事件列表页，直接点击IP或者Domain，页面显示快捷菜单，选择全局搜索可以进入第一种查询方式；
+特别的，这里还支持外部威胁情报查询，目前集成了搜索引擎和跳转VirusTotal的快速查询。</p><h2 id=流影产出威胁情报>流影产出威胁情报 <a class=header-link href=#%e6%b5%81%e5%bd%b1%e4%ba%a7%e5%87%ba%e5%a8%81%e8%83%81%e6%83%85%e6%8a%a5><svg class="fill-current o-60 hover-accent-color-light" height="22" viewBox="0 0 24 24" width="22" xmlns="http://www.w3.org/2000/svg"><path d="M0 0h24v24H0z" fill="none"/><path d="M3.9 12c0-1.71 1.39-3.1 3.1-3.1h4V7H7c-2.76.0-5 2.24-5 5s2.24 5 5 5h4v-1.9H7c-1.71.0-3.1-1.39-3.1-3.1zM8 13h8v-2H8v2zm9-6h-4v1.9h4c1.71.0 3.1 1.39 3.1 3.1s-1.39 3.1-3.1 3.1h-4V17h4c2.76.0 5-2.24 5-5s-2.24-5-5-5z"/></svg></a></h2><p>流影本身能够生产威胁情报。安全分析人员通过分析确认后的安全告警事件，即是自产的高时效性威胁情报，
+可以共享给社区联盟或者外界使用，输出威胁情报。</p><p>流影留存了告警事件的上下文流量特征、原始Pcap包、聚合事件等信息。
+在事件列表页面，支持导出事件告警及其上下文信息，如下图所示：
+<img src=./ti_export.png alt=情报导出共享>
+批量选择安全事件进行导出，支持Excel和CSV格式及导出字段选择。</p><p>在事件详情页面，支持导出详细报告和通讯特征数据，如下图所示：
+<img src=./ti_export_2.png alt=情报导出共享2></p><h2 id=总结>总结 <a class=header-link href=#%e6%80%bb%e7%bb%93><svg class="fill-current o-60 hover-accent-color-light" height="22" viewBox="0 0 24 24" width="22" xmlns="http://www.w3.org/2000/svg"><path d="M0 0h24v24H0z" fill="none"/><path d="M3.9 12c0-1.71 1.39-3.1 3.1-3.1h4V7H7c-2.76.0-5 2.24-5 5s2.24 5 5 5h4v-1.9H7c-1.71.0-3.1-1.39-3.1-3.1zM8 13h8v-2H8v2zm9-6h-4v1.9h4c1.71.0 3.1 1.39 3.1 3.1s-1.39 3.1-3.1 3.1h-4V17h4c2.76.0 5-2.24 5-5s-2.24-5-5-5z"/></svg></a></h2><p>本文简要介绍了威胁情报在流影中的应用，包括威胁情报基本概念、当前流影支持的威胁情报类型、
+流影如何使用威胁情报进行检测和分析、如何通过流影生产威胁情报等方面内容。
+一方面，高精准的威胁情报，可以为流影提供强力弹药，
+从而命中一些高级别的攻击行为，提升了流影的识别检测能力；另一方面，流影能够留存威胁行为的流量上下文信息和证据，
+输出丰富的、高价值流量侧威胁情报。
+流影加威胁情报，互相结合，能够相辅相成，达到更好的安全防护效果。</p><h2 id=展望与规划>展望与规划 <a class=header-link href=#%e5%b1%95%e6%9c%9b%e4%b8%8e%e8%a7%84%e5%88%92><svg class="fill-current o-60 hover-accent-color-light" height="22" viewBox="0 0 24 24" width="22" xmlns="http://www.w3.org/2000/svg"><path d="M0 0h24v24H0z" fill="none"/><path d="M3.9 12c0-1.71 1.39-3.1 3.1-3.1h4V7H7c-2.76.0-5 2.24-5 5s2.24 5 5 5h4v-1.9H7c-1.71.0-3.1-1.39-3.1-3.1zM8 13h8v-2H8v2zm9-6h-4v1.9h4c1.71.0 3.1 1.39 3.1 3.1s-1.39 3.1-3.1 3.1h-4V17h4c2.76.0 5-2.24 5-5s-2.24-5-5-5z"/></svg></a></h2><p>当前开源流影在威胁情报的应用还处于初级阶段，
+已实现的功能仅仅支持威胁情报中一小部分内容，
+除了IP、Domain类型的IOC，还有哈希值、URL、电子邮件等类型IOC；
+除了IOC，还有高级别威胁情报TTPs，目前还没有支持。
+因此也只能发挥威胁情报少量的作用，还有很大的改进提升空间。</p><p>对威胁情报数据类型的全面支持，结合ATT&CK，遵循共享交换标准规范的，能够使流影在威胁分析、共享交换中发挥更好的作用。
+这些功能需求已经列入开源版将来的研发规划之中。
+相信如果全面地实现这些功能，在流影中进行集成应用，并且不断迭代完善，
+一定能够为用户提供全新的安全视角、更好的使用体验。</p><p>流影是一个完全开源的项目，欢迎大家广泛参与使用，期待您的贡献。</p><h2 id=相关信息>相关信息 <a class=header-link href=#%e7%9b%b8%e5%85%b3%e4%bf%a1%e6%81%af><svg class="fill-current o-60 hover-accent-color-light" height="22" viewBox="0 0 24 24" width="22" xmlns="http://www.w3.org/2000/svg"><path d="M0 0h24v24H0z" fill="none"/><path d="M3.9 12c0-1.71 1.39-3.1 3.1-3.1h4V7H7c-2.76.0-5 2.24-5 5s2.24 5 5 5h4v-1.9H7c-1.71.0-3.1-1.39-3.1-3.1zM8 13h8v-2H8v2zm9-6h-4v1.9h4c1.71.0 3.1 1.39 3.1 3.1s-1.39 3.1-3.1 3.1h-4V17h4c2.76.0 5-2.24 5-5s-2.24-5-5-5z"/></svg></a></h2><ul>
+<li>邮箱：opensource@abyssalfish.com.cn</li><li><a href=https://abyssalfish-os.github.io/>流影项目</a></li><li><a href=https://github.com/orgs/Abyssal-Fish-Technology/repositories>GitHub</a></li><li><a href=https://gitee.com/organizations/abyssalfish-os/projects>Gitee</a></li><li><a href=http://101.254.236.75:12280/ui/#/login>Demo地址</a></li></ul><h2 id=参考文献>参考文献 <a class=header-link href=#%e5%8f%82%e8%80%83%e6%96%87%e7%8c%ae><svg class="fill-current o-60 hover-accent-color-light" height="22" viewBox="0 0 24 24" width="22" xmlns="http://www.w3.org/2000/svg"><path d="M0 0h24v24H0z" fill="none"/><path d="M3.9 12c0-1.71 1.39-3.1 3.1-3.1h4V7H7c-2.76.0-5 2.24-5 5s2.24 5 5 5h4v-1.9H7c-1.71.0-3.1-1.39-3.1-3.1zM8 13h8v-2H8v2zm9-6h-4v1.9h4c1.71.0 3.1 1.39 3.1 3.1s-1.39 3.1-3.1 3.1h-4V17h4c2.76.0 5-2.24 5-5s-2.24-5-5-5z"/></svg></a></h2><ol>
+<li><a href=http://101.254.236.75:12280/ui>流影Demo</a></li><li><a href=https://abyssalfish-os.github.io/>流影文档主页</a></li><li>Gartner, <a href=https://www.gartner.com/en/documents/2874317>Market Guide for Security Threat Intelligence Service</a>, 2014.</li><li>J. Friedman, M. Bouchard. Definitive guide to cyber threat intelligence[M]. CyberEdge Press, 2015.</li><li>CrowdStrike, <a href=https://www.crowdstrike.com/cybersecurity-101/threat-intelligence/>WHAT IS CYBER THREAT INTELLIGENCE?</a></li><li><a href=http://stixproject.github.io/>STIX</a></li><li><a href=https://taxiiproject.github.io/>TAXII</a></li><li><a href=https://www.nist.gov/publications/cyber-threat-intelligence-and-information-sharing>Cyber Threat Intelligence and Information Sharing</a></li><li><a href=https://nvlpubs.nist.gov/nistpubs/SpecialPublications/NIST.SP.800-150.pdf>NIST.SP.800-150</a></li><li><a href=http://attack.mitre.org/>ATT&CK</a></li><li><a href="https://www.tc260.org.cn/advice/detail.html?norm_id=20150910115414&norm_iso_id=GB/T%2036643%E2%80%942018">《信息安全技术 网络安全威胁信息格式规范》(GB/T 36643-2018)</a></li><li>尹彦,张红斌,刘滨,赵冬梅.网络安全态势感知中的威胁情报技术[J].河北科技大学学报,2021,42(2):195-204.</li><li>刘宝旭, 杨沛安, 武杨, 苏莉娅. 网络空间威胁情报共享技术综述. 计算机科学[J]. 2018, 45(6): 9-18,26.</li><li>Jasper S E. US cyber threat intelligence sharing frameworks[J]. International Journal of Intelligence and CounterIntelligence, 2017, 30(1): 53-65.</li><li>Bromiley M. Threat intelligence: What it is, and how to use it effectively[J]. SANS Institute InfoSec Reading Room, 2016, 15: 172.</li></ol></div></div><div class="gray f6 mv6">
+Last Update: January 13, 2023 <br>
+<a href=https://github.com/abyssalfish-os/abyssalfish-os.github.io/edit/master/content/news/ti/index.md class="f6 ph3 pv1 br2 dib tc ttu mv3 bg-primary-color white hover-bg-green link">Improve this page</a>
+</div></article></main><footer class="bg-primary-color-dark ph4-ns pt4 relative w-100" role=contentinfo>
+<div class="center flex-ns flex-wrap justify-between mw9 w-90">
+<div class="center pb3 pt4">
+<div class="b f3 light-gray mb3 nested-links tc">
+流影由 <a href=https://github.com/orgs/Abyssal-Fish-Technology class=link>深海鱼（北京）科技有限公司 </a>发起开源和维护，欢迎参与<br>
+</div><ul class="center f6 list ma0 mv4 pa0 tc">
+<li class="dib mr3"><a href=https://github.com/Abyssal-Fish-Technology/ly_vis class="dim link light-gray pv2">可视化交互分析(ly_vis)</a></li><li class="dib mr3"><a href=https://github.com/Abyssal-Fish-Technology/ly_server class="dim link light-gray pv2">管理引擎(ly_server)</a></li><li class=dib><a href=https://github.com/Abyssal-Fish-Technology/ly_analyser class="dim link light-gray pv2">分析引擎(ly_analyser)</a></li><li class=dib><a href=https://github.com/Abyssal-Fish-Technology/ly_probe class="dim link light-gray pv2"> &nbsp;&nbsp;&nbsp;&nbsp;流量探针(ly_probe)</a></li></ul><ul class="center f6 list ma0 mv3 pa0 tc"><li class="dib mr3"><a href=https://github.com/abyssalfish-os/liuying/issues/new class="dim link light-gray pv2">到 Github 发起 Issue</a></li><li class=dib><a href=https://gitter.im/abyssalfish-os/community class="dim link light-gray pv2">来 Gitter 沟通留言</a></li></ul></div></div><div class="bg-primary-color-dark bottom-0 left-0 right-0 dn-l fixed pb3 ph3 pt3 z-2"><div class="globalmenu mobilemenu pb1 dn">
+<ul class="list hidden dib ph0 scrolling-touch tc">
+<li class="tl dib ma0 hover-bg-black w-100">
+<a href=/news/ class="ttu f6 link primary-color-light overflow hover-white db brand-font ma0 w-100 pv3 ph4">
+新闻&博客
+</a>
+</li><li class="tl dib ma0 hover-bg-black w-100">
+<a href=/documentation/ class="ttu f6 link primary-color-light overflow hover-white db brand-font ma0 w-100 pv3 ph4">
+文档
+</a>
+</li><li class="tl dib ma0 hover-bg-black w-100">
+<a href=/demo/ class="ttu f6 link primary-color-light overflow hover-white db brand-font ma0 w-100 pv3 ph4">
+Demo演示
+</a>
+</li><li class="tl dib ma0 hover-bg-black w-100">
+<a href=https://gitee.com/organizations/abyssalfish-os/projects class="ttu f6 link primary-color-light overflow hover-white db brand-font ma0 w-100 pv3 ph4">
+Gitee
+</a>
+</li><li class="tl dib ma0 hover-bg-black w-100">
+<a href=https://github.com/orgs/Abyssal-Fish-Technology/repositories class="ttu f6 link primary-color-light overflow hover-white db brand-font ma0 w-100 pv3 ph4">
+GitHub
+</a>
+</li><li class="tl dib ma0 hover-bg-black w-100">
+<a href=https://gitter.im/abyssalfish-os/community class="ttu f6 link primary-color-light overflow hover-white db brand-font ma0 w-100 pv3 ph4">
+讨论区
+</a>
+</li></ul></div><div class="docsmenu mobilemenu pb1 dn">
+<ul class="list dib ph0 scrolling-touch tc">
+<li class="tl dib ma0 hover-bg-black w-100">
+<a href=/about/ class="ttu f6 link primary-color-light hover-white db brand-font mb1 ma0 w-100 pv2 ph4">
+关于流影
+</a>
+</li><li class="tl dib ma0 hover-bg-black w-100">
+<a href=/getting-started/ class="ttu f6 link primary-color-light hover-white db brand-font mb1 ma0 w-100 pv2 ph4">
+快速开始
+</a>
+</li><li class="tl dib ma0 hover-bg-black w-100">
+<a href=/installation/ class="ttu f6 link primary-color-light hover-white db brand-font mb1 ma0 w-100 pv2 ph4">
+编译安装
+</a>
+</li><li class="tl dib ma0 hover-bg-black w-100">
+<a href=/user-manual/ class="ttu f6 link primary-color-light hover-white db brand-font mb1 ma0 w-100 pv2 ph4">
+用户手册
+</a>
+</li><li class="tl dib ma0 hover-bg-black w-100">
+<a href=/demo/ class="ttu f6 link primary-color-light hover-white db brand-font mb1 ma0 w-100 pv2 ph4">
+演示Demo
+</a>
+</li><li class="tl dib ma0 hover-bg-black w-100 mb2 bb b--mid-gray">
+<a href=/contribute/ class="ttu f6 link primary-color-light hover-white db brand-font mb1 ma0 w-100 pv2 ph4">
+欢迎贡献
+</a>
+</li></ul></div><div class="flex dn-l justify-between">
+<button class="js-toggle flex-auto dib dn-l f6 tc db ph3 pv2 link mr2 white bg-primary-color-dark hover-bg-primary-color ba b--white-40 w-auto" data-target=.globalmenu>Menu</button>
+<button class="js-toggle flex-auto dib dn-l f6 tc db ph3 pv2 link white bg-primary-color-dark hover-bg-primary-color ba b--white-40 w-auto" data-target=.docsmenu>Docs Menu</button>
+</div></div></footer></body></html>
