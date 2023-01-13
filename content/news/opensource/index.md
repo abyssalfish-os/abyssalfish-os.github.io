@@ -62,3 +62,5 @@ isCJKLanguage: true
 ## 联系反馈
 
 - 邮箱：opensource@abyssalfish.com.cn
+- 扫码进入微信讨论群
+{{< imgproc wx_group.png Resize "256x" />}}

@@ -84,8 +84,8 @@ draft: false
 ![网络安全情报](./ti_def.png)
 
 在安全行业业内，大多数情况下所说的威胁情报指的是狭义的威胁情报，
-主要是攻击者相关的信息、动机、目标、攻击技战术、攻击指示器IOC等。
-特别地，在威胁行为检测场景下，其主要内容特指用于识别和检测威胁的失陷标识（IOC: Indicators of Compromise），
+主要是攻击者相关的信息、动机、目标、攻击技战术、失陷指示器IOC（Indicators of Compromise）等。
+特别地，在威胁行为检测场景下，其主要内容特指用于识别和检测威胁的失陷标识IOC，
 如文件 HASH、IP、域名、程序运行路径、注册表项等低层次技术级威胁情报。
 本文后面所述威胁情报，如果没有特别说明，一般也是指狭义的威胁情报，在检测场景下也特指威胁情报相关IOC。
 
@@ -216,7 +216,7 @@ Trusted Automated eXchange of Indicator Information [(TAXII)](https://taxiiproje
 内外部的威胁情报能够提供线索扩展，辅助事件告警分析，去伪存真。
 这主要是针对威胁情报命中事件之外的告警事件而言，例如流影中包检测事件、经验模型判定事件，
 通过查询事件相关的内外部威胁情报，进行关联分析，最终确认是否真实威胁行为。
-需要说明的是，开源流影当前集成的情报查询时自建情报数据接口，开源版仅限用于开发测试。
+需要说明的是，开源流影当前集成的情报查询是自建情报数据接口，开源版仅限用于开发测试。
 外部情报查询，支持跳转到VirusTotal。
 在实际生产环境，建议用户使用商业版威胁情报或者自营情报中心的数据。
 
@@ -278,6 +278,10 @@ Trusted Automated eXchange of Indicator Information [(TAXII)](https://taxiiproje
 - [GitHub](https://github.com/orgs/Abyssal-Fish-Technology/repositories)
 - [Gitee](https://gitee.com/organizations/abyssalfish-os/projects)
 - [Demo地址](http://101.254.236.75:12280/ui/#/login)
+- 扫码进入微信讨论群
+
+
+{{< imgproc wx_group.png Resize "256x" />}}
 
 
 ## 参考文献

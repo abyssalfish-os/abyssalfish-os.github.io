@@ -12,15 +12,15 @@
 {{ else }}
   {{ errorf "Invalid image processing command: Must be one of Crop, Fit, Fill or Resize."}}
 {{ end }}
-<figure style="padding: 0.25rem; margin: 2rem 0; background-color: #cccc">
+<figure style="padding: 0.25rem; margin: 2rem 0; ">
   <img style="max-width: 100%; width: auto; height: auto;" src="{{ $img.RelPermalink }}" width="{{ $img.Width }}" height="{{ $img.Height }}">
-  <figcaption>
-  <small>
-    {{ with .Inner }}
-      {{ . }}
-    {{ else }}
-      .{{ $command }} "{{ $options }}"
-    {{ end }}
-  </small>
-  </figcaption>
+<!--  <figcaption>-->
+<!--  <small>-->
+<!--    {{ with .Inner }}-->
+<!--      {{ . }}-->
+<!--    {{ else }}-->
+<!--      .{{ $command }} "{{ $options }}"-->
+<!--    {{ end }}-->
+<!--  </small>-->
+<!--  </figcaption>-->
 </figure>
