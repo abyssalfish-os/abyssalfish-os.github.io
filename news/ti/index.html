@@ -31,11 +31,11 @@
 <meta property="og:type" content="article">
 <meta property="og:url" content="https://abyssalfish-os.github.io/news/ti/"><meta property="og:image" content="https://abyssalfish-os.github.io/opengraph/gohugoio-card-base-1_huf001e7df4fd9c00c4355abac7d4ca455_242906_filter_2509903698934508900.png"><meta property="article:section" content="news">
 <meta property="article:published_time" content="2023-01-13T00:00:00+08:00">
-<meta property="article:modified_time" content="2023-01-13T17:54:41+08:00">
+<meta property="article:modified_time" content="2023-01-13T21:13:34+08:00">
 <meta itemprop=name content="威胁情报在流影中的应用实践">
 <meta itemprop=description content="流影结合威胁情报，相辅相成，达到更好的安全防护效果。"><meta itemprop=datePublished content="2023-01-13T00:00:00+08:00">
-<meta itemprop=dateModified content="2023-01-13T17:54:41+08:00">
-<meta itemprop=wordCount content="5746">
+<meta itemprop=dateModified content="2023-01-13T21:13:34+08:00">
+<meta itemprop=wordCount content="5734">
 <meta itemprop=keywords content>
 </head><body class="ma0 sans-serif bg-primary-color-light
 production">
@@ -142,10 +142,10 @@ internel and external threats actors. TI includes sepecifics on the TTPs of thes
 <li>安全厂商CrowdStrike的描述：威胁情报是为了理解威胁攻击者的动机、目标和攻击行为而收集、处理和分析的数据。</li></ul><blockquote>
 <p>Threat intelligence is data that is collected, processed,
 and analyzed to understand a threat actor&rsquo;s motives, targets, and attack behaviors.</p></blockquote><p>从上面可以看出，有的定义比较宽泛，有的相对具体和狭义。
-广义上的威胁情报，基本可以说是普遍的网络安全情报，内容比较宽泛，包括不限于狭义的资产情报、威胁情报、
+广义上的威胁情报，基本可以说是普遍的网络安全情报，内容比较宽泛，包括不限于（狭义的）威胁情报、资产情报、
 漏洞情报、安全事件情报及基础信息知识情报等方面内容。</p><p><img src=./ti_def.png alt=网络安全情报></p><p>在安全行业业内，大多数情况下所说的威胁情报指的是狭义的威胁情报，
 主要是攻击者相关的信息、动机、目标、攻击技战术、失陷指示器IOC（Indicators of Compromise）等。
-特别地，在威胁行为检测场景下，其主要内容特指用于识别和检测威胁的失陷标识IOC，
+特别地，在威胁行为检测场景下，其主要内容特指用于识别和检测威胁的失陷指示器IOC，
 如文件 HASH、IP、域名、程序运行路径、注册表项等低层次技术级威胁情报。
 本文后面所述威胁情报，如果没有特别说明，一般也是指狭义的威胁情报，在检测场景下也特指威胁情报相关IOC。</p><h3 id=威胁情报用途和分类>威胁情报用途和分类 <a class=header-link href=#%e5%a8%81%e8%83%81%e6%83%85%e6%8a%a5%e7%94%a8%e9%80%94%e5%92%8c%e5%88%86%e7%b1%bb><svg class="fill-current o-60 hover-accent-color-light" height="22" viewBox="0 0 24 24" width="22" xmlns="http://www.w3.org/2000/svg"><path d="M0 0h24v24H0z" fill="none"/><path d="M3.9 12c0-1.71 1.39-3.1 3.1-3.1h4V7H7c-2.76.0-5 2.24-5 5s2.24 5 5 5h4v-1.9H7c-1.71.0-3.1-1.39-3.1-3.1zM8 13h8v-2H8v2zm9-6h-4v1.9h4c1.71.0 3.1 1.39 3.1 3.1s-1.39 3.1-3.1 3.1h-4V17h4c2.76.0 5-2.24 5-5s-2.24-5-5-5z"/></svg></a></h3><p>威胁情报已经广泛被应用在威胁检测、溯源分析、主动防御和安全响应过程中。
 通过应用威胁情报，能够提高安全响应的效率，
@@ -161,7 +161,7 @@ and analyzed to understand a threat actor&rsquo;s motives, targets, and attack b
 其中活跃情报是指正在或者潜在导致威胁发生的情报，供实时检测和响应使用；
 情报档案是归档后的数据集，供查询分析使用。</p><h3 id=威胁情报相关标准>威胁情报相关标准 <a class=header-link href=#%e5%a8%81%e8%83%81%e6%83%85%e6%8a%a5%e7%9b%b8%e5%85%b3%e6%a0%87%e5%87%86><svg class="fill-current o-60 hover-accent-color-light" height="22" viewBox="0 0 24 24" width="22" xmlns="http://www.w3.org/2000/svg"><path d="M0 0h24v24H0z" fill="none"/><path d="M3.9 12c0-1.71 1.39-3.1 3.1-3.1h4V7H7c-2.76.0-5 2.24-5 5s2.24 5 5 5h4v-1.9H7c-1.71.0-3.1-1.39-3.1-3.1zM8 13h8v-2H8v2zm9-6h-4v1.9h4c1.71.0 3.1 1.39 3.1 3.1s-1.39 3.1-3.1 3.1h-4V17h4c2.76.0 5-2.24 5-5s-2.24-5-5-5z"/></svg></a></h3><p>威胁情报通过广泛扩散使用才能使其价值最大化。
 威胁情报的扩散使用，需要各种行业、组织用户的广泛参与和情报交换共享。
-情报的共享交换的基础，是建立在情报格式标准规范化及有效共享交换机制基础之上的。
+情报的共享交换的基础，是建立在情报格式标准规范化及有效共享交换机制之上的。
 下图列出一些威胁情报相关的国内外主要相关的标准规范。</p><p><img src=./ti_bz.png alt=相关标准></p><p>威胁情报标准化和共享机制，目前国外已经比较成熟，国内也在逐步完善之中。
 美国牵头提出的一些标准包括Structured Threat Information eXpression <a href=http://stixproject.github.io/>(STIX)</a>系列、
 Cyber Observable eXpression <a href=https://cyboxproject.github.io/>(CyboX)</a>、
@@ -184,7 +184,7 @@ Trusted Automated eXchange of Indicator Information <a href=https://taxiiproject
 为了与国际接轨，也有部分厂商的威胁情报支持STIX系列标准规范。</p><p>当前流影开源版已经实现威胁情报自定义格式的接入和查询，后续规划中考虑增加对符合国内外标准规范的更广泛的威胁情报的支持。</p><h2 id=流影中应用威胁情报>流影中应用威胁情报 <a class=header-link href=#%e6%b5%81%e5%bd%b1%e4%b8%ad%e5%ba%94%e7%94%a8%e5%a8%81%e8%83%81%e6%83%85%e6%8a%a5><svg class="fill-current o-60 hover-accent-color-light" height="22" viewBox="0 0 24 24" width="22" xmlns="http://www.w3.org/2000/svg"><path d="M0 0h24v24H0z" fill="none"/><path d="M3.9 12c0-1.71 1.39-3.1 3.1-3.1h4V7H7c-2.76.0-5 2.24-5 5s2.24 5 5 5h4v-1.9H7c-1.71.0-3.1-1.39-3.1-3.1zM8 13h8v-2H8v2zm9-6h-4v1.9h4c1.71.0 3.1 1.39 3.1 3.1s-1.39 3.1-3.1 3.1h-4V17h4c2.76.0 5-2.24 5-5s-2.24-5-5-5z"/></svg></a></h2><p>当前开源流影版本支持部分自定义格式的威胁情报接入，
 集成实现了基于威胁情报的威胁行为检测告警、威胁分析、情报生产等方面的功能。</p><h3 id=流影不只是消费威胁情报也可以生产威胁情报>流影不只是消费威胁情报，也可以生产威胁情报 <a class=header-link href=#%e6%b5%81%e5%bd%b1%e4%b8%8d%e5%8f%aa%e6%98%af%e6%b6%88%e8%b4%b9%e5%a8%81%e8%83%81%e6%83%85%e6%8a%a5%e4%b9%9f%e5%8f%af%e4%bb%a5%e7%94%9f%e4%ba%a7%e5%a8%81%e8%83%81%e6%83%85%e6%8a%a5><svg class="fill-current o-60 hover-accent-color-light" height="22" viewBox="0 0 24 24" width="22" xmlns="http://www.w3.org/2000/svg"><path d="M0 0h24v24H0z" fill="none"/><path d="M3.9 12c0-1.71 1.39-3.1 3.1-3.1h4V7H7c-2.76.0-5 2.24-5 5s2.24 5 5 5h4v-1.9H7c-1.71.0-3.1-1.39-3.1-3.1zM8 13h8v-2H8v2zm9-6h-4v1.9h4c1.71.0 3.1 1.39 3.1 3.1s-1.39 3.1-3.1 3.1h-4V17h4c2.76.0 5-2.24 5-5s-2.24-5-5-5z"/></svg></a></h3><p><img src=./ti_ly.png alt=流影和威胁情报></p><p>在流影中既可以消费使用威胁情报，也可以生产输出威胁情报。
 威胁情报在流影中应用主要包括以下三个方面：</p><ul>
-<li>基于威胁情报的检测告警，支持恶意IP和域名的检测告警</li><li>基于情报的威胁分析，支持内外部威胁情报检索</li><li>威胁情报生产，安全人员使用流影分析发现和确认的威胁事件后，可以输出共享威胁情报数据</li></ul><p>使用和生产威胁情报，两者相辅相成，互相结合，能够形成良性循环，不断提高流影威胁检测与分析的能力。
+<li>基于威胁情报的检测告警，支持恶意IP和域名的检测告警</li><li>基于情报的威胁分析，支持内外部威胁情报检索</li><li>威胁情报生产，安全人员使用流影分析发现和确认的威胁事件后，可以输出共享威胁情报数据</li></ul><p>使用和生产威胁情报，两者相辅相成，互相结合，能够形成良性循环。
 一方面，通过多种威胁情报的接入，可以增强流影威胁检测发现和分析能力；
 另一方面，流影其他威胁行为识别模型检测出的安全事件，经过安全人员分析确认后，
 相关上下文、证据、IOC就可以作为情报输出，生成更多、更丰富的威胁情报数据。
@@ -207,7 +207,7 @@ Trusted Automated eXchange of Indicator Information <a href=https://taxiiproject
 该页面显示的情报信息，来源于公司自建的情报接口，开源版可以测试使用。商业使用请单独联系。</p><p>第二种查询方式是通过事件列表页的快捷菜单，如下图所示：
 <img src=./ti_search_2.png alt=情报检索结果2>
 在事件列表页，直接点击IP或者Domain，页面显示快捷菜单，选择全局搜索可以进入第一种查询方式；
-特别的，这里还支持外部威胁情报查询，目前集成了搜索引擎和跳转VirusTotal的快速查询。</p><h2 id=流影产出威胁情报>流影产出威胁情报 <a class=header-link href=#%e6%b5%81%e5%bd%b1%e4%ba%a7%e5%87%ba%e5%a8%81%e8%83%81%e6%83%85%e6%8a%a5><svg class="fill-current o-60 hover-accent-color-light" height="22" viewBox="0 0 24 24" width="22" xmlns="http://www.w3.org/2000/svg"><path d="M0 0h24v24H0z" fill="none"/><path d="M3.9 12c0-1.71 1.39-3.1 3.1-3.1h4V7H7c-2.76.0-5 2.24-5 5s2.24 5 5 5h4v-1.9H7c-1.71.0-3.1-1.39-3.1-3.1zM8 13h8v-2H8v2zm9-6h-4v1.9h4c1.71.0 3.1 1.39 3.1 3.1s-1.39 3.1-3.1 3.1h-4V17h4c2.76.0 5-2.24 5-5s-2.24-5-5-5z"/></svg></a></h2><p>流影本身能够生产威胁情报。安全分析人员通过分析确认后的安全告警事件，即是自产的高时效性威胁情报，
+特别地，这里还支持外部威胁情报查询，目前集成了搜索引擎和跳转VirusTotal的快速查询。</p><h2 id=流影产出威胁情报>流影产出威胁情报 <a class=header-link href=#%e6%b5%81%e5%bd%b1%e4%ba%a7%e5%87%ba%e5%a8%81%e8%83%81%e6%83%85%e6%8a%a5><svg class="fill-current o-60 hover-accent-color-light" height="22" viewBox="0 0 24 24" width="22" xmlns="http://www.w3.org/2000/svg"><path d="M0 0h24v24H0z" fill="none"/><path d="M3.9 12c0-1.71 1.39-3.1 3.1-3.1h4V7H7c-2.76.0-5 2.24-5 5s2.24 5 5 5h4v-1.9H7c-1.71.0-3.1-1.39-3.1-3.1zM8 13h8v-2H8v2zm9-6h-4v1.9h4c1.71.0 3.1 1.39 3.1 3.1s-1.39 3.1-3.1 3.1h-4V17h4c2.76.0 5-2.24 5-5s-2.24-5-5-5z"/></svg></a></h2><p>流影本身能够生产威胁情报。安全分析人员通过分析确认后的安全告警事件，即是自产的高时效性威胁情报，
 可以共享给社区联盟或者外界使用，输出威胁情报。</p><p>流影留存了告警事件的上下文流量特征、原始Pcap包、聚合事件等信息。
 在事件列表页面，支持导出事件告警及其上下文信息，如下图所示：
 <img src=./ti_export.png alt=情报导出共享>
@@ -218,10 +218,10 @@ Trusted Automated eXchange of Indicator Information <a href=https://taxiiproject
 从而命中一些高级别的攻击行为，提升了流影的识别检测能力；另一方面，流影能够留存威胁行为的流量上下文信息和证据，
 输出丰富的、高价值流量侧威胁情报。
 流影加威胁情报，互相结合，能够相辅相成，达到更好的安全防护效果。</p><h2 id=展望与规划>展望与规划 <a class=header-link href=#%e5%b1%95%e6%9c%9b%e4%b8%8e%e8%a7%84%e5%88%92><svg class="fill-current o-60 hover-accent-color-light" height="22" viewBox="0 0 24 24" width="22" xmlns="http://www.w3.org/2000/svg"><path d="M0 0h24v24H0z" fill="none"/><path d="M3.9 12c0-1.71 1.39-3.1 3.1-3.1h4V7H7c-2.76.0-5 2.24-5 5s2.24 5 5 5h4v-1.9H7c-1.71.0-3.1-1.39-3.1-3.1zM8 13h8v-2H8v2zm9-6h-4v1.9h4c1.71.0 3.1 1.39 3.1 3.1s-1.39 3.1-3.1 3.1h-4V17h4c2.76.0 5-2.24 5-5s-2.24-5-5-5z"/></svg></a></h2><p>当前开源流影在威胁情报的应用还处于初级阶段，
-已实现的功能仅仅支持威胁情报中一小部分内容，
+已实现的功能仅支持威胁情报中一小部分内容，
 除了IP、Domain类型的IOC，还有哈希值、URL、电子邮件等类型IOC；
-除了IOC，还有高级别威胁情报TTPs，目前还没有支持。
-因此也只能发挥威胁情报少量的作用，还有很大的改进提升空间。</p><p>对威胁情报数据类型的全面支持，结合ATT&CK，遵循共享交换标准规范的，能够使流影在威胁分析、共享交换中发挥更好的作用。
+除了IOC，还有高级别威胁情报TTPs，这些目前还没有支持。
+因此当前只是发挥出威胁情报少量的作用，还有很大的改进提升空间。</p><p>对威胁情报数据类型的全面支持，结合ATT&CK，并且遵循共享交换标准规范，能够使流影在威胁分析、共享交换中发挥更好的作用。
 这些功能需求已经列入开源版将来的研发规划之中。
 相信如果全面地实现这些功能，在流影中进行集成应用，并且不断迭代完善，
 一定能够为用户提供全新的安全视角、更好的使用体验。</p><p>流影是一个完全开源的项目，欢迎大家广泛参与使用，期待您的贡献。</p><h2 id=相关信息>相关信息 <a class=header-link href=#%e7%9b%b8%e5%85%b3%e4%bf%a1%e6%81%af><svg class="fill-current o-60 hover-accent-color-light" height="22" viewBox="0 0 24 24" width="22" xmlns="http://www.w3.org/2000/svg"><path d="M0 0h24v24H0z" fill="none"/><path d="M3.9 12c0-1.71 1.39-3.1 3.1-3.1h4V7H7c-2.76.0-5 2.24-5 5s2.24 5 5 5h4v-1.9H7c-1.71.0-3.1-1.39-3.1-3.1zM8 13h8v-2H8v2zm9-6h-4v1.9h4c1.71.0 3.1 1.39 3.1 3.1s-1.39 3.1-3.1 3.1h-4V17h4c2.76.0 5-2.24 5-5s-2.24-5-5-5z"/></svg></a></h2><ul>
