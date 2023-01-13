@@ -1,7 +1,7 @@
-<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>流影 – 开源网络流量可视化分析平台</title><link>https://abyssalfish-os.github.io/</link><description>Recent Hugo news from gohugo.io</description><generator>Hugo -- gohugo.io</generator><language>zh-CN</language><lastBuildDate>Thu, 29 Dec 2022 12:00:00 +0800</lastBuildDate><image><url>https://abyssalfish-os.github.io/img/hugo.png</url><title>GoHugo.io</title><link>https://abyssalfish-os.github.io/</link></image><atom:link href="https://abyssalfish-os.github.io/index.xml" rel="self" type="application/rss+xml"/><item><title>News: 威胁情报在流影中的实践应用</title><link>https://abyssalfish-os.github.io/news/ti/</link><pubDate>Wed, 11 Jan 2023 00:00:00 +0800</pubDate><guid>https://abyssalfish-os.github.io/news/ti/</guid><description>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>流影 – 开源网络流量可视化分析平台</title><link>https://abyssalfish-os.github.io/</link><description>Recent Hugo news from gohugo.io</description><generator>Hugo -- gohugo.io</generator><language>zh-CN</language><lastBuildDate>Thu, 29 Dec 2022 12:00:00 +0800</lastBuildDate><image><url>https://abyssalfish-os.github.io/img/hugo.png</url><title>GoHugo.io</title><link>https://abyssalfish-os.github.io/</link></image><atom:link href="https://abyssalfish-os.github.io/index.xml" rel="self" type="application/rss+xml"/><item><title>News: 威胁情报在流影中的应用实践</title><link>https://abyssalfish-os.github.io/news/ti/</link><pubDate>Wed, 11 Jan 2023 00:00:00 +0800</pubDate><guid>https://abyssalfish-os.github.io/news/ti/</guid><description>
 &lt;p>&lt;img src="./ti_info.png" alt="示意图">&lt;/p>
 &lt;p>流影是开源的基于流量的网络行为可视化分析平台，功能架构灵活可扩展。
-威胁情报在安全检测与防御的实践应用中具有重要作用。
+威胁情报在安全检测与防御的实践应用中能够发挥很大作用。
 流影支持多种网络威胁行为的检测方式，也支持威胁情报这种基本的检测方式。
 流影通过威胁情报的集成应用，方便用户能够灵活接入自产或采购的情报数据，
 实现基于情报的威胁检测告警、威胁分析功能。&lt;/p>
@@ -126,7 +126,7 @@ Trusted Automated eXchange of Indicator Information &lt;a href="https://taxiipro
 国内威胁情报厂商支持的情报格式以自定义格式居多，少部分支持国标，
 但是各厂商的具体实现落地差异性较大，不太统一；
 为了与国际接轨，也有部分厂商的威胁情报支持STIX系列标准规范。&lt;/p>
-&lt;p>当前流影开源版已经实现威胁情报自定义格式的接入和查询，后续规划中考虑增加对国内外标准规范的接入和查询功能。&lt;/p>
+&lt;p>当前流影开源版已经实现威胁情报自定义格式的接入和查询，后续规划中考虑增加对符合国内外标准规范的更广泛的威胁情报的支持。&lt;/p>
 &lt;h2 id="流影中应用威胁情报">流影中应用威胁情报 &lt;a class="header-link" href="#%e6%b5%81%e5%bd%b1%e4%b8%ad%e5%ba%94%e7%94%a8%e5%a8%81%e8%83%81%e6%83%85%e6%8a%a5">&lt;svg class="fill-current o-60 hover-accent-color-light" height="22px" viewBox="0 0 24 24" width="22px" xmlns="http://www.w3.org/2000/svg">&lt;path d="M0 0h24v24H0z" fill="none"/>&lt;path d="M3.9 12c0-1.71 1.39-3.1 3.1-3.1h4V7H7c-2.76 0-5 2.24-5 5s2.24 5 5 5h4v-1.9H7c-1.71 0-3.1-1.39-3.1-3.1zM8 13h8v-2H8v2zm9-6h-4v1.9h4c1.71 0 3.1 1.39 3.1 3.1s-1.39 3.1-3.1 3.1h-4V17h4c2.76 0 5-2.24 5-5s-2.24-5-5-5z"/>&lt;/svg>&lt;/a>&lt;/h2>
 &lt;p>当前开源流影版本支持部分自定义格式的威胁情报接入，
 集成实现了基于威胁情报的威胁行为检测告警、威胁分析、情报生产等方面的功能。&lt;/p>
