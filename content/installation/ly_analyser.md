@@ -127,7 +127,7 @@ ly_analyser是流影的威胁行为分析引擎，读取netflow v9格式的数�
 	
 	# 编译agent
 	cd agent/
-	make && make instal
+	make && make install
 	
 	# 编译nfdump
 	cd nfdump/

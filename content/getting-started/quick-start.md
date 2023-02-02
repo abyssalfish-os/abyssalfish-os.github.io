@@ -126,7 +126,7 @@ lyprobe -n <host:port|none> [-i <interface|dump file>] [-f <filter>]
 
 ​通过数据包传输层载荷进行正则模式匹配，结合资产指纹规则，识别数据流应用层协议，目标IP的中间件服务、设备种类、操作系统等资产信息；结合威胁指纹规则，识别指定类型的威胁流量。
 
-​指纹规则存放于 **fp-pattern/** 目录中，包含以JSON格式书写的五类规则：
+​指纹规则存放于 **fp-patterns/** 目录中，包含以JSON格式书写的五类规则：
 
 ```text
 service.json	-- 应用层协议与服务识别规则
