@@ -1,4 +1,113 @@
-<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>流影 – 开源网络流量可视化分析平台</title><link>https://abyssalfish-os.github.io/</link><description>Recent Hugo news from gohugo.io</description><generator>Hugo -- gohugo.io</generator><language>zh-CN</language><lastBuildDate>Thu, 29 Dec 2022 12:00:00 +0800</lastBuildDate><image><url>https://abyssalfish-os.github.io/img/hugo.png</url><title>GoHugo.io</title><link>https://abyssalfish-os.github.io/</link></image><atom:link href="https://abyssalfish-os.github.io/index.xml" rel="self" type="application/rss+xml"/><item><title>News: 威胁情报在流影中的应用实践</title><link>https://abyssalfish-os.github.io/news/ti/</link><pubDate>Wed, 11 Jan 2023 00:00:00 +0800</pubDate><guid>https://abyssalfish-os.github.io/news/ti/</guid><description>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>流影 – 开源网络流量可视化分析平台</title><link>https://abyssalfish-os.github.io/</link><description>Recent Hugo news from gohugo.io</description><generator>Hugo -- gohugo.io</generator><language>zh-CN</language><lastBuildDate>Thu, 29 Dec 2022 12:00:00 +0800</lastBuildDate><image><url>https://abyssalfish-os.github.io/img/hugo.png</url><title>GoHugo.io</title><link>https://abyssalfish-os.github.io/</link></image><atom:link href="https://abyssalfish-os.github.io/index.xml" rel="self" type="application/rss+xml"/><item><title>News: 流影概览</title><link>https://abyssalfish-os.github.io/news/introduction/</link><pubDate>Mon, 06 Feb 2023 00:00:00 +0800</pubDate><guid>https://abyssalfish-os.github.io/news/introduction/</guid><description>
+&lt;h1 id="流影概览">流影概览&lt;/h1>
+&lt;h2 id="引言">引言 &lt;a class="header-link" href="#%e5%bc%95%e8%a8%80">&lt;svg class="fill-current o-60 hover-accent-color-light" height="22px" viewBox="0 0 24 24" width="22px" xmlns="http://www.w3.org/2000/svg">&lt;path d="M0 0h24v24H0z" fill="none"/>&lt;path d="M3.9 12c0-1.71 1.39-3.1 3.1-3.1h4V7H7c-2.76 0-5 2.24-5 5s2.24 5 5 5h4v-1.9H7c-1.71 0-3.1-1.39-3.1-3.1zM8 13h8v-2H8v2zm9-6h-4v1.9h4c1.71 0 3.1 1.39 3.1 3.1s-1.39 3.1-3.1 3.1h-4V17h4c2.76 0 5-2.24 5-5s-2.24-5-5-5z"/>&lt;/svg>&lt;/a>&lt;/h2>
+&lt;p>流影开源发布已经过去两个月，陆陆续续有小伙伴已经进行了安装部署和试用反馈。
+在这里首先对大家的参与表示欢迎，对安装使用中给出的反馈建议表示感谢。
+为了让大家对流影有一个总体的认识和了解，
+撰写此文，对流影进行系统全面的概括性介绍。&lt;/p>
+&lt;h2 id="简介">简介 &lt;a class="header-link" href="#%e7%ae%80%e4%bb%8b">&lt;svg class="fill-current o-60 hover-accent-color-light" height="22px" viewBox="0 0 24 24" width="22px" xmlns="http://www.w3.org/2000/svg">&lt;path d="M0 0h24v24H0z" fill="none"/>&lt;path d="M3.9 12c0-1.71 1.39-3.1 3.1-3.1h4V7H7c-2.76 0-5 2.24-5 5s2.24 5 5 5h4v-1.9H7c-1.71 0-3.1-1.39-3.1-3.1zM8 13h8v-2H8v2zm9-6h-4v1.9h4c1.71 0 3.1 1.39 3.1 3.1s-1.39 3.1-3.1 3.1h-4V17h4c2.76 0 5-2.24 5-5s-2.24-5-5-5z"/>&lt;/svg>&lt;/a>&lt;/h2>
+&lt;p>流影是面向全行业用户的下一代网络安全威胁检测与分析产品，
+其定位是一个轻量级的网络安全态势感知与可视化分析平台。
+该系统集成了流量探针、网络行为分析引擎、威胁检测引擎和交互式可视化分析引擎四个核心模块，
+实现了对网络流量全方位监测、网络行为多维度特征提取留存、
+网络资产被动测绘画像和网络威胁行为实时告警等基本功能。
+流影适用于各种网络安全防护场景，包括不限于入侵检测、威胁狩猎、攻防演练、网络证据留存、网络行为调查分析、态势感知等。&lt;/p>
+&lt;p>&lt;img src="https://abyssalfish-os.github.io/images/liuying/ly_structure.png" alt="流影架构">&lt;/p>
+&lt;p>开源版流影功能已经比较全面，基本能够满足中小型用户的网络安全防护需求。
+流影开源版本功能丰富且灵活可拓展；可视化界面图表丰富，易于使用；部署高效，运维成本低。
+使用流影，能够有效避免以往多种网络安全产品堆砌带来的高成本、运维难度大等方面问题。
+不仅能显著提升各位用户的网络安全防护水平，还能够降低用户安装部署、运维等方面的成本。&lt;/p>
+&lt;p>需要说明的是，流影也有商业版本，商业版可以满足用户的高阶定制化网络安全防护需求。
+商业版本流影已经可供交付使用，能够提供更丰富的功能，并且集成了更全面的威胁行为指纹特征库及威胁情报数据。大家如果有商务合作需求，可以联系我们。&lt;/p>
+&lt;h2 id="核心技术概览">核心技术概览 &lt;a class="header-link" href="#%e6%a0%b8%e5%bf%83%e6%8a%80%e6%9c%af%e6%a6%82%e8%a7%88">&lt;svg class="fill-current o-60 hover-accent-color-light" height="22px" viewBox="0 0 24 24" width="22px" xmlns="http://www.w3.org/2000/svg">&lt;path d="M0 0h24v24H0z" fill="none"/>&lt;path d="M3.9 12c0-1.71 1.39-3.1 3.1-3.1h4V7H7c-2.76 0-5 2.24-5 5s2.24 5 5 5h4v-1.9H7c-1.71 0-3.1-1.39-3.1-3.1zM8 13h8v-2H8v2zm9-6h-4v1.9h4c1.71 0 3.1 1.39 3.1 3.1s-1.39 3.1-3.1 3.1h-4V17h4c2.76 0 5-2.24 5-5s-2.24-5-5-5z"/>&lt;/svg>&lt;/a>&lt;/h2>
+&lt;ul>
+&lt;li>数据可视化：数据时序、地理位置、聚类呈现，支持交互式探索、追溯与挖掘&lt;/li>
+&lt;li>机器学习：支持基于tensorflow的检测模型&lt;/li>
+&lt;li>基于统计的经验模型：统计分析结合专家经验&lt;/li>
+&lt;li>威胁情报：集成威胁情报支持&lt;/li>
+&lt;li>网络流量采集与解析：流量定制采集与Netflow支持&lt;/li>
+&lt;li>深度包检测与网络流分析：支持指纹规则匹配、会话特征提取留存&lt;/li>
+&lt;/ul>
+&lt;h2 id="主要功能概览">主要功能概览 &lt;a class="header-link" href="#%e4%b8%bb%e8%a6%81%e5%8a%9f%e8%83%bd%e6%a6%82%e8%a7%88">&lt;svg class="fill-current o-60 hover-accent-color-light" height="22px" viewBox="0 0 24 24" width="22px" xmlns="http://www.w3.org/2000/svg">&lt;path d="M0 0h24v24H0z" fill="none"/>&lt;path d="M3.9 12c0-1.71 1.39-3.1 3.1-3.1h4V7H7c-2.76 0-5 2.24-5 5s2.24 5 5 5h4v-1.9H7c-1.71 0-3.1-1.39-3.1-3.1zM8 13h8v-2H8v2zm9-6h-4v1.9h4c1.71 0 3.1 1.39 3.1 3.1s-1.39 3.1-3.1 3.1h-4V17h4c2.76 0 5-2.24 5-5s-2.24-5-5-5z"/>&lt;/svg>&lt;/a>&lt;/h2>
+&lt;ol>
+&lt;li>安全告警检测&lt;/li>
+&lt;/ol>
+&lt;ul>
+&lt;li>内置多种场景，包括扫描、风险访问、威胁访问、C&amp;amp;C 通 讯、挖矿行为、后门利用、隧道通信、服务器异常、注入等。 场景内部包含近 40 种识别模型&lt;/li>
+&lt;li>支持自定义业务安全场景&lt;/li>
+&lt;/ul>
+&lt;ol start="2">
+&lt;li>安全告警研判&lt;/li>
+&lt;/ol>
+&lt;ul>
+&lt;li>关键证据留存&lt;/li>
+&lt;li>相关设备分析&lt;/li>
+&lt;li>攻击模式分析&lt;/li>
+&lt;/ul>
+&lt;ol start="3">
+&lt;li>安全告警溯源&lt;/li>
+&lt;/ol>
+&lt;ul>
+&lt;li>威胁情报查询&lt;/li>
+&lt;li>多维设备画像&lt;/li>
+&lt;li>历史行为检索&lt;/li>
+&lt;/ul>
+&lt;ol start="4">
+&lt;li>被动资产识别&lt;/li>
+&lt;/ol>
+&lt;ul>
+&lt;li>活跃IP：活跃时间、流量&lt;/li>
+&lt;li>活跃端口：服务类型、中间件、设备类型、应用系统、操作系统等信息&lt;/li>
+&lt;li>活跃网址：活跃时间、流量、响应码&lt;/li>
+&lt;li>资产关联分布图&lt;/li>
+&lt;/ul>
+&lt;ol start="5">
+&lt;li>其他功能&lt;/li>
+&lt;/ol>
+&lt;ul>
+&lt;li>威胁态势概览&lt;/li>
+&lt;li>重点目标监控&lt;/li>
+&lt;li>常规网络行为识别&lt;/li>
+&lt;/ul>
+&lt;h2 id="系统特性概览">系统特性概览 &lt;a class="header-link" href="#%e7%b3%bb%e7%bb%9f%e7%89%b9%e6%80%a7%e6%a6%82%e8%a7%88">&lt;svg class="fill-current o-60 hover-accent-color-light" height="22px" viewBox="0 0 24 24" width="22px" xmlns="http://www.w3.org/2000/svg">&lt;path d="M0 0h24v24H0z" fill="none"/>&lt;path d="M3.9 12c0-1.71 1.39-3.1 3.1-3.1h4V7H7c-2.76 0-5 2.24-5 5s2.24 5 5 5h4v-1.9H7c-1.71 0-3.1-1.39-3.1-3.1zM8 13h8v-2H8v2zm9-6h-4v1.9h4c1.71 0 3.1 1.39 3.1 3.1s-1.39 3.1-3.1 3.1h-4V17h4c2.76 0 5-2.24 5-5s-2.24-5-5-5z"/>&lt;/svg>&lt;/a>&lt;/h2>
+&lt;ul>
+&lt;li>基于行为识别威胁：有效发现已知威胁、N-day、未知威胁、APT、内部威胁&lt;/li>
+&lt;li>精准、精简的告警：从识别层、验证层、分析层、业务层自主进行去重、去伪&lt;/li>
+&lt;li>人脑 &amp;amp; 机器结合：在高级威胁的检测分析中，人的参与则是必不可少的，机器是扮演辅助工具的角色，为用户提供证据线索，提升威胁检测分析效率&lt;/li>
+&lt;li>提升认知，快速响应：系统中的每一次告警都能解释清楚，并且有据可依，让安全运营人员“知其然，亦知其所以然”&lt;/li>
+&lt;/ul>
+&lt;h2 id="应用场景">应用场景 &lt;a class="header-link" href="#%e5%ba%94%e7%94%a8%e5%9c%ba%e6%99%af">&lt;svg class="fill-current o-60 hover-accent-color-light" height="22px" viewBox="0 0 24 24" width="22px" xmlns="http://www.w3.org/2000/svg">&lt;path d="M0 0h24v24H0z" fill="none"/>&lt;path d="M3.9 12c0-1.71 1.39-3.1 3.1-3.1h4V7H7c-2.76 0-5 2.24-5 5s2.24 5 5 5h4v-1.9H7c-1.71 0-3.1-1.39-3.1-3.1zM8 13h8v-2H8v2zm9-6h-4v1.9h4c1.71 0 3.1 1.39 3.1 3.1s-1.39 3.1-3.1 3.1h-4V17h4c2.76 0 5-2.24 5-5s-2.24-5-5-5z"/>&lt;/svg>&lt;/a>&lt;/h2>
+&lt;p>流影应用场景包括不限于以下方面：&lt;/p>
+&lt;ul>
+&lt;li>网络攻击威胁检测&lt;/li>
+&lt;li>网络安全攻防演练&lt;/li>
+&lt;li>重点目标网络流量监测&lt;/li>
+&lt;li>数字加密货币挖矿检测&lt;/li>
+&lt;li>网络隐蔽隧道通信发现&lt;/li>
+&lt;li>网络异常服务发现&lt;/li>
+&lt;li>异常数据流动：数据定向流动、跨境传输&lt;/li>
+&lt;li>网络行为监测与调查&lt;/li>
+&lt;li>高价值网络行为痕迹证据留存&lt;/li>
+&lt;/ul>
+&lt;h2 id="结语">结语 &lt;a class="header-link" href="#%e7%bb%93%e8%af%ad">&lt;svg class="fill-current o-60 hover-accent-color-light" height="22px" viewBox="0 0 24 24" width="22px" xmlns="http://www.w3.org/2000/svg">&lt;path d="M0 0h24v24H0z" fill="none"/>&lt;path d="M3.9 12c0-1.71 1.39-3.1 3.1-3.1h4V7H7c-2.76 0-5 2.24-5 5s2.24 5 5 5h4v-1.9H7c-1.71 0-3.1-1.39-3.1-3.1zM8 13h8v-2H8v2zm9-6h-4v1.9h4c1.71 0 3.1 1.39 3.1 3.1s-1.39 3.1-3.1 3.1h-4V17h4c2.76 0 5-2.24 5-5s-2.24-5-5-5z"/>&lt;/svg>&lt;/a>&lt;/h2>
+&lt;p>本文从架构、技术、功能、应用等方面，对流影进行了概要性介绍，帮助读者对流影有一个整体认识。
+本文并没有深入相关细节，如需深入了解，请查看流影&lt;a href="https://abyssalfish-os.github.io/documentation/">文档&lt;/a>。同时我们提供了线上演示Demo，便于您快速上手试用，您可以通过以下链接和演示账号登录试用：&lt;/p>
+&lt;ul>
+&lt;li>&lt;a href="http://101.254.236.75:12280/ui/#/login">流影Demo&lt;/a>&lt;/li>
+&lt;li>Demo账号：demo&lt;/li>
+&lt;li>Demo口令：demo@2022&lt;/li>
+&lt;/ul>
+&lt;p>欢迎大家使用反馈，并且积极参与项目贡献。&lt;/p>
+&lt;h2 id="联系反馈">联系反馈 &lt;a class="header-link" href="#%e8%81%94%e7%b3%bb%e5%8f%8d%e9%a6%88">&lt;svg class="fill-current o-60 hover-accent-color-light" height="22px" viewBox="0 0 24 24" width="22px" xmlns="http://www.w3.org/2000/svg">&lt;path d="M0 0h24v24H0z" fill="none"/>&lt;path d="M3.9 12c0-1.71 1.39-3.1 3.1-3.1h4V7H7c-2.76 0-5 2.24-5 5s2.24 5 5 5h4v-1.9H7c-1.71 0-3.1-1.39-3.1-3.1zM8 13h8v-2H8v2zm9-6h-4v1.9h4c1.71 0 3.1 1.39 3.1 3.1s-1.39 3.1-3.1 3.1h-4V17h4c2.76 0 5-2.24 5-5s-2.24-5-5-5z"/>&lt;/svg>&lt;/a>&lt;/h2>
+&lt;p>如果有问题，欢迎通过邮件或者微信群进行反馈。&lt;/p>
+&lt;ul>
+&lt;li>邮箱：opensource@abyssalfish.com.cn&lt;/li>
+&lt;li>扫码进入微信讨论群
+&lt;figure style="padding: 0.25rem; margin: 2rem 0; ">
+&lt;img style="max-width: 100%; width: auto; height: auto;" src="https://abyssalfish-os.github.io/news/introduction/wx_group_hu87a2e382e09fcee856265bf5cb34cab9_30575_256x0_resize_catmullrom_3.png" width="256" height="258">
+&lt;/figure>
+&lt;/li>
+&lt;/ul></description></item><item><title>News: 威胁情报在流影中的应用实践</title><link>https://abyssalfish-os.github.io/news/ti/</link><pubDate>Wed, 11 Jan 2023 00:00:00 +0800</pubDate><guid>https://abyssalfish-os.github.io/news/ti/</guid><description>
 &lt;p>&lt;img src="./ti_info.png" alt="示意图">&lt;/p>
 &lt;p>流影是开源的基于流量的网络行为可视化分析平台，功能架构灵活可扩展。
 威胁情报在安全检测与防御的实践应用中能够发挥很大作用。
