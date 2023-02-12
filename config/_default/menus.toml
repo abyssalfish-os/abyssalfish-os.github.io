@@ -51,6 +51,11 @@
   identifier = "docs"
   url = "/documentation/"
 
+[[global]]
+  name = "下载"
+  weight = 10
+  identifier = "downloads"
+  url = "/downloads/"
 
 [[global]]
   name = "Demo演示"
