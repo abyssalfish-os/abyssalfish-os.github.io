@@ -1,4 +1,33 @@
-<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>流影 – 开源网络流量可视化分析平台</title><link>https://abyssalfish-os.github.io/</link><description>Recent Hugo news from gohugo.io</description><generator>Hugo -- gohugo.io</generator><language>zh-CN</language><lastBuildDate>Thu, 29 Dec 2022 12:00:00 +0800</lastBuildDate><image><url>https://abyssalfish-os.github.io/img/hugo.png</url><title>GoHugo.io</title><link>https://abyssalfish-os.github.io/</link></image><atom:link href="https://abyssalfish-os.github.io/index.xml" rel="self" type="application/rss+xml"/><item><title>News: 流影概览</title><link>https://abyssalfish-os.github.io/news/introduction/</link><pubDate>Mon, 06 Feb 2023 00:00:00 +0800</pubDate><guid>https://abyssalfish-os.github.io/news/introduction/</guid><description>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>流影 – 开源网络流量可视化分析平台</title><link>https://abyssalfish-os.github.io/</link><description>Recent Hugo news from gohugo.io</description><generator>Hugo -- gohugo.io</generator><language>zh-CN</language><lastBuildDate>Thu, 29 Dec 2022 12:00:00 +0800</lastBuildDate><image><url>https://abyssalfish-os.github.io/img/hugo.png</url><title>GoHugo.io</title><link>https://abyssalfish-os.github.io/</link></image><atom:link href="https://abyssalfish-os.github.io/index.xml" rel="self" type="application/rss+xml"/><item><title>News: 流影虚拟机镜像</title><link>https://abyssalfish-os.github.io/news/vmdownload/</link><pubDate>Sun, 12 Feb 2023 00:00:00 +0800</pubDate><guid>https://abyssalfish-os.github.io/news/vmdownload/</guid><description>
+&lt;h1 id="流影vmware镜像">流影Vmware镜像&lt;/h1>
+&lt;h2 id="前言">前言 &lt;a class="header-link" href="#%e5%89%8d%e8%a8%80">&lt;svg class="fill-current o-60 hover-accent-color-light" height="22px" viewBox="0 0 24 24" width="22px" xmlns="http://www.w3.org/2000/svg">&lt;path d="M0 0h24v24H0z" fill="none"/>&lt;path d="M3.9 12c0-1.71 1.39-3.1 3.1-3.1h4V7H7c-2.76 0-5 2.24-5 5s2.24 5 5 5h4v-1.9H7c-1.71 0-3.1-1.39-3.1-3.1zM8 13h8v-2H8v2zm9-6h-4v1.9h4c1.71 0 3.1 1.39 3.1 3.1s-1.39 3.1-3.1 3.1h-4V17h4c2.76 0 5-2.24 5-5s-2.24-5-5-5z"/>&lt;/svg>&lt;/a>&lt;/h2>
+&lt;p>流影开源发布后，近期不断收到小伙伴们安装部署和试用反馈。
+首先感谢微信群列大家对安装使用中问题的反馈。
+为了减低安装试用的门槛，我们制作了Vmware虚拟镜像，方便大家快速安装试用。&lt;/p>
+&lt;h2 id="vmware虚拟机镜像">Vmware虚拟机镜像 &lt;a class="header-link" href="#vmware%e8%99%9a%e6%8b%9f%e6%9c%ba%e9%95%9c%e5%83%8f">&lt;svg class="fill-current o-60 hover-accent-color-light" height="22px" viewBox="0 0 24 24" width="22px" xmlns="http://www.w3.org/2000/svg">&lt;path d="M0 0h24v24H0z" fill="none"/>&lt;path d="M3.9 12c0-1.71 1.39-3.1 3.1-3.1h4V7H7c-2.76 0-5 2.24-5 5s2.24 5 5 5h4v-1.9H7c-1.71 0-3.1-1.39-3.1-3.1zM8 13h8v-2H8v2zm9-6h-4v1.9h4c1.71 0 3.1 1.39 3.1 3.1s-1.39 3.1-3.1 3.1h-4V17h4c2.76 0 5-2.24 5-5s-2.24-5-5-5z"/>&lt;/svg>&lt;/a>&lt;/h2>
+&lt;p>为了方便大家安装试用，制作了vmware安装镜像，请大家前往如下百度网盘地址下载。&lt;/p>
+&lt;ul>
+&lt;li>&lt;a href="https://pan.baidu.com/s/1b1VIgjMuGdeT7a23Pbod5A">镜像下载地址&lt;/a>&lt;/li>
+&lt;li>提取码：AFOS&lt;/li>
+&lt;li>虚拟机用户名root，密码ShyLiuying&lt;/li>
+&lt;/ul>
+&lt;h2 id="后语">后语 &lt;a class="header-link" href="#%e5%90%8e%e8%af%ad">&lt;svg class="fill-current o-60 hover-accent-color-light" height="22px" viewBox="0 0 24 24" width="22px" xmlns="http://www.w3.org/2000/svg">&lt;path d="M0 0h24v24H0z" fill="none"/>&lt;path d="M3.9 12c0-1.71 1.39-3.1 3.1-3.1h4V7H7c-2.76 0-5 2.24-5 5s2.24 5 5 5h4v-1.9H7c-1.71 0-3.1-1.39-3.1-3.1zM8 13h8v-2H8v2zm9-6h-4v1.9h4c1.71 0 3.1 1.39 3.1 3.1s-1.39 3.1-3.1 3.1h-4V17h4c2.76 0 5-2.24 5-5s-2.24-5-5-5z"/>&lt;/svg>&lt;/a>&lt;/h2>
+&lt;p>流影定位于轻量级的网络安全态势感知与可视化分析平台，开源版本集成了流量探针、网络行为分析引擎、威胁检测引擎和交互式可视化分析引擎四个核心模块，
+实现了对网络流量全方位监测、网络行为多维度特征提取留存、网络资产被动测绘画像和网络威胁行为实时告警等基本功能。&lt;/p>
+&lt;p>用户需求多样，网络安全攻防技术发展变化迅速，而流影具有灵活可扩展的特点，支持根据用户需求和技术更新的定制化功能扩展。
+通过开源，一方面希望得到广大潜在需求用户的试用反馈，深入了解用户网络安全方面相关需求及产品使用方面的建议；
+另一方面，希望广大感兴趣的研发人员能够参与进来，博采众长，吸收大家的安全实践经验和新技术，形成良性循环发展，不断迭代完善。&lt;/p>
+&lt;p>我们欢迎大家的使用反馈，特别是积极参与项目贡献。&lt;/p>
+&lt;h2 id="反馈">反馈 &lt;a class="header-link" href="#%e5%8f%8d%e9%a6%88">&lt;svg class="fill-current o-60 hover-accent-color-light" height="22px" viewBox="0 0 24 24" width="22px" xmlns="http://www.w3.org/2000/svg">&lt;path d="M0 0h24v24H0z" fill="none"/>&lt;path d="M3.9 12c0-1.71 1.39-3.1 3.1-3.1h4V7H7c-2.76 0-5 2.24-5 5s2.24 5 5 5h4v-1.9H7c-1.71 0-3.1-1.39-3.1-3.1zM8 13h8v-2H8v2zm9-6h-4v1.9h4c1.71 0 3.1 1.39 3.1 3.1s-1.39 3.1-3.1 3.1h-4V17h4c2.76 0 5-2.24 5-5s-2.24-5-5-5z"/>&lt;/svg>&lt;/a>&lt;/h2>
+&lt;p>如果有问题，欢迎通过邮件或者微信群进行反馈。&lt;/p>
+&lt;ul>
+&lt;li>邮箱：opensource@abyssalfish.com.cn&lt;/li>
+&lt;li>扫码进入微信讨论群
+&lt;figure style="padding: 0.25rem; margin: 2rem 0; ">
+&lt;img style="max-width: 100%; width: auto; height: auto;" src="https://abyssalfish-os.github.io/news/vmdownload/wx_group_hu87a2e382e09fcee856265bf5cb34cab9_30575_256x0_resize_catmullrom_3.png" width="256" height="258">
+&lt;/figure>
+&lt;/li>
+&lt;/ul></description></item><item><title>News: 流影概览</title><link>https://abyssalfish-os.github.io/news/introduction/</link><pubDate>Mon, 06 Feb 2023 00:00:00 +0800</pubDate><guid>https://abyssalfish-os.github.io/news/introduction/</guid><description>
 &lt;h1 id="流影概览">流影概览&lt;/h1>
 &lt;h2 id="引言">引言 &lt;a class="header-link" href="#%e5%bc%95%e8%a8%80">&lt;svg class="fill-current o-60 hover-accent-color-light" height="22px" viewBox="0 0 24 24" width="22px" xmlns="http://www.w3.org/2000/svg">&lt;path d="M0 0h24v24H0z" fill="none"/>&lt;path d="M3.9 12c0-1.71 1.39-3.1 3.1-3.1h4V7H7c-2.76 0-5 2.24-5 5s2.24 5 5 5h4v-1.9H7c-1.71 0-3.1-1.39-3.1-3.1zM8 13h8v-2H8v2zm9-6h-4v1.9h4c1.71 0 3.1 1.39 3.1 3.1s-1.39 3.1-3.1 3.1h-4V17h4c2.76 0 5-2.24 5-5s-2.24-5-5-5z"/>&lt;/svg>&lt;/a>&lt;/h2>
 &lt;p>流影开源发布已经过去两个月，陆陆续续有小伙伴已经进行了安装部署和试用反馈。
