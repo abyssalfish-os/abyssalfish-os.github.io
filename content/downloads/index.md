@@ -18,6 +18,10 @@ isCJKLanguage: true
 - 提取码：AFOS
 - 虚拟机用户名root，密码ShyLiuying
 
+虚拟机安装后，流影前端默认使用18080端口，访问地址及默认账号：
+- 访问地址：http://ip:18080/ui
+- 登录管理员账号：admin，密码LoginLY@2016
+
 ## Github Releases
 以下是Github上各个节点Release地址。
 - [ly_vis](https://github.com/Abyssal-Fish-Technology/ly_vis/releases)
