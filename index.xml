@@ -13,6 +13,11 @@
 &lt;ul>
 &lt;li>虚拟机用户名root，密码ShyLiuying&lt;/li>
 &lt;/ul>
+&lt;p>虚拟机安装后，流影前端默认使用18080端口，访问地址及默认账号：&lt;/p>
+&lt;ul>
+&lt;li>访问地址：http://ip:18080/ui&lt;/li>
+&lt;li>登录管理员账号：admin，密码LoginLY@2016&lt;/li>
+&lt;/ul>
 &lt;h2 id="后语">后语 &lt;a class="header-link" href="#%e5%90%8e%e8%af%ad">&lt;svg class="fill-current o-60 hover-accent-color-light" height="22px" viewBox="0 0 24 24" width="22px" xmlns="http://www.w3.org/2000/svg">&lt;path d="M0 0h24v24H0z" fill="none"/>&lt;path d="M3.9 12c0-1.71 1.39-3.1 3.1-3.1h4V7H7c-2.76 0-5 2.24-5 5s2.24 5 5 5h4v-1.9H7c-1.71 0-3.1-1.39-3.1-3.1zM8 13h8v-2H8v2zm9-6h-4v1.9h4c1.71 0 3.1 1.39 3.1 3.1s-1.39 3.1-3.1 3.1h-4V17h4c2.76 0 5-2.24 5-5s-2.24-5-5-5z"/>&lt;/svg>&lt;/a>&lt;/h2>
 &lt;p>流影定位于轻量级的网络安全态势感知与可视化分析平台，开源版本集成了流量探针、网络行为分析引擎、威胁检测引擎和交互式可视化分析引擎四个核心模块，
 实现了对网络流量全方位监测、网络行为多维度特征提取留存和网络威胁行为实时告警等基本功能。&lt;/p>
