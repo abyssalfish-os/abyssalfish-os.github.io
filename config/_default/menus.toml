@@ -30,6 +30,12 @@
   identifier = "demo"
   url = "/demo/"
 
+[[docs]]
+  name = "其它资料"
+  weight = 80
+  identifier = "other"
+  url = "/other/"
+
 
 [[docs]]
   name = "欢迎贡献"

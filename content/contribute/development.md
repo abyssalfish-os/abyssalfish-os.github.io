@@ -5,8 +5,7 @@ description: 欢迎参见流影开源社区，积极贡献代码
 date: 2022-12-29
 publishdate: 2022-12-29
 categories: [contribute]
-keywords: [dev,open source]
-authors: [digitalcraftsman]
+keywords: [dev,open source,docs,documentation,community, contribute]
 menu:
   docs:
     parent: "contribute"
