@@ -1,0 +1,200 @@
+<!doctype html><html class=no-js lang="
+    zh-cn
+  
+  ">
+<head>
+<meta charset=utf-8>
+<link rel=preload href=https://abyssalfish-os.github.io/fonts/muli-latin-200.woff2 as=font type=font/woff2 crossorigin>
+<link rel=preload href=https://abyssalfish-os.github.io/fonts/muli-latin-400.woff2 as=font type=font/woff2 crossorigin>
+<link rel=preload href=https://abyssalfish-os.github.io/fonts/muli-latin-800.woff2 as=font type=font/woff2 crossorigin>
+<meta http-equiv=x-ua-compatible content="IE=edge">
+<title>
+流影: ESXi环境流量镜像设置
+</title><meta name=viewport content="width=device-width,minimum-scale=1">
+<meta name=generator content="Hugo 0.109.0">
+<meta name=robots content="index, follow">
+<link rel=stylesheet href=/output/css/app.min.631706eef190df8129d8f5b57c45caa8c431efd8e4148fbd17b354b607ce316a.css integrity="sha256-YxcG7vGQ34Ep2PW1fEXKqMQx79jkFI+9F7NUtgfOMWo=" crossorigin=anonymous>
+<meta name=description content="
+        以ESXi环境下流量接入配置为例，说明如何接入外部或内部的流量
+      
+      ">
+<script type=text/javascript src=/output/js/app.5a802739f9b2407f0d3a1f84a20731b6705a5a4df051c35686f22bd3aea90731.js crossorigin=anonymous defer></script>
+<script async defer src=https://buttons.github.io/buttons.js></script>
+<link rel=apple-touch-icon sizes=180x180 href=/apple-touch-icon.png>
+<link rel=icon type=image/png href=/favicon-32x32.png sizes=32x32>
+<link rel=icon type=image/png href=/favicon-16x16.png sizes=16x16>
+<link rel=manifest href=/manifest.json>
+<link rel=mask-icon href=/safari-pinned-tab.svg color=#0594cb>
+<meta name=theme-color content="#ffffff">
+<meta property="og:title" content="ESXi环境流量镜像设置">
+<meta property="og:description" content="以ESXi环境下流量接入配置为例，说明如何接入外部或内部的流量">
+<meta property="og:type" content="article">
+<meta property="og:url" content="https://abyssalfish-os.github.io/news/exsi/"><meta property="og:image" content="https://abyssalfish-os.github.io/opengraph/gohugoio-card-base-1_huf001e7df4fd9c00c4355abac7d4ca455_242906_filter_8535748214999717139.png"><meta property="article:section" content="news">
+<meta property="article:published_time" content="2023-02-20T00:00:00+08:00">
+<meta property="article:modified_time" content="2023-02-20T21:17:33+08:00">
+<meta itemprop=name content="ESXi环境流量镜像设置">
+<meta itemprop=description content="以ESXi环境下流量接入配置为例，说明如何接入外部或内部的流量"><meta itemprop=datePublished content="2023-02-20T00:00:00+08:00">
+<meta itemprop=dateModified content="2023-02-20T21:17:33+08:00">
+<meta itemprop=wordCount content="1291">
+<meta itemprop=keywords content>
+</head><body class="ma0 sans-serif bg-primary-color-light
+production">
+<nav class="bg-primary-color-dark pv4 w-100" role=navigation>
+<div class="center flex-ns flex-wrap items-center justify-start mw9">
+<h1 class="dim f3 lh-solid ml0-ns mr0 mr4-l mv0 pl3 pl4-ns">
+<a href=https://abyssalfish-os.github.io/ class="link white">
+流影->FlowShadow
+</a>
+</h1><ul class="list ma0 pa0 dn dib-l" role=menu>
+<li class="f5 dib mr4" role=menuitem>
+<a href=/news/ class="dim link light-silver">
+新闻&博客
+</a>
+</li><li class="f5 dib mr4" role=menuitem>
+<a href=/documentation/ class="dim link light-silver">
+文档
+</a>
+</li><li class="f5 dib mr4" role=menuitem>
+<a href=/downloads/ class="dim link light-silver">
+下载
+</a>
+</li><li class="f5 dib mr4" role=menuitem>
+<a href=/demo/ class="dim link light-silver">
+Demo演示
+</a>
+</li><li class="f5 dib mr4" role=menuitem>
+<a href=https://gitee.com/organizations/abyssalfish-os/projects class="dim link light-silver">
+Gitee
+<span class=pl1><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="10" height="10" viewBox="0 0 32 32" class="fill-current v-base" aria-label="External Link"><path d="M25.152 16.576v5.696q0 2.144-1.504 3.648T20 27.424H5.152q-2.144.0-3.648-1.504t-1.504-3.648V7.424q0-2.112 1.504-3.616t3.648-1.536h12.576q.224.0.384.16t.16.416V4q0 .256-.16.416t-.384.16H5.152q-1.184.0-2.016.832t-.864 2.016v14.848q0 1.184.864 2.016t2.016.864H20q1.184.0 2.016-.864t.832-2.016v-5.696q0-.256.16-.416t.416-.16h1.152q.256.0.416.16t.16.416zM32 1.152v9.12q0 .48-.352.8t-.8.352-.8-.352l-3.136-3.136-11.648 11.648q-.16.192-.416.192t-.384-.192l-2.048-2.048q-.192-.16-.192-.384t.192-.416L24.064 5.088l-3.136-3.136q-.352-.352-.352-.8t.352-.8.8-.352h9.12q.48.0.8.352t.352.8z"/></svg>
+</span>
+</a>
+</li><li class="f5 dib mr4" role=menuitem>
+<a href=https://github.com/orgs/Abyssal-Fish-Technology/repositories class="dim link light-silver">
+GitHub
+<span class=pl1><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="10" height="10" viewBox="0 0 32 32" class="fill-current v-base" aria-label="External Link"><path d="M25.152 16.576v5.696q0 2.144-1.504 3.648T20 27.424H5.152q-2.144.0-3.648-1.504t-1.504-3.648V7.424q0-2.112 1.504-3.616t3.648-1.536h12.576q.224.0.384.16t.16.416V4q0 .256-.16.416t-.384.16H5.152q-1.184.0-2.016.832t-.864 2.016v14.848q0 1.184.864 2.016t2.016.864H20q1.184.0 2.016-.864t.832-2.016v-5.696q0-.256.16-.416t.416-.16h1.152q.256.0.416.16t.16.416zM32 1.152v9.12q0 .48-.352.8t-.8.352-.8-.352l-3.136-3.136-11.648 11.648q-.16.192-.416.192t-.384-.192l-2.048-2.048q-.192-.16-.192-.384t.192-.416L24.064 5.088l-3.136-3.136q-.352-.352-.352-.8t.352-.8.8-.352h9.12q.48.0.8.352t.352.8z"/></svg>
+</span>
+</a>
+</li><li class="f5 dib mr4" role=menuitem>
+<a href=https://gitter.im/abyssalfish-os/community class="dim link light-silver">
+讨论区
+<span class=pl1><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="10" height="10" viewBox="0 0 32 32" class="fill-current v-base" aria-label="External Link"><path d="M25.152 16.576v5.696q0 2.144-1.504 3.648T20 27.424H5.152q-2.144.0-3.648-1.504t-1.504-3.648V7.424q0-2.112 1.504-3.616t3.648-1.536h12.576q.224.0.384.16t.16.416V4q0 .256-.16.416t-.384.16H5.152q-1.184.0-2.016.832t-.864 2.016v14.848q0 1.184.864 2.016t2.016.864H20q1.184.0 2.016-.864t.832-2.016v-5.696q0-.256.16-.416t.416-.16h1.152q.256.0.416.16t.16.416zM32 1.152v9.12q0 .48-.352.8t-.8.352-.8-.352l-3.136-3.136-11.648 11.648q-.16.192-.416.192t-.384-.192l-2.048-2.048q-.192-.16-.192-.384t.192-.416L24.064 5.088l-3.136-3.136q-.352-.352-.352-.8t.352-.8.8-.352h9.12q.48.0.8.352t.352.8z"/></svg>
+</span>
+</a>
+</li></ul><div class="db dib-ns pl3"><form id=site-search-form role=search>
+<fieldset class="bn ma0 pa0">
+<label class=clip for=search-input>Search</label>
+<input type=text id=search-input class="needs-js dn bn f5 lh-solid mt3 mt0-ns pl4 pv2 w5 white" placeholder="Welcome to FlowShadow" name=search-input style=background-color:rgba(255,255,255,0)>
+</fieldset></form></div></div></nav><main role=main class="content-with-sidebar min-vh-100 pb7 pb0-ns">
+<article class="cf ph4 pv3 pv5-ns">
+<header class="flex-none w-100 pb3">
+<a href=/categories/categories class="f6 fw8 mb0 link mid-gray dim mr3">
+CATEGORIES
+</a>
+<h1 class="lh-title fw9 mb7 mv0 pt3">
+<a href=/news/exsi/ class="link primary-color dim">
+ESXi环境流量镜像设置
+</a>
+</h1></header><div class=flex-l>
+<aside class="mid-gray fn w-100 w-25-l">
+<h2 class="f3 lh-title">
+以ESXi环境下流量接入配置为例，说明如何接入外部或内部的流量
+</h2><time class="f6 mt2 db ttu tracked" datetime=2023-02-20T00:00:00+08:00>
+February 20, 2023
+</time>
+<div class="nested-links mt4">
+<div date-pref>
+<a href=https://abyssalfish-os.github.io/news/vmdownload/ class="dib f6 pr1 hover-bg-light-gray br-100" title=流影虚拟机镜像><svg class="fill-current" height="30" viewBox="0 0 24 24" width="30" xmlns="http://www.w3.org/2000/svg"><path d="M10 6 8.59 7.41 13.17 12l-4.58 4.59L10 18l6-6z"/><path d="M0 0h24v24H0z" fill="none"/></svg>
+</a>
+</div></div></aside><div class="fn pl5-l pt3 mid-gray w-100 w-two-third-l sans-serif nested-copy-line-height no-underline nested-links nested-img nested-copy-seperator nested-blockquote measure-wide-wd">
+<h1 id=esxi环境镜像流量接入>ESXi环境镜像流量接入</h1><h2 id=前言>前言 <a class=header-link href=#%e5%89%8d%e8%a8%80><svg class="fill-current o-60 hover-accent-color-light" height="22" viewBox="0 0 24 24" width="22" xmlns="http://www.w3.org/2000/svg"><path d="M0 0h24v24H0z" fill="none"/><path d="M3.9 12c0-1.71 1.39-3.1 3.1-3.1h4V7H7c-2.76.0-5 2.24-5 5s2.24 5 5 5h4v-1.9H7c-1.71.0-3.1-1.39-3.1-3.1zM8 13h8v-2H8v2zm9-6h-4v1.9h4c1.71.0 3.1 1.39 3.1 3.1s-1.39 3.1-3.1 3.1h-4V17h4c2.76.0 5-2.24 5-5s-2.24-5-5-5z"/></svg></a></h2><p>近期有小伙伴们在微信交流群里询问了流量接入的问题，本文以ESXi环境下流量接入配置为例进行示例。
+本文主要演示如何将外部或内部的流量，接入到ESXi管理的某台虚拟机的虚拟网卡上（流量采集节点）。
+用户可以参考，并根据自身实际环境进行流量接入的设置。</p><h3 id=外部流量镜像接入>外部流量镜像接入 <a class=header-link href=#%e5%a4%96%e9%83%a8%e6%b5%81%e9%87%8f%e9%95%9c%e5%83%8f%e6%8e%a5%e5%85%a5><svg class="fill-current o-60 hover-accent-color-light" height="22" viewBox="0 0 24 24" width="22" xmlns="http://www.w3.org/2000/svg"><path d="M0 0h24v24H0z" fill="none"/><path d="M3.9 12c0-1.71 1.39-3.1 3.1-3.1h4V7H7c-2.76.0-5 2.24-5 5s2.24 5 5 5h4v-1.9H7c-1.71.0-3.1-1.39-3.1-3.1zM8 13h8v-2H8v2zm9-6h-4v1.9h4c1.71.0 3.1 1.39 3.1 3.1s-1.39 3.1-3.1 3.1h-4V17h4c2.76.0 5-2.24 5-5s-2.24-5-5-5z"/></svg></a></h3><p>外部流量镜像接入过程可以概括为：接入待分析流量数据到物理网卡，新建虚拟交换机（vSwitch）接入从物理网卡（vmnic）采集到的数据，新建端口组（Network）建立虚拟交换机上的对外接口，再到分析平台所在虚拟机新建虚拟机网卡（vm）接入流量数据。
+具体操作步骤如下：</p><ol>
+<li>在网络管理页面，网络标签下，新建虚拟交换机（图中vSwitch3-Mirror），配置“上行链路”为已接入流量的物理网卡（图中vmnic4）。“安全”标签下，虚拟交换机的“允许混杂模式”配置为“是”。</li></ol><p><img src=/img/esxi/esxi_1.png alt=esxi_1></p><ol start=2>
+<li>在网络管理页面，新建端口组（图中Mirror1），绑定到接入流量的虚拟交换机（图中vSwitch3-Mirror）。“安全”标签下端口组的“允许混杂模式”配置为“接受”。</li></ol><p><img src=/img/esxi/esxi_2.png alt=esxi_2></p><ol start=3>
+<li>在运行分析程序的虚拟机的管理页面，添加网络适配器，绑定到流量镜像端口组（图中Mirror1）。</li></ol><p><img src=/img/esxi/esxi_3.png alt=esxi_3></p><p>至此，从外部流量镜像到虚拟机网卡的配置完毕，虚拟交换机上网络链接关系如下图所示：</p><p><img src=/img/esxi/esxi_4.png alt=esxi_4></p><h3 id=从内部接入流量镜像>从内部接入流量镜像 <a class=header-link href=#%e4%bb%8e%e5%86%85%e9%83%a8%e6%8e%a5%e5%85%a5%e6%b5%81%e9%87%8f%e9%95%9c%e5%83%8f><svg class="fill-current o-60 hover-accent-color-light" height="22" viewBox="0 0 24 24" width="22" xmlns="http://www.w3.org/2000/svg"><path d="M0 0h24v24H0z" fill="none"/><path d="M3.9 12c0-1.71 1.39-3.1 3.1-3.1h4V7H7c-2.76.0-5 2.24-5 5s2.24 5 5 5h4v-1.9H7c-1.71.0-3.1-1.39-3.1-3.1zM8 13h8v-2H8v2zm9-6h-4v1.9h4c1.71.0 3.1 1.39 3.1 3.1s-1.39 3.1-3.1 3.1h-4V17h4c2.76.0 5-2.24 5-5s-2.24-5-5-5z"/></svg></a></h3><p>内部流量镜像接入过程可以概括为：找到待分析流量数据所在虚拟交换机，在虚拟交换机（vSwitch）新建一个端口组（Network）用作流量采集，再把虚拟机网卡（vm）接入这个端口组采集数据。
+具体操作步骤如下：</p><ol>
+<li>在网络管理页面，定位到待分析目标流量所在的虚拟交换机（vSwitch/vDSwitch），记录该虚拟交换机名称（图中vSwitch1-LAN），进入该虚拟交换机配置页面，将该虚拟交换机的“允许混杂模式”配置为“是”。</li></ol><p><img src=/img/esxi/esxi_5.png alt=esxi_5></p><ol start=2>
+<li>在网络管理页面，新建端口组（图中MirrorLAN），绑定到接入流量的虚拟交换机（图中vSwitch1-LAN）。“安全”标签下端口组的“允许混杂模式”配置为“接受”。</li></ol><p><img src=/img/esxi/esxi_6.png alt=esxi_6></p><ol start=3>
+<li>在运行分析程序的虚拟机的管理页面，添加网络适配器，绑定到流量镜像端口组（图中MirrorLAN）。</li></ol><p><img src=/img/esxi/esxi_7.png alt=esxi_7></p><p>至此，从内部流量镜像到虚拟机网卡的配置完毕，虚拟交换机上网络链接关系如下图所示：</p><p><img src=/img/esxi/esxi_8.png alt=esxi_8></p><p>进入流量分析平台所在虚拟机操作系统，配置新网卡进入混杂模式，从该网卡即可采集到流量镜像数据。</p><h2 id=后语>后语 <a class=header-link href=#%e5%90%8e%e8%af%ad><svg class="fill-current o-60 hover-accent-color-light" height="22" viewBox="0 0 24 24" width="22" xmlns="http://www.w3.org/2000/svg"><path d="M0 0h24v24H0z" fill="none"/><path d="M3.9 12c0-1.71 1.39-3.1 3.1-3.1h4V7H7c-2.76.0-5 2.24-5 5s2.24 5 5 5h4v-1.9H7c-1.71.0-3.1-1.39-3.1-3.1zM8 13h8v-2H8v2zm9-6h-4v1.9h4c1.71.0 3.1 1.39 3.1 3.1s-1.39 3.1-3.1 3.1h-4V17h4c2.76.0 5-2.24 5-5s-2.24-5-5-5z"/></svg></a></h2><p>本文以ESXi环境下流量镜像如何配置接入采集节点，进行了简要说明。
+用户的网络环境可能复杂多样，流量接入需要根据实际情况具体配置。</p><p>流影定位于轻量级的网络安全态势感知与可视化分析平台，开源版本集成了流量探针、网络行为分析引擎、威胁检测引擎和交互式可视化分析引擎四个核心模块，
+实现了对网络流量全方位监测、网络行为多维度特征提取留存和网络威胁行为实时告警等基本功能。我们欢迎大家的使用反馈，特别是积极参与项目贡献。如果用户有商业定制化需求，也欢迎进行联系合作。</p><h2 id=反馈>反馈 <a class=header-link href=#%e5%8f%8d%e9%a6%88><svg class="fill-current o-60 hover-accent-color-light" height="22" viewBox="0 0 24 24" width="22" xmlns="http://www.w3.org/2000/svg"><path d="M0 0h24v24H0z" fill="none"/><path d="M3.9 12c0-1.71 1.39-3.1 3.1-3.1h4V7H7c-2.76.0-5 2.24-5 5s2.24 5 5 5h4v-1.9H7c-1.71.0-3.1-1.39-3.1-3.1zM8 13h8v-2H8v2zm9-6h-4v1.9h4c1.71.0 3.1 1.39 3.1 3.1s-1.39 3.1-3.1 3.1h-4V17h4c2.76.0 5-2.24 5-5s-2.24-5-5-5z"/></svg></a></h2><p>如果有问题，欢迎通过邮件或者微信群进行反馈。</p><ul>
+<li>邮箱：opensource@abyssalfish.com.cn</li><li>扫码进入微信讨论群
+<figure style="padding:.25rem;margin:2rem 0">
+<img style=max-width:100%;width:auto;height:auto src=/news/exsi/wx_group_hu87a2e382e09fcee856265bf5cb34cab9_30575_256x0_resize_catmullrom_3.png width=256 height=258>
+</figure></li><li>微信扫码关注公众号
+<figure style="padding:.25rem;margin:2rem 0">
+<img style=max-width:100%;width:auto;height:auto src=/news/exsi/wx_public_huda63cca9d1badff4db6b51eadc89af72_48781_256x0_resize_q80_catmullrom.jpg width=256 height=256>
+</figure></li></ul></div></div><div class="gray f6 mv6">
+Last Update: February 20, 2023 <br>
+<a href=https://github.com/abyssalfish-os/abyssalfish-os.github.io/edit/master/content/news/exsi/index.md class="f6 ph3 pv1 br2 dib tc ttu mv3 bg-primary-color white hover-bg-green link">Improve this page</a>
+</div></article></main><footer class="bg-primary-color-dark ph4-ns pt4 relative w-100" role=contentinfo>
+<div class="center flex-ns flex-wrap justify-between mw9 w-90">
+<div class="center pb3 pt4">
+<div class="b f3 light-gray mb3 nested-links tc">
+流影由 <a href=https://github.com/orgs/Abyssal-Fish-Technology class=link>深海鱼（北京）科技有限公司 </a>发起开源和维护，欢迎参与<br>
+</div><ul class="center f6 list ma0 mv4 pa0 tc">
+<li class="dib mr3"><a href=https://github.com/Abyssal-Fish-Technology/ly_vis class="dim link light-gray pv2">可视化交互分析(ly_vis)</a></li><li class="dib mr3"><a href=https://github.com/Abyssal-Fish-Technology/ly_server class="dim link light-gray pv2">管理引擎(ly_server)</a></li><li class=dib><a href=https://github.com/Abyssal-Fish-Technology/ly_analyser class="dim link light-gray pv2">分析引擎(ly_analyser)</a></li><li class=dib><a href=https://github.com/Abyssal-Fish-Technology/ly_probe class="dim link light-gray pv2"> &nbsp;&nbsp;&nbsp;&nbsp;流量探针(ly_probe)</a></li></ul><ul class="center f6 list ma0 mv3 pa0 tc"><li class="dib mr3"><a href=https://github.com/abyssalfish-os/liuying/issues/new class="dim link light-gray pv2">到 Github 发起 Issue</a></li><li class=dib><a href=https://gitter.im/abyssalfish-os/community class="dim link light-gray pv2">来 Gitter 沟通留言</a></li></ul></div></div><div class="bg-primary-color-dark bottom-0 left-0 right-0 dn-l fixed pb3 ph3 pt3 z-2"><div class="globalmenu mobilemenu pb1 dn">
+<ul class="list hidden dib ph0 scrolling-touch tc">
+<li class="tl dib ma0 hover-bg-black w-100">
+<a href=/news/ class="ttu f6 link primary-color-light overflow hover-white db brand-font ma0 w-100 pv3 ph4">
+新闻&博客
+</a>
+</li><li class="tl dib ma0 hover-bg-black w-100">
+<a href=/documentation/ class="ttu f6 link primary-color-light overflow hover-white db brand-font ma0 w-100 pv3 ph4">
+文档
+</a>
+</li><li class="tl dib ma0 hover-bg-black w-100">
+<a href=/downloads/ class="ttu f6 link primary-color-light overflow hover-white db brand-font ma0 w-100 pv3 ph4">
+下载
+</a>
+</li><li class="tl dib ma0 hover-bg-black w-100">
+<a href=/demo/ class="ttu f6 link primary-color-light overflow hover-white db brand-font ma0 w-100 pv3 ph4">
+Demo演示
+</a>
+</li><li class="tl dib ma0 hover-bg-black w-100">
+<a href=https://gitee.com/organizations/abyssalfish-os/projects class="ttu f6 link primary-color-light overflow hover-white db brand-font ma0 w-100 pv3 ph4">
+Gitee
+</a>
+</li><li class="tl dib ma0 hover-bg-black w-100">
+<a href=https://github.com/orgs/Abyssal-Fish-Technology/repositories class="ttu f6 link primary-color-light overflow hover-white db brand-font ma0 w-100 pv3 ph4">
+GitHub
+</a>
+</li><li class="tl dib ma0 hover-bg-black w-100">
+<a href=https://gitter.im/abyssalfish-os/community class="ttu f6 link primary-color-light overflow hover-white db brand-font ma0 w-100 pv3 ph4">
+讨论区
+</a>
+</li></ul></div><div class="docsmenu mobilemenu pb1 dn">
+<ul class="list dib ph0 scrolling-touch tc">
+<li class="tl dib ma0 hover-bg-black w-100">
+<a href=/about/ class="ttu f6 link primary-color-light hover-white db brand-font mb1 ma0 w-100 pv2 ph4">
+关于流影
+</a>
+</li><li class="tl dib ma0 hover-bg-black w-100">
+<a href=/getting-started/ class="ttu f6 link primary-color-light hover-white db brand-font mb1 ma0 w-100 pv2 ph4">
+快速开始
+</a>
+</li><li class="tl dib ma0 hover-bg-black w-100">
+<a href=/installation/ class="ttu f6 link primary-color-light hover-white db brand-font mb1 ma0 w-100 pv2 ph4">
+编译安装
+</a>
+</li><li class="tl dib ma0 hover-bg-black w-100">
+<a href=/user-manual/ class="ttu f6 link primary-color-light hover-white db brand-font mb1 ma0 w-100 pv2 ph4">
+用户手册
+</a>
+</li><li class="tl dib ma0 hover-bg-black w-100">
+<a href=/other/ class="ttu f6 link primary-color-light hover-white db brand-font mb1 ma0 w-100 pv2 ph4">
+其它资料
+</a>
+</li><li class="tl dib ma0 hover-bg-black w-100">
+<a href=/demo/ class="ttu f6 link primary-color-light hover-white db brand-font mb1 ma0 w-100 pv2 ph4">
+演示Demo
+</a>
+</li><li class="tl dib ma0 hover-bg-black w-100 mb2 bb b--mid-gray">
+<a href=/contribute/ class="ttu f6 link primary-color-light hover-white db brand-font mb1 ma0 w-100 pv2 ph4">
+欢迎贡献
+</a>
+</li></ul></div><div class="flex dn-l justify-between">
+<button class="js-toggle flex-auto dib dn-l f6 tc db ph3 pv2 link mr2 white bg-primary-color-dark hover-bg-primary-color ba b--white-40 w-auto" data-target=.globalmenu>Menu</button>
+<button class="js-toggle flex-auto dib dn-l f6 tc db ph3 pv2 link white bg-primary-color-dark hover-bg-primary-color ba b--white-40 w-auto" data-target=.docsmenu>Docs Menu</button>
+</div></div></footer></body></html>

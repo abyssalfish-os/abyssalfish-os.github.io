@@ -1,4 +1,64 @@
-<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>流影 – 开源网络流量可视化分析平台</title><link>https://abyssalfish-os.github.io/</link><description>Recent Hugo news from gohugo.io</description><generator>Hugo -- gohugo.io</generator><language>zh-CN</language><lastBuildDate>Thu, 29 Dec 2022 12:00:00 +0800</lastBuildDate><image><url>https://abyssalfish-os.github.io/img/hugo.png</url><title>GoHugo.io</title><link>https://abyssalfish-os.github.io/</link></image><atom:link href="https://abyssalfish-os.github.io/index.xml" rel="self" type="application/rss+xml"/><item><title>News: 流影虚拟机镜像</title><link>https://abyssalfish-os.github.io/news/vmdownload/</link><pubDate>Sun, 12 Feb 2023 00:00:00 +0800</pubDate><guid>https://abyssalfish-os.github.io/news/vmdownload/</guid><description>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>流影 – 开源网络流量可视化分析平台</title><link>https://abyssalfish-os.github.io/</link><description>Recent Hugo news from gohugo.io</description><generator>Hugo -- gohugo.io</generator><language>zh-CN</language><lastBuildDate>Thu, 29 Dec 2022 12:00:00 +0800</lastBuildDate><image><url>https://abyssalfish-os.github.io/img/hugo.png</url><title>GoHugo.io</title><link>https://abyssalfish-os.github.io/</link></image><atom:link href="https://abyssalfish-os.github.io/index.xml" rel="self" type="application/rss+xml"/><item><title>News: ESXi环境流量镜像设置</title><link>https://abyssalfish-os.github.io/news/exsi/</link><pubDate>Mon, 20 Feb 2023 00:00:00 +0800</pubDate><guid>https://abyssalfish-os.github.io/news/exsi/</guid><description>
+&lt;h1 id="esxi环境镜像流量接入">ESXi环境镜像流量接入&lt;/h1>
+&lt;h2 id="前言">前言 &lt;a class="header-link" href="#%e5%89%8d%e8%a8%80">&lt;svg class="fill-current o-60 hover-accent-color-light" height="22px" viewBox="0 0 24 24" width="22px" xmlns="http://www.w3.org/2000/svg">&lt;path d="M0 0h24v24H0z" fill="none"/>&lt;path d="M3.9 12c0-1.71 1.39-3.1 3.1-3.1h4V7H7c-2.76 0-5 2.24-5 5s2.24 5 5 5h4v-1.9H7c-1.71 0-3.1-1.39-3.1-3.1zM8 13h8v-2H8v2zm9-6h-4v1.9h4c1.71 0 3.1 1.39 3.1 3.1s-1.39 3.1-3.1 3.1h-4V17h4c2.76 0 5-2.24 5-5s-2.24-5-5-5z"/>&lt;/svg>&lt;/a>&lt;/h2>
+&lt;p>近期有小伙伴们在微信交流群里询问了流量接入的问题，本文以ESXi环境下流量接入配置为例进行示例。
+本文主要演示如何将外部或内部的流量，接入到ESXi管理的某台虚拟机的虚拟网卡上（流量采集节点）。
+用户可以参考，并根据自身实际环境进行流量接入的设置。&lt;/p>
+&lt;h3 id="外部流量镜像接入">外部流量镜像接入 &lt;a class="header-link" href="#%e5%a4%96%e9%83%a8%e6%b5%81%e9%87%8f%e9%95%9c%e5%83%8f%e6%8e%a5%e5%85%a5">&lt;svg class="fill-current o-60 hover-accent-color-light" height="22px" viewBox="0 0 24 24" width="22px" xmlns="http://www.w3.org/2000/svg">&lt;path d="M0 0h24v24H0z" fill="none"/>&lt;path d="M3.9 12c0-1.71 1.39-3.1 3.1-3.1h4V7H7c-2.76 0-5 2.24-5 5s2.24 5 5 5h4v-1.9H7c-1.71 0-3.1-1.39-3.1-3.1zM8 13h8v-2H8v2zm9-6h-4v1.9h4c1.71 0 3.1 1.39 3.1 3.1s-1.39 3.1-3.1 3.1h-4V17h4c2.76 0 5-2.24 5-5s-2.24-5-5-5z"/>&lt;/svg>&lt;/a>&lt;/h3>
+&lt;p>外部流量镜像接入过程可以概括为：接入待分析流量数据到物理网卡，新建虚拟交换机（vSwitch）接入从物理网卡（vmnic）采集到的数据，新建端口组（Network）建立虚拟交换机上的对外接口，再到分析平台所在虚拟机新建虚拟机网卡（vm）接入流量数据。
+具体操作步骤如下：&lt;/p>
+&lt;ol>
+&lt;li>在网络管理页面，网络标签下，新建虚拟交换机（图中vSwitch3-Mirror），配置“上行链路”为已接入流量的物理网卡（图中vmnic4）。“安全”标签下，虚拟交换机的“允许混杂模式”配置为“是”。&lt;/li>
+&lt;/ol>
+&lt;p>&lt;img src="https://abyssalfish-os.github.io/img/esxi/esxi_1.png" alt="esxi_1">&lt;/p>
+&lt;ol start="2">
+&lt;li>在网络管理页面，新建端口组（图中Mirror1），绑定到接入流量的虚拟交换机（图中vSwitch3-Mirror）。“安全”标签下端口组的“允许混杂模式”配置为“接受”。&lt;/li>
+&lt;/ol>
+&lt;p>&lt;img src="https://abyssalfish-os.github.io/img/esxi/esxi_2.png" alt="esxi_2">&lt;/p>
+&lt;ol start="3">
+&lt;li>在运行分析程序的虚拟机的管理页面，添加网络适配器，绑定到流量镜像端口组（图中Mirror1）。&lt;/li>
+&lt;/ol>
+&lt;p>&lt;img src="https://abyssalfish-os.github.io/img/esxi/esxi_3.png" alt="esxi_3">&lt;/p>
+&lt;p>至此，从外部流量镜像到虚拟机网卡的配置完毕，虚拟交换机上网络链接关系如下图所示：&lt;/p>
+&lt;p>&lt;img src="https://abyssalfish-os.github.io/img/esxi/esxi_4.png" alt="esxi_4">&lt;/p>
+&lt;h3 id="从内部接入流量镜像">从内部接入流量镜像 &lt;a class="header-link" href="#%e4%bb%8e%e5%86%85%e9%83%a8%e6%8e%a5%e5%85%a5%e6%b5%81%e9%87%8f%e9%95%9c%e5%83%8f">&lt;svg class="fill-current o-60 hover-accent-color-light" height="22px" viewBox="0 0 24 24" width="22px" xmlns="http://www.w3.org/2000/svg">&lt;path d="M0 0h24v24H0z" fill="none"/>&lt;path d="M3.9 12c0-1.71 1.39-3.1 3.1-3.1h4V7H7c-2.76 0-5 2.24-5 5s2.24 5 5 5h4v-1.9H7c-1.71 0-3.1-1.39-3.1-3.1zM8 13h8v-2H8v2zm9-6h-4v1.9h4c1.71 0 3.1 1.39 3.1 3.1s-1.39 3.1-3.1 3.1h-4V17h4c2.76 0 5-2.24 5-5s-2.24-5-5-5z"/>&lt;/svg>&lt;/a>&lt;/h3>
+&lt;p>内部流量镜像接入过程可以概括为：找到待分析流量数据所在虚拟交换机，在虚拟交换机（vSwitch）新建一个端口组（Network）用作流量采集，再把虚拟机网卡（vm）接入这个端口组采集数据。
+具体操作步骤如下：&lt;/p>
+&lt;ol>
+&lt;li>在网络管理页面，定位到待分析目标流量所在的虚拟交换机（vSwitch/vDSwitch），记录该虚拟交换机名称（图中vSwitch1-LAN），进入该虚拟交换机配置页面，将该虚拟交换机的“允许混杂模式”配置为“是”。&lt;/li>
+&lt;/ol>
+&lt;p>&lt;img src="https://abyssalfish-os.github.io/img/esxi/esxi_5.png" alt="esxi_5">&lt;/p>
+&lt;ol start="2">
+&lt;li>在网络管理页面，新建端口组（图中MirrorLAN），绑定到接入流量的虚拟交换机（图中vSwitch1-LAN）。“安全”标签下端口组的“允许混杂模式”配置为“接受”。&lt;/li>
+&lt;/ol>
+&lt;p>&lt;img src="https://abyssalfish-os.github.io/img/esxi/esxi_6.png" alt="esxi_6">&lt;/p>
+&lt;ol start="3">
+&lt;li>在运行分析程序的虚拟机的管理页面，添加网络适配器，绑定到流量镜像端口组（图中MirrorLAN）。&lt;/li>
+&lt;/ol>
+&lt;p>&lt;img src="https://abyssalfish-os.github.io/img/esxi/esxi_7.png" alt="esxi_7">&lt;/p>
+&lt;p>至此，从内部流量镜像到虚拟机网卡的配置完毕，虚拟交换机上网络链接关系如下图所示：&lt;/p>
+&lt;p>&lt;img src="https://abyssalfish-os.github.io/img/esxi/esxi_8.png" alt="esxi_8">&lt;/p>
+&lt;p>进入流量分析平台所在虚拟机操作系统，配置新网卡进入混杂模式，从该网卡即可采集到流量镜像数据。&lt;/p>
+&lt;h2 id="后语">后语 &lt;a class="header-link" href="#%e5%90%8e%e8%af%ad">&lt;svg class="fill-current o-60 hover-accent-color-light" height="22px" viewBox="0 0 24 24" width="22px" xmlns="http://www.w3.org/2000/svg">&lt;path d="M0 0h24v24H0z" fill="none"/>&lt;path d="M3.9 12c0-1.71 1.39-3.1 3.1-3.1h4V7H7c-2.76 0-5 2.24-5 5s2.24 5 5 5h4v-1.9H7c-1.71 0-3.1-1.39-3.1-3.1zM8 13h8v-2H8v2zm9-6h-4v1.9h4c1.71 0 3.1 1.39 3.1 3.1s-1.39 3.1-3.1 3.1h-4V17h4c2.76 0 5-2.24 5-5s-2.24-5-5-5z"/>&lt;/svg>&lt;/a>&lt;/h2>
+&lt;p>本文以ESXi环境下流量镜像如何配置接入采集节点，进行了简要说明。
+用户的网络环境可能复杂多样，流量接入需要根据实际情况具体配置。&lt;/p>
+&lt;p>流影定位于轻量级的网络安全态势感知与可视化分析平台，开源版本集成了流量探针、网络行为分析引擎、威胁检测引擎和交互式可视化分析引擎四个核心模块，
+实现了对网络流量全方位监测、网络行为多维度特征提取留存和网络威胁行为实时告警等基本功能。我们欢迎大家的使用反馈，特别是积极参与项目贡献。如果用户有商业定制化需求，也欢迎进行联系合作。&lt;/p>
+&lt;h2 id="反馈">反馈 &lt;a class="header-link" href="#%e5%8f%8d%e9%a6%88">&lt;svg class="fill-current o-60 hover-accent-color-light" height="22px" viewBox="0 0 24 24" width="22px" xmlns="http://www.w3.org/2000/svg">&lt;path d="M0 0h24v24H0z" fill="none"/>&lt;path d="M3.9 12c0-1.71 1.39-3.1 3.1-3.1h4V7H7c-2.76 0-5 2.24-5 5s2.24 5 5 5h4v-1.9H7c-1.71 0-3.1-1.39-3.1-3.1zM8 13h8v-2H8v2zm9-6h-4v1.9h4c1.71 0 3.1 1.39 3.1 3.1s-1.39 3.1-3.1 3.1h-4V17h4c2.76 0 5-2.24 5-5s-2.24-5-5-5z"/>&lt;/svg>&lt;/a>&lt;/h2>
+&lt;p>如果有问题，欢迎通过邮件或者微信群进行反馈。&lt;/p>
+&lt;ul>
+&lt;li>邮箱：opensource@abyssalfish.com.cn&lt;/li>
+&lt;li>扫码进入微信讨论群
+&lt;figure style="padding: 0.25rem; margin: 2rem 0; ">
+&lt;img style="max-width: 100%; width: auto; height: auto;" src="https://abyssalfish-os.github.io/news/exsi/wx_group_hu87a2e382e09fcee856265bf5cb34cab9_30575_256x0_resize_catmullrom_3.png" width="256" height="258">
+&lt;/figure>
+&lt;/li>
+&lt;li>微信扫码关注公众号
+&lt;figure style="padding: 0.25rem; margin: 2rem 0; ">
+&lt;img style="max-width: 100%; width: auto; height: auto;" src="https://abyssalfish-os.github.io/news/exsi/wx_public_huda63cca9d1badff4db6b51eadc89af72_48781_256x0_resize_q80_catmullrom.jpg" width="256" height="256">
+&lt;/figure>
+&lt;/li>
+&lt;/ul></description></item><item><title>News: 流影虚拟机镜像</title><link>https://abyssalfish-os.github.io/news/vmdownload/</link><pubDate>Sun, 12 Feb 2023 00:00:00 +0800</pubDate><guid>https://abyssalfish-os.github.io/news/vmdownload/</guid><description>
 &lt;h1 id="流影vmware镜像">流影Vmware镜像&lt;/h1>
 &lt;h2 id="前言">前言 &lt;a class="header-link" href="#%e5%89%8d%e8%a8%80">&lt;svg class="fill-current o-60 hover-accent-color-light" height="22px" viewBox="0 0 24 24" width="22px" xmlns="http://www.w3.org/2000/svg">&lt;path d="M0 0h24v24H0z" fill="none"/>&lt;path d="M3.9 12c0-1.71 1.39-3.1 3.1-3.1h4V7H7c-2.76 0-5 2.24-5 5s2.24 5 5 5h4v-1.9H7c-1.71 0-3.1-1.39-3.1-3.1zM8 13h8v-2H8v2zm9-6h-4v1.9h4c1.71 0 3.1 1.39 3.1 3.1s-1.39 3.1-3.1 3.1h-4V17h4c2.76 0 5-2.24 5-5s-2.24-5-5-5z"/>&lt;/svg>&lt;/a>&lt;/h2>
 &lt;p>流影开源发布后，近期不断收到小伙伴们安装部署和试用反馈，首先感谢大家的反馈和建议。
@@ -33,6 +93,11 @@
 &lt;li>扫码进入微信讨论群
 &lt;figure style="padding: 0.25rem; margin: 2rem 0; ">
 &lt;img style="max-width: 100%; width: auto; height: auto;" src="https://abyssalfish-os.github.io/news/vmdownload/wx_group_hu87a2e382e09fcee856265bf5cb34cab9_30575_256x0_resize_catmullrom_3.png" width="256" height="258">
+&lt;/figure>
+&lt;/li>
+&lt;li>微信扫码关注公众号
+&lt;figure style="padding: 0.25rem; margin: 2rem 0; ">
+&lt;img style="max-width: 100%; width: auto; height: auto;" src="https://abyssalfish-os.github.io/news/vmdownload/wx_public_huda63cca9d1badff4db6b51eadc89af72_48781_256x0_resize_q80_catmullrom.jpg" width="256" height="256">
 &lt;/figure>
 &lt;/li>
 &lt;/ul></description></item><item><title>News: 流影概览</title><link>https://abyssalfish-os.github.io/news/introduction/</link><pubDate>Mon, 06 Feb 2023 00:00:00 +0800</pubDate><guid>https://abyssalfish-os.github.io/news/introduction/</guid><description>
@@ -142,6 +207,11 @@
 &lt;li>扫码进入微信讨论群
 &lt;figure style="padding: 0.25rem; margin: 2rem 0; ">
 &lt;img style="max-width: 100%; width: auto; height: auto;" src="https://abyssalfish-os.github.io/news/introduction/wx_group_hu87a2e382e09fcee856265bf5cb34cab9_30575_256x0_resize_catmullrom_3.png" width="256" height="258">
+&lt;/figure>
+&lt;/li>
+&lt;li>微信扫码关注公众号
+&lt;figure style="padding: 0.25rem; margin: 2rem 0; ">
+&lt;img style="max-width: 100%; width: auto; height: auto;" src="https://abyssalfish-os.github.io/news/introduction/wx_public_huda63cca9d1badff4db6b51eadc89af72_48781_256x0_resize_q80_catmullrom.jpg" width="256" height="256">
 &lt;/figure>
 &lt;/li>
 &lt;/ul></description></item><item><title>News: 威胁情报在流影中的应用实践</title><link>https://abyssalfish-os.github.io/news/ti/</link><pubDate>Wed, 11 Jan 2023 00:00:00 +0800</pubDate><guid>https://abyssalfish-os.github.io/news/ti/</guid><description>
@@ -436,6 +506,11 @@ Trusted Automated eXchange of Indicator Information &lt;a href="https://taxiipro
 &lt;li>扫码进入微信讨论群
 &lt;figure style="padding: 0.25rem; margin: 2rem 0; ">
 &lt;img style="max-width: 100%; width: auto; height: auto;" src="https://abyssalfish-os.github.io/news/opensource/wx_group_hu87a2e382e09fcee856265bf5cb34cab9_30575_256x0_resize_catmullrom_3.png" width="256" height="258">
+&lt;/figure>
+&lt;/li>
+&lt;li>微信扫码关注公众号
+&lt;figure style="padding: 0.25rem; margin: 2rem 0; ">
+&lt;img style="max-width: 100%; width: auto; height: auto;" src="https://abyssalfish-os.github.io/news/opensource/wx_public_huda63cca9d1badff4db6b51eadc89af72_48781_256x0_resize_q80_catmullrom.jpg" width="256" height="256">
 &lt;/figure>
 &lt;/li>
 &lt;/ul></description></item></channel></rss>

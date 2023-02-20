@@ -1,5 +1,7 @@
 # Netlify redirects. See https://www.netlify.com/docs/redirects/
 
+/tutorials/other/                  	/other/
+/community/other/                  	/other/
 /tutorials/how-to-contribute/      	/contribute/
 /community/contributing/           	/contribute/
 /about-liuying/                    	/about/
