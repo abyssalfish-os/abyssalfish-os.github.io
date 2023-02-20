@@ -31,10 +31,10 @@
 <meta property="og:type" content="article">
 <meta property="og:url" content="https://abyssalfish-os.github.io/getting-started/quick-start/"><meta property="og:image" content="https://abyssalfish-os.github.io/opengraph/gohugoio-card-base-1_huf001e7df4fd9c00c4355abac7d4ca455_242906_filter_5172917340717269072.png"><meta property="article:section" content="getting-started">
 <meta property="article:published_time" content="2022-12-23T00:00:00+08:00">
-<meta property="article:modified_time" content="2023-02-02T16:37:37+08:00">
+<meta property="article:modified_time" content="2023-02-20T13:48:53+08:00">
 <meta itemprop=name content="快速上手">
 <meta itemprop=description content="了解流影节点部署、配置、运行方式"><meta itemprop=datePublished content="2022-12-23T00:00:00+08:00">
-<meta itemprop=dateModified content="2023-02-02T16:37:37+08:00">
+<meta itemprop=dateModified content="2023-02-20T13:48:53+08:00">
 <meta itemprop=wordCount content="3461">
 <meta itemprop=keywords content>
 </head><body class="ma0 sans-serif bg-primary-color-light
@@ -245,7 +245,7 @@ systemctl restart firewalld
 firewall-cmd --zone=public --add-port=18080/tcp --permanent
 firewall-cmd --reload
 </code></pre><h6 id=httpd配置-1>httpd配置</h6><p>编辑<code>etc/httpd/conf.d/server.conf</code></p><pre tabindex=0><code>Listen 18080
-&lt;VirtualHost :18080&gt;
+&lt;VirtualHost *:18080&gt;
     DocumentRoot &#34;/Server/www&#34;
     AddDefaultCharset utf-8
     &lt;Directory &#34;/Server/www&#34;&gt;
@@ -266,7 +266,7 @@ firewall-cmd --reload
         Require all granted
         RewriteEngine On
         RewriteCond %{REQUEST_FILENAME} !auth$
-        RewriteRule ^(.)$ auth?auth_target=$1 [QSA,PT,L]
+        RewriteRule ^(.*)$ auth?auth_target=$1 [QSA,PT,L]
     &lt;/Directory&gt;
 &lt;/VirtualHost&gt;
 </code></pre><p>httpd配置完成后，重启httpd</p><div class=highlight><pre tabindex=0 class=chroma><code class=language-sh data-lang=sh><span class=line><span class=cl>systemctl restart httpd
@@ -430,7 +430,7 @@ firewall-cmd --reload
 </li></ul></li></ul></nav></div></div></article><div class="w-100 bg-light-gray">
 <div class="mw7 pa4 center nested-lh-copy lh-copy">
 <h6 class="f6 dark-gray mb2">
-Last updated: February 2, 2023: <a class="hide-child link primary-color" href=https://github.com/abyssalfish-os/abyssalfish-os.github.io/commit/3986a6efd78c502c6718fbc21fadb083086d64a2>fix words error (3986a6e)</a>
+Last updated: February 20, 2023: <a class="hide-child link primary-color" href=https://github.com/abyssalfish-os/abyssalfish-os.github.io/commit/68574c99853a0d67f6bf2bfa1246da76f130a06e>fix httpd conf miss * error (68574c9)</a>
 </h6><a href=https://github.com/abyssalfish-os/abyssalfish-os.github.io/edit/master/content/getting-started/quick-start.md class="f6 ph3 pv1 br2 dib tc ttu mv3 bg-primary-color white hover-bg-green link">Improve this page</a>
 </div></div></main><footer class="bg-primary-color-dark ph4-ns pt4 relative w-100" role=contentinfo>
 <div class="center flex-ns flex-wrap justify-between mw9 w-90">
