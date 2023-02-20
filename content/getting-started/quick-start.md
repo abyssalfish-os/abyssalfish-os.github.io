@@ -301,7 +301,7 @@ firewall-cmd --reload
 编辑`etc/httpd/conf.d/server.conf`
 ```
 Listen 18080
-<VirtualHost :18080>
+<VirtualHost *:18080>
     DocumentRoot "/Server/www"
     AddDefaultCharset utf-8
     <Directory "/Server/www">
@@ -322,7 +322,7 @@ Listen 18080
         Require all granted
         RewriteEngine On
         RewriteCond %{REQUEST_FILENAME} !auth$
-        RewriteRule ^(.)$ auth?auth_target=$1 [QSA,PT,L]
+        RewriteRule ^(.*)$ auth?auth_target=$1 [QSA,PT,L]
     </Directory>
 </VirtualHost>
 ```
