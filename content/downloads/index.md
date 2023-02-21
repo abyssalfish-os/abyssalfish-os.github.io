@@ -22,13 +22,16 @@ isCJKLanguage: true
 - 访问地址：http://ip:18080/ui
 - 登录管理员账号：admin，密码LoginLY@2016
 
-## 镜像相关信息
+{{% note %}}
+
 制作vmware镜像的软件是macos下的VMware Fusion 10.1。
 虚拟机镜像在各个平台的版本对应关系：
 - 对应的win下的软件是VMware Workstation 14
 - 对应服务器软件是VMware vSphere 6.5
-
 理论上使用这些版本（或更新的版本）加载虚拟机镜像，都可以兼容并运行。
+
+{{% /note %}}
+
 
 ## Github Releases
 以下是Github上各个节点Release地址。
