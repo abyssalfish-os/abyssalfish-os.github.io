@@ -23,13 +23,11 @@ isCJKLanguage: true
 - 虚拟机用户名root，密码ShyLiuying
 
 {{% note %}}
-
-制作vmware镜像的软件是macos下的VMware Fusion 10.1。
-虚拟机镜像在各个平台的版本对应关系：
-- 对应的win下的软件是VMware Workstation 14
+制作vmware镜像的软件是macos下的VMware Fusion 10.1。虚拟机镜像在各个平台的版本对应关系：
+- 对应 Windows 下的VMware Workstation 14
 - 对应服务器软件是VMware vSphere 6.5
-理论上使用这些版本（或更新的版本）加载虚拟机镜像，都可以兼容并运行。
 
+理论上使用这些版本（或更新的版本）加载虚拟机镜像，应该都可以兼容并运行。
 {{% /note %}}
 
 虚拟机安装后，流影前端默认使用18080端口，访问地址及默认账号：
