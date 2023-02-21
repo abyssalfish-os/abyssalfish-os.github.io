@@ -73,6 +73,18 @@
 &lt;ul>
 &lt;li>虚拟机用户名root，密码ShyLiuying&lt;/li>
 &lt;/ul>
+&lt;aside class="admonition note">
+&lt;div class="note-icon">
+&lt;/div>
+&lt;div class="admonition-content">&lt;p>制作vmware镜像的软件是macos下的VMware Fusion 10.1。
+虚拟机镜像在各个平台的版本对应关系：&lt;/p>
+&lt;ul>
+&lt;li>对应的win下的软件是VMware Workstation 14&lt;/li>
+&lt;li>对应服务器软件是VMware vSphere 6.5
+理论上使用这些版本（或更新的版本）加载虚拟机镜像，都可以兼容并运行。&lt;/li>
+&lt;/ul>
+&lt;/div>
+&lt;/aside>
 &lt;p>虚拟机安装后，流影前端默认使用18080端口，访问地址及默认账号：&lt;/p>
 &lt;ul>
 &lt;li>访问地址：http://ip:18080/ui&lt;/li>
