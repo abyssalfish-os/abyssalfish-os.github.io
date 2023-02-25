@@ -64,5 +64,3 @@ isCJKLanguage: true
 - 邮箱：opensource@abyssalfish.com.cn
 - 扫码进入微信讨论群
 {{< imgproc wx_group.png Resize "256x" />}}
-- 微信扫码关注公众号
-{{< imgproc wx_public.jpg Resize "256x" />}}
