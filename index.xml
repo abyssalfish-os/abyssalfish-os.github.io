@@ -1,4 +1,65 @@
-<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>流影 – 开源网络流量可视化分析平台</title><link>https://abyssalfish-os.github.io/</link><description>Recent Hugo news from gohugo.io</description><generator>Hugo -- gohugo.io</generator><language>zh-CN</language><lastBuildDate>Thu, 29 Dec 2022 12:00:00 +0800</lastBuildDate><image><url>https://abyssalfish-os.github.io/img/hugo.png</url><title>GoHugo.io</title><link>https://abyssalfish-os.github.io/</link></image><atom:link href="https://abyssalfish-os.github.io/index.xml" rel="self" type="application/rss+xml"/><item><title>News: ESXi环境流量镜像设置</title><link>https://abyssalfish-os.github.io/news/exsi/</link><pubDate>Mon, 20 Feb 2023 00:00:00 +0800</pubDate><guid>https://abyssalfish-os.github.io/news/exsi/</guid><description>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>流影 – 开源网络流量可视化分析平台</title><link>https://abyssalfish-os.github.io/</link><description>Recent Hugo news from gohugo.io</description><generator>Hugo -- gohugo.io</generator><language>zh-CN</language><lastBuildDate>Thu, 29 Dec 2022 12:00:00 +0800</lastBuildDate><image><url>https://abyssalfish-os.github.io/img/hugo.png</url><title>GoHugo.io</title><link>https://abyssalfish-os.github.io/</link></image><atom:link href="https://abyssalfish-os.github.io/index.xml" rel="self" type="application/rss+xml"/><item><title>News: 流影之网络扫描行为发现</title><link>https://abyssalfish-os.github.io/news/netscan/</link><pubDate>Mon, 27 Feb 2023 00:00:00 +0800</pubDate><guid>https://abyssalfish-os.github.io/news/netscan/</guid><description>
+&lt;h2 id="前言">前言 &lt;a class="header-link" href="#%e5%89%8d%e8%a8%80">&lt;svg class="fill-current o-60 hover-accent-color-light" height="22px" viewBox="0 0 24 24" width="22px" xmlns="http://www.w3.org/2000/svg">&lt;path d="M0 0h24v24H0z" fill="none"/>&lt;path d="M3.9 12c0-1.71 1.39-3.1 3.1-3.1h4V7H7c-2.76 0-5 2.24-5 5s2.24 5 5 5h4v-1.9H7c-1.71 0-3.1-1.39-3.1-3.1zM8 13h8v-2H8v2zm9-6h-4v1.9h4c1.71 0 3.1 1.39 3.1 3.1s-1.39 3.1-3.1 3.1h-4V17h4c2.76 0 5-2.24 5-5s-2.24-5-5-5z"/>&lt;/svg>&lt;/a>&lt;/h2>
+&lt;p>流影已经开源2个月左右，陆陆续续收到了大家的一些安装使用反馈，其中不乏一些很好的建议，例如录制教学视频、制作docker镜像或虚拟机、增加大屏展示等。
+这些方面我们已经开始跟进，有些已经列入后续工作计划。需要说明的是，由于目前人力有限，相关工作推进不如预期那么快。同时，我们欢迎大家积极参与这个开源项目并积极贡献，壮大社区力量，从而不断推动流影完善迭代。&lt;/p>
+&lt;p>为了使大家了解流影的功能，我们会不定期发布一些使用介绍使用方面的blog。之前已经发布过一篇介绍&lt;a href="https://abyssalfish-os.github.io/news/ti/">流影中应用威胁情报&lt;/a>的文章，没有看过的伙伴可以浏览一下。本文是第二篇介绍性文章，主要讲解通过流影发现网络扫描行为的使用，相关规则配置方法。&lt;/p>
+&lt;h2 id="网络扫描简介">网络扫描简介 &lt;a class="header-link" href="#%e7%bd%91%e7%bb%9c%e6%89%ab%e6%8f%8f%e7%ae%80%e4%bb%8b">&lt;svg class="fill-current o-60 hover-accent-color-light" height="22px" viewBox="0 0 24 24" width="22px" xmlns="http://www.w3.org/2000/svg">&lt;path d="M0 0h24v24H0z" fill="none"/>&lt;path d="M3.9 12c0-1.71 1.39-3.1 3.1-3.1h4V7H7c-2.76 0-5 2.24-5 5s2.24 5 5 5h4v-1.9H7c-1.71 0-3.1-1.39-3.1-3.1zM8 13h8v-2H8v2zm9-6h-4v1.9h4c1.71 0 3.1 1.39 3.1 3.1s-1.39 3.1-3.1 3.1h-4V17h4c2.76 0 5-2.24 5-5s-2.24-5-5-5z"/>&lt;/svg>&lt;/a>&lt;/h2>
+&lt;p>网络扫描是实现网络目标信息收集的重要手段之一，是一种十分常见的网络行为。网络扫描不一定都是恶意行为，主要看使用者的目的。
+一方面，安全人员合理使用网络扫描进行服务监测、网络资产盘点、辅助内网漏洞扫描发现等行为，都是良性的正常行为；另一方面，
+黑客或攻击者在实施网络攻击的过程中，会不断通过网络扫描技术收集攻击目标信息、扫描目标漏洞，为实施后续攻击做准备，这种网络扫描是恶意的，有可能对目标造成威胁，是需要重点关注的网络扫描行为。&lt;/p>
+&lt;p>黑客进行网络扫描的过程，一般是踩点后发现目标的存活主机，收集目标主机操作系统信息、开放端口、运行服务的版本信息、网络拓扑，进而发现目标漏洞和脆弱性。以便后续开展漏洞利用，进入目标网络达成攻击。&lt;/p>
+&lt;h3 id="常见扫描工具">常见扫描工具 &lt;a class="header-link" href="#%e5%b8%b8%e8%a7%81%e6%89%ab%e6%8f%8f%e5%b7%a5%e5%85%b7">&lt;svg class="fill-current o-60 hover-accent-color-light" height="22px" viewBox="0 0 24 24" width="22px" xmlns="http://www.w3.org/2000/svg">&lt;path d="M0 0h24v24H0z" fill="none"/>&lt;path d="M3.9 12c0-1.71 1.39-3.1 3.1-3.1h4V7H7c-2.76 0-5 2.24-5 5s2.24 5 5 5h4v-1.9H7c-1.71 0-3.1-1.39-3.1-3.1zM8 13h8v-2H8v2zm9-6h-4v1.9h4c1.71 0 3.1 1.39 3.1 3.1s-1.39 3.1-3.1 3.1h-4V17h4c2.76 0 5-2.24 5-5s-2.24-5-5-5z"/>&lt;/svg>&lt;/a>&lt;/h3>
+&lt;p>扫描工具以主动式为主，一般过程是主动向扫描目标发送探测包，收集响应包，根据响应指纹匹配，最后输出扫描结果。
+如Nmap是一款开源的扫描工具，能够快速的扫描大范围的设备并且能提供比较全面的关于网络目标的信息。Nmap扫描探测示例：&lt;/p>
+&lt;p>&lt;img src="./nmap_port.png" alt="IP_nmap_port">&lt;/p>
+&lt;p>&lt;img src="./nmap_sample.png" alt="IP_namp">&lt;/p>
+&lt;p>其他扫描工具，如Zmap、masscan、rustscan等也是类似于nmap的扫描工具。Nessus是一个功能强大而又简单易用的网络安全扫描工具，可以扫描选定范围内的主机的端口开放情况、提供的服务、是否存在安全漏洞等。&lt;/p>
+&lt;h2 id="使用流影分析网络扫描行为">使用流影分析网络扫描行为 &lt;a class="header-link" href="#%e4%bd%bf%e7%94%a8%e6%b5%81%e5%bd%b1%e5%88%86%e6%9e%90%e7%bd%91%e7%bb%9c%e6%89%ab%e6%8f%8f%e8%a1%8c%e4%b8%ba">&lt;svg class="fill-current o-60 hover-accent-color-light" height="22px" viewBox="0 0 24 24" width="22px" xmlns="http://www.w3.org/2000/svg">&lt;path d="M0 0h24v24H0z" fill="none"/>&lt;path d="M3.9 12c0-1.71 1.39-3.1 3.1-3.1h4V7H7c-2.76 0-5 2.24-5 5s2.24 5 5 5h4v-1.9H7c-1.71 0-3.1-1.39-3.1-3.1zM8 13h8v-2H8v2zm9-6h-4v1.9h4c1.71 0 3.1 1.39 3.1 3.1s-1.39 3.1-3.1 3.1h-4V17h4c2.76 0 5-2.24 5-5s-2.24-5-5-5z"/>&lt;/svg>&lt;/a>&lt;/h2>
+&lt;p>流影基于扫描特征统计技术，实现网络扫描行为发现。支持扫描行为识别规则自定义配置，并对网络扫描行为进行了可视化呈现，让用户一眼就能确定网络扫描行为。&lt;/p>
+&lt;p>流影中扫描事件包括IP扫描和端口扫描两类。&lt;/p>
+&lt;ul>
+&lt;li>IP扫描：针对一个IP地址的扫描行为，主要特征是目标IP上大范围端口的探测，一定时间窗口内出现大量相同特征的探测包。攻击场景下，这种扫描行为说明目标很明确，正在寻求突破口。&lt;/li>
+&lt;li>端口扫描：针对部分端口（服务）的扫描，主要特征是目标是一个IP段或者范围，一定时间窗口内出现大量相同特征的探测包。攻击场景下，这种扫描行为可能说明攻击者掌握某个服务的漏洞，正在广泛搜集可入侵的目标。&lt;/li>
+&lt;/ul>
+&lt;h3 id="如何在流影中查看和判定网络扫描行为">如何在流影中查看和判定网络扫描行为 &lt;a class="header-link" href="#%e5%a6%82%e4%bd%95%e5%9c%a8%e6%b5%81%e5%bd%b1%e4%b8%ad%e6%9f%a5%e7%9c%8b%e5%92%8c%e5%88%a4%e5%ae%9a%e7%bd%91%e7%bb%9c%e6%89%ab%e6%8f%8f%e8%a1%8c%e4%b8%ba">&lt;svg class="fill-current o-60 hover-accent-color-light" height="22px" viewBox="0 0 24 24" width="22px" xmlns="http://www.w3.org/2000/svg">&lt;path d="M0 0h24v24H0z" fill="none"/>&lt;path d="M3.9 12c0-1.71 1.39-3.1 3.1-3.1h4V7H7c-2.76 0-5 2.24-5 5s2.24 5 5 5h4v-1.9H7c-1.71 0-3.1-1.39-3.1-3.1zM8 13h8v-2H8v2zm9-6h-4v1.9h4c1.71 0 3.1 1.39 3.1 3.1s-1.39 3.1-3.1 3.1h-4V17h4c2.76 0 5-2.24 5-5s-2.24-5-5-5z"/>&lt;/svg>&lt;/a>&lt;/h3>
+&lt;p>登录系统后，点击事件主菜单，进入事件告警界面。如果系统已经发现了扫描事件，在筛选区的“事件类型”下，会显示IP扫描和端口扫描的复选标签项。如果没有标签项，说明暂无相关事件类型。如下图所示，表明系统检出了多种类型的事项，两种扫描行为都有事件，可以选中多种事件类型，系统相应进行关联筛选。
+&lt;img src="./ip_port.png" alt="扫描事件">
+柱状图显示事件源和目的事件排行，饼状图显示事件分布情况，最下方是事件列表信息。
+&lt;img src="./ip_port_1.png" alt="扫描事件1">
+点击事件ID可以查看该告警事件详情信息，包括源、目的基本信息、事件时序特征和数据特征，如下图所示：
+&lt;img src="./ip_scan_1.png" alt="扫描事件2">
+对TCP会显示主动握手的时序分布图，从左到右显示源、发生时间、数据包字节大小、流的数量、数据包个数、目的端口分布、目的地址，并显示扫描相关特征列表，让用户一眼就能看懂，辅助对这个事件进行判定。如下图所示，某个ip上的高位端口范围上有大量特征相同的数据包，表明进行了扫描探测。
+&lt;img src="./ip_scan_2.png" alt="扫描事件3">&lt;/p>
+&lt;p>返回事件列表，选择一个端口扫描的事件进行详情查看，如下图所示：
+&lt;img src="./port_scan_1.png" alt="端口扫描">&lt;/p>
+&lt;p>从时序图可以明显看出其扫描行为的分布情况：
+&lt;img src="./port_scan_2.png" alt="端口扫描2">&lt;/p>
+&lt;p>最下方的列表显示行为统计特征信息：
+&lt;img src="./port_scan_3.png" alt="端口扫描2">&lt;/p>
+&lt;h3 id="自定义扫描识别规则配置">自定义扫描识别规则配置 &lt;a class="header-link" href="#%e8%87%aa%e5%ae%9a%e4%b9%89%e6%89%ab%e6%8f%8f%e8%af%86%e5%88%ab%e8%a7%84%e5%88%99%e9%85%8d%e7%bd%ae">&lt;svg class="fill-current o-60 hover-accent-color-light" height="22px" viewBox="0 0 24 24" width="22px" xmlns="http://www.w3.org/2000/svg">&lt;path d="M0 0h24v24H0z" fill="none"/>&lt;path d="M3.9 12c0-1.71 1.39-3.1 3.1-3.1h4V7H7c-2.76 0-5 2.24-5 5s2.24 5 5 5h4v-1.9H7c-1.71 0-3.1-1.39-3.1-3.1zM8 13h8v-2H8v2zm9-6h-4v1.9h4c1.71 0 3.1 1.39 3.1 3.1s-1.39 3.1-3.1 3.1h-4V17h4c2.76 0 5-2.24 5-5s-2.24-5-5-5z"/>&lt;/svg>&lt;/a>&lt;/h3>
+&lt;p>系统支持对两种扫描行为的规则自定义配置。（管理员用户）登录系统后，点击配置主菜单，选择“规则”子菜单，进入规则配置与查看界面。
+&lt;img src="./scan_config.png" alt="端口扫描2">
+管理员权限的用户可以进行规则维护。配置参数请参见&lt;a href="https://abyssalfish-os.github.io/user-manual/peizhi/#ip%e6%89%ab%e6%8f%8f">使用文档&lt;/a>。&lt;/p>
+&lt;h2 id="网络扫描防护建议">网络扫描防护建议 &lt;a class="header-link" href="#%e7%bd%91%e7%bb%9c%e6%89%ab%e6%8f%8f%e9%98%b2%e6%8a%a4%e5%bb%ba%e8%ae%ae">&lt;svg class="fill-current o-60 hover-accent-color-light" height="22px" viewBox="0 0 24 24" width="22px" xmlns="http://www.w3.org/2000/svg">&lt;path d="M0 0h24v24H0z" fill="none"/>&lt;path d="M3.9 12c0-1.71 1.39-3.1 3.1-3.1h4V7H7c-2.76 0-5 2.24-5 5s2.24 5 5 5h4v-1.9H7c-1.71 0-3.1-1.39-3.1-3.1zM8 13h8v-2H8v2zm9-6h-4v1.9h4c1.71 0 3.1 1.39 3.1 3.1s-1.39 3.1-3.1 3.1h-4V17h4c2.76 0 5-2.24 5-5s-2.24-5-5-5z"/>&lt;/svg>&lt;/a>&lt;/h2>
+&lt;p>为了防范恶意网络扫描的危害，建议综合进行以下措施：&lt;/p>
+&lt;ol>
+&lt;li>减少端口开放，加强系统防护&lt;/li>
+&lt;li>端口伪装，进行信息欺骗&lt;/li>
+&lt;li>实时监测扫描行为，及时告警和处置&lt;/li>
+&lt;/ol>
+&lt;h2 id="结语">结语 &lt;a class="header-link" href="#%e7%bb%93%e8%af%ad">&lt;svg class="fill-current o-60 hover-accent-color-light" height="22px" viewBox="0 0 24 24" width="22px" xmlns="http://www.w3.org/2000/svg">&lt;path d="M0 0h24v24H0z" fill="none"/>&lt;path d="M3.9 12c0-1.71 1.39-3.1 3.1-3.1h4V7H7c-2.76 0-5 2.24-5 5s2.24 5 5 5h4v-1.9H7c-1.71 0-3.1-1.39-3.1-3.1zM8 13h8v-2H8v2zm9-6h-4v1.9h4c1.71 0 3.1 1.39 3.1 3.1s-1.39 3.1-3.1 3.1h-4V17h4c2.76 0 5-2.24 5-5s-2.24-5-5-5z"/>&lt;/svg>&lt;/a>&lt;/h2>
+&lt;p>在网络安全防护的场景下，尽早的发现黑客的扫描活动，才能及时采取措施，阻断黑客进一步实施后续攻击和破坏，避免损失。&lt;/p>
+&lt;p>流影可以感知网络扫描行为，支持用户自定义配置检测规则，及时发出网络扫描行为告警，并将扫描行为特征以可视化的方式呈现，帮助用户快速判定，大大减少分析响应时间，提高分析处理效率。&lt;/p>
+&lt;h2 id="其他信息">其他信息 &lt;a class="header-link" href="#%e5%85%b6%e4%bb%96%e4%bf%a1%e6%81%af">&lt;svg class="fill-current o-60 hover-accent-color-light" height="22px" viewBox="0 0 24 24" width="22px" xmlns="http://www.w3.org/2000/svg">&lt;path d="M0 0h24v24H0z" fill="none"/>&lt;path d="M3.9 12c0-1.71 1.39-3.1 3.1-3.1h4V7H7c-2.76 0-5 2.24-5 5s2.24 5 5 5h4v-1.9H7c-1.71 0-3.1-1.39-3.1-3.1zM8 13h8v-2H8v2zm9-6h-4v1.9h4c1.71 0 3.1 1.39 3.1 3.1s-1.39 3.1-3.1 3.1h-4V17h4c2.76 0 5-2.24 5-5s-2.24-5-5-5z"/>&lt;/svg>&lt;/a>&lt;/h2>
+&lt;ul>
+&lt;li>&lt;a href="https://abyssalfish-os.github.io/">开源流影项目主页&lt;/a>&lt;/li>
+&lt;li>邮箱：opensource@abyssalfish.com.cn&lt;/li>
+&lt;li>扫码进入微信讨论群
+&lt;figure style="padding: 0.25rem; margin: 2rem 0; ">
+&lt;img style="max-width: 100%; width: auto; height: auto;" src="https://abyssalfish-os.github.io/news/netscan/wx_group_hu87a2e382e09fcee856265bf5cb34cab9_30575_256x0_resize_catmullrom_3.png" width="256" height="258">
+&lt;/figure>
+&lt;/li>
+&lt;/ul></description></item><item><title>News: ESXi环境流量镜像设置</title><link>https://abyssalfish-os.github.io/news/exsi/</link><pubDate>Mon, 20 Feb 2023 00:00:00 +0800</pubDate><guid>https://abyssalfish-os.github.io/news/exsi/</guid><description>
 &lt;h1 id="esxi环境镜像流量接入">ESXi环境镜像流量接入&lt;/h1>
 &lt;h2 id="前言">前言 &lt;a class="header-link" href="#%e5%89%8d%e8%a8%80">&lt;svg class="fill-current o-60 hover-accent-color-light" height="22px" viewBox="0 0 24 24" width="22px" xmlns="http://www.w3.org/2000/svg">&lt;path d="M0 0h24v24H0z" fill="none"/>&lt;path d="M3.9 12c0-1.71 1.39-3.1 3.1-3.1h4V7H7c-2.76 0-5 2.24-5 5s2.24 5 5 5h4v-1.9H7c-1.71 0-3.1-1.39-3.1-3.1zM8 13h8v-2H8v2zm9-6h-4v1.9h4c1.71 0 3.1 1.39 3.1 3.1s-1.39 3.1-3.1 3.1h-4V17h4c2.76 0 5-2.24 5-5s-2.24-5-5-5z"/>&lt;/svg>&lt;/a>&lt;/h2>
 &lt;p>近期有小伙伴们在微信交流群里询问了流量接入的问题，本文以ESXi环境下流量接入配置为例进行说明。
@@ -196,7 +257,7 @@
 &lt;p>本文从架构、技术、功能、应用等方面，对流影进行了概要性介绍，帮助读者对流影有一个整体认识。
 本文并没有深入相关细节，如需深入了解，请查看流影&lt;a href="https://abyssalfish-os.github.io/documentation/">文档&lt;/a>。同时我们提供了线上演示Demo，便于您快速上手试用，您可以通过以下链接和演示账号登录试用：&lt;/p>
 &lt;ul>
-&lt;li>&lt;a href="http://101.254.236.75:12280/ui/#/login">流影Demo&lt;/a>&lt;/li>
+&lt;li>&lt;a href="http://101.254.236.75:14180/ui/#/login">流影Demo&lt;/a>&lt;/li>
 &lt;li>Demo账号：demo&lt;/li>
 &lt;li>Demo口令：demo@2022&lt;/li>
 &lt;/ul>
@@ -429,7 +490,7 @@ Trusted Automated eXchange of Indicator Information &lt;a href="https://taxiipro
 &lt;li>&lt;a href="https://abyssalfish-os.github.io/">流影项目&lt;/a>&lt;/li>
 &lt;li>&lt;a href="https://github.com/orgs/Abyssal-Fish-Technology/repositories">GitHub&lt;/a>&lt;/li>
 &lt;li>&lt;a href="https://gitee.com/organizations/abyssalfish-os/projects">Gitee&lt;/a>&lt;/li>
-&lt;li>&lt;a href="http://101.254.236.75:12280/ui/#/login">Demo地址&lt;/a>&lt;/li>
+&lt;li>&lt;a href="http://101.254.236.75:14180/ui/#/login">Demo地址&lt;/a>&lt;/li>
 &lt;li>扫码进入微信讨论群&lt;/li>
 &lt;/ul>
 &lt;figure style="padding: 0.25rem; margin: 2rem 0; ">
@@ -486,7 +547,7 @@ Trusted Automated eXchange of Indicator Information &lt;a href="https://taxiipro
 &lt;h2 id="演示地址">演示地址 &lt;a class="header-link" href="#%e6%bc%94%e7%a4%ba%e5%9c%b0%e5%9d%80">&lt;svg class="fill-current o-60 hover-accent-color-light" height="22px" viewBox="0 0 24 24" width="22px" xmlns="http://www.w3.org/2000/svg">&lt;path d="M0 0h24v24H0z" fill="none"/>&lt;path d="M3.9 12c0-1.71 1.39-3.1 3.1-3.1h4V7H7c-2.76 0-5 2.24-5 5s2.24 5 5 5h4v-1.9H7c-1.71 0-3.1-1.39-3.1-3.1zM8 13h8v-2H8v2zm9-6h-4v1.9h4c1.71 0 3.1 1.39 3.1 3.1s-1.39 3.1-3.1 3.1h-4V17h4c2.76 0 5-2.24 5-5s-2.24-5-5-5z"/>&lt;/svg>&lt;/a>&lt;/h2>
 &lt;ul>
 &lt;li>
-&lt;p>&lt;a href="http://101.254.236.75:12280/ui/#/login">Demo地址&lt;/a>&lt;/p>
+&lt;p>&lt;a href="http://101.254.236.75:14180/ui/">Demo地址&lt;/a>&lt;/p>
 &lt;/li>
 &lt;li>
 &lt;p>演示账号：demo&lt;/p>
