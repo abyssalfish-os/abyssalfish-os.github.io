@@ -93,7 +93,7 @@ isCJKLanguage: true
 ## 结语
 本文从架构、技术、功能、应用等方面，对流影进行了概要性介绍，帮助读者对流影有一个整体认识。
 本文并没有深入相关细节，如需深入了解，请查看流影[文档](https://abyssalfish-os.github.io/documentation/)。同时我们提供了线上演示Demo，便于您快速上手试用，您可以通过以下链接和演示账号登录试用：
-- [流影Demo](http://101.254.236.75:12280/ui/#/login)
+- [流影Demo](http://101.254.236.75:14180/ui/#/login)
 - Demo账号：demo
 - Demo口令：demo@2022
 

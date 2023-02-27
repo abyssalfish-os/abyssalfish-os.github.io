@@ -26,7 +26,7 @@ features:
 sections:
   - heading: "马上体验"
     cta: 点击进入演示 Demo
-    link: http://101.254.236.75:12280/ui/
+    link: http://101.254.236.75:14180/ui/
     color_classes: bg-accent-color blue
     image: /img/login.png
     copy: "我们提供了一个在线演示体验环境，便于您快速上手操作使用，能够马上体验流影各种功能"
