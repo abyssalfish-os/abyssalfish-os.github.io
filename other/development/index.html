@@ -91,7 +91,10 @@ GitHub
 <aside class="fixed-lTK mw5-l right-0 f6 bl-l b--moon-gray pv4 pv0-ns ph4-l nested-list-reset nested-links nested-copy-line-height">
 <p class=b>What's on this Page</p><nav id=TableOfContents>
 <ul>
-<li><a href=#esxi环境采集流量镜像>ESXi环境采集流量镜像</a></li></ul></nav></aside></div><div class="order-1 w-60-l mw7 ph0 ph5-ns mid-gray nested-copy-line-height no-underline nested-links nested-img nested-copy-seperator nested-blockquote mt0-ns" style=flex-grow:1>
+<li><a href=#esxi环境采集流量镜像>ESXi环境采集流量镜像</a></li></ul></nav><div date-pref>
+<a href=https://abyssalfish-os.github.io/other/faq/ class="dib f6 pr1 hover-bg-light-gray br-100" title=常见问题><svg class="fill-current" height="30" viewBox="0 0 24 24" width="30" xmlns="http://www.w3.org/2000/svg"><path d="M10 6 8.59 7.41 13.17 12l-4.58 4.59L10 18l6-6z"/><path d="M0 0h24v24H0z" fill="none"/></svg>
+</a>
+</div></aside></div><div class="order-1 w-60-l mw7 ph0 ph5-ns mid-gray nested-copy-line-height no-underline nested-links nested-img nested-copy-seperator nested-blockquote mt0-ns" style=flex-grow:1>
 <div class="documentation-copy center measure-wide-wd">
 <div id=readout class="fixed right-0 bottom-0">
 </div><header class="flex-none w-100">
@@ -116,7 +119,7 @@ DEPLOY
 <li>在网络管理页面，新建端口组（图中MirrorLAN），绑定到接入流量的虚拟交换机（图中vSwitch1-LAN）。“安全”标签下端口组的“允许混杂模式”配置为“接受”。</li></ol><p><img src=/img/esxi/esxi_6.png alt=esxi_6></p><ol start=3>
 <li>在运行分析程序的虚拟机的管理页面，添加网络适配器，绑定到流量镜像端口组（图中MirrorLAN）。</li></ol><p><img src=/img/esxi/esxi_7.png alt=esxi_7></p><p>至此，从内部流量镜像到虚拟机网卡的配置完毕，虚拟交换机上网络链接关系如下图所示：</p><p><img src=/img/esxi/esxi_8.png alt=esxi_8></p><p>进入流量分析平台所在虚拟机操作系统，配置新网卡进入混杂模式，从该网卡即可采集到流量镜像数据。</p><h3 id=联系反馈>联系反馈 <a class=header-link href=#%e8%81%94%e7%b3%bb%e5%8f%8d%e9%a6%88><svg class="fill-current o-60 hover-accent-color-light" height="22" viewBox="0 0 24 24" width="22" xmlns="http://www.w3.org/2000/svg"><path d="M0 0h24v24H0z" fill="none"/><path d="M3.9 12c0-1.71 1.39-3.1 3.1-3.1h4V7H7c-2.76.0-5 2.24-5 5s2.24 5 5 5h4v-1.9H7c-1.71.0-3.1-1.39-3.1-3.1zM8 13h8v-2H8v2zm9-6h-4v1.9h4c1.71.0 3.1 1.39 3.1 3.1s-1.39 3.1-3.1 3.1h-4V17h4c2.76.0 5-2.24 5-5s-2.24-5-5-5z"/></svg></a></h3><ul>
 <li>联系邮箱：<a href=mailto:opensource@abyssalfish.com.cn>opensource@abyssalfish.com.cn</a></li></ul></div><h2>See Also</h2><ul>
-<li><a href=/contribute/development/>代码贡献</a></li><li><a href=/contribute/documentation/>帮助完善项目文档 Docs</a></li><li><a href=/getting-started/deploy-required/>部署环境说明</a></li></ul></div></div><div class="order-0 w-20 dn db-l">
+<li><a href=/other/faq/>常见问题</a></li><li><a href=/contribute/development/>代码贡献</a></li><li><a href=/contribute/documentation/>帮助完善项目文档 Docs</a></li><li><a href=/getting-started/deploy-required/>部署环境说明</a></li></ul></div></div><div class="order-0 w-20 dn db-l">
 <nav role=navigation>
 <ul class="list pa0 nl2">
 <li class="f5 w-100 hover-bg-light-gray hover-accent-color-light fw8">
@@ -225,6 +228,10 @@ DEPLOY
 </li><li class="f6 fw4">
 <a href=/other/development/ class="db link hover-bg-gray hover-white pl3 pr2 pv2 primary-color">
 流量镜像接入
+</a>
+</li><li class="f6 fw4">
+<a href=/other/faq/ class="db link hover-bg-gray hover-white pl3 pr2 pv2 black">
+常见问题
 </a>
 </li></ul></li><li class="f5 w-100 hover-bg-light-gray hover-accent-color-light fw8">
 <a href=/demo/ class="js-toggle dib w-100 link mid-gray hover-accent-color-light pl2 pr2 pv2" data-target=.demo>演示Demo</a>
