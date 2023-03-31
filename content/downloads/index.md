@@ -14,7 +14,7 @@ isCJKLanguage: true
 
 ## Vmware虚拟机镜像
 为了方便大家安装试用，制作了vmware安装镜像，请大家前往如下百度网盘地址下载。
-- [镜像下载地址](https://pan.baidu.com/s/12LYVlJdKHRd7ylZYSWF5AQ)
+- [镜像下载地址](https://pan.baidu.com/s/1B9ykL2n1lsvpJvgNup0ltQ)
 - 提取码：AFOS
 - 虚拟机用户名root，密码ShyLiuying
 
