@@ -1,7 +1,7 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>流影 – 开源网络流量可视化分析平台</title><link>https://abyssalfish-os.github.io/</link><description>Recent Hugo news from gohugo.io</description><generator>Hugo -- gohugo.io</generator><language>zh-CN</language><lastBuildDate>Thu, 29 Dec 2022 12:00:00 +0800</lastBuildDate><image><url>https://abyssalfish-os.github.io/img/hugo.png</url><title>GoHugo.io</title><link>https://abyssalfish-os.github.io/</link></image><atom:link href="https://abyssalfish-os.github.io/index.xml" rel="self" type="application/rss+xml"/><item><title>News: 流影之DGA域名识别检测</title><link>https://abyssalfish-os.github.io/news/dga/</link><pubDate>Sat, 25 Mar 2023 00:00:00 +0800</pubDate><guid>https://abyssalfish-os.github.io/news/dga/</guid><description>
 &lt;h2 id="前言">前言 &lt;a class="header-link" href="#%e5%89%8d%e8%a8%80">&lt;svg class="fill-current o-60 hover-accent-color-light" height="22px" viewBox="0 0 24 24" width="22px" xmlns="http://www.w3.org/2000/svg">&lt;path d="M0 0h24v24H0z" fill="none"/>&lt;path d="M3.9 12c0-1.71 1.39-3.1 3.1-3.1h4V7H7c-2.76 0-5 2.24-5 5s2.24 5 5 5h4v-1.9H7c-1.71 0-3.1-1.39-3.1-3.1zM8 13h8v-2H8v2zm9-6h-4v1.9h4c1.71 0 3.1 1.39 3.1 3.1s-1.39 3.1-3.1 3.1h-4V17h4c2.76 0 5-2.24 5-5s-2.24-5-5-5z"/>&lt;/svg>&lt;/a>&lt;/h2>
-&lt;p>DGA是域名生成算法(Domain Generation Algorithm)的简写，该技术被攻击者被广泛应用于构建恶意软件基础设施之中，例如僵尸网络的C2（Command and Control）通讯设施， 如Mirai、Conficker、Mjuyh等僵尸网络, 通过生成域名的随机性与短时生存性来躲避检测。&lt;/p>
-&lt;p>流影内置了基于深度学习的DGA域名检测模型，支持从DNS流量中识别DGA域名，具有较高的准确度。本文简要介绍流影中如何查看和分析DGA告警事件。 识别DGA域名对安全防守方很有意义，能够协助发现恶意软件通讯行为，从而及时响应。&lt;/p>
+&lt;p>DGA是域名生成算法(Domain Generation Algorithm)的简写，该技术被攻击者广泛应用于构建恶意软件基础设施之中，例如僵尸网络的C2（Command and Control）通讯设施， 如Mirai、Conficker、Mjuyh等僵尸网络, 通过生成域名的随机性与短时生存性来躲避检测。&lt;/p>
+&lt;p>识别DGA域名对安全防守方很有意义，能够协助发现恶意软件通讯行为，从而及时响应。流影内置了基于深度学习的DGA域名检测模型，支持从DNS流量中识别DGA域名，具有较高的准确度。本文简要介绍流影中如何查看和分析DGA告警事件。&lt;/p>
 &lt;h2 id="dga相关简介">DGA相关简介 &lt;a class="header-link" href="#dga%e7%9b%b8%e5%85%b3%e7%ae%80%e4%bb%8b">&lt;svg class="fill-current o-60 hover-accent-color-light" height="22px" viewBox="0 0 24 24" width="22px" xmlns="http://www.w3.org/2000/svg">&lt;path d="M0 0h24v24H0z" fill="none"/>&lt;path d="M3.9 12c0-1.71 1.39-3.1 3.1-3.1h4V7H7c-2.76 0-5 2.24-5 5s2.24 5 5 5h4v-1.9H7c-1.71 0-3.1-1.39-3.1-3.1zM8 13h8v-2H8v2zm9-6h-4v1.9h4c1.71 0 3.1 1.39 3.1 3.1s-1.39 3.1-3.1 3.1h-4V17h4c2.76 0 5-2.24 5-5s-2.24-5-5-5z"/>&lt;/svg>&lt;/a>&lt;/h2>
 &lt;p>2009年DGA被首次曝光，相关攻防技术目前已发展了十几年。DGA域名本身没有好坏之分，主要与使用者的目的有关。恶意攻击者利用DGA算法随机生成大量域名，来规避安全设备的检测封禁。其基本原理是，攻击者控制端和被控端运行相同的DGA算法，当需要发起攻击的时候，选择其中一部分进行注册生效，建立起C2通道后实施攻击。
 截止目前，DGA仍然是广泛应用于恶意软件与C2服务器通信之中。业界、学界也对DGA算法进行了大量的研究，提出了许多检测方法。&lt;/p>
@@ -12,7 +12,7 @@
 &lt;li>深度学习模型&lt;/li>
 &lt;/ol>
 &lt;p>开始时，DGA就是攻击者为了躲避传统域名碰撞检测而设计的域名生成算法，DGA域名数量巨大，黑名单很难覆盖DGA域名，需要阻断所有DGA域名才能中断C2，使得传统碰撞检测机制基本失效。&lt;/p>
-&lt;p>值得庆幸的是，近年来大量的恶意软件中DGA算法被公开，积累了许多DGA域名数据，为构建深度学习模型提供了数据基础条件。深度学习技术具有强大的拟合和泛化能力，从一些研究结论和实际检测效果上来说，目前基于深度学习的模型准确率、误报率等综合性能方面都优于其他方法。
+&lt;p>近年来大量的恶意软件中DGA算法被公开，积累了许多DGA域名数据，为构建深度学习模型提供了数据基础条件。深度学习技术具有强大的拟合和泛化能力，从一些研究结论和实际检测效果上来说，目前基于深度学习的模型准确率、误报率等综合性能方面都优于其他方法。
 另一方面，并不能说深度学习已经完美解决了DGA域名检测的问题，事实上深度学习模型存在检测效率比较低的缺点，也无法杜绝误报。&lt;/p>
 &lt;h2 id="流影中dga域名检测技术">流影中DGA域名检测技术 &lt;a class="header-link" href="#%e6%b5%81%e5%bd%b1%e4%b8%addga%e5%9f%9f%e5%90%8d%e6%a3%80%e6%b5%8b%e6%8a%80%e6%9c%af">&lt;svg class="fill-current o-60 hover-accent-color-light" height="22px" viewBox="0 0 24 24" width="22px" xmlns="http://www.w3.org/2000/svg">&lt;path d="M0 0h24v24H0z" fill="none"/>&lt;path d="M3.9 12c0-1.71 1.39-3.1 3.1-3.1h4V7H7c-2.76 0-5 2.24-5 5s2.24 5 5 5h4v-1.9H7c-1.71 0-3.1-1.39-3.1-3.1zM8 13h8v-2H8v2zm9-6h-4v1.9h4c1.71 0 3.1 1.39 3.1 3.1s-1.39 3.1-3.1 3.1h-4V17h4c2.76 0 5-2.24 5-5s-2.24-5-5-5z"/>&lt;/svg>&lt;/a>&lt;/h2>
 &lt;p>我们基于现有dga检测技术，进行了优化改造，模型定时离线训练，并在流影中集成了DGA域名检测AI模型。该检测模型基于千万级域名正、负样本数据，样本数据涵盖了主要流行DGA算法，使用LSTM深度学习模型训练而成，并进行了模型压缩和参数调优，兼顾了检测效率和性能。模型框架概要如下图所示。&lt;/p>
@@ -208,7 +208,7 @@
 &lt;h2 id="vmware虚拟机镜像">Vmware虚拟机镜像 &lt;a class="header-link" href="#vmware%e8%99%9a%e6%8b%9f%e6%9c%ba%e9%95%9c%e5%83%8f">&lt;svg class="fill-current o-60 hover-accent-color-light" height="22px" viewBox="0 0 24 24" width="22px" xmlns="http://www.w3.org/2000/svg">&lt;path d="M0 0h24v24H0z" fill="none"/>&lt;path d="M3.9 12c0-1.71 1.39-3.1 3.1-3.1h4V7H7c-2.76 0-5 2.24-5 5s2.24 5 5 5h4v-1.9H7c-1.71 0-3.1-1.39-3.1-3.1zM8 13h8v-2H8v2zm9-6h-4v1.9h4c1.71 0 3.1 1.39 3.1 3.1s-1.39 3.1-3.1 3.1h-4V17h4c2.76 0 5-2.24 5-5s-2.24-5-5-5z"/>&lt;/svg>&lt;/a>&lt;/h2>
 &lt;p>镜像下载信息如下：&lt;/p>
 &lt;ul>
-&lt;li>&lt;a href="https://pan.baidu.com/s/12LYVlJdKHRd7ylZYSWF5AQ">镜像下载地址&lt;/a>&lt;/li>
+&lt;li>&lt;a href="https://pan.baidu.com/s/1B9ykL2n1lsvpJvgNup0ltQ">镜像下载地址&lt;/a>&lt;/li>
 &lt;li>提取码：AFOS&lt;/li>
 &lt;/ul>
 &lt;p>虚拟机相关信息如下：&lt;/p>
