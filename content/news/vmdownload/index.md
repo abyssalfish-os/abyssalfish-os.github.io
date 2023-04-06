@@ -34,6 +34,8 @@ isCJKLanguage: true
 - 访问地址：http://ip:18080/ui
 - 登录管理员账号：admin，密码LoginLY@2016
 
+## 镜像安装视频
+{{<bili "https://www.bilibili.com/video/BV1Mg4y1g7nT" >}}
 
 ## 后语
 流影定位于轻量级的网络安全态势感知与可视化分析平台，开源版本集成了流量探针、网络行为分析引擎、威胁检测引擎和交互式可视化分析引擎四个核心模块，

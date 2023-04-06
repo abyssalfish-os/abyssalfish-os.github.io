@@ -30,6 +30,8 @@ isCJKLanguage: true
 理论上使用这些版本（或更新的版本）加载虚拟机镜像，应该都可以兼容并运行。
 {{% /note %}}
 
+### 虚拟机安装教学视频
+{{<bili "https://www.bilibili.com/video/BV1Mg4y1g7nT" >}}
 
 ## Github Releases
 以下是Github上各个节点Release地址。

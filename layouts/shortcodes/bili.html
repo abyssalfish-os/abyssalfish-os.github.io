@@ -1,0 +1,64 @@
+<!-- 语法规则
+    1. 匿名模式
+        <bilibili BV1Mg4y1g7nT 1>
+    2. 具名模式
+        <bilibili
+            src="https://www.bilibili.com/video/BV1Mg4y1g7nT/"
+            page="1"
+        >
+-->
+
+<!-- 第一个参数 视频地址 -->
+{{- $dest := ( .Get 0) -}}
+
+<!-- 具名模式， 获取 src -->
+{{ if .IsNamedParams }}
+    {{ $dest = (.Get "src") }}
+{{ end }}
+
+<!-- 判断是否为全路径， 是则获取视频ID -->
+{{ if (hasPrefix $dest "http" )}}
+    <!-- https://www.bilibili.com/video/BV1Mg4y1g7nT/ -->
+    {{ $dest = (strings.TrimPrefix "http" $dest ) }}
+
+    <!-- 解析 URL -->
+    {{ $url := urls.Parse $dest }}
+
+    <!-- /video/BV1Mg4y1g7nT/ -->
+    {{ $dest = $url.Path }}
+
+    <!-- BV1Mg4y1g7nT -->
+    {{ $dest = (path.BaseName $dest) }}
+{{ end }}
+
+
+<!-- 获取专辑中的视频 ID -->
+{{- $page := (.Get 1) -}}
+
+{{ if .IsNamedParams }}
+    {{ $page = (.Get "page") }}
+{{ end }}
+
+<!-- 默认值为 1 -->
+{{ if (not $page) }}
+    {{ $page = 1 }}
+{{ end }}
+
+
+<!-- 嵌入 bili播放框 -->
+<div style="margin: 10px 0 20px 0;">
+
+  <div style="position:relative; padding-bottom:75%; width:100%; height:0">
+    <iframe src="//player.bilibili.com/player.html?bvid={{ $dest }}&page={{ $page }}"
+        scrolling="no" border="0"
+        frameborder="no"
+        framespacing="0"
+        allowfullscreen="true"
+        style="position:absolute; height: 100%; width: 100%;">
+    </iframe>
+  </div>
+  <div style="margin: 5px 0;">
+    <span>更多视频，请点击跳转 <strong>Bilibili</strong>进行观看</span>
+    <a href="https://space.bilibili.com/3493262893517732">流影教学视频</a>
+  </div>
+</div>
