@@ -91,3 +91,10 @@
   identifier = "gitter"
   post = "external"
   url = "https://gitter.im/abyssalfish-os/community"
+
+[[global]]
+  name = "视频Video"
+  weight = 300
+  identifier = "videos"
+  post = "external"
+  url = "https://space.bilibili.com/3493262893517732"
