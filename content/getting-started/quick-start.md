@@ -22,6 +22,9 @@ isCJKLanguage: true
 2. 部署架构
 3. 简单使用
 
+## Realse安装部署教学视频
+{{<bili "https://www.bilibili.com/video/BV16k4y1Y7VW" >}}
+
 ## 准备
 
 在开始部署之前，您必须准备好部署条件:
