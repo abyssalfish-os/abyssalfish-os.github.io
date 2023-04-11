@@ -1,0 +1,197 @@
+<!doctype html><html class=no-js lang="
+    zh-cn
+  
+  ">
+<head>
+<meta charset=utf-8>
+<link rel=preload href=https://abyssalfish-os.github.io/fonts/muli-latin-200.woff2 as=font type=font/woff2 crossorigin>
+<link rel=preload href=https://abyssalfish-os.github.io/fonts/muli-latin-400.woff2 as=font type=font/woff2 crossorigin>
+<link rel=preload href=https://abyssalfish-os.github.io/fonts/muli-latin-800.woff2 as=font type=font/woff2 crossorigin>
+<meta http-equiv=x-ua-compatible content="IE=edge">
+<title>
+流影: 流影之隐蔽隧道通讯行为检测，预警C2和数据窃取
+</title><meta name=viewport content="width=device-width,minimum-scale=1">
+<meta name=generator content="Hugo 0.109.0">
+<meta name=robots content="index, follow">
+<link rel=stylesheet href=/output/css/app.min.631706eef190df8129d8f5b57c45caa8c431efd8e4148fbd17b354b607ce316a.css integrity="sha256-YxcG7vGQ34Ep2PW1fEXKqMQx79jkFI+9F7NUtgfOMWo=" crossorigin=anonymous>
+<meta name=description content="
+        流影内置了ICMP隧道检测和DNS隧道通讯行为检测算法，帮助用户及时发现疑似恶意隐蔽隧道通讯行为，及时预警C2和数据窃取攻击行为
+      
+      ">
+<script type=text/javascript src=/output/js/app.5a802739f9b2407f0d3a1f84a20731b6705a5a4df051c35686f22bd3aea90731.js crossorigin=anonymous defer></script>
+<script async defer src=https://buttons.github.io/buttons.js></script>
+<link rel=apple-touch-icon sizes=180x180 href=/apple-touch-icon.png>
+<link rel=icon type=image/png href=/favicon-32x32.png sizes=32x32>
+<link rel=icon type=image/png href=/favicon-16x16.png sizes=16x16>
+<link rel=manifest href=/manifest.json>
+<link rel=mask-icon href=/safari-pinned-tab.svg color=#0594cb>
+<meta name=theme-color content="#ffffff">
+<meta property="og:title" content="流影之隐蔽隧道通讯行为检测，预警C2和数据窃取">
+<meta property="og:description" content="流影内置了ICMP隧道检测和DNS隧道通讯行为检测算法，帮助用户及时发现疑似恶意隐蔽隧道通讯行为，及时预警C2和数据窃取攻击行为">
+<meta property="og:type" content="article">
+<meta property="og:url" content="https://abyssalfish-os.github.io/news/tunnel/"><meta property="og:image" content="https://abyssalfish-os.github.io/opengraph/gohugoio-card-base-1_huf001e7df4fd9c00c4355abac7d4ca455_242906_filter_16799900078578108527.png"><meta property="article:section" content="news">
+<meta property="article:published_time" content="2023-04-11T00:00:00+08:00">
+<meta property="article:modified_time" content="2023-04-11T11:17:42+08:00">
+<meta itemprop=name content="流影之隐蔽隧道通讯行为检测，预警C2和数据窃取">
+<meta itemprop=description content="流影内置了ICMP隧道检测和DNS隧道通讯行为检测算法，帮助用户及时发现疑似恶意隐蔽隧道通讯行为，及时预警C2和数据窃取攻击行为"><meta itemprop=datePublished content="2023-04-11T00:00:00+08:00">
+<meta itemprop=dateModified content="2023-04-11T11:17:42+08:00">
+<meta itemprop=wordCount content="3080">
+<meta itemprop=keywords content>
+</head><body class="ma0 sans-serif bg-primary-color-light
+production">
+<nav class="bg-primary-color-dark pv4 w-100" role=navigation>
+<div class="center flex-ns flex-wrap items-center justify-start mw9">
+<h1 class="dim f3 lh-solid ml0-ns mr0 mr4-l mv0 pl3 pl4-ns">
+<a href=https://abyssalfish-os.github.io/ class="link white">
+流影->FlowShadow
+</a>
+</h1><ul class="list ma0 pa0 dn dib-l" role=menu>
+<li class="f5 dib mr4" role=menuitem>
+<a href=/news/ class="dim link light-silver">
+新闻&博客
+</a>
+</li><li class="f5 dib mr4" role=menuitem>
+<a href=/documentation/ class="dim link light-silver">
+文档
+</a>
+</li><li class="f5 dib mr4" role=menuitem>
+<a href=/downloads/ class="dim link light-silver">
+下载
+</a>
+</li><li class="f5 dib mr4" role=menuitem>
+<a href=/demo/ class="dim link light-silver">
+Demo演示
+</a>
+</li><li class="f5 dib mr4" role=menuitem>
+<a href=https://gitee.com/organizations/abyssalfish-os/projects class="dim link light-silver">
+Gitee
+<span class=pl1><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="10" height="10" viewBox="0 0 32 32" class="fill-current v-base" aria-label="External Link"><path d="M25.152 16.576v5.696q0 2.144-1.504 3.648T20 27.424H5.152q-2.144.0-3.648-1.504t-1.504-3.648V7.424q0-2.112 1.504-3.616t3.648-1.536h12.576q.224.0.384.16t.16.416V4q0 .256-.16.416t-.384.16H5.152q-1.184.0-2.016.832t-.864 2.016v14.848q0 1.184.864 2.016t2.016.864H20q1.184.0 2.016-.864t.832-2.016v-5.696q0-.256.16-.416t.416-.16h1.152q.256.0.416.16t.16.416zM32 1.152v9.12q0 .48-.352.8t-.8.352-.8-.352l-3.136-3.136-11.648 11.648q-.16.192-.416.192t-.384-.192l-2.048-2.048q-.192-.16-.192-.384t.192-.416L24.064 5.088l-3.136-3.136q-.352-.352-.352-.8t.352-.8.8-.352h9.12q.48.0.8.352t.352.8z"/></svg>
+</span>
+</a>
+</li><li class="f5 dib mr4" role=menuitem>
+<a href=https://github.com/orgs/Abyssal-Fish-Technology/repositories class="dim link light-silver">
+GitHub
+<span class=pl1><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="10" height="10" viewBox="0 0 32 32" class="fill-current v-base" aria-label="External Link"><path d="M25.152 16.576v5.696q0 2.144-1.504 3.648T20 27.424H5.152q-2.144.0-3.648-1.504t-1.504-3.648V7.424q0-2.112 1.504-3.616t3.648-1.536h12.576q.224.0.384.16t.16.416V4q0 .256-.16.416t-.384.16H5.152q-1.184.0-2.016.832t-.864 2.016v14.848q0 1.184.864 2.016t2.016.864H20q1.184.0 2.016-.864t.832-2.016v-5.696q0-.256.16-.416t.416-.16h1.152q.256.0.416.16t.16.416zM32 1.152v9.12q0 .48-.352.8t-.8.352-.8-.352l-3.136-3.136-11.648 11.648q-.16.192-.416.192t-.384-.192l-2.048-2.048q-.192-.16-.192-.384t.192-.416L24.064 5.088l-3.136-3.136q-.352-.352-.352-.8t.352-.8.8-.352h9.12q.48.0.8.352t.352.8z"/></svg>
+</span>
+</a>
+</li><li class="f5 dib mr4" role=menuitem>
+<a href=https://gitter.im/abyssalfish-os/community class="dim link light-silver">
+讨论区
+<span class=pl1><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="10" height="10" viewBox="0 0 32 32" class="fill-current v-base" aria-label="External Link"><path d="M25.152 16.576v5.696q0 2.144-1.504 3.648T20 27.424H5.152q-2.144.0-3.648-1.504t-1.504-3.648V7.424q0-2.112 1.504-3.616t3.648-1.536h12.576q.224.0.384.16t.16.416V4q0 .256-.16.416t-.384.16H5.152q-1.184.0-2.016.832t-.864 2.016v14.848q0 1.184.864 2.016t2.016.864H20q1.184.0 2.016-.864t.832-2.016v-5.696q0-.256.16-.416t.416-.16h1.152q.256.0.416.16t.16.416zM32 1.152v9.12q0 .48-.352.8t-.8.352-.8-.352l-3.136-3.136-11.648 11.648q-.16.192-.416.192t-.384-.192l-2.048-2.048q-.192-.16-.192-.384t.192-.416L24.064 5.088l-3.136-3.136q-.352-.352-.352-.8t.352-.8.8-.352h9.12q.48.0.8.352t.352.8z"/></svg>
+</span>
+</a>
+</li><li class="f5 dib mr4" role=menuitem>
+<a href=https://space.bilibili.com/3493262893517732 class="dim link light-silver">
+视频Video
+<span class=pl1><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="10" height="10" viewBox="0 0 32 32" class="fill-current v-base" aria-label="External Link"><path d="M25.152 16.576v5.696q0 2.144-1.504 3.648T20 27.424H5.152q-2.144.0-3.648-1.504t-1.504-3.648V7.424q0-2.112 1.504-3.616t3.648-1.536h12.576q.224.0.384.16t.16.416V4q0 .256-.16.416t-.384.16H5.152q-1.184.0-2.016.832t-.864 2.016v14.848q0 1.184.864 2.016t2.016.864H20q1.184.0 2.016-.864t.832-2.016v-5.696q0-.256.16-.416t.416-.16h1.152q.256.0.416.16t.16.416zM32 1.152v9.12q0 .48-.352.8t-.8.352-.8-.352l-3.136-3.136-11.648 11.648q-.16.192-.416.192t-.384-.192l-2.048-2.048q-.192-.16-.192-.384t.192-.416L24.064 5.088l-3.136-3.136q-.352-.352-.352-.8t.352-.8.8-.352h9.12q.48.0.8.352t.352.8z"/></svg>
+</span>
+</a>
+</li></ul><div class="db dib-ns pl3"><form id=site-search-form role=search>
+<fieldset class="bn ma0 pa0">
+<label class=clip for=search-input>Search</label>
+<input type=text id=search-input class="needs-js dn bn f5 lh-solid mt3 mt0-ns pl4 pv2 w5 white" placeholder="Welcome to FlowShadow" name=search-input style=background-color:rgba(255,255,255,0)>
+</fieldset></form></div></div></nav><main role=main class="content-with-sidebar min-vh-100 pb7 pb0-ns">
+<article class="cf ph4 pv3 pv5-ns">
+<header class="flex-none w-100 pb3">
+<a href=/categories/categories class="f6 fw8 mb0 link mid-gray dim mr3">
+CATEGORIES
+</a>
+<h1 class="lh-title fw9 mb7 mv0 pt3">
+<a href=/news/tunnel/ class="link primary-color dim">
+流影之隐蔽隧道通讯行为检测，预警C2和数据窃取
+</a>
+</h1></header><div class=flex-l>
+<aside class="mid-gray fn w-100 w-25-l">
+<h2 class="f3 lh-title">
+流影内置了ICMP隧道检测和DNS隧道通讯行为检测算法，帮助用户及时发现疑似恶意隐蔽隧道通讯行为，及时预警C2和数据窃取攻击行为
+</h2><time class="f6 mt2 db ttu tracked" datetime=2023-04-11T00:00:00+08:00>
+April 11, 2023
+</time>
+<div class="nested-links mt4">
+<div date-pref>
+<a href=https://abyssalfish-os.github.io/news/bili/ class="dib f6 pr1 hover-bg-light-gray br-100" title=流影使用教学视频在B站发布><svg class="fill-current" height="30" viewBox="0 0 24 24" width="30" xmlns="http://www.w3.org/2000/svg"><path d="M10 6 8.59 7.41 13.17 12l-4.58 4.59L10 18l6-6z"/><path d="M0 0h24v24H0z" fill="none"/></svg>
+</a>
+</div></div></aside><div class="fn pl5-l pt3 mid-gray w-100 w-two-third-l sans-serif nested-copy-line-height no-underline nested-links nested-img nested-copy-seperator nested-blockquote measure-wide-wd">
+<h2 id=前言>前言 <a class=header-link href=#%e5%89%8d%e8%a8%80><svg class="fill-current o-60 hover-accent-color-light" height="22" viewBox="0 0 24 24" width="22" xmlns="http://www.w3.org/2000/svg"><path d="M0 0h24v24H0z" fill="none"/><path d="M3.9 12c0-1.71 1.39-3.1 3.1-3.1h4V7H7c-2.76.0-5 2.24-5 5s2.24 5 5 5h4v-1.9H7c-1.71.0-3.1-1.39-3.1-3.1zM8 13h8v-2H8v2zm9-6h-4v1.9h4c1.71.0 3.1 1.39 3.1 3.1s-1.39 3.1-3.1 3.1h-4V17h4c2.76.0 5-2.24 5-5s-2.24-5-5-5z"/></svg></a></h2><p>本文是关于流影功能使用介绍系列文章之一，主要介绍流影中隧道通讯行为的检测概要、相关告警事件的查看与分析。前期已经发布了多篇功能使用介绍类似性质的blog，建议大家阅读，并在演示demo中进行实际操作，能够帮助大家比较好的理解流影的功能和应用场景。</p><h2 id=隧道通讯行为简介>隧道通讯行为简介 <a class=header-link href=#%e9%9a%a7%e9%81%93%e9%80%9a%e8%ae%af%e8%a1%8c%e4%b8%ba%e7%ae%80%e4%bb%8b><svg class="fill-current o-60 hover-accent-color-light" height="22" viewBox="0 0 24 24" width="22" xmlns="http://www.w3.org/2000/svg"><path d="M0 0h24v24H0z" fill="none"/><path d="M3.9 12c0-1.71 1.39-3.1 3.1-3.1h4V7H7c-2.76.0-5 2.24-5 5s2.24 5 5 5h4v-1.9H7c-1.71.0-3.1-1.39-3.1-3.1zM8 13h8v-2H8v2zm9-6h-4v1.9h4c1.71.0 3.1 1.39 3.1 3.1s-1.39 3.1-3.1 3.1h-4V17h4c2.76.0 5-2.24 5-5s-2.24-5-5-5z"/></svg></a></h2><p>网络隧道技术是通过一种网络协议来传输另一种网络协议的通讯技术。网络隧道通讯一般通过网络隧道协议实现，例如用于VPN的各类协议PPTP、LTF、L2TP协议等。</p><p>恶意攻击者经常利用网络隧道技术进行隐蔽通讯，达到远程命令控制或者数据传输的目的。攻击者使用隧道协议将数据包封装成防火墙允许通过的数据包类型，绕过防火墙或入侵检测设备，发送到对应的服务器上，到达目标后解封。使用传统的socket隧道通讯目前已经很少了，因为TCP\UDP类型的隧道通讯基本被安全防护系统的策略所拦截。而DNS、ICMP等属于很少会被列为封禁的协议，因此这些协议成为恶意攻击者构建隧道通讯工具的主要协议。</p><h3 id=icmp隧道通讯>ICMP隧道通讯 <a class=header-link href=#icmp%e9%9a%a7%e9%81%93%e9%80%9a%e8%ae%af><svg class="fill-current o-60 hover-accent-color-light" height="22" viewBox="0 0 24 24" width="22" xmlns="http://www.w3.org/2000/svg"><path d="M0 0h24v24H0z" fill="none"/><path d="M3.9 12c0-1.71 1.39-3.1 3.1-3.1h4V7H7c-2.76.0-5 2.24-5 5s2.24 5 5 5h4v-1.9H7c-1.71.0-3.1-1.39-3.1-3.1zM8 13h8v-2H8v2zm9-6h-4v1.9h4c1.71.0 3.1 1.39 3.1 3.1s-1.39 3.1-3.1 3.1h-4V17h4c2.76.0 5-2.24 5-5s-2.24-5-5-5z"/></svg></a></h3><p>ICMP隧道属于网络层隧道，将TCP/UDP的数据包封装到ICMP的ping数据包中，从而穿过防火墙，实现不受控制的访问。常用的ICMP隧道工具有ICMPsh、PingTunnel、ICMPTunnel、PowerShell ICMP等。</p><p>ICMP隧道是一个很特殊的协议，ICMP报文是由系统内核处理的，不占用任何端口，因此具有很高的隐蔽性。在一般的通信协议里，如果两台设备要进行通信，肯定要开放端口，而在ICMP协议下不需要开放端口。 进行隧道通讯的时候，内部主机运行并接受外部攻击端的ICMP_ECHO数据包，攻击端把需要执行的命令隐藏在ICMP_ECHO数据包中，被攻击者接收到该数据包，解封其中隐藏的命令后在内部主机上执行，将执行结果封装在ICMP_ECHOREPLY数据包中，发送给外部攻击端。 在一些条件下，如果攻击者使用各类隧道技术（HTTP，DNS，常规正反端口转发等）操作都失败了，常常会通过ping命令访问远程计算机， 尝试进行ICMP隧道，将TCP/UDP数据封装到ICMP的ping数据包中，从而穿过防火墙（通常防火墙不会屏蔽ping数据包），实现不受限制的网络通讯。ICMP类隧道，经常被应用于窃取信息类的木马后门之中。</p><p>从流量上看，ICMP隧道通讯的特征，一般是通讯时刻ICMP数据包数量有大量的增长，数据包Payload一般比较大，请求数据包和响应数据包内容不一致，有的还带有类似TUNL的指纹标记。利用ICMP的通讯特征，可以从流量中进行检测ICMP隧道通讯行为。</p><h3 id=dns隧道通讯>DNS隧道通讯 <a class=header-link href=#dns%e9%9a%a7%e9%81%93%e9%80%9a%e8%ae%af><svg class="fill-current o-60 hover-accent-color-light" height="22" viewBox="0 0 24 24" width="22" xmlns="http://www.w3.org/2000/svg"><path d="M0 0h24v24H0z" fill="none"/><path d="M3.9 12c0-1.71 1.39-3.1 3.1-3.1h4V7H7c-2.76.0-5 2.24-5 5s2.24 5 5 5h4v-1.9H7c-1.71.0-3.1-1.39-3.1-3.1zM8 13h8v-2H8v2zm9-6h-4v1.9h4c1.71.0 3.1 1.39 3.1 3.1s-1.39 3.1-3.1 3.1h-4V17h4c2.76.0 5-2.24 5-5s-2.24-5-5-5z"/></svg></a></h3><p>DNS隧道属于应用层隧道，通过将其他协议封装在DNS协议中实现网络通讯。数据封装一般在客户端进行，服务器进行DNS流量解封成正常的流量。目前攻击者利用比较多的是域名型的DNS隧道，通过DNS迭代查询进行中继，将数据封装在DNS协议中，这种隧道方式比较隐蔽，但是速度上也比较慢。DNS域名字符串根据RFC约定在字母以及连字符’-’，每个子域最多63个字符，总长度最多253个字符。DNS隧道通讯一般会使用base32或base64来编码要传输的信息，为了更多的编码信息，造成域名长度普遍比较大。发送端将隐蔽数据信息切分并且编码后封装到DNS报文域名中进行传输，接收端收到DNS报文后提取域名中的隐蔽信息字段进行解码重组还原得到IP报文。从DNS协议的角度来看，这样的操作只是递归查询某些域名并得到解析结果，事实上内部封装的Payload确可以包含任意数据，包括远程控制C2指令，从而达到命令控制或数据传输的目的。</p><p>攻击者利用了大多数防火墙和入侵检测设备对DNS流量是放行的条件，通过DNS隧道进行渗透后的命令控制（C2）或数据传输，在建立隧道连接后将指令传递给客户端上的后门程序。DNS隧道常见的工具有DNSCat、Iodine、Cobaltstrike等。</p><p>从流量上看，DNS隧道的通讯特征，在通讯时刻会出现DNS流量上的增长，数据Payload较长，域名随机性比较大。可以利用其通讯特征，进行DNS隧道通讯的检测识别。</p><h2 id=流影中隧道通讯事件告警>流影中隧道通讯事件告警 <a class=header-link href=#%e6%b5%81%e5%bd%b1%e4%b8%ad%e9%9a%a7%e9%81%93%e9%80%9a%e8%ae%af%e4%ba%8b%e4%bb%b6%e5%91%8a%e8%ad%a6><svg class="fill-current o-60 hover-accent-color-light" height="22" viewBox="0 0 24 24" width="22" xmlns="http://www.w3.org/2000/svg"><path d="M0 0h24v24H0z" fill="none"/><path d="M3.9 12c0-1.71 1.39-3.1 3.1-3.1h4V7H7c-2.76.0-5 2.24-5 5s2.24 5 5 5h4v-1.9H7c-1.71.0-3.1-1.39-3.1-3.1zM8 13h8v-2H8v2zm9-6h-4v1.9h4c1.71.0 3.1 1.39 3.1 3.1s-1.39 3.1-3.1 3.1h-4V17h4c2.76.0 5-2.24 5-5s-2.24-5-5-5z"/></svg></a></h2><p>流影开源版集成了ICMP隧道通讯和DNS隧道通讯行为检测模型，识别出的告警事件类型分别称为ICMP隧道事件和DNS隧道事件。</p><h3 id=icmp隧道事件>ICMP隧道事件 <a class=header-link href=#icmp%e9%9a%a7%e9%81%93%e4%ba%8b%e4%bb%b6><svg class="fill-current o-60 hover-accent-color-light" height="22" viewBox="0 0 24 24" width="22" xmlns="http://www.w3.org/2000/svg"><path d="M0 0h24v24H0z" fill="none"/><path d="M3.9 12c0-1.71 1.39-3.1 3.1-3.1h4V7H7c-2.76.0-5 2.24-5 5s2.24 5 5 5h4v-1.9H7c-1.71.0-3.1-1.39-3.1-3.1zM8 13h8v-2H8v2zm9-6h-4v1.9h4c1.71.0 3.1 1.39 3.1 3.1s-1.39 3.1-3.1 3.1h-4V17h4c2.76.0 5-2.24 5-5s-2.24-5-5-5z"/></svg></a></h3><p>用户登录系统后，在主菜单点击“事件”，进入事件总览页面，在筛选查询区域，通过事件类型可以筛选ICMP隧道的告警事件。筛选事件类型后，页面上半部分显示统计分布相关信息，如下图所示：</p><p><img src=./icmp_0.png alt=icmp0></p><p>在页面下半部分区域，是筛选出的ICMP告警事件列表，默认显示一天内事件，右上角可以选取事件的时间范围，如图所示。</p><p><img src=./icmp_1.png alt=icmp1></p><p>在筛选出的ICMP事件列表中，点击该某一行事件ID，即跳转到该事件的详情页面，能够查看该告警事件相关详细信息，详情页面上半部分显示源、目的资产信息、事件信息、告警行为详细时序图及特征分析数据。</p><p><img src=./icmp_2.png alt=icmp2></p><p>在详情页面下半部分区域（ICMP没有TCP时序数据，因此图表为空），以列表形式显示该事件相关NetFlow特征信息。ICMP隧道支持查看Payload数据特征，便于用户分析。例如对demo演示环境中的一个事件，点击左侧按钮展开，即可查看其详细内容。如下图所示，发现其Payload里的内容很不正常。</p><p><img src=./icmp_3.png alt=icmp3></p><h3 id=dns隧道事件>DNS隧道事件 <a class=header-link href=#dns%e9%9a%a7%e9%81%93%e4%ba%8b%e4%bb%b6><svg class="fill-current o-60 hover-accent-color-light" height="22" viewBox="0 0 24 24" width="22" xmlns="http://www.w3.org/2000/svg"><path d="M0 0h24v24H0z" fill="none"/><path d="M3.9 12c0-1.71 1.39-3.1 3.1-3.1h4V7H7c-2.76.0-5 2.24-5 5s2.24 5 5 5h4v-1.9H7c-1.71.0-3.1-1.39-3.1-3.1zM8 13h8v-2H8v2zm9-6h-4v1.9h4c1.71.0 3.1 1.39 3.1 3.1s-1.39 3.1-3.1 3.1h-4V17h4c2.76.0 5-2.24 5-5s-2.24-5-5-5z"/></svg></a></h3><p>登录系统后，在主菜单点击“事件”，进入事件总览页面，在筛选查询区域，通过事件类型可以筛选DNS隧道的告警事件。筛选事件类型后，页面上半部分显示统计分布相关信息，如下图所示：</p><p><img src=./dns_0.png alt=dns0></p><p>在页面下半部分区域，是筛选出的DNS告警事件列表，默认显示一天内事件，右上角可以选取事件的时间范围，如图所示。</p><p><img src=./dns_1.png alt=dns1></p><p>在DNS事件列表中，点击该某一事件ID，即跳转到该事件的详情页面，能够查看该告警事件相关详细信息，详情页面上半部分显示源、目的资产信息、事件信息、告警行为详细时序图及特征分析数据。</p><p><img src=./dns_2.png alt=dns2></p><p>在详情页面下半部分区域，以可视化图表方式显示DNS请求时序分布图和相关数据特征，以列表形式显示该事件相关NetFlow特征信息。DNS隧道支持查看Payload数据特征，便于用户查看。如下图所示，发现DNS请求大量随机域名，很不正常，需要引起注意。</p><p><img src=./dns_3.png alt=dns3></p><p>以上就是隧道通讯告警事件的查看和分析示例，用户使用中需要对这类事件给与关注，隧道通讯事件的确认，往往意味着已经被攻陷。需要引起重视，具体事件具体分析，及时响应。需要说明的是，演示环境中的数据是来自实验模拟环境中测试数据，请勿用于实际响应和阻断。</p><h2 id=相关配置>相关配置 <a class=header-link href=#%e7%9b%b8%e5%85%b3%e9%85%8d%e7%bd%ae><svg class="fill-current o-60 hover-accent-color-light" height="22" viewBox="0 0 24 24" width="22" xmlns="http://www.w3.org/2000/svg"><path d="M0 0h24v24H0z" fill="none"/><path d="M3.9 12c0-1.71 1.39-3.1 3.1-3.1h4V7H7c-2.76.0-5 2.24-5 5s2.24 5 5 5h4v-1.9H7c-1.71.0-3.1-1.39-3.1-3.1zM8 13h8v-2H8v2zm9-6h-4v1.9h4c1.71.0 3.1 1.39 3.1 3.1s-1.39 3.1-3.1 3.1h-4V17h4c2.76.0 5-2.24 5-5s-2.24-5-5-5z"/></svg></a></h2><p>用户可以查看、修改或新建告警规则配置，需要管理员权限。登录系统后，点击配置菜单中“规则”子菜单，如下即可查看和修改相关配置。</p><p><img src=./config.png alt=conf></p><p>这里不做深入介绍，感兴趣的伙伴们可以自行探索，如果有相关问题，可以进入流影开源微信群进行反馈沟通。</p><h2 id=结语>结语 <a class=header-link href=#%e7%bb%93%e8%af%ad><svg class="fill-current o-60 hover-accent-color-light" height="22" viewBox="0 0 24 24" width="22" xmlns="http://www.w3.org/2000/svg"><path d="M0 0h24v24H0z" fill="none"/><path d="M3.9 12c0-1.71 1.39-3.1 3.1-3.1h4V7H7c-2.76.0-5 2.24-5 5s2.24 5 5 5h4v-1.9H7c-1.71.0-3.1-1.39-3.1-3.1zM8 13h8v-2H8v2zm9-6h-4v1.9h4c1.71.0 3.1 1.39 3.1 3.1s-1.39 3.1-3.1 3.1h-4V17h4c2.76.0 5-2.24 5-5s-2.24-5-5-5z"/></svg></a></h2><p>攻击者经常利用网络隧道实现远程命令控制和数据窃取，造成目标攻陷或数据泄露等安全事件。隧道通讯事件的发生，往往意味着内部已经被攻陷，企业安全运营人员需要重视此类告警。流影集成了ICMP隧道通讯和DNS隧道通讯检测模型，实现网络隐蔽通讯行为发现和告警，留存了通讯相关特征，便于用户取证分析，能够帮助用户及时发现隧道通讯行为，尽快做出响应，避免更大损失。</p><h2 id=相关信息>相关信息 <a class=header-link href=#%e7%9b%b8%e5%85%b3%e4%bf%a1%e6%81%af><svg class="fill-current o-60 hover-accent-color-light" height="22" viewBox="0 0 24 24" width="22" xmlns="http://www.w3.org/2000/svg"><path d="M0 0h24v24H0z" fill="none"/><path d="M3.9 12c0-1.71 1.39-3.1 3.1-3.1h4V7H7c-2.76.0-5 2.24-5 5s2.24 5 5 5h4v-1.9H7c-1.71.0-3.1-1.39-3.1-3.1zM8 13h8v-2H8v2zm9-6h-4v1.9h4c1.71.0 3.1 1.39 3.1 3.1s-1.39 3.1-3.1 3.1h-4V17h4c2.76.0 5-2.24 5-5s-2.24-5-5-5z"/></svg></a></h2><p>欢迎大家使用流影，更加欢迎参与项目贡献。流影广泛适用于各种网络安全防护场景，包括不限于入侵检测、威胁狩猎、攻防演练、网络证据留存、网络行为调查分析、态势感知等，如果有商务定制化需求，欢迎联系合作。</p><ul>
+<li><a href=https://abyssalfish-os.github.io/>流影项目主页</a></li><li>邮箱：opensource@abyssalfish.com.cn</li><li>扫码进入微信讨论群
+<figure style="padding:.25rem;margin:2rem 0">
+<img style=max-width:100%;width:auto;height:auto src=/news/tunnel/wx_group_hu87a2e382e09fcee856265bf5cb34cab9_30575_256x0_resize_catmullrom_3.png width=256 height=258>
+</figure></li></ul></div></div><div class="gray f6 mv6">
+Last Update: April 11, 2023 <br>
+<a href=https://github.com/abyssalfish-os/abyssalfish-os.github.io/edit/master/content/news/tunnel/index.md class="f6 ph3 pv1 br2 dib tc ttu mv3 bg-primary-color white hover-bg-green link">Improve this page</a>
+</div></article></main><footer class="bg-primary-color-dark ph4-ns pt4 relative w-100" role=contentinfo>
+<div class="center flex-ns flex-wrap justify-between mw9 w-90">
+<div class="center pb3 pt4">
+<div class="b f3 light-gray mb3 nested-links tc">
+流影由 <a href=https://github.com/orgs/Abyssal-Fish-Technology class=link>深海鱼（北京）科技有限公司 </a>发起开源和维护，欢迎参与<br>
+</div><div class="center w4">
+<img src=/images/wx_public.jpg alt=关注微信公众号 width=100 height=100>
+</div><ul class="center f6 list ma0 mv4 pa0 tc">
+<li class="dib mr3"><a href=https://github.com/Abyssal-Fish-Technology/ly_vis class="dim link light-gray pv2">可视化交互分析(ly_vis)</a></li><li class="dib mr3"><a href=https://github.com/Abyssal-Fish-Technology/ly_server class="dim link light-gray pv2">管理引擎(ly_server)</a></li><li class=dib><a href=https://github.com/Abyssal-Fish-Technology/ly_analyser class="dim link light-gray pv2">分析引擎(ly_analyser)</a></li><li class=dib><a href=https://github.com/Abyssal-Fish-Technology/ly_probe class="dim link light-gray pv2"> &nbsp;&nbsp;&nbsp;&nbsp;流量探针(ly_probe)</a></li></ul><ul class="center f6 list ma0 mv3 pa0 tc"><li class="dib mr3"><a href=https://github.com/abyssalfish-os/liuying/issues/new class="dim link light-gray pv2">到 Github 发起 Issue</a></li><li class=dib><a href=https://gitter.im/abyssalfish-os/community class="dim link light-gray pv2">来 Gitter 沟通留言</a></li></ul></div></div><div class="bg-primary-color-dark bottom-0 left-0 right-0 dn-l fixed pb3 ph3 pt3 z-2"><div class="globalmenu mobilemenu pb1 dn">
+<ul class="list hidden dib ph0 scrolling-touch tc">
+<li class="tl dib ma0 hover-bg-black w-100">
+<a href=/news/ class="ttu f6 link primary-color-light overflow hover-white db brand-font ma0 w-100 pv3 ph4">
+新闻&博客
+</a>
+</li><li class="tl dib ma0 hover-bg-black w-100">
+<a href=/documentation/ class="ttu f6 link primary-color-light overflow hover-white db brand-font ma0 w-100 pv3 ph4">
+文档
+</a>
+</li><li class="tl dib ma0 hover-bg-black w-100">
+<a href=/downloads/ class="ttu f6 link primary-color-light overflow hover-white db brand-font ma0 w-100 pv3 ph4">
+下载
+</a>
+</li><li class="tl dib ma0 hover-bg-black w-100">
+<a href=/demo/ class="ttu f6 link primary-color-light overflow hover-white db brand-font ma0 w-100 pv3 ph4">
+Demo演示
+</a>
+</li><li class="tl dib ma0 hover-bg-black w-100">
+<a href=https://gitee.com/organizations/abyssalfish-os/projects class="ttu f6 link primary-color-light overflow hover-white db brand-font ma0 w-100 pv3 ph4">
+Gitee
+</a>
+</li><li class="tl dib ma0 hover-bg-black w-100">
+<a href=https://github.com/orgs/Abyssal-Fish-Technology/repositories class="ttu f6 link primary-color-light overflow hover-white db brand-font ma0 w-100 pv3 ph4">
+GitHub
+</a>
+</li><li class="tl dib ma0 hover-bg-black w-100">
+<a href=https://gitter.im/abyssalfish-os/community class="ttu f6 link primary-color-light overflow hover-white db brand-font ma0 w-100 pv3 ph4">
+讨论区
+</a>
+</li><li class="tl dib ma0 hover-bg-black w-100">
+<a href=https://space.bilibili.com/3493262893517732 class="ttu f6 link primary-color-light overflow hover-white db brand-font ma0 w-100 pv3 ph4">
+视频Video
+</a>
+</li></ul></div><div class="docsmenu mobilemenu pb1 dn">
+<ul class="list dib ph0 scrolling-touch tc">
+<li class="tl dib ma0 hover-bg-black w-100">
+<a href=/about/ class="ttu f6 link primary-color-light hover-white db brand-font mb1 ma0 w-100 pv2 ph4">
+关于流影
+</a>
+</li><li class="tl dib ma0 hover-bg-black w-100">
+<a href=/getting-started/ class="ttu f6 link primary-color-light hover-white db brand-font mb1 ma0 w-100 pv2 ph4">
+快速开始
+</a>
+</li><li class="tl dib ma0 hover-bg-black w-100">
+<a href=/installation/ class="ttu f6 link primary-color-light hover-white db brand-font mb1 ma0 w-100 pv2 ph4">
+编译安装
+</a>
+</li><li class="tl dib ma0 hover-bg-black w-100">
+<a href=/user-manual/ class="ttu f6 link primary-color-light hover-white db brand-font mb1 ma0 w-100 pv2 ph4">
+用户手册
+</a>
+</li><li class="tl dib ma0 hover-bg-black w-100">
+<a href=/other/ class="ttu f6 link primary-color-light hover-white db brand-font mb1 ma0 w-100 pv2 ph4">
+其它资料
+</a>
+</li><li class="tl dib ma0 hover-bg-black w-100">
+<a href=/demo/ class="ttu f6 link primary-color-light hover-white db brand-font mb1 ma0 w-100 pv2 ph4">
+演示Demo
+</a>
+</li><li class="tl dib ma0 hover-bg-black w-100 mb2 bb b--mid-gray">
+<a href=/contribute/ class="ttu f6 link primary-color-light hover-white db brand-font mb1 ma0 w-100 pv2 ph4">
+欢迎贡献
+</a>
+</li></ul></div><div class="flex dn-l justify-between">
+<button class="js-toggle flex-auto dib dn-l f6 tc db ph3 pv2 link mr2 white bg-primary-color-dark hover-bg-primary-color ba b--white-40 w-auto" data-target=.globalmenu>Menu</button>
+<button class="js-toggle flex-auto dib dn-l f6 tc db ph3 pv2 link white bg-primary-color-dark hover-bg-primary-color ba b--white-40 w-auto" data-target=.docsmenu>Docs Menu</button>
+</div></div></footer></body></html>
