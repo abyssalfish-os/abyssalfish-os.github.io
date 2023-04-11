@@ -21,7 +21,7 @@
 &lt;p>&lt;img src="./icmp_1.png" alt="icmp1">&lt;/p>
 &lt;p>在筛选出的ICMP事件列表中，点击该某一行事件ID，即跳转到该事件的详情页面，能够查看该告警事件相关详细信息，详情页面上半部分显示源、目的资产信息、事件信息、告警行为详细时序图及特征分析数据。&lt;/p>
 &lt;p>&lt;img src="./icmp_2.png" alt="icmp2">&lt;/p>
-&lt;p>在详情页面下半部分区域（ICMP没有TCP时序数据，因此图表为空），以列表形式显示该事件相关NetFlow特征信息。ICMP隧道支持查看Payload数据特征，便于用户分析。例如对demo演示环境中的一个事件，点击左侧按钮展开，即可查看其详细内容。如下图所示，发现其Payload里的内容很不正常。&lt;/p>
+&lt;p>在详情页面下半部分区域（ICMP没有TCP时序数据，因此图表为空），以列表形式显示该事件相关NetFlow特征信息。ICMP隧道支持查看Payload数据特征，便于用户分析。例如对demo演示环境中的一个事件，如下图所示，发现其Payload里的内容很不正常。&lt;/p>
 &lt;p>&lt;img src="./icmp_3.png" alt="icmp3">&lt;/p>
 &lt;h3 id="dns隧道事件">DNS隧道事件 &lt;a class="header-link" href="#dns%e9%9a%a7%e9%81%93%e4%ba%8b%e4%bb%b6">&lt;svg class="fill-current o-60 hover-accent-color-light" height="22px" viewBox="0 0 24 24" width="22px" xmlns="http://www.w3.org/2000/svg">&lt;path d="M0 0h24v24H0z" fill="none"/>&lt;path d="M3.9 12c0-1.71 1.39-3.1 3.1-3.1h4V7H7c-2.76 0-5 2.24-5 5s2.24 5 5 5h4v-1.9H7c-1.71 0-3.1-1.39-3.1-3.1zM8 13h8v-2H8v2zm9-6h-4v1.9h4c1.71 0 3.1 1.39 3.1 3.1s-1.39 3.1-3.1 3.1h-4V17h4c2.76 0 5-2.24 5-5s-2.24-5-5-5z"/>&lt;/svg>&lt;/a>&lt;/h3>
 &lt;p>登录系统后，在主菜单点击“事件”，进入事件总览页面，在筛选查询区域，通过事件类型可以筛选DNS隧道的告警事件。筛选事件类型后，页面上半部分显示统计分布相关信息，如下图所示：&lt;/p>
