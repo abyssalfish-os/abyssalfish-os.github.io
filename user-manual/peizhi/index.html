@@ -35,7 +35,7 @@
 <meta itemprop=name content="系统配置">
 <meta itemprop=description content="配置事件检测策略、配置追踪、用户管理等"><meta itemprop=datePublished content="2022-12-30T00:00:00+08:00">
 <meta itemprop=dateModified content="2023-01-07T00:58:17+08:00">
-<meta itemprop=wordCount content="4306">
+<meta itemprop=wordCount content="4291">
 <meta itemprop=keywords content>
 </head><body class="ma0 sans-serif bg-primary-color-light
 production">
@@ -274,7 +274,7 @@ FUNDAMENTALS
 <td>对端端口</td><td>否</td><td>追踪的通讯关系中的对端端口</td></tr><tr>
 <td>协议</td><td>否</td><td>追踪目标的通讯协议</td></tr><tr>
 <td>追踪分组</td><td>是</td><td>所属分组</td></tr><tr>
-<td>方向</td><td>是</td><td>追踪通讯关系的流向。ALL：不关注通讯方向。IN：只关注对端 &ndash;> 追踪目标的通讯。OUT：只关注追踪目标 &ndash;> 对端的通讯。</td></tr><tr>
+<td>方向</td><td>是</td><td><p>追踪通讯关系的流向。</p><p>ALL：不关注通讯方向。</p><p>IN：只关注对端 &ndash;> 追踪目标的通讯。</p><p>OUT：只关注追踪目标 &ndash;> 对端的通讯。</p></td></tr><tr>
 <td>数据源</td><td>是</td><td>监控目标所属采集环境</td></tr><tr>
 <td>描述</td><td>否</td><td>标签描述</td></tr></tbody></table><h2 id=系统配置><strong>系统配置</strong> <a class=header-link href=#%e7%b3%bb%e7%bb%9f%e9%85%8d%e7%bd%ae><svg class="fill-current o-60 hover-accent-color-light" height="22" viewBox="0 0 24 24" width="22" xmlns="http://www.w3.org/2000/svg"><path d="M0 0h24v24H0z" fill="none"/><path d="M3.9 12c0-1.71 1.39-3.1 3.1-3.1h4V7H7c-2.76.0-5 2.24-5 5s2.24 5 5 5h4v-1.9H7c-1.71.0-3.1-1.39-3.1-3.1zM8 13h8v-2H8v2zm9-6h-4v1.9h4c1.71.0 3.1 1.39 3.1 3.1s-1.39 3.1-3.1 3.1h-4V17h4c2.76.0 5-2.24 5-5s-2.24-5-5-5z"/></svg></a></h2><h3 id=用户配置><strong>用户配置</strong> <a class=header-link href=#%e7%94%a8%e6%88%b7%e9%85%8d%e7%bd%ae><svg class="fill-current o-60 hover-accent-color-light" height="22" viewBox="0 0 24 24" width="22" xmlns="http://www.w3.org/2000/svg"><path d="M0 0h24v24H0z" fill="none"/><path d="M3.9 12c0-1.71 1.39-3.1 3.1-3.1h4V7H7c-2.76.0-5 2.24-5 5s2.24 5 5 5h4v-1.9H7c-1.71.0-3.1-1.39-3.1-3.1zM8 13h8v-2H8v2zm9-6h-4v1.9h4c1.71.0 3.1 1.39 3.1 3.1s-1.39 3.1-3.1 3.1h-4V17h4c2.76.0 5-2.24 5-5s-2.24-5-5-5z"/></svg></a></h3><h4 id=介绍-20><strong>介绍</strong> <a class=header-link href=#%e4%bb%8b%e7%bb%8d-20><svg class="fill-current o-60 hover-accent-color-light" height="22" viewBox="0 0 24 24" width="22" xmlns="http://www.w3.org/2000/svg"><path d="M0 0h24v24H0z" fill="none"/><path d="M3.9 12c0-1.71 1.39-3.1 3.1-3.1h4V7H7c-2.76.0-5 2.24-5 5s2.24 5 5 5h4v-1.9H7c-1.71.0-3.1-1.39-3.1-3.1zM8 13h8v-2H8v2zm9-6h-4v1.9h4c1.71.0 3.1 1.39 3.1 3.1s-1.39 3.1-3.1 3.1h-4V17h4c2.76.0 5-2.24 5-5s-2.24-5-5-5z"/></svg></a></h4><p>支持修改用户密码、权限、访问数据资源、锁定/解锁等操作。</p><h4 id=配置内容-19><strong>配置内容</strong> <a class=header-link href=#%e9%85%8d%e7%bd%ae%e5%86%85%e5%ae%b9-19><svg class="fill-current o-60 hover-accent-color-light" height="22" viewBox="0 0 24 24" width="22" xmlns="http://www.w3.org/2000/svg"><path d="M0 0h24v24H0z" fill="none"/><path d="M3.9 12c0-1.71 1.39-3.1 3.1-3.1h4V7H7c-2.76.0-5 2.24-5 5s2.24 5 5 5h4v-1.9H7c-1.71.0-3.1-1.39-3.1-3.1zM8 13h8v-2H8v2zm9-6h-4v1.9h4c1.71.0 3.1 1.39 3.1 3.1s-1.39 3.1-3.1 3.1h-4V17h4c2.76.0 5-2.24 5-5s-2.24-5-5-5z"/></svg></a></h4><table>
 <thead>
@@ -285,7 +285,7 @@ FUNDAMENTALS
 <td>密码</td><td>是</td><td>密码</td></tr><tr>
 <td>重复密码</td><td>是</td><td>重复密码</td></tr><tr>
 <td>注释</td><td>否</td><td>描述信息</td></tr><tr>
-<td>角色</td><td>是</td><td>系统内部具有三种权限的用户：1) Viewer观察员。只能查看数据和修改自身密码。2) Analysis分析员，仅能调整事件的检出规则配置和修改自身密码。3) Admin管理员。拥有系统所有权限。</td></tr><tr>
+<td>角色</td><td>是</td><td><p>系统内部具有三种权限的用户：</p><p>1) Viewer观察员。只能查看数据和修改自身密码。</p><p>2) Analysis分析员，仅能调整事件的检出规则配置和修改自身密码。</p><p>3) Admin管理员。拥有系统所有权限。</p></td></tr><tr>
 <td>是否禁用</td><td>否</td><td>是否锁定账户</td></tr><tr>
 <td>资源</td><td>否</td><td>用户能够访问的采集环境</td></tr></tbody></table><h3 id=数据节点配置><strong>数据节点配置</strong> <a class=header-link href=#%e6%95%b0%e6%8d%ae%e8%8a%82%e7%82%b9%e9%85%8d%e7%bd%ae><svg class="fill-current o-60 hover-accent-color-light" height="22" viewBox="0 0 24 24" width="22" xmlns="http://www.w3.org/2000/svg"><path d="M0 0h24v24H0z" fill="none"/><path d="M3.9 12c0-1.71 1.39-3.1 3.1-3.1h4V7H7c-2.76.0-5 2.24-5 5s2.24 5 5 5h4v-1.9H7c-1.71.0-3.1-1.39-3.1-3.1zM8 13h8v-2H8v2zm9-6h-4v1.9h4c1.71.0 3.1 1.39 3.1 3.1s-1.39 3.1-3.1 3.1h-4V17h4c2.76.0 5-2.24 5-5s-2.24-5-5-5z"/></svg></a></h3><h4 id=介绍-21><strong>介绍</strong> <a class=header-link href=#%e4%bb%8b%e7%bb%8d-21><svg class="fill-current o-60 hover-accent-color-light" height="22" viewBox="0 0 24 24" width="22" xmlns="http://www.w3.org/2000/svg"><path d="M0 0h24v24H0z" fill="none"/><path d="M3.9 12c0-1.71 1.39-3.1 3.1-3.1h4V7H7c-2.76.0-5 2.24-5 5s2.24 5 5 5h4v-1.9H7c-1.71.0-3.1-1.39-3.1-3.1zM8 13h8v-2H8v2zm9-6h-4v1.9h4c1.71.0 3.1 1.39 3.1 3.1s-1.39 3.1-3.1 3.1h-4V17h4c2.76.0 5-2.24 5-5s-2.24-5-5-5z"/></svg></a></h4><p>数据节点也就是采集节点的配置，系统部署后有一个默认的采集器配置。</p><h4 id=配置内容-20><strong>配置内容</strong> <a class=header-link href=#%e9%85%8d%e7%bd%ae%e5%86%85%e5%ae%b9-20><svg class="fill-current o-60 hover-accent-color-light" height="22" viewBox="0 0 24 24" width="22" xmlns="http://www.w3.org/2000/svg"><path d="M0 0h24v24H0z" fill="none"/><path d="M3.9 12c0-1.71 1.39-3.1 3.1-3.1h4V7H7c-2.76.0-5 2.24-5 5s2.24 5 5 5h4v-1.9H7c-1.71.0-3.1-1.39-3.1-3.1zM8 13h8v-2H8v2zm9-6h-4v1.9h4c1.71.0 3.1 1.39 3.1 3.1s-1.39 3.1-3.1 3.1h-4V17h4c2.76.0 5-2.24 5-5s-2.24-5-5-5z"/></svg></a></h4><table>
 <thead>
@@ -297,7 +297,7 @@ FUNDAMENTALS
 <td>创建者</td><td>否</td><td>新建配置的人</td></tr><tr>
 <td>注释</td><td>否</td><td>描述信息</td></tr><tr>
 <td>端口</td><td>是</td><td>发送到分析节点哪个接收端口，注意端口占用</td></tr><tr>
-<td>设备类型</td><td>否</td><td>采集流量设备属性描述信息。router: 路由器switch: 交换机mirror：镜像</td></tr><tr>
+<td>设备类型</td><td>否</td><td><p>采集流量设备属性描述信息。</p><p>router: 路由器</p><p>switch: 交换机</p><p>mirror：镜像</p></td></tr><tr>
 <td>数据类型</td><td>否</td><td>netflow和sflow两种数据格式</td></tr><tr>
 <td>分析节点</td><td>否</td><td>采集后的数据发到哪个分析节点</td></tr><tr>
 <td>禁止使用</td><td>否</td><td>是否禁用采集器</td></tr></tbody></table><h3 id=分析节点配置><strong>分析节点配置</strong> <a class=header-link href=#%e5%88%86%e6%9e%90%e8%8a%82%e7%82%b9%e9%85%8d%e7%bd%ae><svg class="fill-current o-60 hover-accent-color-light" height="22" viewBox="0 0 24 24" width="22" xmlns="http://www.w3.org/2000/svg"><path d="M0 0h24v24H0z" fill="none"/><path d="M3.9 12c0-1.71 1.39-3.1 3.1-3.1h4V7H7c-2.76.0-5 2.24-5 5s2.24 5 5 5h4v-1.9H7c-1.71.0-3.1-1.39-3.1-3.1zM8 13h8v-2H8v2zm9-6h-4v1.9h4c1.71.0 3.1 1.39 3.1 3.1s-1.39 3.1-3.1 3.1h-4V17h4c2.76.0 5-2.24 5-5s-2.24-5-5-5z"/></svg></a></h3><h4 id=介绍-22><strong>介绍</strong> <a class=header-link href=#%e4%bb%8b%e7%bb%8d-22><svg class="fill-current o-60 hover-accent-color-light" height="22" viewBox="0 0 24 24" width="22" xmlns="http://www.w3.org/2000/svg"><path d="M0 0h24v24H0z" fill="none"/><path d="M3.9 12c0-1.71 1.39-3.1 3.1-3.1h4V7H7c-2.76.0-5 2.24-5 5s2.24 5 5 5h4v-1.9H7c-1.71.0-3.1-1.39-3.1-3.1zM8 13h8v-2H8v2zm9-6h-4v1.9h4c1.71.0 3.1 1.39 3.1 3.1s-1.39 3.1-3.1 3.1h-4V17h4c2.76.0 5-2.24 5-5s-2.24-5-5-5z"/></svg></a></h4><p>分析节点是系统架构中的数据分析层，用来接收采集器采集、解析的数据，并识别特征和告警事件，Server服务器来读取最终的结果数据。</p><h4 id=配置内容-21><strong>配置内容</strong> <a class=header-link href=#%e9%85%8d%e7%bd%ae%e5%86%85%e5%ae%b9-21><svg class="fill-current o-60 hover-accent-color-light" height="22" viewBox="0 0 24 24" width="22" xmlns="http://www.w3.org/2000/svg"><path d="M0 0h24v24H0z" fill="none"/><path d="M3.9 12c0-1.71 1.39-3.1 3.1-3.1h4V7H7c-2.76.0-5 2.24-5 5s2.24 5 5 5h4v-1.9H7c-1.71.0-3.1-1.39-3.1-3.1zM8 13h8v-2H8v2zm9-6h-4v1.9h4c1.71.0 3.1 1.39 3.1 3.1s-1.39 3.1-3.1 3.1h-4V17h4c2.76.0 5-2.24 5-5s-2.24-5-5-5z"/></svg></a></h4><table>
@@ -309,7 +309,7 @@ FUNDAMENTALS
 <td>创建者</td><td>否</td><td>填入IPv4或者IPv6</td></tr><tr>
 <td>注释</td><td>否</td><td>新建配置的人</td></tr><tr>
 <td>IP地址</td><td>是</td><td>分析节点的地址，让Server用来读取数据的</td></tr><tr>
-<td>状态</td><td>否</td><td>disconnect：断开连接connect：连接</td></tr><tr>
+<td>状态</td><td>否</td><td><p>disconnect：断开连接</p><p>connect：连接</p></td></tr><tr>
 <td>禁止使用</td><td>否</td><td>是否禁用分析节点。</td></tr></tbody></table></div><h2>See Also</h2><ul>
 <li><a href=/user-manual/basic-setting/>基础配置</a></li><li><a href=/user-manual/zhuizong/>追踪功能</a></li><li><a href=/user-manual/yanpan/>事件分析研判</a></li><li><a href=/user-manual/shijian/>安全事件</a></li><li><a href=/user-manual/zonglan/>态势总览</a></li></ul></div></div><div class="order-0 w-20 dn db-l">
 <nav role=navigation>
@@ -420,6 +420,10 @@ FUNDAMENTALS
 </li><li class="f6 fw4">
 <a href=/other/development/ class="db link hover-bg-gray hover-white pl3 pr2 pv2 black">
 流量镜像接入
+</a>
+</li><li class="f6 fw4">
+<a href=/other/qalist/ class="db link hover-bg-gray hover-white pl3 pr2 pv2 black">
+功能支持说明
 </a>
 </li><li class="f6 fw4">
 <a href=/other/faq/ class="db link hover-bg-gray hover-white pl3 pr2 pv2 black">
