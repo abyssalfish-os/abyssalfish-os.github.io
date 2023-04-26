@@ -1,4 +1,30 @@
-<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>流影 – 开源网络流量可视化分析平台</title><link>https://abyssalfish-os.github.io/</link><description>Recent Hugo news from gohugo.io</description><generator>Hugo -- gohugo.io</generator><language>zh-CN</language><lastBuildDate>Thu, 29 Dec 2022 12:00:00 +0800</lastBuildDate><image><url>https://abyssalfish-os.github.io/img/hugo.png</url><title>GoHugo.io</title><link>https://abyssalfish-os.github.io/</link></image><atom:link href="https://abyssalfish-os.github.io/index.xml" rel="self" type="application/rss+xml"/><item><title>News: 流影之隐蔽隧道通讯行为检测，预警C2和数据窃取</title><link>https://abyssalfish-os.github.io/news/tunnel/</link><pubDate>Tue, 11 Apr 2023 00:00:00 +0800</pubDate><guid>https://abyssalfish-os.github.io/news/tunnel/</guid><description>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>流影 – 开源网络流量可视化分析平台</title><link>https://abyssalfish-os.github.io/</link><description>Recent Hugo news from gohugo.io</description><generator>Hugo -- gohugo.io</generator><language>zh-CN</language><lastBuildDate>Thu, 29 Dec 2022 12:00:00 +0800</lastBuildDate><image><url>https://abyssalfish-os.github.io/img/hugo.png</url><title>GoHugo.io</title><link>https://abyssalfish-os.github.io/</link></image><atom:link href="https://abyssalfish-os.github.io/index.xml" rel="self" type="application/rss+xml"/><item><title>News: 流影完整安装部署包发布</title><link>https://abyssalfish-os.github.io/news/pkg/</link><pubDate>Wed, 26 Apr 2023 00:00:00 +0800</pubDate><guid>https://abyssalfish-os.github.io/news/pkg/</guid><description>
+&lt;h2 id="流影完整安装部署包发布">流影完整安装部署包发布 &lt;a class="header-link" href="#%e6%b5%81%e5%bd%b1%e5%ae%8c%e6%95%b4%e5%ae%89%e8%a3%85%e9%83%a8%e7%bd%b2%e5%8c%85%e5%8f%91%e5%b8%83">&lt;svg class="fill-current o-60 hover-accent-color-light" height="22px" viewBox="0 0 24 24" width="22px" xmlns="http://www.w3.org/2000/svg">&lt;path d="M0 0h24v24H0z" fill="none"/>&lt;path d="M3.9 12c0-1.71 1.39-3.1 3.1-3.1h4V7H7c-2.76 0-5 2.24-5 5s2.24 5 5 5h4v-1.9H7c-1.71 0-3.1-1.39-3.1-3.1zM8 13h8v-2H8v2zm9-6h-4v1.9h4c1.71 0 3.1 1.39 3.1 3.1s-1.39 3.1-3.1 3.1h-4V17h4c2.76 0 5-2.24 5-5s-2.24-5-5-5z"/>&lt;/svg>&lt;/a>&lt;/h2>
+&lt;h3 id="前言">前言 &lt;a class="header-link" href="#%e5%89%8d%e8%a8%80">&lt;svg class="fill-current o-60 hover-accent-color-light" height="22px" viewBox="0 0 24 24" width="22px" xmlns="http://www.w3.org/2000/svg">&lt;path d="M0 0h24v24H0z" fill="none"/>&lt;path d="M3.9 12c0-1.71 1.39-3.1 3.1-3.1h4V7H7c-2.76 0-5 2.24-5 5s2.24 5 5 5h4v-1.9H7c-1.71 0-3.1-1.39-3.1-3.1zM8 13h8v-2H8v2zm9-6h-4v1.9h4c1.71 0 3.1 1.39 3.1 3.1s-1.39 3.1-3.1 3.1h-4V17h4c2.76 0 5-2.24 5-5s-2.24-5-5-5z"/>&lt;/svg>&lt;/a>&lt;/h3>
+&lt;p>根据前期小伙伴们安装部署遇到的问题比较多，这其中有我们自己的原因，比如拆分了安装包引起部署失败，
+原因是github和gitee不支持上传大文件，在Release时进行了拆分打包，小伙伴们下载后有些依赖没有正确组合，造成了很多安装问题。&lt;/p>
+&lt;p>为了进一步减低安装试用的门槛，这次制作了和发布CentOS7下的完整的安装包，包含所有节点的Release文件和部署脚本，方便大家快速安装试用，减少安装失败的可能性。
+其他更多操作系统环境的安装部署包，也在测试和适配之中，敬请关注。&lt;/p>
+&lt;h3 id="下载地址">下载地址 &lt;a class="header-link" href="#%e4%b8%8b%e8%bd%bd%e5%9c%b0%e5%9d%80">&lt;svg class="fill-current o-60 hover-accent-color-light" height="22px" viewBox="0 0 24 24" width="22px" xmlns="http://www.w3.org/2000/svg">&lt;path d="M0 0h24v24H0z" fill="none"/>&lt;path d="M3.9 12c0-1.71 1.39-3.1 3.1-3.1h4V7H7c-2.76 0-5 2.24-5 5s2.24 5 5 5h4v-1.9H7c-1.71 0-3.1-1.39-3.1-3.1zM8 13h8v-2H8v2zm9-6h-4v1.9h4c1.71 0 3.1 1.39 3.1 3.1s-1.39 3.1-3.1 3.1h-4V17h4c2.76 0 5-2.24 5-5s-2.24-5-5-5z"/>&lt;/svg>&lt;/a>&lt;/h3>
+&lt;p>由于安装部署包较大，我们将安装包放在了网盘上。请您选择一种网盘链接去下载即可。&lt;/p>
+&lt;ul>
+&lt;li>&lt;a href="https://pan.baidu.com/s/1C_gofonH5hGEl7Ryj30KAg">百度网盘：流影完整安装包&lt;/a> 提取码 AFOS&lt;/li>
+&lt;li>&lt;a href="https://pan.quark.cn/s/bb6947d13e83">夸克网盘：流影完整安装包&lt;/a> 提取码：CUSy&lt;/li>
+&lt;/ul>
+&lt;p>完整安装包是对最新Release版本的打包，其安装方式请参见安装部署手册，不再赘述。&lt;/p>
+&lt;h3 id="后语">后语 &lt;a class="header-link" href="#%e5%90%8e%e8%af%ad">&lt;svg class="fill-current o-60 hover-accent-color-light" height="22px" viewBox="0 0 24 24" width="22px" xmlns="http://www.w3.org/2000/svg">&lt;path d="M0 0h24v24H0z" fill="none"/>&lt;path d="M3.9 12c0-1.71 1.39-3.1 3.1-3.1h4V7H7c-2.76 0-5 2.24-5 5s2.24 5 5 5h4v-1.9H7c-1.71 0-3.1-1.39-3.1-3.1zM8 13h8v-2H8v2zm9-6h-4v1.9h4c1.71 0 3.1 1.39 3.1 3.1s-1.39 3.1-3.1 3.1h-4V17h4c2.76 0 5-2.24 5-5s-2.24-5-5-5z"/>&lt;/svg>&lt;/a>&lt;/h3>
+&lt;p>流影定位于轻量级的网络安全态势感知与可视化分析平台，开源版本集成了流量探针、网络行为分析引擎、威胁检测引擎和交互式可视化分析引擎四个核心模块，
+实现了对网络流量全方位监测、网络行为多维度特征提取留存和网络威胁行为实时告警等基本功能。我们欢迎大家的使用反馈，特别是积极参与项目贡献。如果用户有商业定制化需求，也欢迎进行联系合作。&lt;/p>
+&lt;h3 id="反馈">反馈 &lt;a class="header-link" href="#%e5%8f%8d%e9%a6%88">&lt;svg class="fill-current o-60 hover-accent-color-light" height="22px" viewBox="0 0 24 24" width="22px" xmlns="http://www.w3.org/2000/svg">&lt;path d="M0 0h24v24H0z" fill="none"/>&lt;path d="M3.9 12c0-1.71 1.39-3.1 3.1-3.1h4V7H7c-2.76 0-5 2.24-5 5s2.24 5 5 5h4v-1.9H7c-1.71 0-3.1-1.39-3.1-3.1zM8 13h8v-2H8v2zm9-6h-4v1.9h4c1.71 0 3.1 1.39 3.1 3.1s-1.39 3.1-3.1 3.1h-4V17h4c2.76 0 5-2.24 5-5s-2.24-5-5-5z"/>&lt;/svg>&lt;/a>&lt;/h3>
+&lt;p>如果有问题，欢迎通过邮件或者微信群进行反馈。&lt;/p>
+&lt;ul>
+&lt;li>邮箱：opensource@abyssalfish.com.cn&lt;/li>
+&lt;li>扫码进入微信讨论群
+&lt;figure style="padding: 0.25rem; margin: 2rem 0; ">
+&lt;img style="max-width: 100%; width: auto; height: auto;" src="https://abyssalfish-os.github.io/news/pkg/wx_group_hu382f7d8cb587e8fa5dc30ffe17d00f19_29687_256x0_resize_catmullrom_3.png" width="256" height="249">
+&lt;/figure>
+&lt;/li>
+&lt;/ul></description></item><item><title>News: 流影之隐蔽隧道通讯行为检测，预警C2和数据窃取</title><link>https://abyssalfish-os.github.io/news/tunnel/</link><pubDate>Tue, 11 Apr 2023 00:00:00 +0800</pubDate><guid>https://abyssalfish-os.github.io/news/tunnel/</guid><description>
 &lt;h2 id="前言">前言 &lt;a class="header-link" href="#%e5%89%8d%e8%a8%80">&lt;svg class="fill-current o-60 hover-accent-color-light" height="22px" viewBox="0 0 24 24" width="22px" xmlns="http://www.w3.org/2000/svg">&lt;path d="M0 0h24v24H0z" fill="none"/>&lt;path d="M3.9 12c0-1.71 1.39-3.1 3.1-3.1h4V7H7c-2.76 0-5 2.24-5 5s2.24 5 5 5h4v-1.9H7c-1.71 0-3.1-1.39-3.1-3.1zM8 13h8v-2H8v2zm9-6h-4v1.9h4c1.71 0 3.1 1.39 3.1 3.1s-1.39 3.1-3.1 3.1h-4V17h4c2.76 0 5-2.24 5-5s-2.24-5-5-5z"/>&lt;/svg>&lt;/a>&lt;/h2>
 &lt;p>本文是关于流影功能使用介绍系列文章之一，主要介绍流影中隧道通讯行为的检测概要、相关告警事件的查看与分析。前期已经发布了多篇功能使用介绍类似性质的blog，建议大家阅读，并在演示demo中进行实际操作，能够帮助大家比较好的理解流影的功能和应用场景。&lt;/p>
 &lt;h2 id="隧道通讯行为简介">隧道通讯行为简介 &lt;a class="header-link" href="#%e9%9a%a7%e9%81%93%e9%80%9a%e8%ae%af%e8%a1%8c%e4%b8%ba%e7%ae%80%e4%bb%8b">&lt;svg class="fill-current o-60 hover-accent-color-light" height="22px" viewBox="0 0 24 24" width="22px" xmlns="http://www.w3.org/2000/svg">&lt;path d="M0 0h24v24H0z" fill="none"/>&lt;path d="M3.9 12c0-1.71 1.39-3.1 3.1-3.1h4V7H7c-2.76 0-5 2.24-5 5s2.24 5 5 5h4v-1.9H7c-1.71 0-3.1-1.39-3.1-3.1zM8 13h8v-2H8v2zm9-6h-4v1.9h4c1.71 0 3.1 1.39 3.1 3.1s-1.39 3.1-3.1 3.1h-4V17h4c2.76 0 5-2.24 5-5s-2.24-5-5-5z"/>&lt;/svg>&lt;/a>&lt;/h2>
@@ -330,7 +356,7 @@ style="position:absolute; height: 100%; width: 100%;">
 &lt;h2 id="vmware虚拟机镜像">Vmware虚拟机镜像 &lt;a class="header-link" href="#vmware%e8%99%9a%e6%8b%9f%e6%9c%ba%e9%95%9c%e5%83%8f">&lt;svg class="fill-current o-60 hover-accent-color-light" height="22px" viewBox="0 0 24 24" width="22px" xmlns="http://www.w3.org/2000/svg">&lt;path d="M0 0h24v24H0z" fill="none"/>&lt;path d="M3.9 12c0-1.71 1.39-3.1 3.1-3.1h4V7H7c-2.76 0-5 2.24-5 5s2.24 5 5 5h4v-1.9H7c-1.71 0-3.1-1.39-3.1-3.1zM8 13h8v-2H8v2zm9-6h-4v1.9h4c1.71 0 3.1 1.39 3.1 3.1s-1.39 3.1-3.1 3.1h-4V17h4c2.76 0 5-2.24 5-5s-2.24-5-5-5z"/>&lt;/svg>&lt;/a>&lt;/h2>
 &lt;p>镜像下载信息如下：&lt;/p>
 &lt;ul>
-&lt;li>&lt;a href="https://pan.baidu.com/s/1B9ykL2n1lsvpJvgNup0ltQ">镜像下载地址&lt;/a>&lt;/li>
+&lt;li>&lt;a href="https://pan.baidu.com/s/1kf_IniICZv2jbOeAQ02CdQ">镜像下载地址&lt;/a>&lt;/li>
 &lt;li>提取码：AFOS&lt;/li>
 &lt;/ul>
 &lt;p>虚拟机相关信息如下：&lt;/p>
