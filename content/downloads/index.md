@@ -11,11 +11,17 @@ toc: true
 isCJKLanguage: true
 ---
 
+## CentOS7环境完整安装包
+我们制作了一键部署安装包，方便大家安装部署。可以通过百度网盘或夸克网盘进行下载。
+
+- [百度网盘：流影完整安装包](https://pan.baidu.com/s/1C_gofonH5hGEl7Ryj30KAg)   提取码 AFOS
+- [夸克网盘：流影完整安装包](https://pan.quark.cn/s/bb6947d13e83)  提取码：CUSy
+
 
 ## Vmware虚拟机镜像
 为了方便大家安装试用，制作了vmware安装镜像，请大家前往如下百度网盘地址下载。
-- [镜像下载地址](https://pan.baidu.com/s/1B9ykL2n1lsvpJvgNup0ltQ)
-- 提取码：AFOS
+- [百度网盘：流影VM镜像](https://pan.baidu.com/s/1kf_IniICZv2jbOeAQ02CdQ)  提取码：AFOS
+- [夸克网盘：流影VM镜像](https://pan.quark.cn/s/9fd51ca0f93a)  提取码：TmaQ
 - 虚拟机用户名root，密码ShyLiuying
 
 虚拟机安装后，流影前端默认使用18080端口，访问地址及默认账号：
@@ -43,8 +49,8 @@ isCJKLanguage: true
 ## Gitee Releases
 以下是Gitee上各个节点Release地址，建议国内用户使用。
 - [ly_vis](https://gitee.com/abyssalfish-os/ly_vis/releases)
-- [ly_server](https://gitee.com/abyssalfish-os/ly_server/releases/tag/v1.0.0)
-- [ly_analyser](https://gitee.com/abyssalfish-os/ly_analyser/releases/tag/v1.0.0)
+- [ly_server](https://gitee.com/abyssalfish-os/ly_server/releases)
+- [ly_analyser](https://gitee.com/abyssalfish-os/ly_analyser/releases)
 - [ly_probe](https://gitee.com/abyssalfish-os/ly_probe/releases)
 
 
