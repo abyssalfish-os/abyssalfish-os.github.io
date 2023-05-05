@@ -14,8 +14,8 @@ isCJKLanguage: true
 ## CentOS7环境完整安装包
 我们制作了一键部署安装包，方便大家安装部署。可以通过百度网盘或夸克网盘进行下载。
 
-- [百度网盘：流影完整安装包](https://pan.baidu.com/s/1C_gofonH5hGEl7Ryj30KAg)   提取码 AFOS
-- [夸克网盘：流影完整安装包](https://pan.quark.cn/s/bb6947d13e83)  提取码：CUSy
+- [百度网盘：流影完整安装包](https://pan.baidu.com/s/1ind5Zkl-2PGcq2LUgQox-w)   提取码 AFOS
+- [夸克网盘：流影完整安装包](https://pan.quark.cn/s/1e3fb062f18f)  提取码：KUje
 
 
 ## Vmware虚拟机镜像

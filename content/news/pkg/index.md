@@ -18,8 +18,8 @@ isCJKLanguage: true
 
 ### 下载地址
 由于安装部署包较大，我们将安装包放在了网盘上。请您选择一种网盘链接去下载即可。
-- [百度网盘：流影完整安装包](https://pan.baidu.com/s/1C_gofonH5hGEl7Ryj30KAg)   提取码 AFOS
-- [夸克网盘：流影完整安装包](https://pan.quark.cn/s/bb6947d13e83)  提取码：CUSy
+- [百度网盘：流影完整安装包](https://pan.baidu.com/s/1ind5Zkl-2PGcq2LUgQox-w)   提取码 AFOS
+- [夸克网盘：流影完整安装包](https://pan.quark.cn/s/1e3fb062f18f)  提取码：KUje
 
 完整安装包是对最新Release版本的打包，其安装方式请参见安装部署手册，不再赘述。
 
