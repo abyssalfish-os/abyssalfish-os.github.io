@@ -14,12 +14,23 @@ isCJKLanguage: true
 ## CentOS7环境完整安装包
 我们制作了一键部署安装包，方便大家安装部署。可以通过百度网盘或夸克网盘进行下载。
 
+#### 安装包下载地址
 - [百度网盘：流影完整安装包](https://pan.baidu.com/s/1ind5Zkl-2PGcq2LUgQox-w)   提取码 AFOS
 - [夸克网盘：流影完整安装包](https://pan.quark.cn/s/1e3fb062f18f)  提取码：KUje
+
+安装完成后，流影前端默认使用18080端口，访问地址及默认账号：
+- 访问地址：http://ip:18080/ui
+- 管理员账号：admin，密码LoginLY@2016
+
+#### 安装教学视频
+{{<bili "https://www.bilibili.com/video/BV1Eh4y147bn" >}}
+
 
 
 ## Vmware虚拟机镜像
 为了方便大家安装试用，制作了vmware安装镜像，请大家前往如下百度网盘地址下载。
+
+#### 镜像下载地址
 - [百度网盘：流影VM镜像](https://pan.baidu.com/s/1kf_IniICZv2jbOeAQ02CdQ)  提取码：AFOS
 - [夸克网盘：流影VM镜像](https://pan.quark.cn/s/9fd51ca0f93a)  提取码：TmaQ
 - 虚拟机用户名root，密码ShyLiuying
@@ -36,7 +47,7 @@ isCJKLanguage: true
 理论上使用这些版本（或更新的版本）加载虚拟机镜像，应该都可以兼容并运行。
 {{% /note %}}
 
-### 虚拟机安装教学视频
+#### 虚拟机安装教学视频
 {{<bili "https://www.bilibili.com/video/BV1Mg4y1g7nT" >}}
 
 ## Github Releases
