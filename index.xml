@@ -390,7 +390,7 @@ style="position:absolute; height: 100%; width: 100%;">
 &lt;img style="max-width: 100%; width: auto; height: auto;" src="https://abyssalfish-os.github.io/news/netscan/wx_group_hu382f7d8cb587e8fa5dc30ffe17d00f19_29687_256x0_resize_catmullrom_3.png" width="256" height="249">
 &lt;/figure>
 &lt;/li>
-&lt;/ul></description></item><item><title>News: ESXi环境流量镜像设置</title><link>https://abyssalfish-os.github.io/news/exsi/</link><pubDate>Mon, 20 Feb 2023 00:00:00 +0800</pubDate><guid>https://abyssalfish-os.github.io/news/exsi/</guid><description>
+&lt;/ul></description></item><item><title>News: ESXi环境流量镜像设置</title><link>https://abyssalfish-os.github.io/news/esxi/</link><pubDate>Mon, 20 Feb 2023 00:00:00 +0800</pubDate><guid>https://abyssalfish-os.github.io/news/esxi/</guid><description>
 &lt;h1 id="esxi环境镜像流量接入">ESXi环境镜像流量接入&lt;/h1>
 &lt;h2 id="前言">前言 &lt;a class="header-link" href="#%e5%89%8d%e8%a8%80">&lt;svg class="fill-current o-60 hover-accent-color-light" height="22px" viewBox="0 0 24 24" width="22px" xmlns="http://www.w3.org/2000/svg">&lt;path d="M0 0h24v24H0z" fill="none"/>&lt;path d="M3.9 12c0-1.71 1.39-3.1 3.1-3.1h4V7H7c-2.76 0-5 2.24-5 5s2.24 5 5 5h4v-1.9H7c-1.71 0-3.1-1.39-3.1-3.1zM8 13h8v-2H8v2zm9-6h-4v1.9h4c1.71 0 3.1 1.39 3.1 3.1s-1.39 3.1-3.1 3.1h-4V17h4c2.76 0 5-2.24 5-5s-2.24-5-5-5z"/>&lt;/svg>&lt;/a>&lt;/h2>
 &lt;p>近期有小伙伴们在微信交流群里询问了流量接入的问题，本文以ESXi环境下流量接入配置为例进行说明。
@@ -442,7 +442,7 @@ style="position:absolute; height: 100%; width: 100%;">
 &lt;li>邮箱：opensource@abyssalfish.com.cn&lt;/li>
 &lt;li>扫码进入微信讨论群
 &lt;figure style="padding: 0.25rem; margin: 2rem 0; ">
-&lt;img style="max-width: 100%; width: auto; height: auto;" src="https://abyssalfish-os.github.io/news/exsi/wx_group_hu382f7d8cb587e8fa5dc30ffe17d00f19_29687_256x0_resize_catmullrom_3.png" width="256" height="249">
+&lt;img style="max-width: 100%; width: auto; height: auto;" src="https://abyssalfish-os.github.io/news/esxi/wx_group_hu382f7d8cb587e8fa5dc30ffe17d00f19_29687_256x0_resize_catmullrom_3.png" width="256" height="249">
 &lt;/figure>
 &lt;/li>
 &lt;/ul></description></item><item><title>News: 流影虚拟机镜像</title><link>https://abyssalfish-os.github.io/news/vmdownload/</link><pubDate>Sun, 12 Feb 2023 00:00:00 +0800</pubDate><guid>https://abyssalfish-os.github.io/news/vmdownload/</guid><description>
