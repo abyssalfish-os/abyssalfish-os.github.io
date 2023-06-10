@@ -31,11 +31,11 @@
 <meta property="og:type" content="article">
 <meta property="og:url" content="https://abyssalfish-os.github.io/news/pkg/"><meta property="og:image" content="https://abyssalfish-os.github.io/opengraph/gohugoio-card-base-1_huf001e7df4fd9c00c4355abac7d4ca455_242906_filter_642008174945153796.png"><meta property="article:section" content="news">
 <meta property="article:published_time" content="2023-04-26T00:00:00+08:00">
-<meta property="article:modified_time" content="2023-05-05T22:52:03+08:00">
+<meta property="article:modified_time" content="2023-06-10T23:17:34+08:00">
 <meta itemprop=name content="流影完整安装部署包发布">
 <meta itemprop=description content="CentOS7环境一键安装部署包"><meta itemprop=datePublished content="2023-04-26T00:00:00+08:00">
-<meta itemprop=dateModified content="2023-05-05T22:52:03+08:00">
-<meta itemprop=wordCount content="645">
+<meta itemprop=dateModified content="2023-06-10T23:17:34+08:00">
+<meta itemprop=wordCount content="679">
 <meta itemprop=keywords content>
 </head><body class="ma0 sans-serif bg-primary-color-light
 production">
@@ -117,13 +117,19 @@ April 26, 2023
 <h2 id=流影完整安装部署包发布>流影完整安装部署包发布 <a class=header-link href=#%e6%b5%81%e5%bd%b1%e5%ae%8c%e6%95%b4%e5%ae%89%e8%a3%85%e9%83%a8%e7%bd%b2%e5%8c%85%e5%8f%91%e5%b8%83><svg class="fill-current o-60 hover-accent-color-light" height="22" viewBox="0 0 24 24" width="22" xmlns="http://www.w3.org/2000/svg"><path d="M0 0h24v24H0z" fill="none"/><path d="M3.9 12c0-1.71 1.39-3.1 3.1-3.1h4V7H7c-2.76.0-5 2.24-5 5s2.24 5 5 5h4v-1.9H7c-1.71.0-3.1-1.39-3.1-3.1zM8 13h8v-2H8v2zm9-6h-4v1.9h4c1.71.0 3.1 1.39 3.1 3.1s-1.39 3.1-3.1 3.1h-4V17h4c2.76.0 5-2.24 5-5s-2.24-5-5-5z"/></svg></a></h2><h3 id=前言>前言 <a class=header-link href=#%e5%89%8d%e8%a8%80><svg class="fill-current o-60 hover-accent-color-light" height="22" viewBox="0 0 24 24" width="22" xmlns="http://www.w3.org/2000/svg"><path d="M0 0h24v24H0z" fill="none"/><path d="M3.9 12c0-1.71 1.39-3.1 3.1-3.1h4V7H7c-2.76.0-5 2.24-5 5s2.24 5 5 5h4v-1.9H7c-1.71.0-3.1-1.39-3.1-3.1zM8 13h8v-2H8v2zm9-6h-4v1.9h4c1.71.0 3.1 1.39 3.1 3.1s-1.39 3.1-3.1 3.1h-4V17h4c2.76.0 5-2.24 5-5s-2.24-5-5-5z"/></svg></a></h3><p>根据反馈，前期小伙伴们在安装部署时遇到的问题比较多，我们分析发现其中有一些是我们Release打包的问题，比如拆分了安装包引起部署失败，
 因为github和gitee不支持上传大文件，在Release时只好进行拆分打包，小伙伴们下载后有些依赖没有进行正确合并，造成了很多安装问题。</p><p>为了进一步减低安装使用门槛，最近制作了CentOS7下的完整的安装包，包含所有节点的Release文件和部署脚本，减少安装失败的可能性，方便大家快速安装和试用。
 也有小伙伴反馈其他系统环境下的是否能支持的问题，目前可以明确的是，更多操作系统环境的安装部署包，也在测试和适配之中，敬请关注。</p><h3 id=下载地址>下载地址 <a class=header-link href=#%e4%b8%8b%e8%bd%bd%e5%9c%b0%e5%9d%80><svg class="fill-current o-60 hover-accent-color-light" height="22" viewBox="0 0 24 24" width="22" xmlns="http://www.w3.org/2000/svg"><path d="M0 0h24v24H0z" fill="none"/><path d="M3.9 12c0-1.71 1.39-3.1 3.1-3.1h4V7H7c-2.76.0-5 2.24-5 5s2.24 5 5 5h4v-1.9H7c-1.71.0-3.1-1.39-3.1-3.1zM8 13h8v-2H8v2zm9-6h-4v1.9h4c1.71.0 3.1 1.39 3.1 3.1s-1.39 3.1-3.1 3.1h-4V17h4c2.76.0 5-2.24 5-5s-2.24-5-5-5z"/></svg></a></h3><p>由于安装部署包较大，我们将安装包放在了网盘上。请您选择一种网盘链接去下载即可。</p><ul>
-<li><a href=https://pan.baidu.com/s/1ind5Zkl-2PGcq2LUgQox-w>百度网盘：流影完整安装包</a> 提取码 AFOS</li><li><a href=https://pan.quark.cn/s/1e3fb062f18f>夸克网盘：流影完整安装包</a> 提取码：KUje</li></ul><p>完整安装包是对最新Release版本的打包，其安装方式请参见安装部署手册，不再赘述。</p><h3 id=后语>后语 <a class=header-link href=#%e5%90%8e%e8%af%ad><svg class="fill-current o-60 hover-accent-color-light" height="22" viewBox="0 0 24 24" width="22" xmlns="http://www.w3.org/2000/svg"><path d="M0 0h24v24H0z" fill="none"/><path d="M3.9 12c0-1.71 1.39-3.1 3.1-3.1h4V7H7c-2.76.0-5 2.24-5 5s2.24 5 5 5h4v-1.9H7c-1.71.0-3.1-1.39-3.1-3.1zM8 13h8v-2H8v2zm9-6h-4v1.9h4c1.71.0 3.1 1.39 3.1 3.1s-1.39 3.1-3.1 3.1h-4V17h4c2.76.0 5-2.24 5-5s-2.24-5-5-5z"/></svg></a></h3><p>流影定位于轻量级的网络安全态势感知与可视化分析平台，开源版本集成了流量探针、网络行为分析引擎、威胁检测引擎和交互式可视化分析引擎四个核心模块，
+<li><a href=https://pan.baidu.com/s/1cIt2Rl6d1wdlq_nWKadDtg>百度网盘：流影完整安装包</a> 提取码 AFOS</li><li><a href=https://pan.quark.cn/s/cc38aa72a833>夸克网盘：流影完整安装包</a> 提取码：5pSs</li></ul><p>完整安装包是对最新Release版本的打包，其安装方式请参见安装部署手册，不再赘述。</p><h4 id=安装教学视频>安装教学视频 <a class=header-link href=#%e5%ae%89%e8%a3%85%e6%95%99%e5%ad%a6%e8%a7%86%e9%a2%91><svg class="fill-current o-60 hover-accent-color-light" height="22" viewBox="0 0 24 24" width="22" xmlns="http://www.w3.org/2000/svg"><path d="M0 0h24v24H0z" fill="none"/><path d="M3.9 12c0-1.71 1.39-3.1 3.1-3.1h4V7H7c-2.76.0-5 2.24-5 5s2.24 5 5 5h4v-1.9H7c-1.71.0-3.1-1.39-3.1-3.1zM8 13h8v-2H8v2zm9-6h-4v1.9h4c1.71.0 3.1 1.39 3.1 3.1s-1.39 3.1-3.1 3.1h-4V17h4c2.76.0 5-2.24 5-5s-2.24-5-5-5z"/></svg></a></h4><div style="margin:10px 0 20px">
+<div style=position:relative;padding-bottom:75%;width:100%;height:0>
+<iframe src="//player.bilibili.com/player.html?bvid=BV1Eh4y147bn&page=1" scrolling=no border=0 frameborder=no framespacing=0 allowfullscreen style=position:absolute;height:100%;width:100%></iframe>
+</div><div style="margin:5px 0">
+<span>更多视频，请点击跳转 <strong>Bilibili</strong>进行观看</span>
+<a href=https://space.bilibili.com/3493262893517732>流影教学视频</a>
+</div></div><h3 id=后语>后语 <a class=header-link href=#%e5%90%8e%e8%af%ad><svg class="fill-current o-60 hover-accent-color-light" height="22" viewBox="0 0 24 24" width="22" xmlns="http://www.w3.org/2000/svg"><path d="M0 0h24v24H0z" fill="none"/><path d="M3.9 12c0-1.71 1.39-3.1 3.1-3.1h4V7H7c-2.76.0-5 2.24-5 5s2.24 5 5 5h4v-1.9H7c-1.71.0-3.1-1.39-3.1-3.1zM8 13h8v-2H8v2zm9-6h-4v1.9h4c1.71.0 3.1 1.39 3.1 3.1s-1.39 3.1-3.1 3.1h-4V17h4c2.76.0 5-2.24 5-5s-2.24-5-5-5z"/></svg></a></h3><p>流影定位于轻量级的网络安全态势感知与可视化分析平台，开源版本集成了流量探针、网络行为分析引擎、威胁检测引擎和交互式可视化分析引擎四个核心模块，
 实现了对网络流量全方位监测、网络行为多维度特征提取留存和网络威胁行为实时告警等基本功能。我们欢迎大家的使用反馈，特别是积极参与项目贡献。如果用户有商业定制化需求，也欢迎进行联系合作。</p><h3 id=反馈>反馈 <a class=header-link href=#%e5%8f%8d%e9%a6%88><svg class="fill-current o-60 hover-accent-color-light" height="22" viewBox="0 0 24 24" width="22" xmlns="http://www.w3.org/2000/svg"><path d="M0 0h24v24H0z" fill="none"/><path d="M3.9 12c0-1.71 1.39-3.1 3.1-3.1h4V7H7c-2.76.0-5 2.24-5 5s2.24 5 5 5h4v-1.9H7c-1.71.0-3.1-1.39-3.1-3.1zM8 13h8v-2H8v2zm9-6h-4v1.9h4c1.71.0 3.1 1.39 3.1 3.1s-1.39 3.1-3.1 3.1h-4V17h4c2.76.0 5-2.24 5-5s-2.24-5-5-5z"/></svg></a></h3><p>如果有问题，欢迎通过邮件或者微信群进行反馈。</p><ul>
 <li>邮箱：opensource@abyssalfish.com.cn</li><li>扫码进入微信讨论群
 <figure style="padding:.25rem;margin:2rem 0">
 <img style=max-width:100%;width:auto;height:auto src=/news/pkg/wx_group_hu382f7d8cb587e8fa5dc30ffe17d00f19_29687_256x0_resize_catmullrom_3.png width=256 height=249>
 </figure></li></ul></div></div><div class="gray f6 mv6">
-Last Update: May 5, 2023 <br>
+Last Update: June 10, 2023 <br>
 <a href=https://github.com/abyssalfish-os/abyssalfish-os.github.io/edit/master/content/news/pkg/index.md class="f6 ph3 pv1 br2 dib tc ttu mv3 bg-primary-color white hover-bg-green link">Improve this page</a>
 </div></article></main><footer class="bg-primary-color-dark ph4-ns pt4 relative w-100" role=contentinfo>
 <div class="center flex-ns flex-wrap justify-between mw9 w-90">
