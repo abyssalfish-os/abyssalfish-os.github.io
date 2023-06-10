@@ -18,11 +18,13 @@ isCJKLanguage: true
 
 ### 下载地址
 由于安装部署包较大，我们将安装包放在了网盘上。请您选择一种网盘链接去下载即可。
-- [百度网盘：流影完整安装包](https://pan.baidu.com/s/1ind5Zkl-2PGcq2LUgQox-w)   提取码 AFOS
-- [夸克网盘：流影完整安装包](https://pan.quark.cn/s/1e3fb062f18f)  提取码：KUje
+- [百度网盘：流影完整安装包](https://pan.baidu.com/s/1cIt2Rl6d1wdlq_nWKadDtg)   提取码 AFOS
+- [夸克网盘：流影完整安装包](https://pan.quark.cn/s/cc38aa72a833)  提取码：5pSs
 
 完整安装包是对最新Release版本的打包，其安装方式请参见安装部署手册，不再赘述。
 
+#### 安装教学视频
+{{<bili "https://www.bilibili.com/video/BV1Eh4y147bn" >}}
 
 ### 后语
 流影定位于轻量级的网络安全态势感知与可视化分析平台，开源版本集成了流量探针、网络行为分析引擎、威胁检测引擎和交互式可视化分析引擎四个核心模块，
