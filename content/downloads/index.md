@@ -30,8 +30,8 @@ isCJKLanguage: true
 为了方便大家安装试用，制作了vmware安装镜像，请大家前往如下百度网盘地址下载。
 
 #### 镜像下载地址
-- [百度网盘：流影VM镜像](https://pan.baidu.com/s/1kf_IniICZv2jbOeAQ02CdQ)  提取码：AFOS
-- [夸克网盘：流影VM镜像](https://pan.quark.cn/s/9fd51ca0f93a)  提取码：TmaQ
+- [百度网盘：流影VM镜像](https://pan.baidu.com/s/1yZ2YB9OyX8u5YePh3wV1gg)  提取码：AFOS
+- [夸克网盘：流影VM镜像](https://pan.quark.cn/s/0f1574d2f5f8)  提取码：gzyc
 - 虚拟机用户名root，密码ShyLiuying
 
 虚拟机安装后，流影前端默认使用18080端口，访问地址及默认账号：
