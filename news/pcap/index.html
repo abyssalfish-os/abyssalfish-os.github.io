@@ -1,0 +1,243 @@
+<!doctype html><html class=no-js lang="
+    zh-cn
+  
+  ">
+<head>
+<meta charset=utf-8>
+<link rel=preload href=https://abyssalfish-os.github.io/fonts/muli-latin-200.woff2 as=font type=font/woff2 crossorigin>
+<link rel=preload href=https://abyssalfish-os.github.io/fonts/muli-latin-400.woff2 as=font type=font/woff2 crossorigin>
+<link rel=preload href=https://abyssalfish-os.github.io/fonts/muli-latin-800.woff2 as=font type=font/woff2 crossorigin>
+<meta http-equiv=x-ua-compatible content="IE=edge">
+<title>
+流影: 流影之网络流量留存
+</title><meta name=viewport content="width=device-width,minimum-scale=1">
+<meta name=generator content="Hugo 0.109.0">
+<meta name=robots content="index, follow">
+<link rel=stylesheet href=/output/css/app.min.631706eef190df8129d8f5b57c45caa8c431efd8e4148fbd17b354b607ce316a.css integrity="sha256-YxcG7vGQ34Ep2PW1fEXKqMQx79jkFI+9F7NUtgfOMWo=" crossorigin=anonymous>
+<meta name=description content="
+        流影以PCap格式留存了可疑网络行为相关流量，存储于探针节点，可供进一步分析和追溯使用。
+      
+      ">
+<script type=text/javascript src=/output/js/app.5a802739f9b2407f0d3a1f84a20731b6705a5a4df051c35686f22bd3aea90731.js crossorigin=anonymous defer></script>
+<script async defer src=https://buttons.github.io/buttons.js></script>
+<link rel=apple-touch-icon sizes=180x180 href=/apple-touch-icon.png>
+<link rel=icon type=image/png href=/favicon-32x32.png sizes=32x32>
+<link rel=icon type=image/png href=/favicon-16x16.png sizes=16x16>
+<link rel=manifest href=/manifest.json>
+<link rel=mask-icon href=/safari-pinned-tab.svg color=#0594cb>
+<meta name=theme-color content="#ffffff">
+<meta property="og:title" content="流影之网络流量留存">
+<meta property="og:description" content="流影以PCap格式留存了可疑网络行为相关流量，存储于探针节点，可供进一步分析和追溯使用。">
+<meta property="og:type" content="article">
+<meta property="og:url" content="https://abyssalfish-os.github.io/news/pcap/"><meta property="og:image" content="https://abyssalfish-os.github.io/opengraph/gohugoio-card-base-1_huf001e7df4fd9c00c4355abac7d4ca455_242906_filter_714242028820943307.png"><meta property="article:section" content="news">
+<meta property="article:published_time" content="2023-07-01T00:00:00+08:00">
+<meta property="article:modified_time" content="2023-07-02T15:43:54+08:00">
+<meta itemprop=name content="流影之网络流量留存">
+<meta itemprop=description content="流影以PCap格式留存了可疑网络行为相关流量，存储于探针节点，可供进一步分析和追溯使用。"><meta itemprop=datePublished content="2023-07-01T00:00:00+08:00">
+<meta itemprop=dateModified content="2023-07-02T15:43:54+08:00">
+<meta itemprop=wordCount content="2433">
+<meta itemprop=keywords content>
+<script>var _hmt=_hmt||[];(function(){var e,t=document.createElement("script");t.src="https://hm.baidu.com/hm.js?20e14b502dcd423ae21f8119455786ab",e=document.getElementsByTagName("script")[0],e.parentNode.insertBefore(t,e)})()</script>
+</head><body class="ma0 sans-serif bg-primary-color-light
+production">
+<nav class="bg-primary-color-dark pv4 w-100" role=navigation>
+<div class="center flex-ns flex-wrap items-center justify-start mw9">
+<h1 class="dim f3 lh-solid ml0-ns mr0 mr4-l mv0 pl3 pl4-ns">
+<a href=https://abyssalfish-os.github.io/ class="link white">
+流影->FlowShadow
+</a>
+</h1><ul class="list ma0 pa0 dn dib-l" role=menu>
+<li class="f5 dib mr4" role=menuitem>
+<a href=/news/ class="dim link light-silver">
+新闻&博客
+</a>
+</li><li class="f5 dib mr4" role=menuitem>
+<a href=/documentation/ class="dim link light-silver">
+文档
+</a>
+</li><li class="f5 dib mr4" role=menuitem>
+<a href=/downloads/ class="dim link light-silver">
+下载
+</a>
+</li><li class="f5 dib mr4" role=menuitem>
+<a href=/demo/ class="dim link light-silver">
+Demo演示
+</a>
+</li><li class="f5 dib mr4" role=menuitem>
+<a href=https://gitee.com/organizations/abyssalfish-os/projects class="dim link light-silver">
+Gitee
+<span class=pl1><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="10" height="10" viewBox="0 0 32 32" class="fill-current v-base" aria-label="External Link"><path d="M25.152 16.576v5.696q0 2.144-1.504 3.648T20 27.424H5.152q-2.144.0-3.648-1.504t-1.504-3.648V7.424q0-2.112 1.504-3.616t3.648-1.536h12.576q.224.0.384.16t.16.416V4q0 .256-.16.416t-.384.16H5.152q-1.184.0-2.016.832t-.864 2.016v14.848q0 1.184.864 2.016t2.016.864H20q1.184.0 2.016-.864t.832-2.016v-5.696q0-.256.16-.416t.416-.16h1.152q.256.0.416.16t.16.416zM32 1.152v9.12q0 .48-.352.8t-.8.352-.8-.352l-3.136-3.136-11.648 11.648q-.16.192-.416.192t-.384-.192l-2.048-2.048q-.192-.16-.192-.384t.192-.416L24.064 5.088l-3.136-3.136q-.352-.352-.352-.8t.352-.8.8-.352h9.12q.48.0.8.352t.352.8z"/></svg>
+</span>
+</a>
+</li><li class="f5 dib mr4" role=menuitem>
+<a href=https://github.com/orgs/Abyssal-Fish-Technology/repositories class="dim link light-silver">
+GitHub
+<span class=pl1><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="10" height="10" viewBox="0 0 32 32" class="fill-current v-base" aria-label="External Link"><path d="M25.152 16.576v5.696q0 2.144-1.504 3.648T20 27.424H5.152q-2.144.0-3.648-1.504t-1.504-3.648V7.424q0-2.112 1.504-3.616t3.648-1.536h12.576q.224.0.384.16t.16.416V4q0 .256-.16.416t-.384.16H5.152q-1.184.0-2.016.832t-.864 2.016v14.848q0 1.184.864 2.016t2.016.864H20q1.184.0 2.016-.864t.832-2.016v-5.696q0-.256.16-.416t.416-.16h1.152q.256.0.416.16t.16.416zM32 1.152v9.12q0 .48-.352.8t-.8.352-.8-.352l-3.136-3.136-11.648 11.648q-.16.192-.416.192t-.384-.192l-2.048-2.048q-.192-.16-.192-.384t.192-.416L24.064 5.088l-3.136-3.136q-.352-.352-.352-.8t.352-.8.8-.352h9.12q.48.0.8.352t.352.8z"/></svg>
+</span>
+</a>
+</li><li class="f5 dib mr4" role=menuitem>
+<a href=https://gitter.im/abyssalfish-os/community class="dim link light-silver">
+讨论区
+<span class=pl1><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="10" height="10" viewBox="0 0 32 32" class="fill-current v-base" aria-label="External Link"><path d="M25.152 16.576v5.696q0 2.144-1.504 3.648T20 27.424H5.152q-2.144.0-3.648-1.504t-1.504-3.648V7.424q0-2.112 1.504-3.616t3.648-1.536h12.576q.224.0.384.16t.16.416V4q0 .256-.16.416t-.384.16H5.152q-1.184.0-2.016.832t-.864 2.016v14.848q0 1.184.864 2.016t2.016.864H20q1.184.0 2.016-.864t.832-2.016v-5.696q0-.256.16-.416t.416-.16h1.152q.256.0.416.16t.16.416zM32 1.152v9.12q0 .48-.352.8t-.8.352-.8-.352l-3.136-3.136-11.648 11.648q-.16.192-.416.192t-.384-.192l-2.048-2.048q-.192-.16-.192-.384t.192-.416L24.064 5.088l-3.136-3.136q-.352-.352-.352-.8t.352-.8.8-.352h9.12q.48.0.8.352t.352.8z"/></svg>
+</span>
+</a>
+</li><li class="f5 dib mr4" role=menuitem>
+<a href=https://space.bilibili.com/3493262893517732 class="dim link light-silver">
+视频Video
+<span class=pl1><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="10" height="10" viewBox="0 0 32 32" class="fill-current v-base" aria-label="External Link"><path d="M25.152 16.576v5.696q0 2.144-1.504 3.648T20 27.424H5.152q-2.144.0-3.648-1.504t-1.504-3.648V7.424q0-2.112 1.504-3.616t3.648-1.536h12.576q.224.0.384.16t.16.416V4q0 .256-.16.416t-.384.16H5.152q-1.184.0-2.016.832t-.864 2.016v14.848q0 1.184.864 2.016t2.016.864H20q1.184.0 2.016-.864t.832-2.016v-5.696q0-.256.16-.416t.416-.16h1.152q.256.0.416.16t.16.416zM32 1.152v9.12q0 .48-.352.8t-.8.352-.8-.352l-3.136-3.136-11.648 11.648q-.16.192-.416.192t-.384-.192l-2.048-2.048q-.192-.16-.192-.384t.192-.416L24.064 5.088l-3.136-3.136q-.352-.352-.352-.8t.352-.8.8-.352h9.12q.48.0.8.352t.352.8z"/></svg>
+</span>
+</a>
+</li></ul><div class="db dib-ns pl3"><form id=site-search-form role=search>
+<fieldset class="bn ma0 pa0">
+<label class=clip for=search-input>Search</label>
+<input type=text id=search-input class="needs-js dn bn f5 lh-solid mt3 mt0-ns pl4 pv2 w5 white" placeholder="Welcome to FlowShadow" name=search-input style=background-color:rgba(255,255,255,0)>
+</fieldset></form></div></div></nav><main role=main class="content-with-sidebar min-vh-100 pb7 pb0-ns">
+<article class="cf ph4 pv3 pv5-ns">
+<header class="flex-none w-100 pb3">
+<a href=/categories/categories class="f6 fw8 mb0 link mid-gray dim mr3">
+CATEGORIES
+</a>
+<h1 class="lh-title fw9 mb7 mv0 pt3">
+<a href=/news/pcap/ class="link primary-color dim">
+流影之网络流量留存
+</a>
+</h1></header><div class=flex-l>
+<aside class="mid-gray fn w-100 w-25-l">
+<h2 class="f3 lh-title">
+流影以PCap格式留存了可疑网络行为相关流量，存储于探针节点，可供进一步分析和追溯使用。
+</h2><time class="f6 mt2 db ttu tracked" datetime=2023-07-01T00:00:00+08:00>
+July 1, 2023
+</time>
+<div class="nested-links mt4">
+<div date-pref>
+<a href=https://abyssalfish-os.github.io/news/ddvideo/ class="dib f6 pr1 hover-bg-light-gray br-100" title=分布式部署教学视频发布><svg class="fill-current" height="30" viewBox="0 0 24 24" width="30" xmlns="http://www.w3.org/2000/svg"><path d="M10 6 8.59 7.41 13.17 12l-4.58 4.59L10 18l6-6z"/><path d="M0 0h24v24H0z" fill="none"/></svg>
+</a>
+</div></div></aside><div class="fn pl5-l pt3 mid-gray w-100 w-two-third-l sans-serif nested-copy-line-height no-underline nested-links nested-img nested-copy-seperator nested-blockquote measure-wide-wd">
+<h2 id=前言>前言 <a class=header-link href=#%e5%89%8d%e8%a8%80><svg class="fill-current o-60 hover-accent-color-light" height="22" viewBox="0 0 24 24" width="22" xmlns="http://www.w3.org/2000/svg"><path d="M0 0h24v24H0z" fill="none"/><path d="M3.9 12c0-1.71 1.39-3.1 3.1-3.1h4V7H7c-2.76.0-5 2.24-5 5s2.24 5 5 5h4v-1.9H7c-1.71.0-3.1-1.39-3.1-3.1zM8 13h8v-2H8v2zm9-6h-4v1.9h4c1.71.0 3.1 1.39 3.1 3.1s-1.39 3.1-3.1 3.1h-4V17h4c2.76.0 5-2.24 5-5s-2.24-5-5-5z"/></svg></a></h2><p>本文是关于流影中相关数据类型介绍系列文章的第二篇，主要介绍流影网络行为证据留存概要及其应用。
+网络原始流量是网络行为分析识别的基石，流影系统从数据采集到分析和呈现的过程中，产出和留存了丰富的网络数据类型，其中包括原始流量的PCAP留存。需要指出的是，流影并没有选择全流量留存的方式，而是针对性的留存了可疑网络行为相关的流量。</p><h2 id=pcap概述>PCAP概述 <a class=header-link href=#pcap%e6%a6%82%e8%bf%b0><svg class="fill-current o-60 hover-accent-color-light" height="22" viewBox="0 0 24 24" width="22" xmlns="http://www.w3.org/2000/svg"><path d="M0 0h24v24H0z" fill="none"/><path d="M3.9 12c0-1.71 1.39-3.1 3.1-3.1h4V7H7c-2.76.0-5 2.24-5 5s2.24 5 5 5h4v-1.9H7c-1.71.0-3.1-1.39-3.1-3.1zM8 13h8v-2H8v2zm9-6h-4v1.9h4c1.71.0 3.1 1.39 3.1 3.1s-1.39 3.1-3.1 3.1h-4V17h4c2.76.0 5-2.24 5-5s-2.24-5-5-5z"/></svg></a></h2><p>PCap(Packet Capture)是一种网络流量数据报文捕获技术，封装了操作系统底层的网络抓包接口，通过调用统一接口可以捕获目标网卡上数据帧，并存储为PCap格式数据文件。比如Unix类系统主要使用libpcap库，而Windows系统主要使用WinPcap，进行网络流量捕获和网络流量PCap留存，文件扩展名一般为pcap。</p><p>网络流量留存一般应用于网络流量分析、网络性能优化和网络安全等领域。PCap格式网络流量留存是比较成熟和常见形式，许多网络监控和数据分析软件都支持PCap格式，如tcpdump、Wireshark等。</p><pre tabindex=0><code>+---------------------+
+| 文件头 (PCap Header) |
+|---------------------|
+| 数据头 (Packet Header) |
+|---------------------|
+| 数据包 (Packet Data) |
+|---------------------|
+| 数据头 (Packet Header) |
+|---------------------|
+| 数据包 (Packet Data) |
+|---------------------|
+| ...                 |
++---------------------+
+</code></pre><p>PCap格式是一种二进制格式的文件，需要使用支持16进制格式的工具进行打开查看。每个PCap文件包含一个文件头和一个或多个数据包头和数据包。在PCap文件中，数据包头和数据包是交替出现的，每个数据包头后面紧跟着对应的数据包。数据包头包含了对后面数据包的描述信息，而数据包则是实际的网络数据帧。PCap具体格式如下图所示：</p><p><img src=./pcap_0.png alt=pcap0></p><p>以下是PCap文件头中各个字段含义：</p><ul>
+<li>Magic Number: 标识PCap文件的格式和字节顺序</li><li>Major: 主版本号</li><li>Minor: 次版本号</li><li>This Zone: 本地标准时间</li><li>SigFlags: 时间精度</li><li>Snaplen: 捕获数据包的最大长度</li><li>LinkType: 网络链接类型，如以太网、令牌环等</li></ul><p>数据包头（Packet Header）字段：</p><ul>
+<li>Timestamp: 高位时间戳，精确到秒</li><li>Timestamp: 低位时间戳，精确到微秒</li><li>Caplen: 捕获数据帧长度</li><li>Len: 实际数据帧长度</li></ul><p>数据包(Packet data)是链路层的数据帧，其长度是Packet Header中定义的Caplen值，数据包实际内容是标准的网络协议格式，包括IP报文、TCP报文、UDP报文等。以下是一个用16进制编辑器打开的PCap文件示例：</p><p><img src=./pcap_1.png alt=pcap1></p><p>上图中红色框内是PCap文件头，黄色框内是数据头，蓝色框内是一个数据帧。</p><p>以上就是对PCap格式数据的简要介绍。当然，网络流量的留存还有其他方式和格式，例如cap、pcapng等，这里不再过多说明。流影系统集成了网络数据包留存功能，采用的是PCap相关捕获技术和存储格式。</p><h2 id=流影之pcap证据留存>流影之PCAP证据留存 <a class=header-link href=#%e6%b5%81%e5%bd%b1%e4%b9%8bpcap%e8%af%81%e6%8d%ae%e7%95%99%e5%ad%98><svg class="fill-current o-60 hover-accent-color-light" height="22" viewBox="0 0 24 24" width="22" xmlns="http://www.w3.org/2000/svg"><path d="M0 0h24v24H0z" fill="none"/><path d="M3.9 12c0-1.71 1.39-3.1 3.1-3.1h4V7H7c-2.76.0-5 2.24-5 5s2.24 5 5 5h4v-1.9H7c-1.71.0-3.1-1.39-3.1-3.1zM8 13h8v-2H8v2zm9-6h-4v1.9h4c1.71.0 3.1 1.39 3.1 3.1s-1.39 3.1-3.1 3.1h-4V17h4c2.76.0 5-2.24 5-5s-2.24-5-5-5z"/></svg></a></h2><p>流影网络流量探针ly_probe，集成了PCap数据包捕获和留存的功能。该探针基于开源高性能探针nprobe的5.X版本进行了深度定制化开发，在实际测试和应用中都具有良好的采集吞吐性能，在高速流量场景下仍然能保持比较低的丢包率。流影并没有选择全流量留存，而是选择性的对可疑流量进行了捕获留存，避免全流量留存的资源消耗和性能大量损失。</p><h3 id=流影证据留存概要>流影证据留存概要 <a class=header-link href=#%e6%b5%81%e5%bd%b1%e8%af%81%e6%8d%ae%e7%95%99%e5%ad%98%e6%a6%82%e8%a6%81><svg class="fill-current o-60 hover-accent-color-light" height="22" viewBox="0 0 24 24" width="22" xmlns="http://www.w3.org/2000/svg"><path d="M0 0h24v24H0z" fill="none"/><path d="M3.9 12c0-1.71 1.39-3.1 3.1-3.1h4V7H7c-2.76.0-5 2.24-5 5s2.24 5 5 5h4v-1.9H7c-1.71.0-3.1-1.39-3.1-3.1zM8 13h8v-2H8v2zm9-6h-4v1.9h4c1.71.0 3.1 1.39 3.1 3.1s-1.39 3.1-3.1 3.1h-4V17h4c2.76.0 5-2.24 5-5s-2.24-5-5-5z"/></svg></a></h3><p>流影PCap留存技术上是使用的是Libpcap库，C语言实现。流影探针加载了特征规则，采集流量的同时进行规则匹配，对命中规则特征的单包进行捕获，记入缓存，每五分钟捕获的数据包汇聚为一个文件，直接以Pcap格式进行留存,文件名记录了时间戳，便于数据包查找。</p><p>特征规则放置在流量探针指定目录， 默认情况下为fp-pattern/ 目录，包含以JSON格式书写的五类规则。</p><pre tabindex=0><code>service.json    -- 应用层协议与服务识别规则
+device.json     -- 硬件设备识别规则
+os.json	        -- 操作系统识别规则
+midware.json    -- 软件平台与中间件规则
+threat.json     -- 异常流量识别规则
+</code></pre><p>lyprobe启动时的参数-K指定PCap的存储路径，默认存储路径配置为/data/cap/3。如下图所示：</p><p><img src=./ly_probe_cmd.png alt=lypcap></p><p>留存的PCap数据包文件如下图所示：</p><p><img src=./lypcap_0.png alt=lypcap0></p><h3 id=流影pcap留存的应用>流影PCap留存的应用 <a class=header-link href=#%e6%b5%81%e5%bd%b1pcap%e7%95%99%e5%ad%98%e7%9a%84%e5%ba%94%e7%94%a8><svg class="fill-current o-60 hover-accent-color-light" height="22" viewBox="0 0 24 24" width="22" xmlns="http://www.w3.org/2000/svg"><path d="M0 0h24v24H0z" fill="none"/><path d="M3.9 12c0-1.71 1.39-3.1 3.1-3.1h4V7H7c-2.76.0-5 2.24-5 5s2.24 5 5 5h4v-1.9H7c-1.71.0-3.1-1.39-3.1-3.1zM8 13h8v-2H8v2zm9-6h-4v1.9h4c1.71.0 3.1 1.39 3.1 3.1s-1.39 3.1-3.1 3.1h-4V17h4c2.76.0 5-2.24 5-5s-2.24-5-5-5z"/></svg></a></h3><p>PCap数据记录了原始网络流量完整信息，在流影中主要用于追溯和分析场景：</p><ul>
+<li>用于对包特征识别结果的验证与追溯</li><li>作为威胁行为告警的直接证据</li></ul><p>流影提供了PCap查询接口evidence；该接口以数据包微秒级时间戳为key进行查询，定位和解析数据包，获取数据包MAC、IP、PORT、协议、载荷、包十六进制源数据等信息。该接口的响应数据如下所示：</p><pre tabindex=0><code># 请求示例
+evidence?time=1687074364968817&amp;devid=3
+
+# 响应结果示例
+[
+    {
+		&#34;devid&#34;: 3,
+		&#34;time_sec&#34;: 1687074364,
+		&#34;time_usec&#34;: 968817,
+		&#34;caplen&#34;: 531,
+		&#34;pktlen&#34;: 531,
+		&#34;smac&#34;: &#34;B0-4F-13-E7-43-2E&#34;,
+		&#34;dmac&#34;: &#34;00-26-88-32-FA-CB&#34;,
+		&#34;sip&#34;: &#34;10.10.1.87&#34;,
+		&#34;sport&#34;: 62766,
+		&#34;dip&#34;: &#34;10.10.10.21&#34;,
+		&#34;dport&#34;: 21,
+		&#34;protocol&#34;: &#34;TCP&#34;,
+		&#34;payload&#34;: &#34;GET /faq.php?action=grouppermission&amp;gids[99]=%27&amp;gids[100][0]=)%20and%20(select%201%20from%20(select%20count(*),concat((select%20concat(user,0x3a,md5(1234),0x3a)%20from%20mysql.user%20limit%200,1),floor(rand(0)*2))x%20from%20information_schema.tables%20group%20by%20x)a)%23  HTTP/1.1..Host: 10.10.10.21:21..User-Agent: Mozilla/5.0 (Macintosh; Intel Mac OS X 10_14_3) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/12.0.3 Safari/605.1.15..Accept-Encoding: gzip....&#34;,
+		&#34;pkthdr&#34;: &#34;3cb68e6471c80e001302000013020000&#34;,
+		&#34;packet&#34;: &#34;00268832facbb04f13e7432e08004500020500004000400619740a0a01570a0a0a15f52e0015252a26790626eaf08018080ae9ce00000101080a7d09755b25614610474554202f6661712e7068703f616374696f6e3d67726f75707065726d697373696f6e26676964735b39395d3d25323726676964735b3130305d5b305d3d29253230616e642532302873656c6563742532303125323066726f6d2532302873656c656374253230636f756e74282a292c636f6e636174282873656c656374253230636f6e63617428757365722c307833612c6d64352831323334292c307833612925323066726f6d2532306d7973716c2e757365722532306c696d6974253230302c31292c666c6f6f722872616e642830292a3229297825323066726f6d253230696e666f726d6174696f6e5f736368656d612e7461626c657325323067726f75702532306279253230782961292532332020485454502f312e310d0a486f73743a2031302e31302e31302e32313a32310d0a557365722d4167656e743a204d6f7a696c6c612f352e3020284d6163696e746f73683b20496e74656c204d6163204f5320582031305f31345f3329204170706c655765624b69742f3630352e312e313520284b48544d4c2c206c696b65204765636b6f292056657273696f6e2f31322e302e33205361666172692f3630352e312e31350d0a4163636570742d456e636f64696e673a20677a69700d0a0d0a&#34;
+	}
+]
+</code></pre><p>该接口提供的PCap相关信息，被集成到前端界面之中，用于证据展示，便于用户查看、分析使用。例如，从演示环境中查看其中一条包特征识别告警：</p><p><img src=./lypcapa.png alt=lypcapa></p><p>点击最后一列的告警事件ID，进入告警详情页面，在下方的事件特征列表中，点击列表第一列的展开按钮，可以查看解析后的数据包信息， 如下图所示。</p><p><img src=./lypcapb.png alt=lypcapa></p><p>值得一提的是，可以将用户通过其他方法留存的Pcap数据导入流影进行分析，比如可以使用tcpreplay等流量回放工具，将PCap数据打到流影探针监听的网卡接口，这样就可以在流影界面看到对应的分析结果。开源版暂未在界面中提供该功能，商业版可以支持定制化开发集成。</p><h2 id=结语>结语 <a class=header-link href=#%e7%bb%93%e8%af%ad><svg class="fill-current o-60 hover-accent-color-light" height="22" viewBox="0 0 24 24" width="22" xmlns="http://www.w3.org/2000/svg"><path d="M0 0h24v24H0z" fill="none"/><path d="M3.9 12c0-1.71 1.39-3.1 3.1-3.1h4V7H7c-2.76.0-5 2.24-5 5s2.24 5 5 5h4v-1.9H7c-1.71.0-3.1-1.39-3.1-3.1zM8 13h8v-2H8v2zm9-6h-4v1.9h4c1.71.0 3.1 1.39 3.1 3.1s-1.39 3.1-3.1 3.1h-4V17h4c2.76.0 5-2.24 5-5s-2.24-5-5-5z"/></svg></a></h2><p>流影系统集成了网络流量PCap留存功能，流影并没有选择全流量留存，而是针对可疑网络行为流量进行了捕获留存，避免探针的大量资源消耗和性能损失。PCap数据记录了完整网络通信信息，是网络行为分析的最原始和直接的证据。流影的可视化界面中，对告警事件的PCap数据进行了解析展示，便于用户从直接的数据证据中发现威胁，让用户更容易看清和看懂网络通信中异常行为。</p><h2 id=相关信息>相关信息 <a class=header-link href=#%e7%9b%b8%e5%85%b3%e4%bf%a1%e6%81%af><svg class="fill-current o-60 hover-accent-color-light" height="22" viewBox="0 0 24 24" width="22" xmlns="http://www.w3.org/2000/svg"><path d="M0 0h24v24H0z" fill="none"/><path d="M3.9 12c0-1.71 1.39-3.1 3.1-3.1h4V7H7c-2.76.0-5 2.24-5 5s2.24 5 5 5h4v-1.9H7c-1.71.0-3.1-1.39-3.1-3.1zM8 13h8v-2H8v2zm9-6h-4v1.9h4c1.71.0 3.1 1.39 3.1 3.1s-1.39 3.1-3.1 3.1h-4V17h4c2.76.0 5-2.24 5-5s-2.24-5-5-5z"/></svg></a></h2><p>欢迎大家使用流影，更加欢迎参与项目贡献。前期已经发布一系列流影功能使用介绍的Blog，能够帮助大家理解流影的功能和应用场景。如果没有看过的话建议大家阅读，并在自己部署的实例或提供的演示Demo中进行操作熟悉。</p><p>流影广泛适用于各种网络安全防护场景，包括不限于入侵检测、威胁狩猎、攻防演练、网络证据留存、网络行为调查分析、态势感知等。如果有定制化商务需求，欢迎联系合作。</p><ul>
+<li><a href=https://abyssalfish-os.github.io/>流影项目主页</a></li><li>邮箱：opensource@abyssalfish.com.cn</li><li>扫码进入微信群
+<figure style="padding:.25rem;margin:2rem 0">
+<img style=max-width:100%;width:auto;height:auto src=/news/pcap/wx_group_hu87a2e382e09fcee856265bf5cb34cab9_30575_256x0_resize_catmullrom_3.png width=256 height=258>
+</figure></li></ul></div></div><div class="gray f6 mv6">
+Last Update: July 2, 2023 <br>
+<a href=https://github.com/abyssalfish-os/abyssalfish-os.github.io/edit/master/content/news/pcap/index.md class="f6 ph3 pv1 br2 dib tc ttu mv3 bg-primary-color white hover-bg-green link">Improve this page</a>
+</div></article></main><footer class="bg-primary-color-dark ph4-ns pt4 relative w-100" role=contentinfo>
+<div class="center flex-ns flex-wrap justify-between mw9 w-90">
+<div class="center pb3 pt4">
+<div class="b f3 light-gray mb3 nested-links tc">
+流影由 <a href=https://github.com/orgs/Abyssal-Fish-Technology class=link>深海鱼（北京）科技有限公司 </a>发起开源和维护，欢迎参与<br>
+</div><div class="center w4">
+<img src=/images/wx_public.jpg alt=关注微信公众号 width=100 height=100>
+</div><ul class="center f6 list ma0 mv4 pa0 tc">
+<li class="dib mr3"><a href=https://github.com/Abyssal-Fish-Technology/ly_vis class="dim link light-gray pv2">可视化交互分析(ly_vis)</a></li><li class="dib mr3"><a href=https://github.com/Abyssal-Fish-Technology/ly_server class="dim link light-gray pv2">管理引擎(ly_server)</a></li><li class=dib><a href=https://github.com/Abyssal-Fish-Technology/ly_analyser class="dim link light-gray pv2">分析引擎(ly_analyser)</a></li><li class=dib><a href=https://github.com/Abyssal-Fish-Technology/ly_probe class="dim link light-gray pv2"> &nbsp;&nbsp;&nbsp;&nbsp;流量探针(ly_probe)</a></li></ul><ul class="center f6 list ma0 mv3 pa0 tc"><li class="dib mr3"><a href=https://github.com/abyssalfish-os/liuying/issues/new class="dim link light-gray pv2">到 Github 发起 Issue</a></li><li class=dib><a href=https://gitter.im/abyssalfish-os/community class="dim link light-gray pv2">来 Gitter 沟通留言</a></li></ul></div></div><div class="bg-primary-color-dark bottom-0 left-0 right-0 dn-l fixed pb3 ph3 pt3 z-2"><div class="globalmenu mobilemenu pb1 dn">
+<ul class="list hidden dib ph0 scrolling-touch tc">
+<li class="tl dib ma0 hover-bg-black w-100">
+<a href=/news/ class="ttu f6 link primary-color-light overflow hover-white db brand-font ma0 w-100 pv3 ph4">
+新闻&博客
+</a>
+</li><li class="tl dib ma0 hover-bg-black w-100">
+<a href=/documentation/ class="ttu f6 link primary-color-light overflow hover-white db brand-font ma0 w-100 pv3 ph4">
+文档
+</a>
+</li><li class="tl dib ma0 hover-bg-black w-100">
+<a href=/downloads/ class="ttu f6 link primary-color-light overflow hover-white db brand-font ma0 w-100 pv3 ph4">
+下载
+</a>
+</li><li class="tl dib ma0 hover-bg-black w-100">
+<a href=/demo/ class="ttu f6 link primary-color-light overflow hover-white db brand-font ma0 w-100 pv3 ph4">
+Demo演示
+</a>
+</li><li class="tl dib ma0 hover-bg-black w-100">
+<a href=https://gitee.com/organizations/abyssalfish-os/projects class="ttu f6 link primary-color-light overflow hover-white db brand-font ma0 w-100 pv3 ph4">
+Gitee
+</a>
+</li><li class="tl dib ma0 hover-bg-black w-100">
+<a href=https://github.com/orgs/Abyssal-Fish-Technology/repositories class="ttu f6 link primary-color-light overflow hover-white db brand-font ma0 w-100 pv3 ph4">
+GitHub
+</a>
+</li><li class="tl dib ma0 hover-bg-black w-100">
+<a href=https://gitter.im/abyssalfish-os/community class="ttu f6 link primary-color-light overflow hover-white db brand-font ma0 w-100 pv3 ph4">
+讨论区
+</a>
+</li><li class="tl dib ma0 hover-bg-black w-100">
+<a href=https://space.bilibili.com/3493262893517732 class="ttu f6 link primary-color-light overflow hover-white db brand-font ma0 w-100 pv3 ph4">
+视频Video
+</a>
+</li></ul></div><div class="docsmenu mobilemenu pb1 dn">
+<ul class="list dib ph0 scrolling-touch tc">
+<li class="tl dib ma0 hover-bg-black w-100">
+<a href=/about/ class="ttu f6 link primary-color-light hover-white db brand-font mb1 ma0 w-100 pv2 ph4">
+关于流影
+</a>
+</li><li class="tl dib ma0 hover-bg-black w-100">
+<a href=/getting-started/ class="ttu f6 link primary-color-light hover-white db brand-font mb1 ma0 w-100 pv2 ph4">
+快速开始
+</a>
+</li><li class="tl dib ma0 hover-bg-black w-100">
+<a href=/installation/ class="ttu f6 link primary-color-light hover-white db brand-font mb1 ma0 w-100 pv2 ph4">
+编译安装
+</a>
+</li><li class="tl dib ma0 hover-bg-black w-100">
+<a href=/user-manual/ class="ttu f6 link primary-color-light hover-white db brand-font mb1 ma0 w-100 pv2 ph4">
+用户手册
+</a>
+</li><li class="tl dib ma0 hover-bg-black w-100">
+<a href=/other/ class="ttu f6 link primary-color-light hover-white db brand-font mb1 ma0 w-100 pv2 ph4">
+其它资料
+</a>
+</li><li class="tl dib ma0 hover-bg-black w-100">
+<a href=/demo/ class="ttu f6 link primary-color-light hover-white db brand-font mb1 ma0 w-100 pv2 ph4">
+演示Demo
+</a>
+</li><li class="tl dib ma0 hover-bg-black w-100 mb2 bb b--mid-gray">
+<a href=/contribute/ class="ttu f6 link primary-color-light hover-white db brand-font mb1 ma0 w-100 pv2 ph4">
+欢迎贡献
+</a>
+</li></ul></div><div class="flex dn-l justify-between">
+<button class="js-toggle flex-auto dib dn-l f6 tc db ph3 pv2 link mr2 white bg-primary-color-dark hover-bg-primary-color ba b--white-40 w-auto" data-target=.globalmenu>Menu</button>
+<button class="js-toggle flex-auto dib dn-l f6 tc db ph3 pv2 link white bg-primary-color-dark hover-bg-primary-color ba b--white-40 w-auto" data-target=.docsmenu>Docs Menu</button>
+</div></div></footer></body></html>
