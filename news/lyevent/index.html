@@ -1,0 +1,200 @@
+<!doctype html><html class=no-js lang="
+    zh-cn
+  
+  ">
+<head>
+<meta charset=utf-8>
+<link rel=preload href=https://abyssalfish-os.github.io/fonts/muli-latin-200.woff2 as=font type=font/woff2 crossorigin>
+<link rel=preload href=https://abyssalfish-os.github.io/fonts/muli-latin-400.woff2 as=font type=font/woff2 crossorigin>
+<link rel=preload href=https://abyssalfish-os.github.io/fonts/muli-latin-800.woff2 as=font type=font/woff2 crossorigin>
+<meta http-equiv=x-ua-compatible content="IE=edge">
+<title>
+流影: 流影之威胁行为告警
+</title><meta name=viewport content="width=device-width,minimum-scale=1">
+<meta name=generator content="Hugo 0.109.0">
+<meta name=robots content="index, follow">
+<link rel=stylesheet href=/output/css/app.min.631706eef190df8129d8f5b57c45caa8c431efd8e4148fbd17b354b607ce316a.css integrity="sha256-YxcG7vGQ34Ep2PW1fEXKqMQx79jkFI+9F7NUtgfOMWo=" crossorigin=anonymous>
+<meta name=description content="
+        流影分析引擎集成了多种异常网络行为检测模型，负责数据分析处理和离散事件检测，输出的数据最终聚合为安全事件，通过可视化界面呈现事件内容，并支持向用户发出告警通知。
+      
+      ">
+<script type=text/javascript src=/output/js/app.5a802739f9b2407f0d3a1f84a20731b6705a5a4df051c35686f22bd3aea90731.js crossorigin=anonymous defer></script>
+<script async defer src=https://buttons.github.io/buttons.js></script>
+<link rel=apple-touch-icon sizes=180x180 href=/apple-touch-icon.png>
+<link rel=icon type=image/png href=/favicon-32x32.png sizes=32x32>
+<link rel=icon type=image/png href=/favicon-16x16.png sizes=16x16>
+<link rel=manifest href=/manifest.json>
+<link rel=mask-icon href=/safari-pinned-tab.svg color=#0594cb>
+<meta name=theme-color content="#ffffff">
+<meta property="og:title" content="流影之威胁行为告警">
+<meta property="og:description" content="流影分析引擎集成了多种异常网络行为检测模型，负责数据分析处理和离散事件检测，输出的数据最终聚合为安全事件，通过可视化界面呈现事件内容，并支持向用户发出告警通知。">
+<meta property="og:type" content="article">
+<meta property="og:url" content="https://abyssalfish-os.github.io/news/lyevent/"><meta property="og:image" content="https://abyssalfish-os.github.io/news/lyevent/lyfeature.png"><meta property="article:section" content="news">
+<meta property="article:published_time" content="2023-07-27T00:00:00+08:00">
+<meta property="article:modified_time" content="2023-07-27T22:01:27+08:00">
+<meta itemprop=name content="流影之威胁行为告警">
+<meta itemprop=description content="流影分析引擎集成了多种异常网络行为检测模型，负责数据分析处理和离散事件检测，输出的数据最终聚合为安全事件，通过可视化界面呈现事件内容，并支持向用户发出告警通知。"><meta itemprop=datePublished content="2023-07-27T00:00:00+08:00">
+<meta itemprop=dateModified content="2023-07-27T22:01:27+08:00">
+<meta itemprop=wordCount content="1968"><meta itemprop=image content="https://abyssalfish-os.github.io/news/lyevent/lyfeature.png">
+<meta itemprop=keywords content>
+<script>var _hmt=_hmt||[];(function(){var e,t=document.createElement("script");t.src="https://hm.baidu.com/hm.js?20e14b502dcd423ae21f8119455786ab",e=document.getElementsByTagName("script")[0],e.parentNode.insertBefore(t,e)})()</script>
+</head><body class="ma0 sans-serif bg-primary-color-light
+production">
+<nav class="bg-primary-color-dark pv4 w-100" role=navigation>
+<div class="center flex-ns flex-wrap items-center justify-start mw9">
+<h1 class="dim f3 lh-solid ml0-ns mr0 mr4-l mv0 pl3 pl4-ns">
+<a href=https://abyssalfish-os.github.io/ class="link white">
+流影->FlowShadow
+</a>
+</h1><ul class="list ma0 pa0 dn dib-l" role=menu>
+<li class="f5 dib mr4" role=menuitem>
+<a href=/news/ class="dim link light-silver">
+新闻&博客
+</a>
+</li><li class="f5 dib mr4" role=menuitem>
+<a href=/documentation/ class="dim link light-silver">
+文档
+</a>
+</li><li class="f5 dib mr4" role=menuitem>
+<a href=/downloads/ class="dim link light-silver">
+下载
+</a>
+</li><li class="f5 dib mr4" role=menuitem>
+<a href=/demo/ class="dim link light-silver">
+Demo演示
+</a>
+</li><li class="f5 dib mr4" role=menuitem>
+<a href=https://gitee.com/organizations/abyssalfish-os/projects class="dim link light-silver">
+Gitee
+<span class=pl1><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="10" height="10" viewBox="0 0 32 32" class="fill-current v-base" aria-label="External Link"><path d="M25.152 16.576v5.696q0 2.144-1.504 3.648T20 27.424H5.152q-2.144.0-3.648-1.504t-1.504-3.648V7.424q0-2.112 1.504-3.616t3.648-1.536h12.576q.224.0.384.16t.16.416V4q0 .256-.16.416t-.384.16H5.152q-1.184.0-2.016.832t-.864 2.016v14.848q0 1.184.864 2.016t2.016.864H20q1.184.0 2.016-.864t.832-2.016v-5.696q0-.256.16-.416t.416-.16h1.152q.256.0.416.16t.16.416zM32 1.152v9.12q0 .48-.352.8t-.8.352-.8-.352l-3.136-3.136-11.648 11.648q-.16.192-.416.192t-.384-.192l-2.048-2.048q-.192-.16-.192-.384t.192-.416L24.064 5.088l-3.136-3.136q-.352-.352-.352-.8t.352-.8.8-.352h9.12q.48.0.8.352t.352.8z"/></svg>
+</span>
+</a>
+</li><li class="f5 dib mr4" role=menuitem>
+<a href=https://github.com/orgs/Abyssal-Fish-Technology/repositories class="dim link light-silver">
+GitHub
+<span class=pl1><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="10" height="10" viewBox="0 0 32 32" class="fill-current v-base" aria-label="External Link"><path d="M25.152 16.576v5.696q0 2.144-1.504 3.648T20 27.424H5.152q-2.144.0-3.648-1.504t-1.504-3.648V7.424q0-2.112 1.504-3.616t3.648-1.536h12.576q.224.0.384.16t.16.416V4q0 .256-.16.416t-.384.16H5.152q-1.184.0-2.016.832t-.864 2.016v14.848q0 1.184.864 2.016t2.016.864H20q1.184.0 2.016-.864t.832-2.016v-5.696q0-.256.16-.416t.416-.16h1.152q.256.0.416.16t.16.416zM32 1.152v9.12q0 .48-.352.8t-.8.352-.8-.352l-3.136-3.136-11.648 11.648q-.16.192-.416.192t-.384-.192l-2.048-2.048q-.192-.16-.192-.384t.192-.416L24.064 5.088l-3.136-3.136q-.352-.352-.352-.8t.352-.8.8-.352h9.12q.48.0.8.352t.352.8z"/></svg>
+</span>
+</a>
+</li><li class="f5 dib mr4" role=menuitem>
+<a href=https://gitter.im/abyssalfish-os/community class="dim link light-silver">
+讨论区
+<span class=pl1><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="10" height="10" viewBox="0 0 32 32" class="fill-current v-base" aria-label="External Link"><path d="M25.152 16.576v5.696q0 2.144-1.504 3.648T20 27.424H5.152q-2.144.0-3.648-1.504t-1.504-3.648V7.424q0-2.112 1.504-3.616t3.648-1.536h12.576q.224.0.384.16t.16.416V4q0 .256-.16.416t-.384.16H5.152q-1.184.0-2.016.832t-.864 2.016v14.848q0 1.184.864 2.016t2.016.864H20q1.184.0 2.016-.864t.832-2.016v-5.696q0-.256.16-.416t.416-.16h1.152q.256.0.416.16t.16.416zM32 1.152v9.12q0 .48-.352.8t-.8.352-.8-.352l-3.136-3.136-11.648 11.648q-.16.192-.416.192t-.384-.192l-2.048-2.048q-.192-.16-.192-.384t.192-.416L24.064 5.088l-3.136-3.136q-.352-.352-.352-.8t.352-.8.8-.352h9.12q.48.0.8.352t.352.8z"/></svg>
+</span>
+</a>
+</li><li class="f5 dib mr4" role=menuitem>
+<a href=https://space.bilibili.com/3493262893517732 class="dim link light-silver">
+视频Video
+<span class=pl1><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="10" height="10" viewBox="0 0 32 32" class="fill-current v-base" aria-label="External Link"><path d="M25.152 16.576v5.696q0 2.144-1.504 3.648T20 27.424H5.152q-2.144.0-3.648-1.504t-1.504-3.648V7.424q0-2.112 1.504-3.616t3.648-1.536h12.576q.224.0.384.16t.16.416V4q0 .256-.16.416t-.384.16H5.152q-1.184.0-2.016.832t-.864 2.016v14.848q0 1.184.864 2.016t2.016.864H20q1.184.0 2.016-.864t.832-2.016v-5.696q0-.256.16-.416t.416-.16h1.152q.256.0.416.16t.16.416zM32 1.152v9.12q0 .48-.352.8t-.8.352-.8-.352l-3.136-3.136-11.648 11.648q-.16.192-.416.192t-.384-.192l-2.048-2.048q-.192-.16-.192-.384t.192-.416L24.064 5.088l-3.136-3.136q-.352-.352-.352-.8t.352-.8.8-.352h9.12q.48.0.8.352t.352.8z"/></svg>
+</span>
+</a>
+</li></ul><div class="db dib-ns pl3"><form id=site-search-form role=search>
+<fieldset class="bn ma0 pa0">
+<label class=clip for=search-input>Search</label>
+<input type=text id=search-input class="needs-js dn bn f5 lh-solid mt3 mt0-ns pl4 pv2 w5 white" placeholder="Welcome to FlowShadow" name=search-input style=background-color:rgba(255,255,255,0)>
+</fieldset></form></div></div></nav><main role=main class="content-with-sidebar min-vh-100 pb7 pb0-ns">
+<article class="cf ph4 pv3 pv5-ns">
+<header class="flex-none w-100 pb3">
+<a href=/categories/categories class="f6 fw8 mb0 link mid-gray dim mr3">
+CATEGORIES
+</a>
+<h1 class="lh-title fw9 mb7 mv0 pt3">
+<a href=/news/lyevent/ class="link primary-color dim">
+流影之威胁行为告警
+</a>
+</h1></header><div class=flex-l>
+<aside class="mid-gray fn w-100 w-25-l">
+<h2 class="f3 lh-title">
+流影分析引擎集成了多种异常网络行为检测模型，负责数据分析处理和离散事件检测，输出的数据最终聚合为安全事件，通过可视化界面呈现事件内容，并支持向用户发出告警通知。
+</h2><time class="f6 mt2 db ttu tracked" datetime=2023-07-27T00:00:00+08:00>
+July 27, 2023
+</time>
+<div class="nested-links mt4">
+<div date-pref>
+<a href=https://abyssalfish-os.github.io/news/pcap/ class="dib f6 pr1 hover-bg-light-gray br-100" title=流影之网络流量留存><svg class="fill-current" height="30" viewBox="0 0 24 24" width="30" xmlns="http://www.w3.org/2000/svg"><path d="M10 6 8.59 7.41 13.17 12l-4.58 4.59L10 18l6-6z"/><path d="M0 0h24v24H0z" fill="none"/></svg>
+</a>
+</div></div></aside><div class="fn pl5-l pt3 mid-gray w-100 w-two-third-l sans-serif nested-copy-line-height no-underline nested-links nested-img nested-copy-seperator nested-blockquote measure-wide-wd">
+<h2 id=前言>前言 <a class=header-link href=#%e5%89%8d%e8%a8%80><svg class="fill-current o-60 hover-accent-color-light" height="22" viewBox="0 0 24 24" width="22" xmlns="http://www.w3.org/2000/svg"><path d="M0 0h24v24H0z" fill="none"/><path d="M3.9 12c0-1.71 1.39-3.1 3.1-3.1h4V7H7c-2.76.0-5 2.24-5 5s2.24 5 5 5h4v-1.9H7c-1.71.0-3.1-1.39-3.1-3.1zM8 13h8v-2H8v2zm9-6h-4v1.9h4c1.71.0 3.1 1.39 3.1 3.1s-1.39 3.1-3.1 3.1h-4V17h4c2.76.0 5-2.24 5-5s-2.24-5-5-5z"/></svg></a></h2><p>网络流量是网络异常检测的基础，流影系统从数据采集到分析和呈现过程中，产出了丰富的网络特征数据。前面已经介绍了流影的PCAP证据留存和NetFlow数据格式及采集过程，本文是关于流影中相关数据类型介绍系列文章的第三篇，也是最后总结篇，主要介绍流影中安全告警相关的事件数据类型，如何在流影界面中查看分析各种不同类型的告警事件。</p><h2 id=告警事件数据简介>告警事件数据简介 <a class=header-link href=#%e5%91%8a%e8%ad%a6%e4%ba%8b%e4%bb%b6%e6%95%b0%e6%8d%ae%e7%ae%80%e4%bb%8b><svg class="fill-current o-60 hover-accent-color-light" height="22" viewBox="0 0 24 24" width="22" xmlns="http://www.w3.org/2000/svg"><path d="M0 0h24v24H0z" fill="none"/><path d="M3.9 12c0-1.71 1.39-3.1 3.1-3.1h4V7H7c-2.76.0-5 2.24-5 5s2.24 5 5 5h4v-1.9H7c-1.71.0-3.1-1.39-3.1-3.1zM8 13h8v-2H8v2zm9-6h-4v1.9h4c1.71.0 3.1 1.39 3.1 3.1s-1.39 3.1-3.1 3.1h-4V17h4c2.76.0 5-2.24 5-5s-2.24-5-5-5z"/></svg></a></h2><p>流影数据处理和流转呈现明显的分层形式，分别对应了流影的四个功能模块，从下到上经过各个模块的处理，数据量不断减少的趋势，如下图所示。
+<img src=./lydata.png alt=lydata></p><p>位于最下层的NetFLow和PCAP数据，由流影探针ly_probe采集，其中NetFlow数据通过UDP分发传输，被接收后存为本地文件；PCAP直接存为本地文件。这方面内容请参见前面发布的<a href=https://abyssalfish-os.github.io/news/netflow/>NetFlow应用</a>和<a href=https://abyssalfish-os.github.io/news/pcap/>PCAP留存</a>两篇文章。</p><p>ly_analyser是流影的负责数据分析处理和离散事件检测，输入为带自定义扩展字段的NetFlow v9格式数据，经过特征提取、各种异常行为模型检测，输出会话特征数据和离散威胁事件。这些数据存放于分析节点的本地文件系统和嵌入式数据库Unqlite中，供上层管理引擎拉取使用。分析引擎输出的会话特征数据，主要包括基本五元组、TCP FLAG、数据量特征、HTTP头部信息、DNS解析信息、ICMP报文载荷、资产指纹、威胁标记等信息；分析引擎集成了各种威胁行为检测模型，包括统计类模型、威胁情报匹配模型、机器学习模型和包检测四大类，这些模型输出各种离散事件，包括扫描、挖矿、命令执行、隧道通信、服务外联、各种注入等威胁行为的离散事件。分析节点目录/Agent/data/db存储了通用会话特征；目录/Agent/data/eventdb 存储事件相关会话特征；/Agent/data/event存储了离散事件数据，如下图所示：</p><p><img src=./lyeventfile.png alt=lyeventfile></p><p>查看其中的/Agent/data/eventdb目录，数据文件形式如下图所示：</p><p><img src=./lyfeature.png alt=lyfeature></p><p>ly_server管理引擎从分析引擎定时拉取离散事件和会话特征数据，不同的事件按照相应的关键字key进行关联聚合，最终生成告警事件及其会话特征数据。将离散事件、会话特征、聚合事件存入关系数据库MySQL(MariaDB)之中，数据库名称为server，数据表<code>t_event_data</code>存放离散事件，<code>t_event_data_aggre</code>存放聚合事件，管理引擎提供API数据接口给可视化界面调用，这也是管理节点被称为server的主要原因。进入数据库后台可以查看其数据表和结构，如下图所示。</p><p><img src=./lyeventdb.png alt=lyeventdb></p><p>ly_vis可视化界面的事件区域集中展示了事件告警信息，包括统计分布趋势和分类告警事件列表，对威胁事件的发生、发展和原因进行了详情页展示，根据不同事件类型，展示不同信息，比如DNS隧道、域名情报等告警，额外展示域名信息；扫描事件告警，聚合显示被扫描目标；通过不同事件配置的威胁程度，标记告警级别。通过告警的最近时间信息，标记该事件是否活跃。事件详情展示告警行为详细时序变化、TCP主动握手时序分布、事件相关会话特征等方面信息。以易于理解的方式进行了解读式的可视化呈现，方便用户分析确认，并提供事件报告查看和下载，便于生成情报进行共享。</p><h2 id=告警事件可视化>告警事件可视化 <a class=header-link href=#%e5%91%8a%e8%ad%a6%e4%ba%8b%e4%bb%b6%e5%8f%af%e8%a7%86%e5%8c%96><svg class="fill-current o-60 hover-accent-color-light" height="22" viewBox="0 0 24 24" width="22" xmlns="http://www.w3.org/2000/svg"><path d="M0 0h24v24H0z" fill="none"/><path d="M3.9 12c0-1.71 1.39-3.1 3.1-3.1h4V7H7c-2.76.0-5 2.24-5 5s2.24 5 5 5h4v-1.9H7c-1.71.0-3.1-1.39-3.1-3.1zM8 13h8v-2H8v2zm9-6h-4v1.9h4c1.71.0 3.1 1.39 3.1 3.1s-1.39 3.1-3.1 3.1h-4V17h4c2.76.0 5-2.24 5-5s-2.24-5-5-5z"/></svg></a></h2><p>流影的总览界面显示了威胁告警态势，支持时间范围、告警类型的组合过滤，提供Top受影响目标态势、告警时间态势、Top威胁来源、工作台视图区域。</p><p><img src=./lyov.png alt=overview></p><p>通过导航栏的“事件”主菜单可以进入事件告警界面，上面为告警事件筛选区，中间区域是事件多维度统计分布情况，下部为告警事件列表。</p><p><img src=./lyevent.png alt></p><p>之前发布的关于流影使用的相关文章包含了各类告警事件的查看和可视化分析介绍。这里简单进行总结整理，不再赘述。文章列表如下：</p><ul>
+<li><a href=https://abyssalfish-os.github.io/news/netscan/>流影之网络扫描行为发现</a></li><li><a href=https://abyssalfish-os.github.io/news/ti/>流影之威胁情报应用</a></li><li><a href=https://abyssalfish-os.github.io/news/mining/>流影之挖矿检测</a></li><li><a href=https://abyssalfish-os.github.io/news/dga/>流影之DGA域名识别检测</a></li><li><a href=https://abyssalfish-os.github.io/news/dpi/>流影之深度包检测（DPI）识别恶意网络行为</a></li><li><a href=https://abyssalfish-os.github.io/news/tunnel/>流影之隐蔽隧道通讯行为检测，预警C2和数据窃取</a></li><li><a href=https://abyssalfish-os.github.io/news/netflow/>流影之NetFlow应用</a></li><li><a href=https://abyssalfish-os.github.io/news/pcap/>流影之网络流量留存</a></li></ul><p>以上文章涵盖了流影支持的典型威胁告警的查看分析，并介绍了相关技术背景和具体实现路线图，能够帮助读者深入理解告警事件的形成过程，同时掌握相应事件的查看和分析方法。如果没有看过的话，建议选择感兴趣的章节阅读了解。</p><h2 id=结语>结语 <a class=header-link href=#%e7%bb%93%e8%af%ad><svg class="fill-current o-60 hover-accent-color-light" height="22" viewBox="0 0 24 24" width="22" xmlns="http://www.w3.org/2000/svg"><path d="M0 0h24v24H0z" fill="none"/><path d="M3.9 12c0-1.71 1.39-3.1 3.1-3.1h4V7H7c-2.76.0-5 2.24-5 5s2.24 5 5 5h4v-1.9H7c-1.71.0-3.1-1.39-3.1-3.1zM8 13h8v-2H8v2zm9-6h-4v1.9h4c1.71.0 3.1 1.39 3.1 3.1s-1.39 3.1-3.1 3.1h-4V17h4c2.76.0 5-2.24 5-5s-2.24-5-5-5z"/></svg></a></h2><p>流影系统集成了对网络威胁行为的告警功能，数据经过分层处理，最终形成精简的聚合事件数据。流影的可视化界面中，对各种告警事件及其相关会话特征进行了可视化展示，让用户更容易看清和看懂网络通信中异常行为，及时做好响应处理。</p><h2 id=相关信息>相关信息 <a class=header-link href=#%e7%9b%b8%e5%85%b3%e4%bf%a1%e6%81%af><svg class="fill-current o-60 hover-accent-color-light" height="22" viewBox="0 0 24 24" width="22" xmlns="http://www.w3.org/2000/svg"><path d="M0 0h24v24H0z" fill="none"/><path d="M3.9 12c0-1.71 1.39-3.1 3.1-3.1h4V7H7c-2.76.0-5 2.24-5 5s2.24 5 5 5h4v-1.9H7c-1.71.0-3.1-1.39-3.1-3.1zM8 13h8v-2H8v2zm9-6h-4v1.9h4c1.71.0 3.1 1.39 3.1 3.1s-1.39 3.1-3.1 3.1h-4V17h4c2.76.0 5-2.24 5-5s-2.24-5-5-5z"/></svg></a></h2><p>欢迎大家使用流影和参与项目贡献。流影广泛适用于各种网络安全防护场景，包括不限于入侵检测、威胁狩猎、攻防演练、网络证据留存、网络行为调查分析、态势感知等。如果有定制化商务需求，欢迎联系合作。</p><ul>
+<li><a href=https://abyssalfish-os.github.io/>流影项目主页</a></li><li>邮箱：opensource@abyssalfish.com.cn</li><li>扫码进入微信群
+<figure style="padding:.25rem;margin:2rem 0">
+<img style=max-width:100%;width:auto;height:auto src=/news/lyevent/wx_group_hu87a2e382e09fcee856265bf5cb34cab9_30575_256x0_resize_catmullrom_3.png width=256 height=258>
+</figure></li></ul></div></div><div class="gray f6 mv6">
+Last Update: July 27, 2023 <br>
+<a href=https://github.com/abyssalfish-os/abyssalfish-os.github.io/edit/master/content/news/lyevent/index.md class="f6 ph3 pv1 br2 dib tc ttu mv3 bg-primary-color white hover-bg-green link">Improve this page</a>
+</div></article></main><footer class="bg-primary-color-dark ph4-ns pt4 relative w-100" role=contentinfo>
+<div class="center flex-ns flex-wrap justify-between mw9 w-90">
+<div class="center pb3 pt4">
+<div class="b f3 light-gray mb3 nested-links tc">
+流影由 <a href=https://github.com/orgs/Abyssal-Fish-Technology class=link>深海鱼（北京）科技有限公司 </a>发起开源和维护，欢迎参与<br>
+</div><div class="center w4">
+<img src=/images/wx_public.jpg alt=关注微信公众号 width=100 height=100>
+</div><ul class="center f6 list ma0 mv4 pa0 tc">
+<li class="dib mr3"><a href=https://github.com/Abyssal-Fish-Technology/ly_vis class="dim link light-gray pv2">可视化交互分析(ly_vis)</a></li><li class="dib mr3"><a href=https://github.com/Abyssal-Fish-Technology/ly_server class="dim link light-gray pv2">管理引擎(ly_server)</a></li><li class=dib><a href=https://github.com/Abyssal-Fish-Technology/ly_analyser class="dim link light-gray pv2">分析引擎(ly_analyser)</a></li><li class=dib><a href=https://github.com/Abyssal-Fish-Technology/ly_probe class="dim link light-gray pv2"> &nbsp;&nbsp;&nbsp;&nbsp;流量探针(ly_probe)</a></li></ul><ul class="center f6 list ma0 mv3 pa0 tc"><li class="dib mr3"><a href=https://github.com/abyssalfish-os/liuying/issues/new class="dim link light-gray pv2">到 Github 发起 Issue</a></li><li class=dib><a href=https://gitter.im/abyssalfish-os/community class="dim link light-gray pv2">来 Gitter 沟通留言</a></li></ul></div></div><div class="bg-primary-color-dark bottom-0 left-0 right-0 dn-l fixed pb3 ph3 pt3 z-2"><div class="globalmenu mobilemenu pb1 dn">
+<ul class="list hidden dib ph0 scrolling-touch tc">
+<li class="tl dib ma0 hover-bg-black w-100">
+<a href=/news/ class="ttu f6 link primary-color-light overflow hover-white db brand-font ma0 w-100 pv3 ph4">
+新闻&博客
+</a>
+</li><li class="tl dib ma0 hover-bg-black w-100">
+<a href=/documentation/ class="ttu f6 link primary-color-light overflow hover-white db brand-font ma0 w-100 pv3 ph4">
+文档
+</a>
+</li><li class="tl dib ma0 hover-bg-black w-100">
+<a href=/downloads/ class="ttu f6 link primary-color-light overflow hover-white db brand-font ma0 w-100 pv3 ph4">
+下载
+</a>
+</li><li class="tl dib ma0 hover-bg-black w-100">
+<a href=/demo/ class="ttu f6 link primary-color-light overflow hover-white db brand-font ma0 w-100 pv3 ph4">
+Demo演示
+</a>
+</li><li class="tl dib ma0 hover-bg-black w-100">
+<a href=https://gitee.com/organizations/abyssalfish-os/projects class="ttu f6 link primary-color-light overflow hover-white db brand-font ma0 w-100 pv3 ph4">
+Gitee
+</a>
+</li><li class="tl dib ma0 hover-bg-black w-100">
+<a href=https://github.com/orgs/Abyssal-Fish-Technology/repositories class="ttu f6 link primary-color-light overflow hover-white db brand-font ma0 w-100 pv3 ph4">
+GitHub
+</a>
+</li><li class="tl dib ma0 hover-bg-black w-100">
+<a href=https://gitter.im/abyssalfish-os/community class="ttu f6 link primary-color-light overflow hover-white db brand-font ma0 w-100 pv3 ph4">
+讨论区
+</a>
+</li><li class="tl dib ma0 hover-bg-black w-100">
+<a href=https://space.bilibili.com/3493262893517732 class="ttu f6 link primary-color-light overflow hover-white db brand-font ma0 w-100 pv3 ph4">
+视频Video
+</a>
+</li></ul></div><div class="docsmenu mobilemenu pb1 dn">
+<ul class="list dib ph0 scrolling-touch tc">
+<li class="tl dib ma0 hover-bg-black w-100">
+<a href=/about/ class="ttu f6 link primary-color-light hover-white db brand-font mb1 ma0 w-100 pv2 ph4">
+关于流影
+</a>
+</li><li class="tl dib ma0 hover-bg-black w-100">
+<a href=/getting-started/ class="ttu f6 link primary-color-light hover-white db brand-font mb1 ma0 w-100 pv2 ph4">
+快速开始
+</a>
+</li><li class="tl dib ma0 hover-bg-black w-100">
+<a href=/installation/ class="ttu f6 link primary-color-light hover-white db brand-font mb1 ma0 w-100 pv2 ph4">
+编译安装
+</a>
+</li><li class="tl dib ma0 hover-bg-black w-100">
+<a href=/user-manual/ class="ttu f6 link primary-color-light hover-white db brand-font mb1 ma0 w-100 pv2 ph4">
+用户手册
+</a>
+</li><li class="tl dib ma0 hover-bg-black w-100">
+<a href=/other/ class="ttu f6 link primary-color-light hover-white db brand-font mb1 ma0 w-100 pv2 ph4">
+其它资料
+</a>
+</li><li class="tl dib ma0 hover-bg-black w-100">
+<a href=/demo/ class="ttu f6 link primary-color-light hover-white db brand-font mb1 ma0 w-100 pv2 ph4">
+演示Demo
+</a>
+</li><li class="tl dib ma0 hover-bg-black w-100 mb2 bb b--mid-gray">
+<a href=/contribute/ class="ttu f6 link primary-color-light hover-white db brand-font mb1 ma0 w-100 pv2 ph4">
+欢迎贡献
+</a>
+</li></ul></div><div class="flex dn-l justify-between">
+<button class="js-toggle flex-auto dib dn-l f6 tc db ph3 pv2 link mr2 white bg-primary-color-dark hover-bg-primary-color ba b--white-40 w-auto" data-target=.globalmenu>Menu</button>
+<button class="js-toggle flex-auto dib dn-l f6 tc db ph3 pv2 link white bg-primary-color-dark hover-bg-primary-color ba b--white-40 w-auto" data-target=.docsmenu>Docs Menu</button>
+</div></div></footer></body></html>
