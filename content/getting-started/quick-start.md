@@ -22,10 +22,26 @@ isCJKLanguage: true
 2. 部署架构
 3. 简单使用
 
-## Realse安装部署教学视频
-{{<bili "https://www.bilibili.com/video/BV16k4y1Y7VW" >}}
+## CentOS7下一键安装
 
-## 准备
+#### 安装包下载地址
+- [百度网盘：流影完整安装包](https://pan.baidu.com/s/1cIt2Rl6d1wdlq_nWKadDtg)   提取码 AFOS
+- [夸克网盘：流影完整安装包](https://pan.quark.cn/s/cc38aa72a833)  提取码：5pSs
+
+#### 安装教学视频
+- [单节点一键部署安装](https://www.bilibili.com/video/BV1Eh4y147bn)
+- [多节点分布式部署](https://www.bilibili.com/video/BV1zu411W7un)
+
+
+## 流影Vmware虚拟机安装
+
+#### 镜像下载
+- [百度网盘：流影VM镜像](https://pan.baidu.com/s/1yZ2YB9OyX8u5YePh3wV1gg)  提取码：AFOS
+- [夸克网盘：流影VM镜像](https://pan.quark.cn/s/0f1574d2f5f8)  提取码：gzyc
+- 虚拟机用户名root，密码ShyLiuying
+
+
+## 安装环境说明
 
 在开始部署之前，您必须准备好部署条件:
 
@@ -50,7 +66,7 @@ isCJKLanguage: true
 * 分布式部署：多流量采集节点，多分析节点，一个管理节点和可视化节点，适合大流量情况
 
 
-## 探针使用
+## 探针使用说明
 
 **流影探针 ly_probe** 是一款用于解析网络流量、提取关键信息的探针软件，源自nprobe早期5.x开源版本，
 是一款高性能流量采集软件。ly_probe基于nprobe5.x进行了定制化开发，能够将流量或pcap文件解析后，提取并匹配指定数据内容后，以netflow格式传输至采集器。
@@ -69,7 +85,7 @@ isCJKLanguage: true
 | 内部服务器-内部服务器 | 危险     | 关注服务器间横向攻击行为，检测失陷服务器与服务器所受到的威胁。 |
 
 
-#### ly_probe 安装
+#### ly_probe 安装说明
 您可以从项目地址下载realse进行安装
 * [Github: ly_probe release](https://github.com/Abyssal-Fish-Technology/ly_probe/releases/)
 * [Gitee: ly_probe release](https://gitee.com/abyssalfish-os/ly_probe/releases/)
@@ -197,7 +213,7 @@ service.json	-- 应用层协议与服务识别规则
 # lyprobe -T "%IN_SRC_MAC %OUT_DST_MAC %IPV4_SRC_ADDR %IPV4_DST_ADDR %PROTOCOL %L4_SRC_PORT %L4_DST_PORT %TCP_FLAGS %SRC_TOS %IN_PKTS %IN_BYTES  %ICMP_DATA %ICMP_SEQ_NUM %ICMP_PAYLOAD_LEN" -n 127.0.0.1:9995 -e 0 -w 32768 -G -i eth0
 ```
 
-## 分析引擎使用
+## 分析引擎上手使用
 ly_analyser是流影的网络行为分析引擎，读取netflow v9格式的数据作为输入，运行各种威胁行为检测模型，产出威胁事件，并留存相关特征数据用于后续取证分析。包括扫描、DGA、DNS隧道、ICMP隧道、服务器外联、 挖矿、各种注入等威胁行为，涵盖机器学习、威胁情报、数据包检测、经验模型四种识别方式。
 
 #### ly_analyser 安装
@@ -267,7 +283,7 @@ systemctl restart httpd
 /Agent/bin/nfcapd -w -D -l /data/flow/3 -p 9995
 ```
 
-## 管理引擎使用
+## 管理引擎上手使用
 ly_server是流影的管理引擎，用于聚合分析引擎产出的威胁事件、数据节点管理、用户管理、配置管理、数据查询等。
 
 #### ly_server 节点安装
@@ -382,7 +398,7 @@ systemctl  restart  mariadb
 */5 * * * * /Server/bin/gen_event
 ```
 
-## 可视化分析引擎使用
+## 可视化分析引擎使用上手
 ly_vis是流影的前端可视化分析引擎，采用react框架、h5+js、d3.js，图表丰富，简洁易用。
 
 #### ly_vis 节点安装
