@@ -29,14 +29,14 @@
 <meta property="og:title" content="常见问题">
 <meta property="og:description" content="安装、使用中问题与解答.">
 <meta property="og:type" content="article">
-<meta property="og:url" content="https://abyssalfish-os.github.io/other/faq/"><meta property="og:image" content="https://abyssalfish-os.github.io/opengraph/gohugoio-card-base-1_huf001e7df4fd9c00c4355abac7d4ca455_242906_filter_15501365026512291743.png"><meta property="article:section" content="other">
+<meta property="og:url" content="https://abyssalfish-os.github.io/qa/"><meta property="og:image" content="https://abyssalfish-os.github.io/opengraph/gohugoio-card-base-1_huf001e7df4fd9c00c4355abac7d4ca455_242906_filter_15501365026512291743.png"><meta property="article:section" content>
 <meta property="article:published_time" content="2023-03-20T00:00:00+08:00">
-<meta property="article:modified_time" content="2023-06-16T22:04:59+08:00">
+<meta property="article:modified_time" content="2023-08-16T21:47:00+08:00">
 <meta itemprop=name content="常见问题">
 <meta itemprop=description content="安装、使用中问题与解答."><meta itemprop=datePublished content="2023-03-20T00:00:00+08:00">
-<meta itemprop=dateModified content="2023-06-16T22:04:59+08:00">
-<meta itemprop=wordCount content="1715">
-<meta itemprop=keywords content>
+<meta itemprop=dateModified content="2023-08-16T21:47:00+08:00">
+<meta itemprop=wordCount content="1802">
+<meta itemprop=keywords content="demo,">
 <script>var _hmt=_hmt||[];(function(){var e,t=document.createElement("script");t.src="https://hm.baidu.com/hm.js?20e14b502dcd423ae21f8119455786ab",e=document.getElementsByTagName("script")[0],e.parentNode.insertBefore(t,e)})()</script>
 </head><body class="ma0 sans-serif bg-primary-color-light
 production">
@@ -96,12 +96,10 @@ GitHub
 <div class=flex-l>
 <div class="order-2 w-100 w-20-l ph5-m ph0-l mb4 sticky">
 <aside class="fixed-lTK mw5-l right-0 f6 bl-l b--moon-gray pv4 pv0-ns ph4-l nested-list-reset nested-links nested-copy-line-height">
-<p class=b>What's on this Page</p><nav id=TableOfContents>
-<ul>
-<li><a href=#q-支持哪些部署方式>Q: 支持哪些部署方式?</a></li><li><a href=#q-各类型功能节点部署方式>Q: 各类型功能节点部署方式?</a></li><li><a href=#q-如何测试流量数据包>Q: 如何测试流量数据包?</a></li><li><a href=#q-如何测试系统数据流转正常>Q: 如何测试系统数据流转正常?</a></li><li><a href=#q-安装部署后发现数据写入失败的问题>Q: 安装部署后，发现数据写入失败的问题。</a></li><li><a href=#q-如何配置两个探针>Q: 如何配置两个探针？</a></li><li><a href=#q-流影安装和使用中是否需要联网>Q: 流影安装和使用中是否需要联网？</a></li><li><a href=#q-自定义规则的添加有几种途经>Q: 自定义规则的添加有几种途经？</a></li><li><a href=#q-威胁情报ioc检测配置文件位置>Q: 威胁情报IOC检测配置文件位置？</a></li></ul></nav><div date-pref>
-<a href=https://abyssalfish-os.github.io/other/development/ class="dib f6 pl1 hover-bg-light-gray br-100" title="ESXi环境流量镜像接入说明 "><svg class="fill-current" height="30" viewBox="0 0 24 24" width="30" xmlns="http://www.w3.org/2000/svg"><path d="M15.41 7.41 14 6l-6 6 6 6 1.41-1.41L10.83 12z"/><path d="M0 0h24v24H0z" fill="none"/></svg>
+<div date-pref>
+<a href=https://abyssalfish-os.github.io/documentation/ class="dib f6 pl1 hover-bg-light-gray br-100" title="流影相关文档 "><svg class="fill-current" height="30" viewBox="0 0 24 24" width="30" xmlns="http://www.w3.org/2000/svg"><path d="M15.41 7.41 14 6l-6 6 6 6 1.41-1.41L10.83 12z"/><path d="M0 0h24v24H0z" fill="none"/></svg>
 </a>
-<a href=https://abyssalfish-os.github.io/other/qalist/ class="dib f6 pr1 hover-bg-light-gray br-100" title=功能列表><svg class="fill-current" height="30" viewBox="0 0 24 24" width="30" xmlns="http://www.w3.org/2000/svg"><path d="M10 6 8.59 7.41 13.17 12l-4.58 4.59L10 18l6-6z"/><path d="M0 0h24v24H0z" fill="none"/></svg>
+<a href=https://abyssalfish-os.github.io/downloads/ class="dib f6 pr1 hover-bg-light-gray br-100" title=相关下载><svg class="fill-current" height="30" viewBox="0 0 24 24" width="30" xmlns="http://www.w3.org/2000/svg"><path d="M10 6 8.59 7.41 13.17 12l-4.58 4.59L10 18l6-6z"/><path d="M0 0h24v24H0z" fill="none"/></svg>
 </a>
 </div></aside></div><div class="order-1 w-60-l mw7 ph0 ph5-ns mid-gray nested-copy-line-height no-underline nested-links nested-img nested-copy-seperator nested-blockquote mt0-ns" style=flex-grow:1>
 <div class="documentation-copy center measure-wide-wd">
@@ -120,8 +118,10 @@ DEPLOY
 <aside class="admonition note">
 <div class=note-icon>
 </div><div class=admonition-content><p><strong>注意:</strong> 本问题列表来自于大家的使用反馈，会不断完善更新。</p></div></aside><h2 id=q-支持哪些部署方式>Q: 支持哪些部署方式? <a class=header-link href=#q-%e6%94%af%e6%8c%81%e5%93%aa%e4%ba%9b%e9%83%a8%e7%bd%b2%e6%96%b9%e5%bc%8f><svg class="fill-current o-60 hover-accent-color-light" height="22" viewBox="0 0 24 24" width="22" xmlns="http://www.w3.org/2000/svg"><path d="M0 0h24v24H0z" fill="none"/><path d="M3.9 12c0-1.71 1.39-3.1 3.1-3.1h4V7H7c-2.76.0-5 2.24-5 5s2.24 5 5 5h4v-1.9H7c-1.71.0-3.1-1.39-3.1-3.1zM8 13h8v-2H8v2zm9-6h-4v1.9h4c1.71.0 3.1 1.39 3.1 3.1s-1.39 3.1-3.1 3.1h-4V17h4c2.76.0 5-2.24 5-5s-2.24-5-5-5z"/></svg></a></h2><ul>
-<li>支持从源码进行<a href=https://abyssalfish-os.github.io/installation/>编译安装</a>。</li><li>支持Release发行版的安装部署（提供了X86_64下CentOS7下的Release）。</li><li>支持虚拟机镜像部署（提供了<a href=https://abyssalfish-os.github.io/downloads/>vmware虚拟镜像</a>)</li></ul><h2 id=q-各类型功能节点部署方式>Q: 各类型功能节点部署方式? <a class=header-link href=#q-%e5%90%84%e7%b1%bb%e5%9e%8b%e5%8a%9f%e8%83%bd%e8%8a%82%e7%82%b9%e9%83%a8%e7%bd%b2%e6%96%b9%e5%bc%8f><svg class="fill-current o-60 hover-accent-color-light" height="22" viewBox="0 0 24 24" width="22" xmlns="http://www.w3.org/2000/svg"><path d="M0 0h24v24H0z" fill="none"/><path d="M3.9 12c0-1.71 1.39-3.1 3.1-3.1h4V7H7c-2.76.0-5 2.24-5 5s2.24 5 5 5h4v-1.9H7c-1.71.0-3.1-1.39-3.1-3.1zM8 13h8v-2H8v2zm9-6h-4v1.9h4c1.71.0 3.1 1.39 3.1 3.1s-1.39 3.1-3.1 3.1h-4V17h4c2.76.0 5-2.24 5-5s-2.24-5-5-5z"/></svg></a></h2><ul>
-<li>采集、分析、管理、可视化界面可集成部署于同一机器内，也可部署于不同机器。建议根据实际流量大小和节点性能进行适当划分。</li><li>小流量环境下，四个模块可以部署于一个节点上。</li><li>采集、分析部署于同一节点环境下，前端UI才可检索展示数据包相关信息。这是由于目前采集节点可留存用于追溯威胁的数据包，但是仅留存于采集节点本地。建议采集、分析节点同机部署。</li></ul><h2 id=q-如何测试流量数据包>Q: 如何测试流量数据包? <a class=header-link href=#q-%e5%a6%82%e4%bd%95%e6%b5%8b%e8%af%95%e6%b5%81%e9%87%8f%e6%95%b0%e6%8d%ae%e5%8c%85><svg class="fill-current o-60 hover-accent-color-light" height="22" viewBox="0 0 24 24" width="22" xmlns="http://www.w3.org/2000/svg"><path d="M0 0h24v24H0z" fill="none"/><path d="M3.9 12c0-1.71 1.39-3.1 3.1-3.1h4V7H7c-2.76.0-5 2.24-5 5s2.24 5 5 5h4v-1.9H7c-1.71.0-3.1-1.39-3.1-3.1zM8 13h8v-2H8v2zm9-6h-4v1.9h4c1.71.0 3.1 1.39 3.1 3.1s-1.39 3.1-3.1 3.1h-4V17h4c2.76.0 5-2.24 5-5s-2.24-5-5-5z"/></svg></a></h2><p>可以考虑以下两种方式：</p><ol>
+<li>支持从源码进行<a href=https://abyssalfish-os.github.io/installation/>编译安装</a></li><li>支持Release发行版的安装部署，提供X86_64的CentOS7环境的Release和<a href=https://abyssalfish-os.github.io/downloads/>一键部署安装包</a></li><li>支持虚拟机镜像部署，提供了<a href=https://abyssalfish-os.github.io/downloads/>vmware虚拟镜像</a></li></ul><h2 id=q-有安装部署教学视频吗>Q: 有安装部署教学视频吗？ <a class=header-link href=#q-%e6%9c%89%e5%ae%89%e8%a3%85%e9%83%a8%e7%bd%b2%e6%95%99%e5%ad%a6%e8%a7%86%e9%a2%91%e5%90%97><svg class="fill-current o-60 hover-accent-color-light" height="22" viewBox="0 0 24 24" width="22" xmlns="http://www.w3.org/2000/svg"><path d="M0 0h24v24H0z" fill="none"/><path d="M3.9 12c0-1.71 1.39-3.1 3.1-3.1h4V7H7c-2.76.0-5 2.24-5 5s2.24 5 5 5h4v-1.9H7c-1.71.0-3.1-1.39-3.1-3.1zM8 13h8v-2H8v2zm9-6h-4v1.9h4c1.71.0 3.1 1.39 3.1 3.1s-1.39 3.1-3.1 3.1h-4V17h4c2.76.0 5-2.24 5-5s-2.24-5-5-5z"/></svg></a></h2><ul>
+<li>安装使用相关视频发布在B站，点击查看：<a href=https://space.bilibili.com/3493262893517732>流影安装使用教学视频</a></li></ul><h2 id=q-各类型功能节点部署方式>Q: 各类型功能节点部署方式? <a class=header-link href=#q-%e5%90%84%e7%b1%bb%e5%9e%8b%e5%8a%9f%e8%83%bd%e8%8a%82%e7%82%b9%e9%83%a8%e7%bd%b2%e6%96%b9%e5%bc%8f><svg class="fill-current o-60 hover-accent-color-light" height="22" viewBox="0 0 24 24" width="22" xmlns="http://www.w3.org/2000/svg"><path d="M0 0h24v24H0z" fill="none"/><path d="M3.9 12c0-1.71 1.39-3.1 3.1-3.1h4V7H7c-2.76.0-5 2.24-5 5s2.24 5 5 5h4v-1.9H7c-1.71.0-3.1-1.39-3.1-3.1zM8 13h8v-2H8v2zm9-6h-4v1.9h4c1.71.0 3.1 1.39 3.1 3.1s-1.39 3.1-3.1 3.1h-4V17h4c2.76.0 5-2.24 5-5s-2.24-5-5-5z"/></svg></a></h2><ul>
+<li>采集、分析、管理、可视化界面可集成部署于同一机器内，也可部署于不同机器。建议根据实际流量大小和节点性能进行适当划分。</li><li>小流量环境下，四个模块可以部署于一个节点上。</li><li>采集、分析部署于同一节点环境下，前端UI才可检索展示数据包相关信息。这是由于目前采集节点可留存用于追溯威胁的数据包，但是仅留存于采集节点本地。建议采集、分析节点同机部署。</li></ul><h2 id=q-镜像流量如何接入>Q: 镜像流量如何接入？ <a class=header-link href=#q-%e9%95%9c%e5%83%8f%e6%b5%81%e9%87%8f%e5%a6%82%e4%bd%95%e6%8e%a5%e5%85%a5><svg class="fill-current o-60 hover-accent-color-light" height="22" viewBox="0 0 24 24" width="22" xmlns="http://www.w3.org/2000/svg"><path d="M0 0h24v24H0z" fill="none"/><path d="M3.9 12c0-1.71 1.39-3.1 3.1-3.1h4V7H7c-2.76.0-5 2.24-5 5s2.24 5 5 5h4v-1.9H7c-1.71.0-3.1-1.39-3.1-3.1zM8 13h8v-2H8v2zm9-6h-4v1.9h4c1.71.0 3.1 1.39 3.1 3.1s-1.39 3.1-3.1 3.1h-4V17h4c2.76.0 5-2.24 5-5s-2.24-5-5-5z"/></svg></a></h2><ul>
+<li>支持旁路镜像的方式接入流量，可以参见<a href=https://abyssalfish-os.github.io/other/development/>ESXi环境下流量接入设置</a>。</li></ul><h2 id=q-如何测试流量数据包>Q: 如何测试流量数据包? <a class=header-link href=#q-%e5%a6%82%e4%bd%95%e6%b5%8b%e8%af%95%e6%b5%81%e9%87%8f%e6%95%b0%e6%8d%ae%e5%8c%85><svg class="fill-current o-60 hover-accent-color-light" height="22" viewBox="0 0 24 24" width="22" xmlns="http://www.w3.org/2000/svg"><path d="M0 0h24v24H0z" fill="none"/><path d="M3.9 12c0-1.71 1.39-3.1 3.1-3.1h4V7H7c-2.76.0-5 2.24-5 5s2.24 5 5 5h4v-1.9H7c-1.71.0-3.1-1.39-3.1-3.1zM8 13h8v-2H8v2zm9-6h-4v1.9h4c1.71.0 3.1 1.39 3.1 3.1s-1.39 3.1-3.1 3.1h-4V17h4c2.76.0 5-2.24 5-5s-2.24-5-5-5z"/></svg></a></h2><p>可以考虑以下两种方式：</p><ol>
 <li>正常启动探针，监听网卡流量，使用tcpreplay或类似数据包回放工具，将ly_probe中所附测试数据包回放至指定网卡，采集流量netflow信息。</li><li>指定探针参数 <code>-i</code> 数据包文件，直接读取测试数据包，将采集数据包netflow信息。</li></ol><h2 id=q-如何测试系统数据流转正常>Q: 如何测试系统数据流转正常? <a class=header-link href=#q-%e5%a6%82%e4%bd%95%e6%b5%8b%e8%af%95%e7%b3%bb%e7%bb%9f%e6%95%b0%e6%8d%ae%e6%b5%81%e8%bd%ac%e6%ad%a3%e5%b8%b8><svg class="fill-current o-60 hover-accent-color-light" height="22" viewBox="0 0 24 24" width="22" xmlns="http://www.w3.org/2000/svg"><path d="M0 0h24v24H0z" fill="none"/><path d="M3.9 12c0-1.71 1.39-3.1 3.1-3.1h4V7H7c-2.76.0-5 2.24-5 5s2.24 5 5 5h4v-1.9H7c-1.71.0-3.1-1.39-3.1-3.1zM8 13h8v-2H8v2zm9-6h-4v1.9h4c1.71.0 3.1 1.39 3.1 3.1s-1.39 3.1-3.1 3.1h-4V17h4c2.76.0 5-2.24 5-5s-2.24-5-5-5z"/></svg></a></h2><p>可以从以下步骤，进行系统数据流转测试验证：</p><ol>
 <li>启动探针监听网卡，接入回放的流量或真实流量。</li><li>验证接收器能够正常接收数据： <code>/data/flow/3/</code> 目录下是否存在 <code>nfcapd</code> 文件，且单个文件大小大于276字节。</li><li>分析引擎正常产出数据： <code>/Agent/data/db/</code> 目录下是否存在 以日期命名的目录，且日期目录中不为空。</li><li>管理端、Web可视化页面正常显示数据：WEB端访问正常，检测到测试数据包中包含的告警事件。</li></ol><aside class="admonition note">
 <div class=note-icon>
@@ -230,25 +230,23 @@ DEPLOY
 系统配置
 </a>
 </li></ul></li><li class="f5 w-100 hover-bg-light-gray hover-accent-color-light fw8">
-<a href=javascript:void(0) class="js-toggle dib w-100 link mid-gray hover-accent-color-light pl2 pr2 pv2 primary-color" data-target=.other>其它资料</a>
-<ul class="other desktopmenu animated fadeIn list pl0 bg-light-gray db">
+<a href=javascript:void(0) class="js-toggle dib w-100 link mid-gray hover-accent-color-light pl2 pr2 pv2" data-target=.other>其它资料</a>
+<ul class="other desktopmenu animated fadeIn list pl0 bg-light-gray dn">
 <li class="f6 fw4">
 <a href=/other/ class="db link hover-bg-gray hover-white pl3 pr2 pv2 black">
 资料概览
 </a>
 </li><li class="f6 fw4">
 <a href=/other/development/ class="db link hover-bg-gray hover-white pl3 pr2 pv2 black">
-流量镜像接入
+流量接入
 </a>
 </li><li class="f6 fw4">
 <a href=/other/qalist/ class="db link hover-bg-gray hover-white pl3 pr2 pv2 black">
-功能支持说明
-</a>
-</li><li class="f6 fw4">
-<a href=/other/faq/ class="db link hover-bg-gray hover-white pl3 pr2 pv2 primary-color">
-常见问题QA
+功能列表
 </a>
 </li></ul></li><li class="f5 w-100 hover-bg-light-gray hover-accent-color-light fw8">
+<a href=/qa/ class="js-toggle dib w-100 link mid-gray hover-accent-color-light pl2 pr2 pv2" data-target=.qa>常见问题</a>
+</li><li class="f5 w-100 hover-bg-light-gray hover-accent-color-light fw8">
 <a href=/demo/ class="js-toggle dib w-100 link mid-gray hover-accent-color-light pl2 pr2 pv2" data-target=.demo>演示Demo</a>
 </li><li class="f5 w-100 hover-bg-light-gray hover-accent-color-light fw8 mb1 bb b--moon-gray">
 <a href=javascript:void(0) class="js-toggle dib w-100 link mid-gray hover-accent-color-light pl2 pr2 pv2" data-target=.contribute>欢迎贡献</a>
@@ -268,8 +266,8 @@ DEPLOY
 </li></ul></li></ul></nav></div></div></article><div class="w-100 bg-light-gray">
 <div class="mw7 pa4 center nested-lh-copy lh-copy">
 <h6 class="f6 dark-gray mb2">
-Last updated: June 16, 2023: <a class="hide-child link primary-color" href=https://github.com/abyssalfish-os/abyssalfish-os.github.io/commit/8035c48dbb74de056a83b65f915929961e03ef66>update QA (8035c48)</a>
-</h6><a href=https://github.com/abyssalfish-os/abyssalfish-os.github.io/edit/master/content/other/faq.md class="f6 ph3 pv1 br2 dib tc ttu mv3 bg-primary-color white hover-bg-green link">Improve this page</a>
+Last updated: August 16, 2023: <a class="hide-child link primary-color" href=https://github.com/abyssalfish-os/abyssalfish-os.github.io/commit/18b199108cf781e9b661f5979f1f4b8719c648f6>update title and content (18b1991)</a>
+</h6><a href=https://github.com/abyssalfish-os/abyssalfish-os.github.io/edit/master/content/qa/index.md class="f6 ph3 pv1 br2 dib tc ttu mv3 bg-primary-color white hover-bg-green link">Improve this page</a>
 </div></div></main><footer class="bg-primary-color-dark ph4-ns pt4 relative w-100" role=contentinfo>
 <div class="center flex-ns flex-wrap justify-between mw9 w-90">
 <div class="center pb3 pt4">
@@ -333,6 +331,10 @@ GitHub
 </li><li class="tl dib ma0 hover-bg-black w-100">
 <a href=/other/ class="ttu f6 link primary-color-light hover-white db brand-font mb1 ma0 w-100 pv2 ph4">
 其它资料
+</a>
+</li><li class="tl dib ma0 hover-bg-black w-100">
+<a href=/qa/ class="ttu f6 link primary-color-light hover-white db brand-font mb1 ma0 w-100 pv2 ph4">
+常见问题
 </a>
 </li><li class="tl dib ma0 hover-bg-black w-100">
 <a href=/demo/ class="ttu f6 link primary-color-light hover-white db brand-font mb1 ma0 w-100 pv2 ph4">

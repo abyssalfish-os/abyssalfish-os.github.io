@@ -13,7 +13,6 @@
 /overview/quickstart/              	/getting-started/quick-start/
 /overview/introduction/            	/about/what-is-liuying/
 /about/why-liuying/                	/about/what-is-liuying/
-/faq/                              	/other/faq/
 /contribute/docs/                  	/contribute/documentation/
 /content/user-login/               	/user-manual/login/
 /qalist/                           	/other/qalist/
@@ -23,6 +22,8 @@
 /usage/                            	/getting-started/usage/
 /overview/deploy/                  	/getting-started/deploy-required/
 /meta/license                      	/about/license/
+/faq/                              	/qa/
+/qa/                               	/qa/
 /downloads/                        	/downloads/
 /overview/downloads/               	/downloads/
 /content/usage/peizhi/             	/user-manual/peizhi/
