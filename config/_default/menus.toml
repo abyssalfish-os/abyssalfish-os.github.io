@@ -36,6 +36,11 @@
   identifier = "other"
   url = "/other/"
 
+[[docs]]
+  name = "常见问题"
+  weight = 85
+  identifier = "qa"
+  url = "/qa/"
 
 [[docs]]
   name = "欢迎贡献"

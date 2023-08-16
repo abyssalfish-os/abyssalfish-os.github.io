@@ -1,6 +1,6 @@
 ---
 title: ESXi环境流量镜像接入说明
-linktitle: 流量镜像接入
+linktitle: 流量接入
 description: 以ESXi环境下流量接入配置为例，说明如何接入外部或内部的流量
 date: 2023-02-20
 publishdate: 2023-02-20

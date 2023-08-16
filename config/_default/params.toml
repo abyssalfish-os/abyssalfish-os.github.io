@@ -1,5 +1,5 @@
 
-description = '国内首个开源网络流量可视化分析平台'
+description = '开源网络流量可视化分析和威胁感知平台'
 ## Setting this to true will add a "noindex" to *EVERY* page on the site..
 removefromexternalsearch = false
 ## Gh repo for site footer (include trailing slash)

@@ -1,6 +1,6 @@
 ---
 title: 功能列表
-linktitle: 功能支持说明
+linktitle: 功能列表
 description: 给出细分功能类型支持情况列表，供大家参考。
 date: 2023-04-20
 categories: [other,deploy]

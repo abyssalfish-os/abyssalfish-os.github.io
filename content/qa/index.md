@@ -5,14 +5,8 @@ description: 安装、使用中问题与解答.
 date: 2023-03-20
 categories: [other,deploy]
 keywords: [dev,docs,deploy]
-menu:
-  docs:
-    parent: "other"
-    weight: 20
-weight: 20
-sections_weight: 20
-toc: true
-aliases: [/faq/]
+tags: ["demo"]
+aliases: [/faq/, /qa/]
 isCJKLanguage: true
 ---
 
@@ -22,10 +16,13 @@ isCJKLanguage: true
 
 ## Q: 支持哪些部署方式?
 
-* 支持从源码进行[编译安装](https://abyssalfish-os.github.io/installation/)。
-* 支持Release发行版的安装部署（提供了X86_64下CentOS7下的Release）。
-* 支持虚拟机镜像部署（提供了[vmware虚拟镜像](https://abyssalfish-os.github.io/downloads/))
+* 支持从源码进行[编译安装](https://abyssalfish-os.github.io/installation/)
+* 支持Release发行版的安装部署，提供X86_64的CentOS7环境的Release和[一键部署安装包](https://abyssalfish-os.github.io/downloads/)
+* 支持虚拟机镜像部署，提供了[vmware虚拟镜像](https://abyssalfish-os.github.io/downloads/)
 
+## Q: 有安装部署教学视频吗？
+
+* 安装使用相关视频发布在B站，点击查看：[流影安装使用教学视频](https://space.bilibili.com/3493262893517732)
 
 ## Q: 各类型功能节点部署方式?
 
@@ -33,6 +30,9 @@ isCJKLanguage: true
 * 小流量环境下，四个模块可以部署于一个节点上。
 * 采集、分析部署于同一节点环境下，前端UI才可检索展示数据包相关信息。这是由于目前采集节点可留存用于追溯威胁的数据包，但是仅留存于采集节点本地。建议采集、分析节点同机部署。
 
+## Q: 镜像流量如何接入？
+
+* 支持旁路镜像的方式接入流量，可以参见[ESXi环境下流量接入设置](https://abyssalfish-os.github.io/other/development/)。
 
 ## Q: 如何测试流量数据包?
 可以考虑以下两种方式：
@@ -80,3 +80,4 @@ isCJKLanguage: true
 ## Q: 威胁情报IOC检测配置文件位置？
 
 * 威胁情报IOC检测配置文件位于`/Agent/data`目录下，相关情报文件包括 sus_threat、ti_dns、mining_domain、mining_ip，更新时从开源组件ly_analyser的`ti`目录中获取最新文件直接替换即可。
+
