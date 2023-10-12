@@ -81,3 +81,15 @@ isCJKLanguage: true
 
 * 威胁情报IOC检测配置文件位于`/Agent/data`目录下，相关情报文件包括 sus_threat、ti_dns、mining_domain、mining_ip，更新时从开源组件ly_analyser的`ti`目录中获取最新文件直接替换即可。
 
+
+## Q: 用户密码锁定后如何解锁？如何重置管理员账号密码？
+
+对于尝试多次被锁定的用户，可由管理员权限用户在"配置"-"系统"-"用户"处进行解除锁定操作。
+请谨慎保管管理员用户的账户密码。在忘记系统管理员登录密码的情况下，可通过修改数据库用户账号恢复密码。参照如下步骤进行：
+
+1. 使用数据库用户表初始化数据文件[user_init.sql](./user_init.sql)，并上传至流影mysql部署主机
+2. 查看数据库用户密码	`cat /etc/my.cnf.d/gl.server.cnf`
+3. 执行命令`mysql -uroot -p server < user_init.sql`
+4. 按回显要求输入数据库密码，无报错则正常导入数据
+5. 此时，即可使用初始用户密码登入web系统
+
