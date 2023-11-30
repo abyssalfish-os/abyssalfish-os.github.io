@@ -1,4 +1,36 @@
-<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>流影 – 国内首个开源网络流量可视化分析和威胁感知平台</title><link>https://abyssalfish-os.github.io/</link><description>Recent Hugo news from gohugo.io</description><generator>Hugo -- gohugo.io</generator><language>zh-CN</language><lastBuildDate>Thu, 29 Dec 2022 12:00:00 +0800</lastBuildDate><image><url>https://abyssalfish-os.github.io/img/hugo.png</url><title>GoHugo.io</title><link>https://abyssalfish-os.github.io/</link></image><atom:link href="https://abyssalfish-os.github.io/index.xml" rel="self" type="application/rss+xml"/><item><title>News: 流影之监控追踪</title><link>https://abyssalfish-os.github.io/news/mo/</link><pubDate>Thu, 31 Aug 2023 00:00:00 +0800</pubDate><guid>https://abyssalfish-os.github.io/news/mo/</guid><description>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>流影 – 国内首个开源网络流量可视化分析和威胁感知平台</title><link>https://abyssalfish-os.github.io/</link><description>Recent Hugo news from gohugo.io</description><generator>Hugo -- gohugo.io</generator><language>zh-CN</language><lastBuildDate>Thu, 29 Dec 2022 12:00:00 +0800</lastBuildDate><image><url>https://abyssalfish-os.github.io/img/hugo.png</url><title>GoHugo.io</title><link>https://abyssalfish-os.github.io/</link></image><atom:link href="https://abyssalfish-os.github.io/index.xml" rel="self" type="application/rss+xml"/><item><title>News: 开源流影更新发布V1.1.0版本</title><link>https://abyssalfish-os.github.io/news/pubv110/</link><pubDate>Wed, 29 Nov 2023 00:00:00 +0800</pubDate><guid>https://abyssalfish-os.github.io/news/pubv110/</guid><description>
+&lt;h2 id="前言">前言 &lt;a class="header-link" href="#%e5%89%8d%e8%a8%80">&lt;svg class="fill-current o-60 hover-accent-color-light" height="22px" viewBox="0 0 24 24" width="22px" xmlns="http://www.w3.org/2000/svg">&lt;path d="M0 0h24v24H0z" fill="none"/>&lt;path d="M3.9 12c0-1.71 1.39-3.1 3.1-3.1h4V7H7c-2.76 0-5 2.24-5 5s2.24 5 5 5h4v-1.9H7c-1.71 0-3.1-1.39-3.1-3.1zM8 13h8v-2H8v2zm9-6h-4v1.9h4c1.71 0 3.1 1.39 3.1 3.1s-1.39 3.1-3.1 3.1h-4V17h4c2.76 0 5-2.24 5-5s-2.24-5-5-5z"/>&lt;/svg>&lt;/a>&lt;/h2>
+&lt;p>针对前期收集的部分需求和发现的问题，近期我们对开源流影进行了一次小版本迭代。本次迭代更新主要进一步优化了配置管理参数设置，解决了管理页面历史遗留问题。最新发布版本为V1.1.0，&lt;a href="https://abyssalfish-os.github.io/downloads">安装包和VM镜像&lt;/a>已经同步更新，欢迎大家下载最新版试用。下文对本次主要更新功能进行简介。&lt;/p>
+&lt;h2 id="配置项优化">配置项优化 &lt;a class="header-link" href="#%e9%85%8d%e7%bd%ae%e9%a1%b9%e4%bc%98%e5%8c%96">&lt;svg class="fill-current o-60 hover-accent-color-light" height="22px" viewBox="0 0 24 24" width="22px" xmlns="http://www.w3.org/2000/svg">&lt;path d="M0 0h24v24H0z" fill="none"/>&lt;path d="M3.9 12c0-1.71 1.39-3.1 3.1-3.1h4V7H7c-2.76 0-5 2.24-5 5s2.24 5 5 5h4v-1.9H7c-1.71 0-3.1-1.39-3.1-3.1zM8 13h8v-2H8v2zm9-6h-4v1.9h4c1.71 0 3.1 1.39 3.1 3.1s-1.39 3.1-3.1 3.1h-4V17h4c2.76 0 5-2.24 5-5s-2.24-5-5-5z"/>&lt;/svg>&lt;/a>&lt;/h2>
+&lt;p>在“配置-系统”页面中，优化采集节点配置项描述，新增可以配置采集节点的监听网卡名、数据包留存级别、流量过滤条件、流量元数据模板，具体参见下图所示。(提示：请使用具有管理配置权限的账号登录系统进行体验)&lt;/p>
+&lt;p>&lt;img src="./0.png" alt="流影更新1">&lt;/p>
+&lt;p>配置项简介：&lt;/p>
+&lt;ul>
+&lt;li>分析节点端口：指定所采集的流量数据发向分析节点的端口。&lt;/li>
+&lt;li>数据包留存级别： 指定探针留存数据包级别，包括不留存数据包、仅留存被后台威胁特征规则命中的数据包、留存威胁特征与资产特征命中的数据包、为每个会话留存第一对有内容的数据包，共计4个级别。&lt;/li>
+&lt;li>采集网卡名称：可在web端页面直接配置采集网卡名。注意核实网卡信息后再行配置。&lt;/li>
+&lt;li>流量采集过滤：可配置符合BPF语法（也常用于Tcpdump / Wireshark等工具进行过滤流量）的流量过滤语句，会在采集流量时进行应用。&lt;/li>
+&lt;li>流量与数据模板：可自行设置流量探针所产生的Netflow数据模板。如非必要，谨慎配置。&lt;/li>
+&lt;/ul>
+&lt;p>在本管理配置界面，通过配置以上信息，即可直接调整探针运行参数，进行管理操作，更便捷。&lt;/p>
+&lt;h2 id="节点启停管理优化">节点启停管理优化 &lt;a class="header-link" href="#%e8%8a%82%e7%82%b9%e5%90%af%e5%81%9c%e7%ae%a1%e7%90%86%e4%bc%98%e5%8c%96">&lt;svg class="fill-current o-60 hover-accent-color-light" height="22px" viewBox="0 0 24 24" width="22px" xmlns="http://www.w3.org/2000/svg">&lt;path d="M0 0h24v24H0z" fill="none"/>&lt;path d="M3.9 12c0-1.71 1.39-3.1 3.1-3.1h4V7H7c-2.76 0-5 2.24-5 5s2.24 5 5 5h4v-1.9H7c-1.71 0-3.1-1.39-3.1-3.1zM8 13h8v-2H8v2zm9-6h-4v1.9h4c1.71 0 3.1 1.39 3.1 3.1s-1.39 3.1-3.1 3.1h-4V17h4c2.76 0 5-2.24 5-5s-2.24-5-5-5z"/>&lt;/svg>&lt;/a>&lt;/h2>
+&lt;p>在“总览-管理”页面中，后台接口进行优化，调整了节点展示项，修复此前存在的启停按钮稳定性问题。新版本可以正常通过界面管理探针节点运行，不必再频繁使用后台命令控制探针启停了。&lt;/p>
+&lt;p>&lt;img src="./1.png" alt="流影更新2">&lt;/p>
+&lt;p>管理页面图卡中，采集节点放置采集器（探针、lyprobe）状态信息，此处的启停操作可直接应用配置页面的参数，对采集器进行启动、停止操作管理。&lt;/p>
+&lt;p>分析节点放置接收器（nfcapd）状态，接收器接收采集器的数据，两者同时处于运行状态后台数据才能持续生成。&lt;/p>
+&lt;h2 id="更新说明">更新说明 &lt;a class="header-link" href="#%e6%9b%b4%e6%96%b0%e8%af%b4%e6%98%8e">&lt;svg class="fill-current o-60 hover-accent-color-light" height="22px" viewBox="0 0 24 24" width="22px" xmlns="http://www.w3.org/2000/svg">&lt;path d="M0 0h24v24H0z" fill="none"/>&lt;path d="M3.9 12c0-1.71 1.39-3.1 3.1-3.1h4V7H7c-2.76 0-5 2.24-5 5s2.24 5 5 5h4v-1.9H7c-1.71 0-3.1-1.39-3.1-3.1zM8 13h8v-2H8v2zm9-6h-4v1.9h4c1.71 0 3.1 1.39 3.1 3.1s-1.39 3.1-3.1 3.1h-4V17h4c2.76 0 5-2.24 5-5s-2.24-5-5-5z"/>&lt;/svg>&lt;/a>&lt;/h2>
+&lt;p>由于后端部分功能进行了重新开发，本次更新与V1.0版本不兼容，升级部署请使用v1.1.0版依赖环境，建议重新安装部署最新版本。&lt;/p>
+&lt;h2 id="相关信息">相关信息 &lt;a class="header-link" href="#%e7%9b%b8%e5%85%b3%e4%bf%a1%e6%81%af">&lt;svg class="fill-current o-60 hover-accent-color-light" height="22px" viewBox="0 0 24 24" width="22px" xmlns="http://www.w3.org/2000/svg">&lt;path d="M0 0h24v24H0z" fill="none"/>&lt;path d="M3.9 12c0-1.71 1.39-3.1 3.1-3.1h4V7H7c-2.76 0-5 2.24-5 5s2.24 5 5 5h4v-1.9H7c-1.71 0-3.1-1.39-3.1-3.1zM8 13h8v-2H8v2zm9-6h-4v1.9h4c1.71 0 3.1 1.39 3.1 3.1s-1.39 3.1-3.1 3.1h-4V17h4c2.76 0 5-2.24 5-5s-2.24-5-5-5z"/>&lt;/svg>&lt;/a>&lt;/h2>
+&lt;p>欢迎大家使用流影和参与项目贡献。流影广泛适用于各种网络安全防护场景，包括不限于入侵检测、威胁狩猎、攻防演练、网络证据留存、网络行为调查分析、态势感知等。如果有定制化商务需求，欢迎联系合作。&lt;/p>
+&lt;ul>
+&lt;li>&lt;a href="https://abyssalfish-os.github.io/">流影项目主页&lt;/a>&lt;/li>
+&lt;li>邮箱：opensource@abyssalfish.com.cn&lt;/li>
+&lt;li>扫码进入微信群
+&lt;figure style="padding: 0.25rem; margin: 2rem 0; ">
+&lt;img style="max-width: 100%; width: auto; height: auto;" src="https://abyssalfish-os.github.io/news/pubv110/wx_group_hu87a2e382e09fcee856265bf5cb34cab9_30575_256x0_resize_catmullrom_3.png" width="256" height="258">
+&lt;/figure>
+&lt;/li>
+&lt;/ul></description></item><item><title>News: 流影之监控追踪</title><link>https://abyssalfish-os.github.io/news/mo/</link><pubDate>Thu, 31 Aug 2023 00:00:00 +0800</pubDate><guid>https://abyssalfish-os.github.io/news/mo/</guid><description>
 &lt;h2 id="前言">前言 &lt;a class="header-link" href="#%e5%89%8d%e8%a8%80">&lt;svg class="fill-current o-60 hover-accent-color-light" height="22px" viewBox="0 0 24 24" width="22px" xmlns="http://www.w3.org/2000/svg">&lt;path d="M0 0h24v24H0z" fill="none"/>&lt;path d="M3.9 12c0-1.71 1.39-3.1 3.1-3.1h4V7H7c-2.76 0-5 2.24-5 5s2.24 5 5 5h4v-1.9H7c-1.71 0-3.1-1.39-3.1-3.1zM8 13h8v-2H8v2zm9-6h-4v1.9h4c1.71 0 3.1 1.39 3.1 3.1s-1.39 3.1-3.1 3.1h-4V17h4c2.76 0 5-2.24 5-5s-2.24-5-5-5z"/>&lt;/svg>&lt;/a>&lt;/h2>
 &lt;p>前期一系列文章已经对流影集成的网络行为检测、威胁告警功能进行了比较详尽的介绍，读者朋友们阅读后可以掌握流影的基本功能操作。除了流影集成好的模型、告警规则相关功能，流影还支持用户自定义追踪监控的功能，即用户根据实际需求，对感兴趣的部分流量进行针对性的监控，并可以自定义告警规则，达到持续进行追踪和观测的目的。本文主要介绍追踪监控功能，让大家了解如何通过界面配置流量追踪和监控告警。&lt;/p>
 &lt;h2 id="追踪监控概览">追踪监控概览 &lt;a class="header-link" href="#%e8%bf%bd%e8%b8%aa%e7%9b%91%e6%8e%a7%e6%a6%82%e8%a7%88">&lt;svg class="fill-current o-60 hover-accent-color-light" height="22px" viewBox="0 0 24 24" width="22px" xmlns="http://www.w3.org/2000/svg">&lt;path d="M0 0h24v24H0z" fill="none"/>&lt;path d="M3.9 12c0-1.71 1.39-3.1 3.1-3.1h4V7H7c-2.76 0-5 2.24-5 5s2.24 5 5 5h4v-1.9H7c-1.71 0-3.1-1.39-3.1-3.1zM8 13h8v-2H8v2zm9-6h-4v1.9h4c1.71 0 3.1 1.39 3.1 3.1s-1.39 3.1-3.1 3.1h-4V17h4c2.76 0 5-2.24 5-5s-2.24-5-5-5z"/>&lt;/svg>&lt;/a>&lt;/h2>
@@ -355,8 +387,7 @@ nfdump输出了易读的Flow格式化数据，每一行是一条Flow统计数据
 &lt;h3 id="下载地址">下载地址 &lt;a class="header-link" href="#%e4%b8%8b%e8%bd%bd%e5%9c%b0%e5%9d%80">&lt;svg class="fill-current o-60 hover-accent-color-light" height="22px" viewBox="0 0 24 24" width="22px" xmlns="http://www.w3.org/2000/svg">&lt;path d="M0 0h24v24H0z" fill="none"/>&lt;path d="M3.9 12c0-1.71 1.39-3.1 3.1-3.1h4V7H7c-2.76 0-5 2.24-5 5s2.24 5 5 5h4v-1.9H7c-1.71 0-3.1-1.39-3.1-3.1zM8 13h8v-2H8v2zm9-6h-4v1.9h4c1.71 0 3.1 1.39 3.1 3.1s-1.39 3.1-3.1 3.1h-4V17h4c2.76 0 5-2.24 5-5s-2.24-5-5-5z"/>&lt;/svg>&lt;/a>&lt;/h3>
 &lt;p>由于安装部署包较大，我们将安装包放在了网盘上。请您选择一种网盘链接去下载即可。&lt;/p>
 &lt;ul>
-&lt;li>&lt;a href="https://pan.baidu.com/s/1cIt2Rl6d1wdlq_nWKadDtg">百度网盘：流影完整安装包&lt;/a> 提取码 AFOS&lt;/li>
-&lt;li>&lt;a href="https://pan.quark.cn/s/cc38aa72a833">夸克网盘：流影完整安装包&lt;/a> 提取码：5pSs&lt;/li>
+&lt;li>&lt;a href="https://abyssalfish-os.github.io/downloads">安装包下载地址&lt;/a>&lt;/li>
 &lt;/ul>
 &lt;p>完整安装包是对最新Release版本的打包，其安装方式请参见安装部署手册，不再赘述。&lt;/p>
 &lt;h4 id="安装教学视频">安装教学视频 &lt;a class="header-link" href="#%e5%ae%89%e8%a3%85%e6%95%99%e5%ad%a6%e8%a7%86%e9%a2%91">&lt;svg class="fill-current o-60 hover-accent-color-light" height="22px" viewBox="0 0 24 24" width="22px" xmlns="http://www.w3.org/2000/svg">&lt;path d="M0 0h24v24H0z" fill="none"/>&lt;path d="M3.9 12c0-1.71 1.39-3.1 3.1-3.1h4V7H7c-2.76 0-5 2.24-5 5s2.24 5 5 5h4v-1.9H7c-1.71 0-3.1-1.39-3.1-3.1zM8 13h8v-2H8v2zm9-6h-4v1.9h4c1.71 0 3.1 1.39 3.1 3.1s-1.39 3.1-3.1 3.1h-4V17h4c2.76 0 5-2.24 5-5s-2.24-5-5-5z"/>&lt;/svg>&lt;/a>&lt;/h4>
@@ -719,7 +750,7 @@ style="position:absolute; height: 100%; width: 100%;">
 &lt;h2 id="vmware虚拟机镜像">Vmware虚拟机镜像 &lt;a class="header-link" href="#vmware%e8%99%9a%e6%8b%9f%e6%9c%ba%e9%95%9c%e5%83%8f">&lt;svg class="fill-current o-60 hover-accent-color-light" height="22px" viewBox="0 0 24 24" width="22px" xmlns="http://www.w3.org/2000/svg">&lt;path d="M0 0h24v24H0z" fill="none"/>&lt;path d="M3.9 12c0-1.71 1.39-3.1 3.1-3.1h4V7H7c-2.76 0-5 2.24-5 5s2.24 5 5 5h4v-1.9H7c-1.71 0-3.1-1.39-3.1-3.1zM8 13h8v-2H8v2zm9-6h-4v1.9h4c1.71 0 3.1 1.39 3.1 3.1s-1.39 3.1-3.1 3.1h-4V17h4c2.76 0 5-2.24 5-5s-2.24-5-5-5z"/>&lt;/svg>&lt;/a>&lt;/h2>
 &lt;p>镜像下载信息如下：&lt;/p>
 &lt;ul>
-&lt;li>&lt;a href="https://pan.baidu.com/s/1yZ2YB9OyX8u5YePh3wV1gg">镜像下载地址&lt;/a>&lt;/li>
+&lt;li>&lt;a href="https://pan.baidu.com/s/1V_Mf6UBzAM9PyRC1LNqSCQ">镜像下载地址&lt;/a>&lt;/li>
 &lt;li>提取码：AFOS&lt;/li>
 &lt;/ul>
 &lt;p>虚拟机相关信息如下：&lt;/p>
