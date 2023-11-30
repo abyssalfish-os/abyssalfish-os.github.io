@@ -12,11 +12,19 @@ isCJKLanguage: true
 ---
 
 ## CentOS7环境完整安装包
-我们制作了一键部署安装包，方便大家安装部署。可以通过百度网盘或夸克网盘进行下载。
+我们制作了一键部署安装包，方便大家安装部署。请通过百度网盘等方式进行下载。
 
-#### 安装包下载地址
-- [百度网盘：流影完整安装包](https://pan.baidu.com/s/1cIt2Rl6d1wdlq_nWKadDtg)   提取码 AFOS
-- [夸克网盘：流影完整安装包](https://pan.quark.cn/s/cc38aa72a833)  提取码：5pSs
+#### 最新装包下载地址
+- [百度网盘：流影v1.1.0完整安装包（2023-11-29-latest）](https://pan.baidu.com/s/1HkjGhkwp6Ple7ZZGyK-IGg)   提取码：AFOS
+
+#### 历史安装包下载地址
+
+| 发布日期   | 流影版本  | 点击下载  | 提取码 |
+| ---------- | ----------------- | ----------------- | ------------------------------ |
+| 2023-11-29 | V1.1.0       | [百度网盘：流影v1.1.0完整安装包](https://pan.baidu.com/s/1HkjGhkwp6Ple7ZZGyK-IGg)       | AFOS            |
+| 2023-06-10 | V1.0.x   | [百度网盘：流影完整安装包](https://pan.baidu.com/s/1cIt2Rl6d1wdlq_nWKadDtg)   | AFOS        |
+| 2023-06-10 | V1.0.x   | [夸克网盘：流影完整安装包](https://pan.quark.cn/s/cc38aa72a833)   | 5pSs       |
+
 
 #### 安装教学视频
 - [单节点一键部署安装](https://www.bilibili.com/video/BV1Eh4y147bn)
@@ -29,11 +37,22 @@ isCJKLanguage: true
 ## Vmware虚拟机镜像
 为了方便大家安装试用，制作了vmware安装镜像，请大家前往如下百度网盘地址下载。
 
-#### 镜像下载地址
-- [百度网盘：流影VM镜像](https://pan.baidu.com/s/1yZ2YB9OyX8u5YePh3wV1gg)  提取码：AFOS
-- [夸克网盘：流影VM镜像](https://pan.quark.cn/s/0f1574d2f5f8)  提取码：gzyc
+#### 最新VM镜像
+- [百度网盘：流影V1.1.0之VM镜像（2023-11-29-latest）](https://pan.baidu.com/s/1V_Mf6UBzAM9PyRC1LNqSCQ)  提取码：AFOS
 - 虚拟机用户名root，密码ShyLiuying
 
+#### 历史版本VM镜像
+
+- 虚拟机用户名root，密码ShyLiuying
+
+| 发布日期   | 流影版本  | 点击下载  | 提取码 |
+| ---------- | ----------------- | ----------------- | ------------------------------ |
+| 2023-11-29 | V1.1.0       | [百度网盘：VM流影V1.1.0](https://pan.baidu.com/s/1V_Mf6UBzAM9PyRC1LNqSCQ)   | AFOS            |
+| 2023-06-10 | V1.0.x   | [百度网盘：VM流影V1.0.2](https://pan.baidu.com/s/1yZ2YB9OyX8u5YePh3wV1gg)   | AFOS        |
+| 2023-06-10 | V1.0.x   | [夸克网盘：VM流影V1.0.2](https://pan.quark.cn/s/0f1574d2f5f8)   | gzyc       |
+
+
+#### VM镜像使用说明
 虚拟机安装后，流影前端默认使用18080端口，访问地址及默认账号：
 - 访问地址：http://ip:18080/ui
 - 登录管理员账号：admin，密码LoginLY@2016

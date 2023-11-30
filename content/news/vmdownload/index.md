@@ -16,7 +16,7 @@ isCJKLanguage: true
 
 ## Vmware虚拟机镜像
 镜像下载信息如下：
-- [镜像下载地址](https://pan.baidu.com/s/1yZ2YB9OyX8u5YePh3wV1gg)
+- [镜像下载地址](https://pan.baidu.com/s/1V_Mf6UBzAM9PyRC1LNqSCQ)
 - 提取码：AFOS
 
 虚拟机相关信息如下：
