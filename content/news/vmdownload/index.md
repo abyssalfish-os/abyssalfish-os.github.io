@@ -7,27 +7,25 @@ isCJKLanguage: true
 ---
 
 
-# 流影Vmware镜像
+# 流影VMware镜像
 
 ## 前言
 
 流影开源发布后，近期不断收到小伙伴们安装部署和试用反馈，首先感谢大家的反馈和建议。
-为了减低安装试用的门槛，我们制作了Vmware虚拟镜像，方便大家快速安装试用。
+为了减低安装试用的门槛，我们制作了VMware虚拟镜像，方便大家快速安装试用。
 
-## Vmware虚拟机镜像
+## VMware虚拟机镜像
 镜像下载信息如下：
-- [镜像下载地址](https://pan.baidu.com/s/1V_Mf6UBzAM9PyRC1LNqSCQ)
-- 提取码：AFOS
-
-虚拟机相关信息如下：
-- 虚拟机用户名root，密码ShyLiuying
+- [百度网盘：流影v1.1.1 OVF镜像](https://pan.baidu.com/s/1PpdnvV-cCQYR6kL1nJ11_A)  提取码：AFOS
+- [夸克网盘：流影v1.0.3 OVF镜像](https://pan.quark.cn/s/0f1574d2f5f8)  提取码：gzyc
+- 虚拟机 用户名：root，密码：ShyLiuying
 
 {{% note %}}
-制作vmware镜像的软件是macos下的VMware Fusion 10.1。虚拟机镜像在各个平台的版本对应关系：
+制作VMware镜像的软件是macos下的VMware Fusion 10.1。虚拟机镜像在各个平台的版本对应关系：
 - 对应 Windows 下的VMware Workstation 14
 - 对应服务器软件是VMware vSphere 6.5
 
-理论上使用这些版本（或更新的版本）加载虚拟机镜像，应该都可以兼容并运行。
+推荐使用对应版本（或更高版本）虚拟机软件平台加载镜像，以兼容运行。
 {{% /note %}}
 
 虚拟机安装后，流影前端默认使用18080端口，访问地址及默认账号：
