@@ -98,7 +98,7 @@
   url = "https://gitter.im/abyssalfish-os/community"
 
 [[global]]
-  name = "视频Video"
+  name = "教学视频"
   weight = 300
   identifier = "videos"
   post = "external"

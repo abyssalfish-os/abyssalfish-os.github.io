@@ -24,10 +24,10 @@ features:
     copy: 经过特征模型、情报关联、白名单过滤等处理，告警去伪存真，避免告警风暴
 
 sections:
-  - heading: "体验一下"
+  - heading: "流影"
     cta: 点击访问流影DEMO
     link: http://101.254.236.75:14180/ui/
-    color_classes: bg-accent-color blue
+    color_classes: bg-primary-color white
     image: /img/login.png
     copy: "流影在线演示环境，便于您快速上手操作，马上体验流影功能。体验账号demo，密码demo@2022"
 ---
@@ -37,4 +37,4 @@ sections:
 
 低成本轻量级网络安全感知解决方案，一键部署、维护简单、轻松使用
 
-适用于企业数字安全防护的多种场景，安全监测、威胁狩猎、攻防演练...
+适用于企业数字安全防护的多种场景，安全监测、威胁狩猎、攻防演练
