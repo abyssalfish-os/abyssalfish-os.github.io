@@ -15,9 +15,9 @@ isCJKLanguage: true
 为了减低安装试用的门槛，我们制作了VMware虚拟镜像，方便大家快速安装试用。
 
 ## VMware虚拟机镜像
-镜像下载信息如下：
-- [百度网盘：流影v1.1.1 OVF镜像](https://pan.baidu.com/s/1PpdnvV-cCQYR6kL1nJ11_A)  提取码：AFOS
-- [夸克网盘：流影v1.0.3 OVF镜像](https://pan.quark.cn/s/0f1574d2f5f8)  提取码：gzyc
+
+由于镜像较大，因此放在了网盘上。请您下载即可。
+- [流影VMware镜像下载地址](/downloads/#vmware虚拟机镜像)
 - 虚拟机 用户名：root，密码：ShyLiuying
 
 {{% note %}}
