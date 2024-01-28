@@ -25,7 +25,7 @@ isCJKLanguage: true
 ## CentOS 7.9 快速集成安装
 
 #### 安装包下载地址
-- [百度网盘：流影完整安装包](https://pan.baidu.com/s/1F883lxpAOJjEKg3xHk1fRQ)   提取码 AFOS
+- [流影安装包下载地址](/downloads/)
 
 #### 安装教学视频
 - [单节点集成安装包快速部署](https://www.bilibili.com/video/BV1Eh4y147bn)
@@ -35,7 +35,7 @@ isCJKLanguage: true
 ## 单节点VMware虚拟机镜像
 
 #### 镜像下载
-- [百度网盘：流影v1.1.1 OVF镜像](https://pan.baidu.com/s/1PpdnvV-cCQYR6kL1nJ11_A)  提取码：AFOS
+- [流影镜像下载地址](/downloads/#vmware虚拟机镜像)
 - 虚拟机用户名：root，密码：ShyLiuying
 
 
