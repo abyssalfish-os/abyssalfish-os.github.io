@@ -897,7 +897,7 @@ style="position:absolute; height: 100%; width: 100%;">
 &lt;p>本文从架构、技术、功能、应用等方面，对流影进行了概要性介绍，帮助读者对流影有一个整体认识。
 本文并没有深入相关细节，如需深入了解，请查看流影&lt;a href="https://abyssalfish-os.github.io/documentation/">文档&lt;/a>。同时我们提供了线上演示Demo，便于您快速上手试用，您可以通过以下链接和演示账号登录试用：&lt;/p>
 &lt;ul>
-&lt;li>&lt;a href="http://101.254.236.75:14180/ui/#/login">流影Demo&lt;/a>&lt;/li>
+&lt;li>&lt;a href="http://119.80.10.68:14180/ui/#/login">流影Demo&lt;/a>&lt;/li>
 &lt;li>Demo账号：demo&lt;/li>
 &lt;li>Demo口令：demo@2022&lt;/li>
 &lt;/ul>
@@ -1130,7 +1130,7 @@ Trusted Automated eXchange of Indicator Information &lt;a href="https://taxiipro
 &lt;li>&lt;a href="https://abyssalfish-os.github.io/">流影项目&lt;/a>&lt;/li>
 &lt;li>&lt;a href="https://github.com/orgs/Abyssal-Fish-Technology/repositories">GitHub&lt;/a>&lt;/li>
 &lt;li>&lt;a href="https://gitee.com/organizations/abyssalfish-os/projects">Gitee&lt;/a>&lt;/li>
-&lt;li>&lt;a href="http://101.254.236.75:14180/ui/#/login">Demo地址&lt;/a>&lt;/li>
+&lt;li>&lt;a href="http://119.80.10.68:14180/ui/#/login">Demo地址&lt;/a>&lt;/li>
 &lt;li>扫码进入微信讨论群&lt;/li>
 &lt;/ul>
 &lt;figure style="padding: 0.25rem; margin: 2rem 0; ">
@@ -1138,7 +1138,7 @@ Trusted Automated eXchange of Indicator Information &lt;a href="https://taxiipro
 &lt;/figure>
 &lt;h2 id="参考文献">参考文献 &lt;a class="header-link" href="#%e5%8f%82%e8%80%83%e6%96%87%e7%8c%ae">&lt;svg class="fill-current o-60 hover-accent-color-light" height="22px" viewBox="0 0 24 24" width="22px" xmlns="http://www.w3.org/2000/svg">&lt;path d="M0 0h24v24H0z" fill="none"/>&lt;path d="M3.9 12c0-1.71 1.39-3.1 3.1-3.1h4V7H7c-2.76 0-5 2.24-5 5s2.24 5 5 5h4v-1.9H7c-1.71 0-3.1-1.39-3.1-3.1zM8 13h8v-2H8v2zm9-6h-4v1.9h4c1.71 0 3.1 1.39 3.1 3.1s-1.39 3.1-3.1 3.1h-4V17h4c2.76 0 5-2.24 5-5s-2.24-5-5-5z"/>&lt;/svg>&lt;/a>&lt;/h2>
 &lt;ol>
-&lt;li>&lt;a href="http://101.254.236.75:12280/ui">流影Demo&lt;/a>&lt;/li>
+&lt;li>&lt;a href="http://119.80.10.68:12280/ui">流影Demo&lt;/a>&lt;/li>
 &lt;li>&lt;a href="https://abyssalfish-os.github.io/">流影文档主页&lt;/a>&lt;/li>
 &lt;li>Gartner, &lt;a href="https://www.gartner.com/en/documents/2874317">Market Guide for Security Threat Intelligence Service&lt;/a>, 2014.&lt;/li>
 &lt;li>J. Friedman, M. Bouchard. Definitive guide to cyber threat intelligence[M]. CyberEdge Press, 2015.&lt;/li>
@@ -1187,7 +1187,7 @@ Trusted Automated eXchange of Indicator Information &lt;a href="https://taxiipro
 &lt;h2 id="演示地址">演示地址 &lt;a class="header-link" href="#%e6%bc%94%e7%a4%ba%e5%9c%b0%e5%9d%80">&lt;svg class="fill-current o-60 hover-accent-color-light" height="22px" viewBox="0 0 24 24" width="22px" xmlns="http://www.w3.org/2000/svg">&lt;path d="M0 0h24v24H0z" fill="none"/>&lt;path d="M3.9 12c0-1.71 1.39-3.1 3.1-3.1h4V7H7c-2.76 0-5 2.24-5 5s2.24 5 5 5h4v-1.9H7c-1.71 0-3.1-1.39-3.1-3.1zM8 13h8v-2H8v2zm9-6h-4v1.9h4c1.71 0 3.1 1.39 3.1 3.1s-1.39 3.1-3.1 3.1h-4V17h4c2.76 0 5-2.24 5-5s-2.24-5-5-5z"/>&lt;/svg>&lt;/a>&lt;/h2>
 &lt;ul>
 &lt;li>
-&lt;p>&lt;a href="http://101.254.236.75:14180/ui/">Demo地址&lt;/a>&lt;/p>
+&lt;p>&lt;a href="http://119.80.10.68:14180/ui/">Demo地址&lt;/a>&lt;/p>
 &lt;/li>
 &lt;li>
 &lt;p>演示账号：demo&lt;/p>
