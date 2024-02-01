@@ -26,7 +26,7 @@ isCJKLanguage: true
 
 您也可以使用以下Demo快速体验流影功能
 
-- [Demo地址](http://101.254.236.75:12280/ui/#/login)
+- [Demo地址](http://119.80.10.68:12280/ui/#/login)
 - 演示账号：demo，口令：demo@2022
 
 ## 用户登录

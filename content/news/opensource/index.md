@@ -52,7 +52,7 @@ isCJKLanguage: true
 
 ## 演示地址
 
-- [Demo地址](http://101.254.236.75:14180/ui/)
+- [Demo地址](http://119.80.10.68:14180/ui/)
 
 - 演示账号：demo
 - 口令：demo@2022

@@ -24,12 +24,12 @@ features:
     copy: 经过特征模型、情报关联、白名单过滤等处理，告警去伪存真，避免告警风暴
 
 sections:
-  - heading: "流影"
-    cta: 点击访问流影DEMO
-    link: http://101.254.236.75:14180/ui/
+  - heading: "流影在线演示"
+    cta: 点击进入流影DEMO
+    link: http://119.80.10.68:14180/ui/
     color_classes: bg-primary-color white
     image: /img/login.png
-    copy: "流影在线演示环境，便于您快速上手操作，马上体验流影功能。体验账号demo，密码demo@2022"
+    copy: "登录账号demo，密码demo@2022。即刻开启流影体验。"
 ---
 
 

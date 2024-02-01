@@ -277,7 +277,7 @@ Trusted Automated eXchange of Indicator Information [(TAXII)](https://taxiiproje
 - [流影项目](https://abyssalfish-os.github.io/)
 - [GitHub](https://github.com/orgs/Abyssal-Fish-Technology/repositories)
 - [Gitee](https://gitee.com/organizations/abyssalfish-os/projects)
-- [Demo地址](http://101.254.236.75:14180/ui/#/login)
+- [Demo地址](http://119.80.10.68:14180/ui/#/login)
 - 扫码进入微信讨论群
 
 
@@ -286,7 +286,7 @@ Trusted Automated eXchange of Indicator Information [(TAXII)](https://taxiiproje
 
 ## 参考文献
 
-1. [流影Demo](http://101.254.236.75:12280/ui)
+1. [流影Demo](http://119.80.10.68:12280/ui)
 1. [流影文档主页](https://abyssalfish-os.github.io/)
 1. Gartner, [Market Guide for Security Threat Intelligence Service](https://www.gartner.com/en/documents/2874317), 2014.
 1. J. Friedman, M. Bouchard. Definitive guide to cyber threat intelligence[M]. CyberEdge Press, 2015.
