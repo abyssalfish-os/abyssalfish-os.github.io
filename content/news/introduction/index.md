@@ -99,9 +99,5 @@ isCJKLanguage: true
 
 欢迎大家使用反馈，并且积极参与项目贡献。
 
-## 联系反馈
-如果有问题，欢迎通过邮件或者微信群进行反馈。
-- 邮箱：opensource@abyssalfish.com.cn
-- 扫码进入微信讨论群
-{{< imgproc wx_group.png Resize "256x" />}}
+
 

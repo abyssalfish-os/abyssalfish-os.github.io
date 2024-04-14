@@ -278,10 +278,7 @@ Trusted Automated eXchange of Indicator Information [(TAXII)](https://taxiiproje
 - [GitHub](https://github.com/orgs/Abyssal-Fish-Technology/repositories)
 - [Gitee](https://gitee.com/organizations/abyssalfish-os/projects)
 - [Demo地址](http://119.80.10.68:14180/ui/#/login)
-- 扫码进入微信讨论群
 
-
-{{< imgproc wx_group.png Resize "256x" />}}
 
 
 ## 参考文献

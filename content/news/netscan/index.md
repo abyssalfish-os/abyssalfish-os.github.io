@@ -77,11 +77,5 @@ draft: false
 
 流影可以感知网络扫描行为，支持用户自定义配置检测规则，及时发出网络扫描行为告警，并将扫描行为特征以可视化的方式呈现，帮助用户快速判定，大大减少分析响应时间，提高分析处理效率。
 
-## 其他信息
-
-- [开源流影项目主页](https://abyssalfish-os.github.io/)
-- 邮箱：opensource@abyssalfish.com.cn
-- 扫码进入微信讨论群
-{{< imgproc wx_group.png Resize "256x" />}}
 
 
