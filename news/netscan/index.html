@@ -31,11 +31,11 @@
 <meta property="og:type" content="article">
 <meta property="og:url" content="https://abyssalfish-os.github.io/news/netscan/"><meta property="og:image" content="https://abyssalfish-os.github.io/opengraph/gohugoio-card-base-1_huf001e7df4fd9c00c4355abac7d4ca455_242906_filter_15111287269022690483.png"><meta property="article:section" content="news">
 <meta property="article:published_time" content="2023-02-27T00:00:00+08:00">
-<meta property="article:modified_time" content="2023-02-27T17:36:12+08:00">
+<meta property="article:modified_time" content="2024-04-14T21:09:09+08:00">
 <meta itemprop=name content="流影之网络扫描行为发现">
 <meta itemprop=description content="介绍通过流影发现网络扫描行为及相关规则配置方法"><meta itemprop=datePublished content="2023-02-27T00:00:00+08:00">
-<meta itemprop=dateModified content="2023-02-27T17:36:12+08:00">
-<meta itemprop=wordCount content="1955">
+<meta itemprop=dateModified content="2024-04-14T21:09:09+08:00">
+<meta itemprop=wordCount content="1902">
 <meta itemprop=keywords content>
 <script>var _hmt=_hmt||[];(function(){var e,t=document.createElement("script");t.src="https://hm.baidu.com/hm.js?20e14b502dcd423ae21f8119455786ab",e=document.getElementsByTagName("script")[0],e.parentNode.insertBefore(t,e)})()</script>
 </head><body class="ma0 sans-serif bg-primary-color-light
@@ -133,21 +133,16 @@ February 27, 2023
 <img src=./port_scan_3.png alt=端口扫描2></p><h3 id=自定义扫描识别规则配置>自定义扫描识别规则配置 <a class=header-link href=#%e8%87%aa%e5%ae%9a%e4%b9%89%e6%89%ab%e6%8f%8f%e8%af%86%e5%88%ab%e8%a7%84%e5%88%99%e9%85%8d%e7%bd%ae><svg class="fill-current o-60 hover-accent-color-light" height="22" viewBox="0 0 24 24" width="22" xmlns="http://www.w3.org/2000/svg"><path d="M0 0h24v24H0z" fill="none"/><path d="M3.9 12c0-1.71 1.39-3.1 3.1-3.1h4V7H7c-2.76.0-5 2.24-5 5s2.24 5 5 5h4v-1.9H7c-1.71.0-3.1-1.39-3.1-3.1zM8 13h8v-2H8v2zm9-6h-4v1.9h4c1.71.0 3.1 1.39 3.1 3.1s-1.39 3.1-3.1 3.1h-4V17h4c2.76.0 5-2.24 5-5s-2.24-5-5-5z"/></svg></a></h3><p>系统支持对两种扫描行为的规则自定义配置。（管理员用户）登录系统后，点击配置主菜单，选择“规则”子菜单，进入规则配置与查看界面。
 <img src=./scan_config.png alt=端口扫描2>
 管理员权限的用户可以进行规则维护。配置参数请参见<a href=https://abyssalfish-os.github.io/user-manual/peizhi/#ip%e6%89%ab%e6%8f%8f>使用文档</a>。</p><h2 id=网络扫描防护建议>网络扫描防护建议 <a class=header-link href=#%e7%bd%91%e7%bb%9c%e6%89%ab%e6%8f%8f%e9%98%b2%e6%8a%a4%e5%bb%ba%e8%ae%ae><svg class="fill-current o-60 hover-accent-color-light" height="22" viewBox="0 0 24 24" width="22" xmlns="http://www.w3.org/2000/svg"><path d="M0 0h24v24H0z" fill="none"/><path d="M3.9 12c0-1.71 1.39-3.1 3.1-3.1h4V7H7c-2.76.0-5 2.24-5 5s2.24 5 5 5h4v-1.9H7c-1.71.0-3.1-1.39-3.1-3.1zM8 13h8v-2H8v2zm9-6h-4v1.9h4c1.71.0 3.1 1.39 3.1 3.1s-1.39 3.1-3.1 3.1h-4V17h4c2.76.0 5-2.24 5-5s-2.24-5-5-5z"/></svg></a></h2><p>为了防范恶意网络扫描的危害，建议综合进行以下措施：</p><ol>
-<li>减少端口开放，加强系统防护</li><li>端口伪装，进行信息欺骗</li><li>实时监测扫描行为，及时告警和处置</li></ol><h2 id=结语>结语 <a class=header-link href=#%e7%bb%93%e8%af%ad><svg class="fill-current o-60 hover-accent-color-light" height="22" viewBox="0 0 24 24" width="22" xmlns="http://www.w3.org/2000/svg"><path d="M0 0h24v24H0z" fill="none"/><path d="M3.9 12c0-1.71 1.39-3.1 3.1-3.1h4V7H7c-2.76.0-5 2.24-5 5s2.24 5 5 5h4v-1.9H7c-1.71.0-3.1-1.39-3.1-3.1zM8 13h8v-2H8v2zm9-6h-4v1.9h4c1.71.0 3.1 1.39 3.1 3.1s-1.39 3.1-3.1 3.1h-4V17h4c2.76.0 5-2.24 5-5s-2.24-5-5-5z"/></svg></a></h2><p>在网络安全防护的场景下，尽早的发现黑客的扫描活动，才能及时采取措施，阻断黑客进一步实施后续攻击和破坏，避免损失。</p><p>流影可以感知网络扫描行为，支持用户自定义配置检测规则，及时发出网络扫描行为告警，并将扫描行为特征以可视化的方式呈现，帮助用户快速判定，大大减少分析响应时间，提高分析处理效率。</p><h2 id=其他信息>其他信息 <a class=header-link href=#%e5%85%b6%e4%bb%96%e4%bf%a1%e6%81%af><svg class="fill-current o-60 hover-accent-color-light" height="22" viewBox="0 0 24 24" width="22" xmlns="http://www.w3.org/2000/svg"><path d="M0 0h24v24H0z" fill="none"/><path d="M3.9 12c0-1.71 1.39-3.1 3.1-3.1h4V7H7c-2.76.0-5 2.24-5 5s2.24 5 5 5h4v-1.9H7c-1.71.0-3.1-1.39-3.1-3.1zM8 13h8v-2H8v2zm9-6h-4v1.9h4c1.71.0 3.1 1.39 3.1 3.1s-1.39 3.1-3.1 3.1h-4V17h4c2.76.0 5-2.24 5-5s-2.24-5-5-5z"/></svg></a></h2><ul>
-<li><a href=https://abyssalfish-os.github.io/>开源流影项目主页</a></li><li>邮箱：opensource@abyssalfish.com.cn</li><li>扫码进入微信讨论群
-<figure style="padding:.25rem;margin:2rem 0">
-<img style=max-width:100%;width:auto;height:auto src=/news/netscan/wx_group_hudb4a69bd2635e3aa43aa83864d6eef95_7688_256x0_resize_catmullrom_3.png width=256 height=256>
-</figure></li></ul></div></div><div class="gray f6 mv6">
-Last Update: February 27, 2023 <br>
+<li>减少端口开放，加强系统防护</li><li>端口伪装，进行信息欺骗</li><li>实时监测扫描行为，及时告警和处置</li></ol><h2 id=结语>结语 <a class=header-link href=#%e7%bb%93%e8%af%ad><svg class="fill-current o-60 hover-accent-color-light" height="22" viewBox="0 0 24 24" width="22" xmlns="http://www.w3.org/2000/svg"><path d="M0 0h24v24H0z" fill="none"/><path d="M3.9 12c0-1.71 1.39-3.1 3.1-3.1h4V7H7c-2.76.0-5 2.24-5 5s2.24 5 5 5h4v-1.9H7c-1.71.0-3.1-1.39-3.1-3.1zM8 13h8v-2H8v2zm9-6h-4v1.9h4c1.71.0 3.1 1.39 3.1 3.1s-1.39 3.1-3.1 3.1h-4V17h4c2.76.0 5-2.24 5-5s-2.24-5-5-5z"/></svg></a></h2><p>在网络安全防护的场景下，尽早的发现黑客的扫描活动，才能及时采取措施，阻断黑客进一步实施后续攻击和破坏，避免损失。</p><p>流影可以感知网络扫描行为，支持用户自定义配置检测规则，及时发出网络扫描行为告警，并将扫描行为特征以可视化的方式呈现，帮助用户快速判定，大大减少分析响应时间，提高分析处理效率。</p></div></div><div class="gray f6 mv6">
+Last Update: April 14, 2024 <br>
 <a href=https://github.com/abyssalfish-os/abyssalfish-os.github.io/edit/master/content/news/netscan/index.md class="f6 ph3 pv1 br2 dib tc ttu mv3 bg-primary-color white hover-bg-green link">Improve this page</a>
-</div></article></main><footer class="bg-primary-color-dark ph4-ns pt4 relative w-100" role=contentinfo>
+</div></article></main><footer class="bg-primary-color-dark ph4-ns pt2 relative w-100" role=contentinfo>
 <div class="center flex-ns flex-wrap justify-between mw9 w-90">
-<div class="center pb3 pt4">
-<div class="b f3 light-gray mb3 nested-links tc">
-流影由 <a href=https://github.com/orgs/Abyssal-Fish-Technology class=link>深海鱼（北京）科技有限公司 </a>发起开源和维护，欢迎参与和使用反馈<br>
-</div><ul class="center f6 list ma0 mv4 pa0 tc">
-<li class="dib mr3"><img src=/images/wx_public.jpg alt=关注微信公众号 width=100 height=100> </li><li class="dib mr3 white"> 公众号 </li><li class="dib mr3 white"> 沟通群 </li><li class="dib mr3"><img src=/images/wx_group.png alt=微信群 width=100 height=100></li></ul><ul class="center f6 list ma0 mv4 pa0 tc">
-<li class="dib mr3"><a href=https://github.com/Abyssal-Fish-Technology/ly_vis class="dim link light-gray pv2">可视化交互分析(ly_vis)</a></li><li class="dib mr3"><a href=https://github.com/Abyssal-Fish-Technology/ly_server class="dim link light-gray pv2">管理引擎(ly_server)</a></li><li class=dib><a href=https://github.com/Abyssal-Fish-Technology/ly_analyser class="dim link light-gray pv2">分析引擎(ly_analyser)</a></li><li class=dib><a href=https://github.com/Abyssal-Fish-Technology/ly_probe class="dim link light-gray pv2"> &nbsp;&nbsp;&nbsp;&nbsp;流量探针(ly_probe)</a></li></ul><ul class="center f6 list ma0 mv3 pa0 tc"><li class="dib mr3"><a href=https://github.com/abyssalfish-os/liuying/issues/new class="dim link light-gray pv2">到 Github 发起 Issue</a></li><li class=dib><a href=https://gitter.im/abyssalfish-os/community class="dim link light-gray pv2">来 Gitter 沟通留言</a></li></ul></div></div><div class="bg-primary-color-dark bottom-0 left-0 right-0 dn-l fixed pb3 ph3 pt3 z-2"><div class="globalmenu mobilemenu pb1 dn">
+<div class="center pb3 pt2">
+<ul class="center f6 list ma0 mv4 pa0 tc">
+<li class="dib mr3"><a href=https://github.com/Abyssal-Fish-Technology/ly_vis class="dim link light-gray pv2">可视化交互分析(ly_vis)</a></li><li class="dib mr3"><a href=https://github.com/Abyssal-Fish-Technology/ly_server class="dim link light-gray pv2">管理引擎(ly_server)</a></li><li class=dib><a href=https://github.com/Abyssal-Fish-Technology/ly_analyser class="dim link light-gray pv2">分析引擎(ly_analyser)</a></li><li class=dib><a href=https://github.com/Abyssal-Fish-Technology/ly_probe class="dim link light-gray pv2"> &nbsp;&nbsp;&nbsp;&nbsp;流量探针(ly_probe)</a></li></ul><div class="b f3 light-gray mb3 nested-links tc">
+流影是深海鱼（北京）科技有限公司 </a>开源项目之一，欢迎参与<br>
+</div></div></div><div class="bg-primary-color-dark bottom-0 left-0 right-0 dn-l fixed pb3 ph3 pt3 z-2"><div class="globalmenu mobilemenu pb1 dn">
 <ul class="list hidden dib ph0 scrolling-touch tc">
 <li class="tl dib ma0 hover-bg-black w-100">
 <a href=/news/ class="ttu f6 link primary-color-light overflow hover-white db brand-font ma0 w-100 pv3 ph4">
